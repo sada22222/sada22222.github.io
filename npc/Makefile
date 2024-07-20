@@ -7,7 +7,7 @@ export TEST_DIR = $(TOP_DIR)/src/test/scala
 # files
 FUXI_SRC := $(wildcard $(SRC_DIR)/*.scala)
 FUXI_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
-FUXI_TARGET := $(TARGET_DIR)/example.v
+FUXI_TARGET := $(TARGET_DIR)/Top.v
 
 .PHONY: all clean
 
