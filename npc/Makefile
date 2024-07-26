@@ -1,8 +1,23 @@
-all:
-	@echo "Write this Makefile by your self."
+# directories
+export TOP_DIR = $(shell if [ "$$PWD" != "" ]; then echo $$PWD; else pwd; fi)
+export TARGET_DIR = $(TOP_DIR)/verilog/vsrc
+export SRC_DIR = $(TOP_DIR)/src/main/scala
+export TEST_DIR = $(TOP_DIR)/src/test/scala
 
-sim:
-	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	@echo "Write this Makefile by your self."
+# files
+FUXI_SRC := $(wildcard $(SRC_DIR)/*.scala)
+FUXI_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
+FUXI_TARGET := $(TARGET_DIR)/Top.v
 
-include ../Makefile
+.PHONY: all clean
+
+all: $(FUXI_TARGET)
+
+$(FUXI_TARGET): $(TARGET_DIR) $(FUXI_SRC)
+	sbt "runMain Top --target-dir $(TARGET_DIR)"
+
+$(TARGET_DIR):
+	mkdir -p $(TARGET_DIR)
+
+clean:
+	-rm -f $(TARGET_DIR)/*
