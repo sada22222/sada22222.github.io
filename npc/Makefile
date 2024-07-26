@@ -5,15 +5,15 @@ export SRC_DIR = $(TOP_DIR)/src/main/scala
 export TEST_DIR = $(TOP_DIR)/src/test/scala
 
 # files
-FUXI_SRC := $(wildcard $(SRC_DIR)/*.scala)
-FUXI_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
-FUXI_TARGET := $(TARGET_DIR)/Top.v
+TOP_SRC := $(wildcard $(SRC_DIR)/*.scala)
+TOP_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
+TOP_TARGET := $(TARGET_DIR)/Top.v
 
 .PHONY: all clean
 
-all: $(FUXI_TARGET)
+all: $(TOP_TARGET)
 
-$(FUXI_TARGET): $(TARGET_DIR) $(FUXI_SRC)
+$(TOP_TARGET): $(TARGET_DIR) $(TOP_SRC)
 	sbt "runMain Top --target-dir $(TARGET_DIR)"
 
 $(TARGET_DIR):
