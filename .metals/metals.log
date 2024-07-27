@@ -1,0 +1,74 @@
+2024.07.27 17:38:10 INFO  Started: Metals version 1.3.4 in folders '/home/hujun/ysyx-workbench' for client Visual Studio Code 1.91.1.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@b203237]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@7271619a]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@b203237]
+2024.07.27 17:38:10 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.07.27 17:38:12 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.07.27 19:20:06 INFO  running '/usr/local/sbt/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.07.27 19:20:10 INFO  [info] welcome to sbt 1.9.8 (Ubuntu Java 17.0.11)
+2024.07.27 19:20:15 INFO  [info] loading settings for project npc-build-build-build from metals.sbt ...
+2024.07.27 19:20:15 INFO  [info] loading project definition from /home/hujun/ysyx-workbench/npc/project/project/project
+2024.07.27 19:21:38 INFO  [warn] 
+2024.07.27 19:21:38 INFO  [warn] 	Note: Some unresolved dependencies have extra attributes.  Check that these dependencies exist with the requested attributes.
+2024.07.27 19:21:38 INFO  [warn] 		ch.epfl.scala:sbt-bloop:1.6.0 (sbtVersion=1.0, scalaVersion=2.12)
+2024.07.27 19:21:38 INFO  [warn] 
+2024.07.27 19:21:38 INFO  [warn] 	Note: Unresolved dependencies path:
+2024.07.27 19:21:38 INFO  [error] sbt.librarymanagement.ResolveException: Error downloading ch.epfl.scala:sbt-bloop;sbtVersion=1.0;scalaVersion=2.12:1.6.0
+2024.07.27 19:21:38 INFO  [error]   Not found
+2024.07.27 19:21:38 INFO  [error]   Not found
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo1.maven.org) while downloading https://repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.6.0/sbt-bloop-1.6.0.pom
+2024.07.27 19:21:38 INFO  [error]   not found: /home/hujun/.ivy2/localch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo.huaweicloud.com) while downloading https://repo.huaweicloud.com/repository/maven/ch/epfl/scala/sbt-bloop_2.12_1.0/1.6.0/sbt-bloop-1.6.0.pom
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo.huaweicloud.com) while downloading https://repo.huaweicloud.com/repository/ivy/ch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo.scala-sbt.org) while downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/ch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error]   not found: https://repo.typesafe.com/typesafe/ivy-releases/ch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:344)
+2024.07.27 19:21:38 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:313)
+2024.07.27 19:21:38 INFO  [error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+2024.07.27 19:21:38 INFO  [error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:313)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:60)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+2024.07.27 19:21:38 INFO  [error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+2024.07.27 19:21:38 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2024.07.27 19:21:38 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2024.07.27 19:21:38 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.07.27 19:21:38 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2024.07.27 19:21:38 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2024.07.27 19:21:38 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2024.07.27 19:21:38 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2024.07.27 19:21:38 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2024.07.27 19:21:38 INFO  [error] (update) sbt.librarymanagement.ResolveException: Error downloading ch.epfl.scala:sbt-bloop;sbtVersion=1.0;scalaVersion=2.12:1.6.0
+2024.07.27 19:21:38 INFO  [error]   Not found
+2024.07.27 19:21:38 INFO  [error]   Not found
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo1.maven.org) while downloading https://repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.6.0/sbt-bloop-1.6.0.pom
+2024.07.27 19:21:38 INFO  [error]   not found: /home/hujun/.ivy2/localch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo.huaweicloud.com) while downloading https://repo.huaweicloud.com/repository/maven/ch/epfl/scala/sbt-bloop_2.12_1.0/1.6.0/sbt-bloop-1.6.0.pom
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo.huaweicloud.com) while downloading https://repo.huaweicloud.com/repository/ivy/ch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error]   download error: Caught java.net.UnknownHostException (repo.scala-sbt.org) while downloading https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/ch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [error]   not found: https://repo.typesafe.com/typesafe/ivy-releases/ch.epfl.scala/sbt-bloop/scala_2.12/sbt_1.0/1.6.0/ivys/ivy.xml
+2024.07.27 19:21:38 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2024.07.27 19:21:39 INFO  time: ran 'sbt bloopInstall' in 1m33s
+2024.07.27 19:21:39 ERROR sbt command failed: /usr/local/sbt/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.07.27 19:21:39 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.07.27 19:30:27 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.07.27 19:30:27 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.07.27 19:30:27 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.07.27 19:38:05 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.07.27 19:43:13 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/example.scala. Using presentation compiler with project's scala-library version: 3.3.3
