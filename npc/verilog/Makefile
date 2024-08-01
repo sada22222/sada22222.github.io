@@ -1,37 +1,49 @@
-# Define variables
-PROJECT = Top
-OBJ_DIR = ./obj
-VERILOG_SOURCES = ./vsrc/Top.v
-CPP_SOURCES = ./csrc/Top.cpp
-VERILATOR_FLAGS = --cc --exe --trace -Wall  -Wno-UNUSEDSIGNAL
+TOPNAME = counter
+NXDC_FILES = constr/top.nxdc
+INC_PATH ?=
 
+VERILATOR = verilator
+VERILATOR_CFLAGS += -MMD --build -cc  \
+				-O3 --x-assign fast --x-initial fast --noassert
 
-# Default target
-all: run
+BUILD_DIR = ./build
+OBJ_DIR = $(BUILD_DIR)/obj_dir
+BIN = $(BUILD_DIR)/$(TOPNAME)
 
-# Ensure the object directory exists
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+default: $(BIN)
 
-# Verilate the design and build
-$(OBJ_DIR)/V$(PROJECT): $(OBJ_DIR) $(VERILOG_SOURCES) $(CPP_SOURCES)
-	@echo "Verilating the design..."
-	verilator $(VERILATOR_FLAGS) -o V$(PROJECT) $(VERILOG_SOURCES) $(CPP_SOURCES) --Mdir $(OBJ_DIR)
-	cd $(OBJ_DIR) && make -f V$(PROJECT).mk
+$(shell mkdir -p $(BUILD_DIR))
 
-# Run the simulation
-run: $(OBJ_DIR)/V$(PROJECT)
-	@echo "Running the simulation..."
-	$(OBJ_DIR)/V$(PROJECT)
+# constraint file
+SRC_AUTO_BIND = $(abspath $(BUILD_DIR)/auto_bind.cpp)
+$(SRC_AUTO_BIND): $(NXDC_FILES)
+	python3 $(NVBOARD_HOME)/scripts/auto_pin_bind.py $^ $@
 
-# Run the simulation and open waveform in GTKWave
-sim: run
-	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
-	gtkwave waveform.vcd &
+# project source
+VSRCS = $(shell find $(abspath ./vsrc) -name "*.v")
+CSRCS = $(shell find $(abspath ./csrc) -name "*.cpp")
+CSRCS += $(SRC_AUTO_BIND)
 
-# Clean up generated files
+# rules for NVBoard
+include $(NVBOARD_HOME)/scripts/nvboard.mk
+
+# rules for verilator
+INCFLAGS = $(addprefix -I, $(INC_PATH))
+CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
+
+$(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
+	@rm -rf $(OBJ_DIR)
+	$(VERILATOR) $(VERILATOR_CFLAGS) \
+		--top-module $(TOPNAME) $^ \
+		$(addprefix -CFLAGS , $(CXXFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
+		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
+
+all: default
+
+run: $(BIN)
+	@$^
+
 clean:
-	rm -rf $(OBJ_DIR) waveform.vcd
+	rm -rf $(BUILD_DIR)
 
-.PHONY: all clean sim run
-
+.PHONY: default all clean run

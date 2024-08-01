@@ -7,14 +7,15 @@ export TEST_DIR = $(TOP_DIR)/src/test/scala
 # files
 TOP_SRC := $(wildcard $(SRC_DIR)/*.scala)
 TOP_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
-TOP_TARGET := $(TARGET_DIR)/Top.v
 
-.PHONY: all clean
+.PHONY: all clean count
 
-all: $(TOP_TARGET)
+all: count
 
-$(TOP_TARGET): $(TARGET_DIR) $(TOP_SRC)
-	sbt "runMain Top --target-dir $(TARGET_DIR)"
+$(TARGET_DIR)/count.v: $(TARGET_DIR) $(TOP_SRC)
+	sbt "runMain counter --target-dir $(TARGET_DIR) --output-file count.v"
+
+count: $(TARGET_DIR)/count.v
 
 $(TARGET_DIR):
 	mkdir -p $(TARGET_DIR)

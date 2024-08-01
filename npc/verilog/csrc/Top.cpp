@@ -1,49 +1,32 @@
-#include "VTop.h"           // Verilated module header
-#include "verilated.h"      // Verilator header
-#include "verilated_vcd_c.h" // Verilator VCD tracing header
-#include <iostream>         // C++ standard I/O header
+#include <nvboard.h>
+#include <Vcounter.h>
 
-int main(int argc, char** argv, char** env) {
-    // Initialize Verilator's command arguments
-    Verilated::commandArgs(argc, argv);
+static Vcounter dut;
+static Vcounter& top = dut;  // Declare top as a reference to dut
 
-    // Instantiate the module
-    VTop* top = new VTop;
+void nvboard_bind_all_pins(Vcounter* top);
 
-    // Enable signal tracing
-    VerilatedVcdC* tfp = new VerilatedVcdC;
-    Verilated::traceEverOn(true);
-    top->trace(tfp, 99);
-    tfp->open("waveform.vcd");
-
-    // Simulation loop
-    int main_time = 0;  // Current simulation time
-
-    // Apply initial conditions
-    top->io_a = 0;
-    top->io_b = 0;
-
-    while (main_time < 10) { // Simulate for 10 time units
-        // Toggle inputs at specific time steps
-        if (main_time == 2) top->io_a = 1;
-        if (main_time == 4) top->io_b = 1;
-        if (main_time == 6) top->io_a = 0;
-        if (main_time == 8) top->io_b = 0;
-
-        // Evaluate the module
-        top->eval();
-
-        // Dump variables into VCD file
-        tfp->dump(main_time);
-
-        // Increment simulation time
-        main_time++;
-    }
-
-    // Cleanup and close VCD file
-    tfp->close();
-    delete top;
-    delete tfp;
-    return 0;
+static void single_cycle() {
+  top.clock = 0;
+  top.eval();
+  top.clock = 1;
+  top.eval();
 }
 
+static void reset(int n) {
+  top.reset = 1;
+  while (n-- > 0) single_cycle();
+  top.reset = 0;
+}
+
+int main() {
+  nvboard_bind_all_pins(&top);
+  nvboard_init();
+
+  reset(10);
+
+  while(1) {
+    nvboard_update();
+    single_cycle();
+  }
+}
