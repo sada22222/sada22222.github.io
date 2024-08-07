@@ -1,0 +1,4 @@
+[debug] [npc-test] Classpath dependencies List()
+[debug] [npc-test] Dependencies from configurations List(npc)
+[debug] Bloop wrote the configuration of project 'npc-test' to '/home/hujun/ysyx-workbench/npc/.bloop/npc-test.json'
+[success] Generated .bloop/npc-test.json
