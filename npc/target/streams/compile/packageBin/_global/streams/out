@@ -1,1 +1,39 @@
-[0m[[0m[0mdebug[0m] [0m[0mJar uptodate: /home/hujun/ysyx-workbench/npc/target/scala-2.12/top_2.12-0.0.1.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/hujun/ysyx-workbench/npc/target/scala-2.12/top_2.12-0.0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	keyboard.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/keyboard.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	counter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/counter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PS2Keyboard$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/PS2Keyboard$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	counter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/counter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	keyboard$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/keyboard$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ALU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/ALU.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	keyboard$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/keyboard$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	keyboard$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/keyboard$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	counter$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/counter$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Timer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/Timer.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	counter$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/counter$$anon$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SevenSegmentDecoder$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/SevenSegmentDecoder$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	SevenSegmentDecoder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/SevenSegmentDecoder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ALU$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/ALU$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ALU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/ALU$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Timer$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/Timer$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	PS2Keyboard.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/PS2Keyboard.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ALU$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/ALU$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

@@ -41,5 +41,5 @@ class ALU extends Module {
 }
 
 object ALU extends App {
-  (new chisel3.stage.ChiselStage).emitVerilog(new ALU())
+  chisel3.Driver.execute(args, () => new ALU)
 }
