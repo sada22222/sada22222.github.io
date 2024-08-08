@@ -5,16 +5,22 @@ export SRC_DIR = $(TOP_DIR)/src/main/scala
 export TEST_DIR = $(TOP_DIR)/src/test/scala
 
 # files
-FUXI_SRC := $(wildcard $(SRC_DIR)/*.scala)
-FUXI_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
-FUXI_TARGET := $(TARGET_DIR)/Top.v
+TOP_SRC := $(wildcard $(SRC_DIR)/*.scala)
+TOP_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
 
-.PHONY: all clean
+.PHONY: all clean count keyboard
 
-all: $(FUXI_TARGET)
+all: default 
 
-$(FUXI_TARGET): $(TARGET_DIR) $(FUXI_SRC)
-	sbt "runMain Top --target-dir $(TARGET_DIR)"
+$(TARGET_DIR)/count.v: $(TARGET_DIR) $(TOP_SRC)
+	sbt "runMain counter --target-dir $(TARGET_DIR) --output-file count.v"
+
+count: $(TARGET_DIR)/count.v
+
+$(TARGET_DIR)/keyboard.v: $(TARGET_DIR) $(TOP_SRC)
+	sbt "runMain keyboard --target-dir $(TARGET_DIR) --output-file keyboard.v"
+
+keyboard: $(TARGET_DIR)/keyboard.v
 
 $(TARGET_DIR):
 	mkdir -p $(TARGET_DIR)
