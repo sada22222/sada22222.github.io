@@ -54,6 +54,34 @@ static int cmd_q(char *args) {
 
 static int cmd_help(char *args);
 
+static int cmd_si(char *args) {
+  int N = 1;  
+
+  if (args != NULL) {
+    sscanf(args, "%d", &N);  // 将字符串转换为整数
+  }
+
+  cpu_exec(N);  
+
+  printf("Step executed: N=%d\n", N);  
+  return 0;
+}
+
+static int cmd_info(char *args) {
+  if (args == NULL) {
+    printf("Usage: info r\n");
+    return 0;
+  }
+
+  if (strcmp(args, "r") == 0) {
+    isa_reg_display();
+  } else {
+    printf("Unknown argument for info: %s\n", args);
+  }
+  return 0;
+}
+
+
 static struct {
   const char *name;
   const char *description;
@@ -62,8 +90,10 @@ static struct {
   { "help", "Display information about all supported commands", cmd_help },
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
-
+ 
   /* TODO: Add more commands */
+  { "si", "Step execute N instructions", cmd_si },  
+  { "info", "Print information", cmd_info }, 
 
 };
 

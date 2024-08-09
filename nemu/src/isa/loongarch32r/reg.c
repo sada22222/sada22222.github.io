@@ -23,7 +23,24 @@ const char *regs[] = {
   "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"
 };
 
+typedef struct {
+  const char *name;
+  uint32_t value;
+} Reg;
+
+static Reg cpu_registers[] = {
+  {"eax", 0x12345678},
+  {"ebx", 0x87654321},
+  {"ecx", 0xabcdef12},
+  {"edx", 0x12fedcba},
+  // 可以继续添加其他寄存器
+};
+
 void isa_reg_display() {
+  int num_regs = sizeof(cpu_registers) / sizeof(cpu_registers[0]);
+  for (int i = 0; i < num_regs; i++) {
+    printf("%s: 0x%08x\n", cpu_registers[i].name, cpu_registers[i].value);
+  }
 }
 
 word_t isa_reg_str2val(const char *s, bool *success) {
