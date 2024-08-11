@@ -9,6 +9,7 @@
         "memory": "cpp",
         "random": "cpp",
         "future": "cpp",
-        "regex.h": "c"
+        "regex.h": "c",
+        "readline.h": "c"
     }
 }
