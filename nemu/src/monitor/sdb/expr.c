@@ -79,9 +79,9 @@ typedef struct token {
 static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
 
-#define TEXTON  1
+/*#define TEXTON  1
 #define TEXTOFF 0
-/*char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token info, used for printf!
+char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token info, used for printf!
   static char TokenInfo[32];
   switch (p->type)
   {
