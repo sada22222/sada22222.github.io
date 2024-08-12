@@ -11,6 +11,7 @@
         "future": "cpp",
         "regex.h": "c",
         "readline.h": "c",
-        "isa.h": "c"
+        "isa.h": "c",
+        "reg.h": "c"
     }
 }
