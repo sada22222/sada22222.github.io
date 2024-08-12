@@ -381,8 +381,8 @@ Token* find_main_op(Token *start,Token *end){
 
 uint32_t eval(Token *p, Token *q) {
   if (p > q) {
-    assert(0); // error! end the program!
-  } else if (p == q) { // single token
+    assert(0); // 错误! 终止程序!
+  } else if (p == q) { // 单个Token
     switch (p->type) {
       case TK_HEX:
         return strtoul(p->str, NULL, 16);
@@ -394,14 +394,14 @@ uint32_t eval(Token *p, Token *q) {
         printf("Evaluating register: %s\n", p->str); // 调试输出
         reg = isa_reg_str2val(p->str, &success);
         if (success) {
-        return reg;
+          return reg;
         } else {
-            printf("reg read error!\n");
-            assert(0); // 确保程序不继续执行无效数据
-                }
-                  }
+          printf("reg read error! Register: %s\n", p->str); // 错误信息
+          assert(0); // 确保程序不继续执行无效数据
+        }
+      }
       default:
-        assert(0); // This single token should be a number or a reg!
+        assert(0); // 此单个Token应为数字或寄存器!
     }
   }
 
