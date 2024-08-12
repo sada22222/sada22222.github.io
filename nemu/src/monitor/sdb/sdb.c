@@ -166,8 +166,8 @@ static int cmd_x(char *args) {
 
   // 打印内存内容
   for (int i = 0; i < N; i++) {
-    word_t paddr = EXPR + i * 8;
-    printf("0x%x:\t0x%016x\n", paddr, paddr_read(paddr, 8));
+    word_t paddr = EXPR + i * 4;  // 这里假设按4字节读取
+    printf("0x%08x:\t0x%08x\n", paddr, paddr_read(paddr, 4));
   }
   
   return 0;
