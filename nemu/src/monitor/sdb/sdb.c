@@ -200,9 +200,7 @@ static int cmd_d(char *args) {
 }
 
 static int cmd_dis(char *args) {
-  if(!new_wp(args)){
-    printf("There are no watch point .");
-  }else{wp_display();}
+  wp_display();
   return 0;
 }
 
