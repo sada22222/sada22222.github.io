@@ -10,6 +10,7 @@
         "random": "cpp",
         "future": "cpp",
         "regex.h": "c",
-        "readline.h": "c"
+        "readline.h": "c",
+        "isa.h": "c"
     }
 }

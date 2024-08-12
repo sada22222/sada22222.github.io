@@ -27,7 +27,7 @@ bool new_wp(char *args);
 bool free_wp(int delNO);
 
 void wp_display();
-word_t paddr_read(paddr_t addr, int len);
+uint32_t paddr_read(paddr_t addr, int len);
 
 static int cmd_help(char *args);
 static int cmd_c(char *args);
@@ -78,6 +78,7 @@ static struct {
   { "w", "Create a new watch point with the expression", cmd_w},
   { "d", "Delete a watch point from link list.", cmd_d},  
   { "display", "display all watch point from link list.", cmd_dis}, 
+
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -155,8 +156,8 @@ static int cmd_x(char *args) {
   // 解析参数
   char *ptrN = NULL;
   char *ptrEXPR = NULL;
-  word_t N = strtoul(argN, &ptrN, 10); 
-  word_t EXPR = strtoul(argEXPR, &ptrEXPR, 16); 
+  uint32_t N = strtoul(argN, &ptrN, 10); 
+  uint32_t EXPR = strtoul(argEXPR, &ptrEXPR, 16); 
 
   // 参数合法性检查
   if (((argN + strlen(argN)) != ptrN) || ((argEXPR + strlen(argEXPR)) != ptrEXPR)) {
@@ -166,7 +167,7 @@ static int cmd_x(char *args) {
 
   // 打印内存内容
   for (int i = 0; i < N; i++) {
-    word_t paddr = EXPR + i * 4;  // 这里假设按4字节读取
+    uint32_t paddr = EXPR + i * 4;  // 这里假设按4字节读取
     printf("0x%08x:\t0x%08x\n", paddr, paddr_read(paddr, 4));
   }
   
@@ -175,7 +176,7 @@ static int cmd_x(char *args) {
 
 static int cmd_p(char *args) {
   bool success;
-  word_t EXPR;
+  uint32_t EXPR;
   EXPR = expr(args, &success);
   if(success){
     printf("input expression == %d\n",EXPR);

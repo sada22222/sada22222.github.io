@@ -5,7 +5,7 @@
  */
 #include <regex.h>
 
-word_t paddr_read(paddr_t addr, int len);
+uint32_t paddr_read(paddr_t addr, int len);
 
 enum {
   TK_NOTYPE = 256,
@@ -379,7 +379,7 @@ Token* find_main_op(Token *start,Token *end){
   return NULL;
 }
 
-word_t eval(Token *p, Token *q) {
+uint32_t eval(Token *p, Token *q) {
   if (p > q) {
     assert(0); // error! end the program!
   } else if (p == q) { // single token
@@ -389,7 +389,7 @@ word_t eval(Token *p, Token *q) {
       case TK_NUM:
         return strtoul(p->str, NULL, 10);
       case TK_REG: {
-        word_t reg;
+        uint32_t reg;
         bool success;
         reg = isa_reg_str2val(p->str, &success);
         if (success) {
@@ -415,12 +415,12 @@ word_t eval(Token *p, Token *q) {
       assert(0);
     }
     else if(op->type == TK_DERE){  // 指针
-      word_t paddr = eval(op + 1, q);
+      uint32_t paddr = eval(op + 1, q);
       return paddr_read(paddr,8);
     }
     else{
-      word_t val1 = eval(p, op - 1);
-      word_t val2 = eval(op + 1, q);
+      uint32_t val1 = eval(p, op - 1);
+      uint32_t val2 = eval(op + 1, q);
 
       // printf("-----------expr1 = ");
       // for(Token *i=p;i<=op-1;i++){
