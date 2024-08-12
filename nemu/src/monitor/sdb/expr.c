@@ -1,11 +1,11 @@
 #include <isa.h>
-
+#include "sdb.h"
 /* We use the POSIX regex functions to process regular expressions.
  * Type 'man regex' for more information about POSIX regex functions.
  */
 #include <regex.h>
 
-word_t paddr_read(paddr_t addr, int len);
+uint32_t paddr_read(paddr_t addr, int len);
 
 enum {
   TK_NOTYPE = 256,
@@ -79,7 +79,7 @@ typedef struct token {
 static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;
 
-#define TEXTON  1
+/*#define TEXTON  1
 #define TEXTOFF 0
 char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token info, used for printf!
   static char TokenInfo[32];
@@ -124,7 +124,7 @@ char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token inf
     case TK_NUM:    strcpy(TokenInfo,p->str); break;
   }
   return TokenInfo;
-}
+}*/
 
 static bool make_token(char *e) {
   int position = 0;
@@ -379,24 +379,33 @@ Token* find_main_op(Token *start,Token *end){
   return NULL;
 }
 
-word_t eval(Token *p,Token *q){
+uint32_t eval(Token *p, Token *q) {
   if (p > q) {
-    assert(0); //error! end the program!
-  }
-  else if (p == q) { //single token
-    word_t reg;
-    switch(p->type){
-      case TK_HEX: return strtoul(p->str,NULL,16);
-      case TK_NUM: return strtoul(p->str,NULL,10);
-      case TK_REG: 
-        if(isa_reg_str2val(p->str,&reg)) //no break!;
+    assert(0); // error! end the program!
+  } else if (p == q) { // single token
+    switch (p->type) {
+      case TK_HEX:
+        return strtoul(p->str, NULL, 16);
+      case TK_NUM:
+        return strtoul(p->str, NULL, 10);
+      case TK_REG: {
+        uint32_t reg;
+        bool success;
+        reg = isa_reg_str2val(p->str, &success);
+        if (success) {
           return reg;
-        else
-          printf("reg read error!");
+        } else {
+          printf("reg read error!\n");
+          assert(0); // Ensure the program does not continue with invalid data
+        }
+      }
       default:
-        assert(0); //This single token should be a number or a reg!
+        assert(0); // This single token should be a number or a reg!
     }
   }
+
+
+  
   else if (check_parentheses(p, q) == true) {
     return eval(p + 1, q - 1);
   }
@@ -406,12 +415,12 @@ word_t eval(Token *p,Token *q){
       assert(0);
     }
     else if(op->type == TK_DERE){  // 指针
-      word_t paddr = eval(op + 1, q);
+      uint32_t paddr = eval(op + 1, q);
       return paddr_read(paddr,8);
     }
     else{
-      word_t val1 = eval(p, op - 1);
-      word_t val2 = eval(op + 1, q);
+      uint32_t val1 = eval(p, op - 1);
+      uint32_t val2 = eval(op + 1, q);
 
       // printf("-----------expr1 = ");
       // for(Token *i=p;i<=op-1;i++){
