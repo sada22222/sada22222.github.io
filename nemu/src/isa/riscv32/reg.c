@@ -31,5 +31,21 @@ void isa_reg_display(void) {
 }
 
 word_t isa_reg_str2val(const char *s, bool *success) {
+  // 遍历寄存器名称数组
+  for (int i = 0; i < 32; i++) {
+    if (strcmp(s, regs[i] + 1) == 0) {  // 匹配寄存器名，跳过 $ 符号
+      *success = true;
+      return cpu.gpr[i];  // 返回通用寄存器值
+    }
+  }
+
+  // 处理程序计数器
+  if (strcmp(s, "pc") == 0) {
+    *success = true;
+    return cpu.pc;  // 返回程序计数器的值
+  }
+
+  // 如果未找到匹配项
+  *success = false;
   return 0;
 }
