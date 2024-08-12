@@ -25,6 +25,7 @@ void init_regex();
 void init_wp_pool();
 bool new_wp(char *args);
 bool free_wp(int delNO);
+
 void wp_display();
 word_t paddr_read(paddr_t addr, int len);
 
@@ -200,7 +201,12 @@ static int cmd_d(char *args) {
 }
 
 static int cmd_dis(char *args) {
-  wp_display();
+  // 检查是否有任何活动的监视点
+  if (head == NULL) {
+    printf("There are no watch points.\n");
+  } else {
+    wp_display();  // 显示所有监视点
+  }
   return 0;
 }
 
