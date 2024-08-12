@@ -391,14 +391,15 @@ uint32_t eval(Token *p, Token *q) {
       case TK_REG: {
         uint32_t reg;
         bool success;
+        printf("Evaluating register: %s\n", p->str); // 调试输出
         reg = isa_reg_str2val(p->str, &success);
         if (success) {
-          return reg;
+        return reg;
         } else {
-          printf("reg read error!\n");
-          assert(0); // Ensure the program does not continue with invalid data
-        }
-      }
+            printf("reg read error!\n");
+            assert(0); // 确保程序不继续执行无效数据
+                }
+                  }
       default:
         assert(0); // This single token should be a number or a reg!
     }
