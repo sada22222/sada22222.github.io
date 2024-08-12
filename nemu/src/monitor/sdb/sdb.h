@@ -20,14 +20,14 @@
 typedef struct watchpoint {
   int NO;
   char expr[128];
-  word_t oldval;
-  word_t newval;
+  uint32_t oldval;
+  uint32_t newval;
   struct watchpoint *next;
 } WP;
 
 // 声明全局变量
 extern WP *head;
 extern WP *free_;
-word_t expr(char *e, bool *success);
+uint32_t expr(char *e, bool *success);
 
 #endif
