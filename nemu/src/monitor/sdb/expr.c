@@ -388,18 +388,18 @@ uint32_t eval(Token *p, Token *q) {
         return strtoul(p->str, NULL, 16);
       case TK_NUM:
         return strtoul(p->str, NULL, 10);
-      case TK_REG: {
-        uint32_t reg;
-        bool success;
-        printf("Evaluating register: %s\n", p->str); // 调试输出
-        reg = isa_reg_str2val(p->str, &success);
-        if (success) {
-          return reg;
-        } else {
-          printf("reg read error! Register: %s\n", p->str); // 错误信息
-          assert(0); // 确保程序不继续执行无效数据
-        }
-      }
+case TK_REG: {
+  uint32_t reg;
+  bool success;
+  printf("Evaluating register: %s\n", p->str); // 调试输出
+  reg = isa_reg_str2val(p->str, &success);
+  if (success) {
+    return reg;
+  } else {
+    printf("reg read error! Register: %s\n", p->str); // 错误信息
+    assert(0); // 确保程序不继续执行无效数据
+  }
+}
       default:
         assert(0); // 此单个Token应为数字或寄存器!
     }
