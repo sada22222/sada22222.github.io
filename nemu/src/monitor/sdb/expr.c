@@ -81,7 +81,7 @@ static int nr_token __attribute__((used))  = 0;
 
 #define TEXTON  1
 #define TEXTOFF 0
-char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token info, used for printf!
+/*char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token info, used for printf!
   static char TokenInfo[32];
   switch (p->type)
   {
@@ -124,7 +124,7 @@ char* getTokenInfo(Token *p,int onoff){ //add by dingyawei. return the token inf
     case TK_NUM:    strcpy(TokenInfo,p->str); break;
   }
   return TokenInfo;
-}
+}*/
 
 static bool make_token(char *e) {
   int position = 0;

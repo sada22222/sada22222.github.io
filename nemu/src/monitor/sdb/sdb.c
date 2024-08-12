@@ -23,6 +23,9 @@ static int is_batch_mode = false;
 
 void init_regex();
 void init_wp_pool();
+bool new_wp(char *args);
+bool free_wp(int delNO);
+void wp_display();
 word_t paddr_read(paddr_t addr, int len);
 
 static int cmd_help(char *args);
@@ -31,6 +34,9 @@ static int cmd_q(char *args);
 static int cmd_si(char *args);
 static int cmd_info(char *args);
 static int cmd_x(char *args);
+static int cmd_p(char *args);
+static int cmd_w(char *args);
+static int cmd_d(char *args);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -65,7 +71,10 @@ static struct {
   /* TODO: Add more commands */
   { "si", "Step execute N instructions", cmd_si },  
   { "info", "Print information", cmd_info }, 
-  { "x", "Examine memory", cmd_x },   
+  { "x", "Examine memory", cmd_x },  
+  { "p", "Calculate the value of a regular expression", cmd_p},
+  { "w", "Create a new watch point with the expression", cmd_w},
+  { "d", "Delete a watch point from link list.", cmd_d},  
 
 };
 
@@ -159,6 +168,33 @@ static int cmd_x(char *args) {
     printf("0x%x:\t0x%016x\n", paddr, paddr_read(paddr, 8));
   }
   
+  return 0;
+}
+
+static int cmd_p(char *args) {
+  bool success;
+  word_t EXPR;
+  EXPR = expr(args, &success);
+  if(success){
+    printf("input expression == %d\n",EXPR);
+  }
+  else{
+    printf("Error!Check your inpur expression!!\n");
+  }
+  return 0;
+}
+
+static int cmd_w(char *args) {
+  if(!new_wp(args)){
+    printf("fail to add watch point.check your watch point expression.");
+  }
+  return 0;
+}
+
+static int cmd_d(char *args) {
+  if(!free_wp(strtoul(args,NULL,10))){
+    printf("del wp failure\n");
+  }
   return 0;
 }
 
