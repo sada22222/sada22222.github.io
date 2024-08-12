@@ -39,7 +39,7 @@ word_t isa_reg_str2val(const char *s, bool *success) {
 
   // 遍历通用寄存器
   for (int idx = 0; idx < 32; idx++) {
-    if (strcmp(s, regs[idx] + 1) == 0) {  // 跳过 $ 符号进行比较
+    if(strcmp(s,regs[idx]) == 0){  // 跳过 $ 符号进行比较
       *success = true;
       return cpu.gpr[idx];
     }

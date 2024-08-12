@@ -398,8 +398,8 @@ uint32_t eval(Token *p, Token *q) {
         } else {
             printf("reg read error!\n");
             assert(0); // 确保程序不继续执行无效数据
-                }
-                  }
+          }
+      }
       default:
         assert(0); // This single token should be a number or a reg!
     }
