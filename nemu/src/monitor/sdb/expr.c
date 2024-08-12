@@ -174,10 +174,10 @@ static bool make_token(char *e) {
               tokens[nr_token].type = TK_MUL;
             }
             break;
-          case TK_REG:
-            strncpy(tokens[nr_token].str,substr_start+1,substr_len-1); //remove the first $.
-            tokens[nr_token].type = rules[i].token_type;
-            break;
+case TK_REG:
+  strncpy(tokens[nr_token].str, substr_start + 1, substr_len - 1); // 移除第一个 $
+  tokens[nr_token].type = rules[i].token_type;
+  break;
           case TK_HEX:  // no breaks!
           case TK_NUM:  // no breaks!
             strncpy(tokens[nr_token].str,substr_start,substr_len);
@@ -388,7 +388,7 @@ uint32_t eval(Token *p, Token *q) {
         return strtoul(p->str, NULL, 16);
       case TK_NUM:
         return strtoul(p->str, NULL, 10);
-case TK_REG: {
+      case TK_REG: {
   uint32_t reg;
   bool success;
   printf("Evaluating register: %s\n", p->str); // 调试输出

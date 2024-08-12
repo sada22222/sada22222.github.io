@@ -47,5 +47,5 @@ word_t isa_reg_str2val(const char *s, bool *success) {
 
   // 未找到匹配项，返回失败
   *success = false;
-  return 0;  // 返回0或者其他默认值，表示没有匹配的寄存器
+  return 0;  // 返回0表示没有匹配的寄存器
 }
