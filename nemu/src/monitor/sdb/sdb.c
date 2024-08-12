@@ -37,6 +37,7 @@ static int cmd_x(char *args);
 static int cmd_p(char *args);
 static int cmd_w(char *args);
 static int cmd_d(char *args);
+static int cmd_dis(char *args);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -75,7 +76,7 @@ static struct {
   { "p", "Calculate the value of a regular expression", cmd_p},
   { "w", "Create a new watch point with the expression", cmd_w},
   { "d", "Delete a watch point from link list.", cmd_d},  
-
+  { "display", "display all watch point from link list.", cmd_dis}, 
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -195,6 +196,11 @@ static int cmd_d(char *args) {
   if(!free_wp(strtoul(args,NULL,10))){
     printf("del wp failure\n");
   }
+  return 0;
+}
+
+static int cmd_dis(char *args) {
+  wp_display();
   return 0;
 }
 
