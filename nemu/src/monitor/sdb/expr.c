@@ -174,10 +174,10 @@ static bool make_token(char *e) {
               tokens[nr_token].type = TK_MUL;
             }
             break;
-case TK_REG:
-  strncpy(tokens[nr_token].str, substr_start + 1, substr_len - 1); // 移除第一个 $
-  tokens[nr_token].type = rules[i].token_type;
-  break;
+          case TK_REG:
+            strncpy(tokens[nr_token].str,substr_start+1,substr_len-1); //remove the first $.
+            tokens[nr_token].type = rules[i].token_type;
+            break;
           case TK_HEX:  // no breaks!
           case TK_NUM:  // no breaks!
             strncpy(tokens[nr_token].str,substr_start,substr_len);
@@ -381,27 +381,27 @@ Token* find_main_op(Token *start,Token *end){
 
 uint32_t eval(Token *p, Token *q) {
   if (p > q) {
-    assert(0); // 错误! 终止程序!
-  } else if (p == q) { // 单个Token
+    assert(0); // error! end the program!
+  } else if (p == q) { // single token
     switch (p->type) {
       case TK_HEX:
         return strtoul(p->str, NULL, 16);
       case TK_NUM:
         return strtoul(p->str, NULL, 10);
       case TK_REG: {
-  uint32_t reg;
-  bool success;
-  printf("Evaluating register: %s\n", p->str); // 调试输出
-  reg = isa_reg_str2val(p->str, &success);
-  if (success) {
-    return reg;
-  } else {
-    printf("reg read error! Register: %s\n", p->str); // 错误信息
-    assert(0); // 确保程序不继续执行无效数据
-  }
-}
+        uint32_t reg;
+        bool success;
+        printf("Evaluating register: %s\n", p->str); // 调试输出
+        reg = isa_reg_str2val(p->str, &success);
+        if (success) {
+        return reg;
+        } else {
+            printf("reg read error!\n");
+            assert(0); // 确保程序不继续执行无效数据
+                }
+                  }
       default:
-        assert(0); // 此单个Token应为数字或寄存器!
+        assert(0); // This single token should be a number or a reg!
     }
   }
 
