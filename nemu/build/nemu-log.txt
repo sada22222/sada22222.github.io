@@ -7,3 +7,9 @@
 [1;34m[src/monitor/monitor.c:35 welcome] Exercise: Please remove me in the source code and compile NEMU again.[0m
 0x80000000: 00 00 02 97 auipc	t0, 0
 0x80000004: 00 02 88 23 sb	zero, 16(t0)
+0x80000008: 01 02 c5 03 lbu	a0, 16(t0)
+0x8000000c: 00 10 00 73 ebreak	
+[1;34m[src/cpu/cpu-exec.c:128 cpu_exec] nemu: [1;32mHIT GOOD TRAP[0m at pc = 0x8000000c[0m
+[1;34m[src/cpu/cpu-exec.c:96 statistic] host time spent = 147 us[0m
+[1;34m[src/cpu/cpu-exec.c:97 statistic] total guest instructions = 4[0m
+[1;34m[src/cpu/cpu-exec.c:98 statistic] simulation frequency = 27,210 inst/s[0m

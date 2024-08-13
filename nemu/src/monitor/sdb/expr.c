@@ -186,7 +186,7 @@ static bool make_token(char *e) {
         }
         
         if(rules[i].token_type != TK_NOTYPE){
-          printf("Make token function get info: token ID = %d, token = %s\n",nr_token,getTokenInfo(&tokens[nr_token],TEXTON));
+         // printf("Make token function get info: token ID = %d, token = %s\n",nr_token,getTokenInfo(&tokens[nr_token],TEXTON));
           nr_token++; //if input is TK_NOTYPE, nr_token will not increase !!
         }
 
