@@ -200,7 +200,7 @@ static bool make_token(char *e) {
     }
   }
 
-  nr_token = nr_token -1 ; //remove the last nr_token++ 
+  nr_token = nr_token +1 ; //remove the last nr_token++ 
   return true;
 }
 
@@ -391,8 +391,6 @@ uint32_t eval(Token *p, Token *q) {
       case TK_REG: {
         uint32_t reg;
         bool success;
-
- 
         reg = isa_reg_str2val(p->str, &success);
         if (success) {
         printf("%s: 0x%08x\n",p->str, reg);         
