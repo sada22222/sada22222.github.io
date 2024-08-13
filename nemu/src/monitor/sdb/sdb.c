@@ -131,13 +131,19 @@ static int cmd_si(char *args) {
 
 static int cmd_info(char *args) {
   if (args == NULL) {
-    printf("Usage: info r\n");
+    printf("Usage: info r or w\n");
     return 0;
   }
-
   if (strcmp(args, "r") == 0) {
     isa_reg_display();
+  }else if(strcmp(args, "w") == 0){
+  if (head == NULL) {
+    printf("There are no watch points.\n");
   } else {
+    wp_display();  // 显示所有监视点
+  }
+ }
+  else {
     printf("Unknown argument for info: %s\n", args);
   }
   return 0;
