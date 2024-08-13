@@ -392,8 +392,10 @@ uint32_t eval(Token *p, Token *q) {
         uint32_t reg;
         bool success;
         printf("Evaluating register: %s\n", p->str); // 调试输出
+ 
         reg = isa_reg_str2val(p->str, &success);
         if (success) {
+        printf("pc: 0x%08x\n", reg);         
         return reg;
         } else {
             printf("reg read error!\n");
