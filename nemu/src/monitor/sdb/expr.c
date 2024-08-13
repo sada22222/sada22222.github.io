@@ -200,7 +200,7 @@ static bool make_token(char *e) {
     }
   }
 
-  nr_token = nr_token +1 ; //remove the last nr_token++ 
+  nr_token = nr_token -1 ; //remove the last nr_token++ 
   return true;
 }
 
