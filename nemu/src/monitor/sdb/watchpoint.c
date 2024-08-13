@@ -113,7 +113,6 @@ bool WP_check_update() {
       printf("Watchpoint %d triggered: expr = %s, old value = 0x%x, new value = 0x%x\n",
              p->NO, p->expr, p->oldval, p->newval);
     }
-
     p = p->next;
   }
 

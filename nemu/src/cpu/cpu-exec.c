@@ -83,7 +83,6 @@ static void execute(uint64_t n) {
       nemu_state.state = NEMU_STOP;  // 将 NEMU 的状态设置为暂停
       break;                       // 退出循环，暂停执行
     }
-
     if (nemu_state.state != NEMU_RUNNING) break;  // 检查 NEMU 的运行状态
     IFDEF(CONFIG_DEVICE, device_update());
   }
