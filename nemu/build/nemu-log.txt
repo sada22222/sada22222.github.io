@@ -5,3 +5,10 @@
 [1;34m[src/monitor/monitor.c:29 welcome] If trace is enabled, a log file will be generated to record the trace. This may lead to a large log file. If it is not necessary, you can disable it in menuconfig[0m
 [1;34m[src/monitor/monitor.c:32 welcome] Build time: 22:10:21, Aug 12 2024[0m
 [1;34m[src/monitor/monitor.c:35 welcome] Exercise: Please remove me in the source code and compile NEMU again.[0m
+0x80000000: 00 00 02 97 auipc	t0, 0
+0x80000004: 00 02 88 23 sb	zero, 16(t0)
+0x80000008: 01 02 c5 03 lbu	a0, 16(t0)
+0x8000000c: 00 10 00 73 ebreak	
+0x80000010: de ad be 00 c.fsd	fs0, 56(a2)
+0x80000014: 81 81 81 81 c.srli64	a1
+0x80000018: 81 81 81 81 c.srli64	a1
