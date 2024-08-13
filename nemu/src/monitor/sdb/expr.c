@@ -47,7 +47,7 @@ static struct rule {
   {"&&", TK_AND},
   {"\\|\\|", TK_OR},
   {"0[xX][0-9a-fA-F]+", TK_HEX},   // hex num 先对比hex num,防止0x的0被识别成num
-  {"[0-9]+", },   // num
+  {"[0-9]+", TK_NUM},   // num
 };
 
 #define NR_REGEX ARRLEN(rules)
@@ -393,7 +393,7 @@ uint32_t eval(Token *p, Token *q) {
         bool success;
         reg = isa_reg_str2val(p->str, &success);
         if (success) {
-        printf("%s: 0x%08x\n",p->str, reg);         
+       // printf("%s: 0x%08x\n",p->str, reg);         
         return reg;
         } else {
             printf("reg read error!\n");

@@ -7,6 +7,3 @@
 [1;34m[src/monitor/monitor.c:35 welcome] Exercise: Please remove me in the source code and compile NEMU again.[0m
 0x80000000: 00 00 02 97 auipc	t0, 0
 0x80000004: 00 02 88 23 sb	zero, 16(t0)
-0x80000008: 01 02 c5 03 lbu	a0, 16(t0)
-0x8000000c: 00 10 00 73 ebreak	
-0x80000010: de ad be 00 c.fsd	fs0, 56(a2)
