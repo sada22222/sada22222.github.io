@@ -73,14 +73,21 @@ static void exec_once(Decode *s, vaddr_t pc) {
 
 static void execute(uint64_t n) {
   Decode s;
-  for (;n > 0; n --) {
-    exec_once(&s, cpu.pc);
-    g_nr_guest_inst ++;
-    trace_and_difftest(&s, cpu.pc);
-    if (nemu_state.state != NEMU_RUNNING) break;
+  for (;n > 0; n--) {
+    exec_once(&s, cpu.pc);        // 执行一条指令
+    g_nr_guest_inst++;            // 记录已执行的指令数
+    trace_and_difftest(&s, cpu.pc);  // 追踪和差分测试
+
+    // 调用监视点检查函数
+    if (WP_check_update()) {      // 如果监视点触发
+      nemu_state.state = NEMU_STOP;  // 将 NEMU 的状态设置为暂停
+      break;                       // 退出循环，暂停执行
+    }
+    if (nemu_state.state != NEMU_RUNNING) break;  // 检查 NEMU 的运行状态
     IFDEF(CONFIG_DEVICE, device_update());
   }
 }
+
 
 static void statistic() {
   IFNDEF(CONFIG_TARGET_AM, setlocale(LC_NUMERIC, ""));

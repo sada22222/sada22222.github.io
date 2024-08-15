@@ -8,7 +8,7 @@ export TEST_DIR = $(TOP_DIR)/src/test/scala
 TOP_SRC := $(wildcard $(SRC_DIR)/*.scala)
 TOP_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
 
-.PHONY: all clean count keyboard
+.PHONY: all clean count keyboard top
 
 all: default 
 
@@ -21,6 +21,11 @@ $(TARGET_DIR)/keyboard.v: $(TARGET_DIR) $(TOP_SRC)
 	sbt "runMain keyboard --target-dir $(TARGET_DIR) --output-file keyboard.v"
 
 keyboard: $(TARGET_DIR)/keyboard.v
+
+$(TARGET_DIR)/top.v: $(TARGET_DIR) $(TOP_SRC)
+	sbt "runMain rv32isc.top --target-dir $(TARGET_DIR) --output-file top.v"
+
+top: $(TARGET_DIR)/top.v
 
 $(TARGET_DIR):
 	mkdir -p $(TARGET_DIR)

@@ -9,6 +9,12 @@
         "memory": "cpp",
         "random": "cpp",
         "future": "cpp",
-        "regex.h": "c"
+        "regex.h": "c",
+        "readline.h": "c",
+        "isa.h": "c",
+        "reg.h": "c",
+        "decode.h": "c",
+        "cpu.h": "c",
+        "difftest.h": "c"
     }
 }
