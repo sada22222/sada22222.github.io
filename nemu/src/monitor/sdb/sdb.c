@@ -59,8 +59,6 @@ static char* rl_gets() {
 }
 
 
-
-
 static struct {
   const char *name;
   const char *description;
@@ -77,7 +75,7 @@ static struct {
   { "p", "Calculate the value of a regular expression", cmd_p},
   { "w", "Create a new watch point with the expression", cmd_w},
   { "d", "Delete a watch point from link list.", cmd_d},  
-  { "display", "display all watch point from link list.", cmd_dis}, 
+  { "display", "Display all watch point from link list.", cmd_dis}, 
 
 };
 

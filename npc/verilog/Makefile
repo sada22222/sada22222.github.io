@@ -1,4 +1,6 @@
-TOPNAME = keyboard
+TOPNAME = counter
+
+
 NXDC_FILES = constr/$(TOPNAME).nxdc
 INC_PATH ?=
 
