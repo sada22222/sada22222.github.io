@@ -6725,3 +6725,67 @@ SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@deb2ef6
 2024.08.16 20:37:08 INFO  time: compiled npc-test in 3.8s
 8月 16, 2024 8:37:38 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 警告: Unmatched cancel notification for request id 27
+8月 16, 2024 9:28:36 下午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+信息: Unsupported notification method: $/setTrace
+8月 16, 2024 9:29:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 105
+2024.08.16 21:30:06 INFO  compiling npc (1 scala source)
+8月 16, 2024 9:30:07 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 139
+2024.08.16 21:30:11 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:30:11 INFO  time: compiled npc in 5.02s
+2024.08.16 21:43:42 INFO  compiling npc (1 scala source)
+2024.08.16 21:43:44 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:43:44 INFO  time: compiled npc in 2.72s
+2024.08.16 21:44:10 INFO  compiling npc (1 scala source)
+2024.08.16 21:44:12 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:44:12 INFO  time: compiled npc in 2.21s
+2024.08.16 21:46:37 INFO  compiling npc (1 scala source)
+2024.08.16 21:46:39 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:46:39 INFO  time: compiled npc in 1.92s
+2024.08.16 21:46:53 INFO  compiling npc (1 scala source)
+2024.08.16 21:46:53 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:46:54 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:46:54 INFO  time: compiled npc in 1.65s
+2024.08.16 21:48:50 INFO  compiling npc (1 scala source)
+2024.08.16 21:48:51 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:48:51 INFO  time: compiled npc in 1.55s
+2024.08.16 21:53:31 INFO  compiling npc (1 scala source)
+2024.08.16 21:53:31 INFO  time: compiled npc in 0.16s
+2024.08.16 21:53:31 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:37 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:37 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:38 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:38 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:40 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:40 INFO  compiling npc (1 scala source)
+2024.08.16 21:53:41 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:53:42 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:53:42 INFO  time: compiled npc in 1.41s
+2024.08.16 21:54:37 INFO  compiling npc (1 scala source)
+2024.08.16 21:54:38 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:54:38 INFO  time: compiled npc in 1.43s
+2024.08.16 21:54:46 INFO  compiling npc (1 scala source)
+2024.08.16 21:54:47 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:54:48 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:54:48 INFO  time: compiled npc in 1.44s
+2024.08.16 21:56:29 INFO  compiling npc (1 scala source)
+2024.08.16 21:56:30 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:56:30 INFO  time: compiled npc in 1.58s
+2024.08.16 21:56:34 INFO  compiling npc (1 scala source)
+2024.08.16 21:56:34 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:56:35 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:56:35 INFO  time: compiled npc in 1.31s
+2024.08.16 21:56:37 INFO  compiling npc (1 scala source)
+2024.08.16 21:56:38 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:56:38 INFO  time: compiled npc in 1.35s
+2024.08.16 21:57:19 INFO  compiling npc (1 scala source)
+2024.08.16 21:57:19 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/ps_data.scala
+2024.08.16 21:57:20 WARN  there were 18 feature warnings; re-run with -feature for details
+2024.08.16 21:57:20 INFO  time: compiled npc in 1.32s
+Exception in thread "pool-1-thread-204" java.lang.OutOfMemoryError: Java heap space
+8月 16, 2024 10:13:22 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+严重: Internal error: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+
+Exception in thread "pool-1-thread-214" java.lang.OutOfMemoryError: Java heap space

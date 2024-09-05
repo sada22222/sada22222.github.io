@@ -1,4 +1,4 @@
-auto_bind.o: /home/hujun/ysyx-workbench/npc/verilog/build/auto_bind.cpp \
+keyboard.o: /home/hujun/ysyx-workbench/npc/verilog/csrc/keyboard.cpp \
  /home/hujun/ysyx-workbench/nvboard/usr/include/nvboard.h \
  /home/hujun/ysyx-workbench/nvboard/usr/include/pins.h Vkeyboard.h \
  /usr/local/share/verilator/include/verilated.h \
