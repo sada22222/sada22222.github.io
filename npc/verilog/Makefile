@@ -1,51 +1,42 @@
-TOPNAME ?= default_name
+CSRC += $(shell find $(abspath ./verilog/csrc) -name "*.cpp")
+VSRC += $(shell find $(abspath ./verilog/vsrc) -name "*.v")
+TOP_NAME := TOP
+SEARCHPATH := $(NPC_HOME)/verilog/vsrc
 
+VERILATOR_FLAGS += -I$(SEARCHPATH)
+VERILATOR_FLAGS += --top $(TOP_NAME)
+VERILATOR_FLAGS += --trace --debug --cc --exe --build
+VERILATOR_FLAGS += -Wno-UNUSED
 
-NXDC_FILES = constr/$(TOPNAME).nxdc
-INC_PATH ?=
+INC_PATH		?= $(NPC_HOME)/sim/include
+CFLAGS			+= -g -I$(INC_PATH)
+CFLAGS			+= -I$(INC_PATH)
+LDFLAGS			+= -lreadline -lSDL2 -ldl
 
-VERILATOR = verilator
-VERILATOR_CFLAGS += -MMD --build -cc  \
-				-O3 --x-assign fast --x-initial fast --noassert
+DIFFTEST		:= $(NEMU_HOME)/build/riscv32-nemu-interpreter-so
+OBJ_DIR			:= ./obj_dir
+BIN				:= $(OBJ_DIR)/V$(TOP_NAME)
 
-BUILD_DIR = ./build
-OBJ_DIR = $(BUILD_DIR)/obj_dir
-BIN = $(BUILD_DIR)/$(TOPNAME)
+IMG				?= /home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.bin
 
-default: $(BIN)
+RUN_FLAGS		:= --img=${IMG} --diff=${DIFFTEST}
+NPC_EXEC		:= ${BIN} ${RUN_FLAGS}
 
-$(shell mkdir -p $(BUILD_DIR))
+.PHONY:run gdb wave clean
 
-# constraint file
-SRC_AUTO_BIND = $(abspath $(BUILD_DIR)/auto_bind.cpp)
-$(SRC_AUTO_BIND): $(NXDC_FILES)
-	python3 $(NVBOARD_HOME)/scripts/auto_pin_bind.py $^ $@
+com:${CSRC} ${VSRC}
+	@verilator ${VERILATOR_FLAGS} ${CSRC} ${VSRC} $(addprefix -CFLAGS , $(CFLAGS)) -LDFLAGS -lSDL2 -LDFLAGS -lreadline
 
-# project source
-VSRCS = $(shell find $(abspath ./vsrc) -name "*$(TOPNAME).v")
-CSRCS = $(shell find $(abspath ./csrc) -name "*$(TOPNAME).cpp")
-CSRCS += $(SRC_AUTO_BIND)
+run:com
+	$(call git_commit, "sim NPC")
+	@${NPC_EXEC}
 
-# rules for NVBoard
-include $(NVBOARD_HOME)/scripts/nvboard.mk
+gdb:com ${DIFFTEST}
+	$(call git_commit, "gdb NPC")
+	@gdb --silent -s ${BIN} --args ${NPC_EXEC}
 
-# rules for verilator
-INCFLAGS = $(addprefix -I, $(INC_PATH))
-CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
-
-$(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
-	@rm -rf $(OBJ_DIR)
-	$(VERILATOR) $(VERILATOR_CFLAGS) \
-		--top-module $(TOPNAME) $^ \
-		$(addprefix -CFLAGS , $(CXXFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
-		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
-
-all: run
-
-run: $(BIN)
-	@$^
+wave:
+	@gtkwave $(OBJ_DIR)/dump.vcd
 
 clean:
-	rm -rf $(BUILD_DIR)
-
-.PHONY: default all clean run
+	rm -rf ${OBJ_DIR}
