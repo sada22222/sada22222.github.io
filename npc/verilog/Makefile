@@ -1,6 +1,6 @@
-CSRC += $(shell find $(abspath ./verilog/csrc) -name "*.cpp")
-VSRC += $(shell find $(abspath ./verilog/vsrc) -name "*.v")
-TOP_NAME := TOP
+CSRC += $(shell find $(abspath ./csrc) -name "*.cpp")
+VSRC += $(shell find $(abspath ./vsrc) -name "*.v")
+TOP_NAME := top
 SEARCHPATH := $(NPC_HOME)/verilog/vsrc
 
 VERILATOR_FLAGS += -I$(SEARCHPATH)
