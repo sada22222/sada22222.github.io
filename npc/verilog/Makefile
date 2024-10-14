@@ -1,49 +1,42 @@
-TOPNAME = keyboard
-NXDC_FILES = constr/$(TOPNAME).nxdc
-INC_PATH ?=
+CSRC += $(shell find $(abspath ./csrc) -name "*.cpp")
+VSRC += $(shell find $(abspath ./vsrc) -name "*.v")
+TOP_NAME := top
+SEARCHPATH := $(NPC_HOME)/verilog/vsrc
 
-VERILATOR = verilator
-VERILATOR_CFLAGS += -MMD --build -cc  \
-				-O3 --x-assign fast --x-initial fast --noassert
+VERILATOR_FLAGS += -I$(SEARCHPATH)
+VERILATOR_FLAGS += --top $(TOP_NAME)
+VERILATOR_FLAGS += --trace --debug --cc --exe --build
+VERILATOR_FLAGS += -Wno-UNUSED
 
-BUILD_DIR = ./build
-OBJ_DIR = $(BUILD_DIR)/obj_dir
-BIN = $(BUILD_DIR)/$(TOPNAME)
+INC_PATH		?= $(NPC_HOME)/sim/include
+CFLAGS			+= -g -I$(INC_PATH)
+CFLAGS			+= -I$(INC_PATH)
+LDFLAGS			+= -lreadline -lSDL2 -ldl
 
-default: $(BIN)
+DIFFTEST		:= $(NEMU_HOME)/build/riscv32-nemu-interpreter-so
+OBJ_DIR			:= ./obj_dir
+BIN				:= $(OBJ_DIR)/V$(TOP_NAME)
 
-$(shell mkdir -p $(BUILD_DIR))
+IMG				?= /home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.bin
 
-# constraint file
-SRC_AUTO_BIND = $(abspath $(BUILD_DIR)/auto_bind.cpp)
-$(SRC_AUTO_BIND): $(NXDC_FILES)
-	python3 $(NVBOARD_HOME)/scripts/auto_pin_bind.py $^ $@
+RUN_FLAGS		:= --img=${IMG} --diff=${DIFFTEST}
+NPC_EXEC		:= ${BIN} ${RUN_FLAGS}
 
-# project source
-VSRCS = $(shell find $(abspath ./vsrc) -name "*.v")
-CSRCS = $(shell find $(abspath ./csrc) -name "*$(TOPNAME).cpp")
-CSRCS += $(SRC_AUTO_BIND)
+.PHONY:run gdb wave clean
 
-# rules for NVBoard
-include $(NVBOARD_HOME)/scripts/nvboard.mk
+com:${CSRC} ${VSRC}
+	@verilator ${VERILATOR_FLAGS} ${CSRC} ${VSRC} $(addprefix -CFLAGS , $(CFLAGS)) -LDFLAGS -lSDL2 -LDFLAGS -lreadline
 
-# rules for verilator
-INCFLAGS = $(addprefix -I, $(INC_PATH))
-CXXFLAGS += $(INCFLAGS) -DTOP_NAME="\"V$(TOPNAME)\""
+run:com
+	$(call git_commit, "sim NPC")
+	@${NPC_EXEC}
 
-$(BIN): $(VSRCS) $(CSRCS) $(NVBOARD_ARCHIVE)
-	@rm -rf $(OBJ_DIR)
-	$(VERILATOR) $(VERILATOR_CFLAGS) \
-		--top-module $(TOPNAME) $^ \
-		$(addprefix -CFLAGS , $(CXXFLAGS)) $(addprefix -LDFLAGS , $(LDFLAGS)) \
-		--Mdir $(OBJ_DIR) --exe -o $(abspath $(BIN))
+gdb:com ${DIFFTEST}
+	$(call git_commit, "gdb NPC")
+	@gdb --silent -s ${BIN} --args ${NPC_EXEC}
 
-all: run
-
-run: $(BIN)
-	@$^
+wave:
+	@gtkwave $(OBJ_DIR)/dump.vcd
 
 clean:
-	rm -rf $(BUILD_DIR)
-
-.PHONY: default all clean run
+	rm -rf ${OBJ_DIR}
