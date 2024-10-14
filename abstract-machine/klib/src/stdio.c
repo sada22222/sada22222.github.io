@@ -1,98 +1,89 @@
 #include <am.h>
 #include <klib.h>
 #include <klib-macros.h>
-#include <unistd.h>
+#include <stdarg.h>
 
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
-static unsigned long int next = 1;
 
-void reverse(char str[], int length)
-{
-    int start = 0;
-    int end = length - 1;
-    while (start < end) {
-        char temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
-        end--;
-        start++;
+int vsprintf(char* buf, const char* fmt, va_list args) {
+  char* buf_p = buf;
+  static char str_temp[64];
+  while (*fmt != '\0') {
+    if (*fmt != '%') {
+      *buf_p++ = *fmt++; // 普通字符，直接复制
     }
-}
-
-int rand(void) {
-  // RAND_MAX assumed to be 32767
-  next = next * 1103515245 + 12345;
-  return (unsigned int)(next/65536) % 32768;
-}
-
-void srand(unsigned int seed) {
-  next = seed;
-}
-
-int abs(int x) {
-  return (x < 0 ? -x : x);
-}
-
-int atoi(const char* nptr) {
-  int x = 0;
-  while (*nptr == ' ') { nptr ++; }
-  while (*nptr >= '0' && *nptr <= '9') {
-    x = x * 10 + *nptr - '0';
-    nptr ++;
+    else {
+      // 先加 1 ，跳过 %
+      switch (*(++fmt)) {
+      case 'c':
+        char ch = va_arg(args, int);
+        *buf_p++ = ch;
+        break;
+      case 's':
+        char* str = va_arg(args, char*);
+        size_t len_s = strlen(str);
+        strcpy(buf_p, str);
+        buf_p += len_s;
+        break;
+      case 'd':
+        int num_d = va_arg(args, int);
+        char* num_d2str = itoa(num_d, (char*)&str_temp, 10);
+        strcpy(buf_p, num_d2str);
+        size_t len_d = strlen(num_d2str);
+        buf_p += len_d;
+        break;
+      case 'p':
+        int num_p = va_arg(args, int);
+        char* num_p2str = itoa(num_p, (char*)&str_temp, 16);
+        strcpy(buf_p, num_p2str);
+        size_t len_p = strlen(num_p2str);
+        buf_p += len_p;
+        break;
+      default:
+        break;
+      }
+      fmt++;
+    }
   }
-  return x;
+  *buf_p++ = '\0';
+  return buf_p - buf;
 }
 
-char* itoa(int num, char* str, int base)
-{
-    int i = 0;
-    bool isNegative = false;
-    if (num == 0) {
-        str[i++] = '0';
-        str[i] = '\0';
-        return str;
-    }
-    if (num < 0 && base == 10) {
-        isNegative = true;
-        num = -num;
-    }
-    while (num != 0) {
-        int rem = num % base;
-        str[i++] = (rem > 9) ? (rem - 10) + 'a' : rem + '0';
-        num = num / base;
-    }
-    if (isNegative)
-        str[i++] = '-';
- 
-    str[i] = '\0';
-    reverse(str, i);
-    return str;
+int snprintf(char* out, size_t n, const char* fmt, ...) {
+  panic("Not implemented");
 }
 
-char* currentAddr = NULL;
-
-void *malloc(size_t size) {
-  // On native, malloc() will be called during initializaion of C runtime.
-  // Therefore do not call panic() here, else it will yield a dead recursion:
-  //   panic() -> putchar() -> (glibc) -> malloc() -> panic()
-#if !(defined(__ISA_NATIVE__) && defined(__NATIVE_USE_KLIB__))
-  if(currentAddr == NULL){
-    currentAddr =(void *)ROUNDUP(heap.start, 8);
-  }
-  size = (size_t)ROUNDUP(size, 8);
-  char* old = currentAddr;
-  currentAddr += size;
-  assert((uintptr_t)heap.start <= (uintptr_t)currentAddr && (uintptr_t)currentAddr < (uintptr_t)heap.end);
-  for(uint64_t *p = (uint64_t*) old; p!= (uint64_t *)currentAddr; p ++){
-    *p = 0;
-  }
-  return old;
-  
-#endif
-  return NULL;
+int vsnprintf(char* out, size_t n, const char* fmt, va_list ap) {
+  panic("Not implemented");
 }
 
-void free(void *ptr) {
+int sprintf(char* buf, const char* fmt, ...) {
+  va_list args;
+  int i;
+
+  va_start(args, fmt);
+  i = vsprintf(buf, fmt, args);
+  va_end(args);
+  return i;
 }
+
+void puts(const char* str) {
+  while (*str)
+    putch(*str++);
+}
+
+static char printf_buf[2048];
+int printf(const char* fmt, ...) {
+  va_list args;
+  int ret;
+  va_start(args, fmt);
+  ret = vsprintf(printf_buf, fmt, args);
+  va_end(args);
+
+  puts(printf_buf);
+
+  return ret;
+}
+
 
 #endif
