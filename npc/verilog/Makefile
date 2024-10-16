@@ -1,5 +1,6 @@
 CSRC += $(shell find $(abspath ./csrc) -name "*.cpp")
 VSRC += $(shell find $(abspath ./vsrc) -name "*.v")
+HSRC += $(shell find $(abspath ./csrc) -name "*.h")
 TOP_NAME := top
 SEARCHPATH := $(NPC_HOME)/verilog/vsrc
 
