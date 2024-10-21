@@ -82,7 +82,7 @@ void cpu_exec(uint64_t n) {
                 ANSI_FMT("HIT BAD TRAP", RED_TXT))),
                 npc_state.halt_pc);
 
-        // case NPC_QUIT: statistic();
+       //  case NPC_QUIT: statistic();
     }
 }
 
@@ -92,7 +92,6 @@ void ebreak() {
 }
 
 void npc_eval() {
-    assert(gprs != NULL);
     npc_cpu.pc = dut->io_pc;
     for (int i = 0; i < 32; i ++) {
         npc_cpu.gpr[i] = gprs[i];

@@ -57,8 +57,5 @@ __EXPORT void difftest_init(int port) {
   init_mem();
   /* Perform ISA dependent initialization. */
   init_isa();
-  // #ifdef CONFIG_DEVICE
-    void init_device();
-    init_device();
-  // #endif
+
 }

@@ -4,7 +4,7 @@
 #include "isa.h"
 #define PMEM_LEFT  ((paddr_t)CONFIG_MBASE)
 #define PMEM_RIGHT ((paddr_t)CONFIG_MBASE + CONFIG_MSIZE)
-#define RESET_VECTOR 0x80000000  // 确保该地址是正确的
+#define RESET_VECTOR (PMEM_LEFT + CONFIG_PC_RESET_OFFSET)
 
 typedef MUXDEF(CONFIG_ISA32, uint32_t, uint64_t) paddr_t;
 #define FMT_PADDR MUXDEF(CONFIG_ISA32, "0x%08" PRIx32, "0x%016" PRIx64)
