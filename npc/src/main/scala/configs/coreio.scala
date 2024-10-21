@@ -87,11 +87,9 @@ class MEM_IO extends StageIO{
   val reg       = new RegCommitIO
   // to CSR
   val csr       = new CsrCommitIO
-
+  val currentPc = UInt(32.W)
 
 }
-
-
 
 class RegCommitIO extends Bundle {
   val en    = Bool()
@@ -135,3 +133,4 @@ class ExceptInfoIO extends Bundle {
   val excPc     = UInt(32.W)
   val excValue  = UInt(32.W)
 }
+

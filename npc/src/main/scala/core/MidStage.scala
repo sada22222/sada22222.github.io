@@ -1,4 +1,4 @@
-package core
+package npc.core
 
 import chisel3._
 import configs.StageIO

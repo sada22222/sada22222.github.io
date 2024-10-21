@@ -3,7 +3,8 @@
 
 #include "Vtop.h"
 #include "Vtop__Syms.h"
-#include "verilated_vcd_c.h"
+#include "verilated_fst_c.h"
+#include "verilated_dpi.h"
 
 //============================================================
 // Constructors
@@ -13,23 +14,20 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vtop__Syms(contextp(), _vcname__, this)}
     , clock{vlSymsp->TOP.clock}
     , reset{vlSymsp->TOP.reset}
-    , io_rom_en{vlSymsp->TOP.io_rom_en}
-    , io_rom_valid{vlSymsp->TOP.io_rom_valid}
-    , io_rom_fault{vlSymsp->TOP.io_rom_fault}
-    , io_rom_wen{vlSymsp->TOP.io_rom_wen}
-    , io_ram_en{vlSymsp->TOP.io_ram_en}
-    , io_ram_valid{vlSymsp->TOP.io_ram_valid}
-    , io_ram_fault{vlSymsp->TOP.io_ram_fault}
-    , io_ram_wen{vlSymsp->TOP.io_ram_wen}
+    , io_if_axi_en{vlSymsp->TOP.io_if_axi_en}
+    , io_if_axi_valid{vlSymsp->TOP.io_if_axi_valid}
+    , io_if_axi_fault{vlSymsp->TOP.io_if_axi_fault}
+    , io_if_axi_wen{vlSymsp->TOP.io_if_axi_wen}
     , io_timer{vlSymsp->TOP.io_timer}
     , io_soft{vlSymsp->TOP.io_soft}
     , io_extern{vlSymsp->TOP.io_extern}
-    , io_rom_addr{vlSymsp->TOP.io_rom_addr}
-    , io_rom_rdata{vlSymsp->TOP.io_rom_rdata}
-    , io_rom_wdata{vlSymsp->TOP.io_rom_wdata}
-    , io_ram_addr{vlSymsp->TOP.io_ram_addr}
-    , io_ram_rdata{vlSymsp->TOP.io_ram_rdata}
-    , io_ram_wdata{vlSymsp->TOP.io_ram_wdata}
+    , io_if_axi_addr{vlSymsp->TOP.io_if_axi_addr}
+    , io_if_axi_rdata{vlSymsp->TOP.io_if_axi_rdata}
+    , io_if_axi_wdata{vlSymsp->TOP.io_if_axi_wdata}
+    , io_inst{vlSymsp->TOP.io_inst}
+    , io_pc{vlSymsp->TOP.io_pc}
+    , io_npc{vlSymsp->TOP.io_npc}
+    , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context
@@ -122,9 +120,9 @@ std::unique_ptr<VerilatedTraceConfig> Vtop::traceConfig() const {
 //============================================================
 // Trace configuration
 
-void Vtop___024root__trace_init_top(Vtop___024root* vlSelf, VerilatedVcd* tracep);
+void Vtop___024root__trace_init_top(Vtop___024root* vlSelf, VerilatedFst* tracep);
 
-VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32_t code) {
+VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedFst* tracep, uint32_t code) {
     // Callback from tracep->open()
     Vtop___024root* const __restrict vlSelf VL_ATTR_UNUSED = static_cast<Vtop___024root*>(voidSelf);
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -140,11 +138,11 @@ VL_ATTR_COLD static void trace_init(void* voidSelf, VerilatedVcd* tracep, uint32
     tracep->scopeEscape('.');
 }
 
-VL_ATTR_COLD void Vtop___024root__trace_register(Vtop___024root* vlSelf, VerilatedVcd* tracep);
+VL_ATTR_COLD void Vtop___024root__trace_register(Vtop___024root* vlSelf, VerilatedFst* tracep);
 
-VL_ATTR_COLD void Vtop::trace(VerilatedVcdC* tfp, int levels, int options) {
+VL_ATTR_COLD void Vtop::trace(VerilatedFstC* tfp, int levels, int options) {
     if (tfp->isOpen()) {
-        vl_fatal(__FILE__, __LINE__, __FILE__,"'Vtop::trace()' shall not be called after 'VerilatedVcdC::open()'.");
+        vl_fatal(__FILE__, __LINE__, __FILE__,"'Vtop::trace()' shall not be called after 'VerilatedFstC::open()'.");
     }
     if (false && levels && options) {}  // Prevent unused
     tfp->spTrace()->addModel(this);

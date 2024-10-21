@@ -1,2 +1,65 @@
 [0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	read$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LsuDecode$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IF$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	read.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Control.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MEM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	awrite.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	awrite$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LsuDecode.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Control$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MEM$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	read$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LsuDecode$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IF$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	read.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Control.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MEM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	awrite.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	awrite$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LsuDecode.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Control$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MEM$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	read$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LsuDecode$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IF$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	read.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Control.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MEM.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	awrite.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	top$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	awrite$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	IF.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	LsuDecode.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Core$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Control$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MEM$$anon$2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes.bak[0m

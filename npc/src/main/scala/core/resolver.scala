@@ -1,4 +1,4 @@
-package core
+package npc.core
 
 import chisel3._
 import configs.CsrOp._
@@ -8,11 +8,12 @@ class resolver extends Module{
   val io=IO(new Bundle() {
     val id_read1=Flipped(new RegReadIO)
     val id_read2=Flipped(new RegReadIO)
-    val csrRead_op   = Input(UInt(CSR_OP_WIDTH.W))
-    val csrRead_addr = Input(UInt(32.W))    
+    val csrRead   = Flipped(new csrreadio)    
 
     val rs1=new RegReadIO
     val rs2=new RegReadIO
+    val csr=new csrreadio
+
     val load =  Input(Bool())
     val ex_reg= Input(new RegCommitIO)
     val ex_csr= Input(new CsrCommitIO)
@@ -48,14 +49,14 @@ class resolver extends Module{
   }
 
 
-  def resolveCsrHazard(csrRead_op:UInt,csrRead_addr:UInt) = {
-    val isRead  = csrRead_op=/= CSR_NOP && csrRead_op =/= CSR_W
+  def resolveCsrHazard(csrread:csrreadio) = {
+    val isRead  = csrread.csr_op=/= CSR_NOP && csrread.csr_op =/= CSR_W
     val exCsr  = io.ex_csr.op =/= CSR_NOP && io.ex_csr.op =/= CSR_R &&
-      csrRead_addr === io.ex_csr.addr
+      csrread.csr_raddr=== io.ex_csr.addr
     val memCsr  = io.mem_csr.op =/= CSR_NOP && io.mem_csr.op =/= CSR_R &&
-      csrRead_addr === io.mem_csr.addr
+      csrread.csr_raddr === io.mem_csr.addr
     val wbCsr   = io.wb_csr.op =/= CSR_NOP && io.wb_csr.op =/= CSR_R &&
-      csrRead_addr === io.wb_csr.addr
+      csrread.csr_raddr === io.wb_csr.addr
     isRead && (memCsr || wbCsr || exCsr)
   }
 
@@ -67,9 +68,10 @@ class resolver extends Module{
   io.rs2.addr := io.id_read2.addr
   val load1=resolveLoad(io.id_read1)
   val load2=resolveLoad(io.id_read2)
-  val csrharard=resolveCsrHazard(io.csrRead_op,io.csrRead_addr)
+  val csrharard=resolveCsrHazard(io.csrRead)
   io.loadflag:=load1||load2
   io.csrflag  := csrharard
+  io.csr <> io.csrRead
 
 
 }

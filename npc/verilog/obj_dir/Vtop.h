@@ -9,10 +9,13 @@
 #define VERILATED_VTOP_H_  // guard
 
 #include "verilated.h"
+#include "svdpi.h"
 
 class Vtop__Syms;
 class Vtop___024root;
-class VerilatedVcdC;
+class VerilatedFstC;
+class Vtop___024unit;
+
 
 // This class is the main interface to the Verilated model
 class Vtop VL_NOT_FINAL : public VerilatedModel {
@@ -27,27 +30,24 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clock,0,0);
     VL_IN8(&reset,0,0);
-    VL_OUT8(&io_rom_en,0,0);
-    VL_IN8(&io_rom_valid,0,0);
-    VL_IN8(&io_rom_fault,0,0);
-    VL_OUT8(&io_rom_wen,3,0);
-    VL_OUT8(&io_ram_en,0,0);
-    VL_IN8(&io_ram_valid,0,0);
-    VL_IN8(&io_ram_fault,0,0);
-    VL_OUT8(&io_ram_wen,3,0);
+    VL_OUT8(&io_if_axi_en,0,0);
+    VL_IN8(&io_if_axi_valid,0,0);
+    VL_IN8(&io_if_axi_fault,0,0);
+    VL_OUT8(&io_if_axi_wen,3,0);
     VL_IN8(&io_timer,0,0);
     VL_IN8(&io_soft,0,0);
     VL_IN8(&io_extern,0,0);
-    VL_OUT(&io_rom_addr,31,0);
-    VL_IN(&io_rom_rdata,31,0);
-    VL_OUT(&io_rom_wdata,31,0);
-    VL_OUT(&io_ram_addr,31,0);
-    VL_IN(&io_ram_rdata,31,0);
-    VL_OUT(&io_ram_wdata,31,0);
+    VL_OUT(&io_if_axi_addr,31,0);
+    VL_IN(&io_if_axi_rdata,31,0);
+    VL_OUT(&io_if_axi_wdata,31,0);
+    VL_OUT(&io_inst,31,0);
+    VL_OUT(&io_pc,31,0);
+    VL_OUT(&io_npc,31,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.
     // Otherwise the application code can consider these internals.
+    Vtop___024unit* const __PVT____024unit;
 
     // Root instance pointer to allow access to model internals,
     // including inlined /* verilator public_flat_* */ items.
@@ -81,7 +81,7 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     /// Returns time at next time slot. Aborts if !eventsPending()
     uint64_t nextTimeSlot();
     /// Trace signals in the model; called by application code
-    void trace(VerilatedVcdC* tfp, int levels, int options = 0);
+    void trace(VerilatedFstC* tfp, int levels, int options = 0);
     /// Retrieve name of this model instance (as passed to constructor).
     const char* name() const;
 

@@ -1,4 +1,4 @@
-package core
+package npc.core
 import chisel3._
 import configs.ExceptInfoIO
 class crtl extends Module{
@@ -31,18 +31,16 @@ class crtl extends Module{
               Mux(io.loadflag,                       "b11000".U(5.W),
               Mux(io.if_stall,                       "b10000".U(5.W), 0.U))))
   val excPc   = Mux(io.except.isSret, io.csrSepc,
-    Mux(io.except.isMret, io.csrMepc, io.csrTvec))
+                Mux(io.except.isMret, io.csrMepc, io.csrTvec))
 
   val flushPc   = Mux(io.except.hasTrap, excPc,io.id_flushpc)
 
-  // stall signals
   io.stallIf  := stall(4)
   io.stallId  := stall(3)
   io.stallEx  := stall(2)
   io.stallMm  := stall(1)
   io.stallWb  := stall(0)
 
-  // flush signals
   io.flush    := io.except.hasTrap
   io.flushIf  := io.except.hasTrap || io.id_flush
   io.flushPc  := flushPc

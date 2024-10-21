@@ -120,16 +120,16 @@ object LsuDecode {
     //
     //                        wen    width   signed
     //                         |       |        |
-                          List(N, LS_DATA_BYTE, N)
+                          List(N,N,LS_DATA_BYTE, N)
   val TABLE = Array(
-    BitPat(LSU_LB)    ->  List(N, LS_DATA_BYTE, Y),
-    BitPat(LSU_LH)    ->  List(N, LS_DATA_HALF, Y),
-    BitPat(LSU_LW)    ->  List(N, LS_DATA_WORD, N),
-    BitPat(LSU_LBU)   ->  List(N, LS_DATA_BYTE, N),
-    BitPat(LSU_LHU)   ->  List(N, LS_DATA_HALF, N),
-    BitPat(LSU_SB)    ->  List(Y, LS_DATA_BYTE, N),
-    BitPat(LSU_SH)    ->  List(Y, LS_DATA_HALF, N),
-    BitPat(LSU_SW)    ->  List(Y, LS_DATA_WORD, N),
+    BitPat(LSU_LB)    ->  List(N,Y, LS_DATA_BYTE, Y),
+    BitPat(LSU_LH)    ->  List(N,Y, LS_DATA_HALF, Y),
+    BitPat(LSU_LW)    ->  List(N,Y, LS_DATA_WORD, N),
+    BitPat(LSU_LBU)   ->  List(N,Y, LS_DATA_BYTE, N),
+    BitPat(LSU_LHU)   ->  List(N,Y, LS_DATA_HALF, N),
+    BitPat(LSU_SB)    ->  List(Y,N, LS_DATA_BYTE, N),
+    BitPat(LSU_SH)    ->  List(Y,N, LS_DATA_HALF, N),
+    BitPat(LSU_SW)    ->  List(Y,N, LS_DATA_WORD, N),
   )
 }
 
