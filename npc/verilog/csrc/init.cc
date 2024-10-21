@@ -22,7 +22,7 @@ uint64_t load_image() {
     fseek(fp, 0, SEEK_END);
     size_t size = ftell(fp);
     fseek(fp, 0, SEEK_SET);
-    IFDEF(CONFIG_VIRTUAL_PMEM, init_pmem());
+    // IFDEF(CONFIG_VIRTUAL_PMEM, init_pmem());
     bool ret = fread(guest_to_host(RESET_VECTOR), size, 1, fp);
     Assert(ret == 1, "Load the instrction to the pmem error!\n");
     fclose(fp);
@@ -40,7 +40,7 @@ void welcome(int argc, char *argv[]) {
     parse_args(argc, argv);
     img_size = load_image();
 
-    init_device();
+    IFDEF(CONFIG_DEVICE, init_device());
 
     printf("Welcome to %s-NPC!\n", ANSI_FMT(GREEN_TXT, "riscv32"));
     printf("For help, type \"help\"\n");
@@ -50,11 +50,11 @@ void welcome(int argc, char *argv[]) {
 int parse_args(int argc, char *argv[]) {
     const struct option table[] = {
         {"batch"    , no_argument      , NULL, 'b'},
-        {"log"      , required_argument, NULL, 'l'}, 
+        /* {"log"      , required_argument, NULL, 'l'}, */
         {"diff"     , required_argument, NULL, 'd'},
-        {"port"     , required_argument, NULL, 'p'}, 
+        /* {"port"     , required_argument, NULL, 'p'}, */
         {"help"     , no_argument      , NULL, 'h'},
-        {"ftrace"   , required_argument, NULL, 'f'}, 
+        /* {"ftrace"   , required_argument, NULL, 'f'}, */
         {0          , 0                , NULL,  0 },
     };
     int o;
@@ -69,10 +69,10 @@ int parse_args(int argc, char *argv[]) {
             default:
                 printf("Usage: %s [OPTION...] IMAGE [args]\n\n", argv[0]);
                 printf("\t-b,--batch              run with batch mode\n");
-                printf("\t-l,--log=FILE           output log to FILE\n"); 
+                /* printf("\t-l,--log=FILE           output log to FILE\n"); */
                 printf("\t-d,--diff=REF_SO        run DiffTest with reference REF_SO\n");
-                printf("\t-p,--port=PORT          run DiffTest with port PORT\n"); 
-                printf("\t-f,--ftrace=FILE        Ftrace file in\n"); 
+                /* printf("\t-p,--port=PORT          run DiffTest with port PORT\n"); */
+                /* printf("\t-f,--ftrace=FILE        Ftrace file in\n"); */
                 printf("\n");
                 Assert(0, "Please choose a option from the above.");
         }
