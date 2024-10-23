@@ -46,6 +46,7 @@ VM_USER_CFLAGS = \
 	-I/home/hujun/ysyx-workbench/npc/verilog/csrc/memory \
 	-Wno-pointer-arith \
 	-Wno-return-type \
+	-fpermissive \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \
@@ -60,6 +61,9 @@ VM_USER_LDLIBS = \
 	-D__STDC_LIMIT_MACROS \
 	-fPIE \
 	-lLLVM-14 \
+	/home/hujun/ysyx-workbench/nemu/build/riscv32-nemu-interpreter-so \
+	-fsanitize=address \
+	-lasan \
 
 # User .cpp files (from .cpp's on Verilator command line)
 VM_USER_CLASSES = \

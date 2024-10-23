@@ -32,8 +32,7 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
                  uint32_t dut_x14, uint32_t dut_x15, uint32_t dut_x16, uint32_t dut_x17, uint32_t dut_x18, 
                  uint32_t dut_x19, uint32_t dut_x20, uint32_t dut_x21, uint32_t dut_x22, uint32_t dut_x23, 
                  uint32_t dut_x24, uint32_t dut_x25, uint32_t dut_x26, uint32_t dut_x27, uint32_t dut_x28, 
-                 uint32_t dut_x29, uint32_t dut_x30, uint32_t dut_x31,
-                 uint32_t dut_mstatus, uint32_t dut_mtvec, uint32_t dut_mepc, uint32_t dut_mcause) {
+                 uint32_t dut_x29, uint32_t dut_x30, uint32_t dut_x31) {
 
     // 如果 gprs 没有初始化，则分配内存
     if (gprs == NULL) {

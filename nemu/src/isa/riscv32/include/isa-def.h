@@ -18,9 +18,18 @@
 
 #include <common.h>
 
+enum {
+  mstatus,
+  mtvec,
+  mepc,
+  mcause,
+  csr_num
+};
+
 typedef struct {
   word_t gpr[32];
   vaddr_t pc;
+  word_t csr[csr_num];
 } riscv32_CPU_state;
 
 // decode

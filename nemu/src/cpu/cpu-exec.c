@@ -17,6 +17,7 @@
 #include <cpu/decode.h>
 #include <cpu/difftest.h>
 #include <locale.h>
+#include <trace.h>
 
 /* The assembly code of instructions executed is only output to the screen
  * when the number of instructions executed is less than this value.
@@ -32,12 +33,15 @@ static bool g_print_step = false;
 
 void device_update();
 
+void scan_wp();
+
 static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #ifdef CONFIG_ITRACE_COND
   if (ITRACE_COND) { log_write("%s\n", _this->logbuf); }
 #endif
   if (g_print_step) { IFDEF(CONFIG_ITRACE, puts(_this->logbuf)); }
   IFDEF(CONFIG_DIFFTEST, difftest_step(_this->pc, dnpc));
+  scan_wp();
 }
 
 static void exec_once(Decode *s, vaddr_t pc) {
@@ -73,21 +77,14 @@ static void exec_once(Decode *s, vaddr_t pc) {
 
 static void execute(uint64_t n) {
   Decode s;
-  for (;n > 0; n--) {
-    exec_once(&s, cpu.pc);        // 执行一条指令
-    g_nr_guest_inst++;            // 记录已执行的指令数
-    trace_and_difftest(&s, cpu.pc);  // 追踪和差分测试
-
-  if(WP_check_update() && nemu_state.state == NEMU_RUNNING){
-    nemu_state.state = NEMU_STOP;
-    printf("program is pause now.\n");
-    break;
-  }
-    if (nemu_state.state != NEMU_RUNNING) break;  // 检查 NEMU 的运行状态
+  for (;n > 0; n --) {
+    exec_once(&s, cpu.pc);
+    g_nr_guest_inst ++;
+    trace_and_difftest(&s, cpu.pc);
+    if (nemu_state.state != NEMU_RUNNING) break;
     IFDEF(CONFIG_DEVICE, device_update());
   }
 }
-
 
 static void statistic() {
   IFNDEF(CONFIG_TARGET_AM, setlocale(LC_NUMERIC, ""));
@@ -124,6 +121,19 @@ void cpu_exec(uint64_t n) {
     case NEMU_RUNNING: nemu_state.state = NEMU_STOP; break;
 
     case NEMU_END: case NEMU_ABORT:
+
+    #ifdef CONFIG_FTRACE
+      ftraceDisplay();
+    #endif
+
+    #ifdef CONFIG_MTRACE
+      mtraceDisplay();
+    #endif
+
+    #ifdef CONFIG_ITRACE
+      itraceDisplay();
+    #endif
+    
       Log("nemu: %s at pc = " FMT_WORD,
           (nemu_state.state == NEMU_ABORT ? ANSI_FMT("ABORT", ANSI_FG_RED) :
            (nemu_state.halt_ret == 0 ? ANSI_FMT("HIT GOOD TRAP", ANSI_FG_GREEN) :

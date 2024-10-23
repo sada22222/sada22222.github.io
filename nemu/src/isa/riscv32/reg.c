@@ -23,27 +23,37 @@ const char *regs[] = {
   "s8", "s9", "s10", "s11", "t3", "t4", "t5", "t6"
 };
 
-void isa_reg_display(void) {
-  for (int i = 0; i < 32; i++) {
-    printf("%s: 0x%08x\n", regs[i], cpu.gpr[i]);
+const char *csrs[] = {
+  "mstatus", "mtvec", "mepc", "mcause"
+};
+
+void isa_reg_display() {
+  printf("RV32E-nemu Registers:\n");
+  printf("pc\t0x%x(%d)\n", cpu.pc, cpu.pc);
+
+  for (int i = 0; i < ARRLEN(regs); i ++) {
+    int idx = check_reg_idx(i);
+    printf("%4s: 0x%08x(%010d)%c", regs[idx], gpr(idx), gpr(idx), i % 4 == 3? '\n': ' ');
   }
-  printf("pc: 0x%08x\n", cpu.pc);  // 打印程序计数器
+  
+  for (int i = 0; i < ARRLEN(csrs); i ++) {
+    printf("%4s: 0x%08x(%010d)%c", csrs[i], cpu.csr[i], cpu.csr[i], i % 4 == 3? '\n': ' ');
+  }
 }
 
 word_t isa_reg_str2val(const char *s, bool *success) {
-  // 处理pc
-  if (strcmp(s, "pc") == 0) {
-    *success = true;
+  if (!(strcmp(s, "pc") && strcmp(s, "$pc") && strcmp(s, "PC") && strcmp(s, "$PC"))) {
     return cpu.pc;
   }
 
-  for (int idx = 0; idx < 32; idx++) {
-    if(strcmp(s,regs[idx]) == 0){ 
-      *success = true;
-      return cpu.gpr[idx];
+  word_t ans = 0;
+  int i = 0;
+  for (; i < ARRLEN(regs); i ++) {
+    if (strcmp(s, regs[i]) == 0 || strcmp(s + 1, regs[i]) == 0) {
+      ans = gpr(i);
+      break;
     }
   }
-
-  *success = false;
-  return 0;  
+  if(i == ARRLEN(regs)) *success = false;
+  return ans;
 }

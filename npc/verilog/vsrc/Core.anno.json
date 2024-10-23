@@ -1,0 +1,42 @@
+[
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"/home/hujun/ysyx-workbench/npc/verilog/vsrc"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Core.DpiBlackBox",
+    "name":"DpiBlackBox.v",
+    "text":"\nimport \"DPI-C\" function void set_gpr_ptr(\n    input int dut_x0, input int dut_x1, input int dut_x2, input int dut_x3, input int dut_x4, input int dut_x5,\n    input int dut_x6, input int dut_x7, input int dut_x8, input int dut_x9, input int dut_x10, input int dut_x11, input int dut_x12,\n    input int dut_x13, input int dut_x14, input int dut_x15, input int dut_x16, input int dut_x17, input int dut_x18, input int dut_x19,\n    input int dut_x20, input int dut_x21, input int dut_x22, input int dut_x23, input int dut_x24, input int dut_x25, input int dut_x26,\n    input int dut_x27, input int dut_x28, input int dut_x29, input int dut_x30, input int dut_x31\n    \n);\n\nmodule DpiBlackBox (\n    input [31:0] s_regs_0,\n    input [31:0] s_regs_1,\n    input [31:0] s_regs_2,\n    input [31:0] s_regs_3,\n    input [31:0] s_regs_4,\n    input [31:0] s_regs_5,\n    input [31:0] s_regs_6,\n    input [31:0] s_regs_7,\n    input [31:0] s_regs_8,\n    input [31:0] s_regs_9,\n    input [31:0] s_regs_10,\n    input [31:0] s_regs_11,\n    input [31:0] s_regs_12,\n    input [31:0] s_regs_13,\n    input [31:0] s_regs_14,\n    input [31:0] s_regs_15,\n    input [31:0] s_regs_16,\n    input [31:0] s_regs_17,\n    input [31:0] s_regs_18,\n    input [31:0] s_regs_19,\n    input [31:0] s_regs_20,\n    input [31:0] s_regs_21,\n    input [31:0] s_regs_22,\n    input [31:0] s_regs_23,\n    input [31:0] s_regs_24,\n    input [31:0] s_regs_25,\n    input [31:0] s_regs_26,\n    input [31:0] s_regs_27,\n    input [31:0] s_regs_28,\n    input [31:0] s_regs_29,\n    input [31:0] s_regs_30,\n    input [31:0] s_regs_31\n);\n  always @(*) begin\n    set_gpr_ptr(s_regs_0, s_regs_1, s_regs_2, s_regs_3, s_regs_4, s_regs_5, s_regs_6, s_regs_7, s_regs_8, s_regs_9,\n                 s_regs_10, s_regs_11, s_regs_12, s_regs_13, s_regs_14, s_regs_15, s_regs_16, s_regs_17, s_regs_18, s_regs_19,\n                 s_regs_20, s_regs_21, s_regs_22, s_regs_23, s_regs_24, s_regs_25, s_regs_26, s_regs_27, s_regs_28, s_regs_29,\n                 s_regs_30, s_regs_31);\n  end\n \nendmodule\n      "
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Core.awrite",
+    "name":"awrite.v",
+    "text":"\r\nimport \"DPI-C\" function void vaddr_write(int addr, byte mask, int data);\r\nimport \"DPI-C\" function int vaddr_read(bit is_signed, int addr, byte mask);\r\n\r\nmodule awrite (\r\n    input         clock,\r\n    input         wen,       \r\n    input         ren,        \r\n    input  [31:0] addr,       // 地址\r\n    input  [ 3:0] mask,       // 字节掩码\r\n    input         sign,       // 是否有符号\r\n    input  [31:0] wdata,      \r\n    output reg [31:0] rdata   \r\n);\r\n\r\n    always @(posedge clock) begin\r\n        if (wen) begin\r\n            vaddr_write(addr, mask, wdata);  // 调用DPI-C写函数\r\n        end\r\n    end\r\n\r\n    always @(*) begin\r\n        if (ren) begin\r\n            rdata = vaddr_read(sign, addr, mask); // 调用DPI-C读函数\r\n        end else begin\r\n            rdata = 32'b0;\r\n        end\r\n    end\r\nendmodule\r\n\r\n    "
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"Core.read",
+    "name":"read.v",
+    "text":"\r\nimport \"DPI-C\" function int fetch(bit clk, bit rst, int pc);\r\nimport \"DPI-C\" function void halt(int inst);\r\nmodule read (\r\n    input  [31:0] addr,\r\n    input         clock,\r\n    input         reset,\r\n    output [31:0] data\r\n);\r\n    reg [31:0] fetched_data;\r\n    always @(posedge clock) begin\r\n        if (reset) begin\r\n            fetched_data <= 32'b0;\r\n        end else begin\r\n            fetched_data <= fetch(clock, reset, addr); // 调用DPI-C读函数\r\n            halt(fetched_data); // 处理指令的halt逻辑\r\n        end\r\n    end\r\n    assign data = fetched_data;\r\nendmodule\r\n    "
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"Core"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/hujun/ysyx-workbench/npc/verilog/vsrc"
+  }
+]
