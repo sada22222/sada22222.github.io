@@ -38,7 +38,6 @@ class read extends BlackBox with HasBlackBoxInline {
 
 class IF extends Module {
   val io = IO(new Bundle {
-    val rom = new SramIO
     val flush = Input(Bool())
     val flush_pc = Input(UInt(32.W))
     val stall = Input(Bool())
@@ -48,11 +47,17 @@ class IF extends Module {
 
   // 初始化PC寄存器
   val pc = RegInit("h80000000".U(32.W))
-  val valid = io.rom.valid
+  val valid = true.B
+
+  // 实例化 `read` 模块
+  val read = Module(new read)  // 将 `read` 模块提前声明
+  read.io.addr := pc
+  read.io.clock := clock
+  read.io.reset := reset.asBool
 
   // 分支预测单元
   val bpu = Module(new BPU)
-  bpu.io.inst_i := io.rom.rdata
+  bpu.io.inst_i := read.io.data  // `read.io.data` 可以安全使用
   bpu.io.inst_valid_i := valid
   bpu.io.pc_i := pc
 
@@ -65,20 +70,8 @@ class IF extends Module {
   // 检查地址是否未对齐
   val misaligned = pc(1, 0) =/= 0.U
 
-  // 配置ROM接口信号
-  io.rom.en     := true.B
-  io.rom.wen    := 0.U
-  io.rom.addr   := pc
-  io.rom.wdata  := 0.U
-
-  // 实例化 `read` 模块
-  val read = Module(new read)
-  read.io.addr := pc
-  read.io.clock := clock
-  read.io.reset := reset.asBool
-
   // 输出信号控制
-  io.stallreq := !io.rom.valid
+  io.stallreq := false.B
   io.IF.pc := pc
   io.IF.valid := valid
   io.IF.inst := read.io.data
@@ -86,3 +79,4 @@ class IF extends Module {
   io.IF.bpu_takepc := bpu.io.prdt_addr_o
   io.IF.misaligned := misaligned
 }
+

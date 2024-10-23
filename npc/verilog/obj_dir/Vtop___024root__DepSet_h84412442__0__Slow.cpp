@@ -33,34 +33,27 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___stl_sequent__TOP__0\n"); );
     // Body
-    vlSelf->Core__DOT__fetch__DOT___T_1 = ((IData)(4U) 
-                                           + vlSelf->Core__DOT__fetch__DOT__pc);
     vlSelf->Core__DOT__csr__DOT___T_617 = (1ULL + vlSelf->Core__DOT__csr__DOT__mcycle_data);
     vlSelf->Core__DOT__csr__DOT___T_619 = (1ULL + vlSelf->Core__DOT__csr__DOT__minstret_data);
     vlSelf->io_inst = vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data;
-    vlSelf->io_pc = vlSelf->Core__DOT__MEM_WB__DOT__ff_currentPc;
+    vlSelf->io_pc = vlSelf->Core__DOT__fetch__DOT__pc;
     vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_taken_o 
-        = ((IData)(vlSelf->io_if_axi_valid) & ((IData)(
-                                                       (0x80000063U 
-                                                        == 
-                                                        (0x8000007fU 
-                                                         & vlSelf->io_if_axi_rdata))) 
-                                               | (0x6fU 
-                                                  == 
-                                                  (0x7fU 
-                                                   & vlSelf->io_if_axi_rdata))));
+        = ((IData)((0x80000063U == (0x8000007fU & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))) 
+           | (0x6fU == (0x7fU & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data)));
+    vlSelf->Core__DOT__fetch__DOT___T_2 = ((IData)(4U) 
+                                           + vlSelf->Core__DOT__fetch__DOT__pc);
+    vlSelf->io_npc = vlSelf->Core__DOT__MEM_WB__DOT__ff_currentPc;
     vlSelf->Core__DOT__regfile__DOT___T_4 = ((IData)(vlSelf->Core__DOT__MEM_WB__DOT__ff_reg_en) 
                                              & (0U 
                                                 != (IData)(vlSelf->Core__DOT__MEM_WB__DOT__ff_reg_addr)));
-    vlSelf->io_if_axi_addr = vlSelf->Core__DOT__fetch__DOT__pc;
     vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm 
-        = ((((vlSelf->io_if_axi_rdata >> 0x1fU) ? 0xfffffU
-              : 0U) << 0xcU) | ((0x800U & (vlSelf->io_if_axi_rdata 
-                                           << 4U)) 
-                                | ((0x7e0U & (vlSelf->io_if_axi_rdata 
-                                              >> 0x14U)) 
-                                   | (0x1eU & (vlSelf->io_if_axi_rdata 
-                                               >> 7U)))));
+        = ((((vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+              >> 0x1fU) ? 0xfffffU : 0U) << 0xcU) | 
+           ((0x800U & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                       << 4U)) | ((0x7e0U & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                             >> 0x14U)) 
+                                  | (0x1eU & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                              >> 7U)))));
     vlSelf->Core__DOT__EX_io_ex_o_load = ((0U != (IData)(vlSelf->Core__DOT__ID_EX__DOT__ff_lsuOp)) 
                                           & (IData)(vlSelf->Core__DOT__ID_EX__DOT__ff_regWen));
     Vtop___024unit____Vdpiimwrap_set_gpr_ptr_TOP____024unit(vlSelf->Core__DOT__regfile__DOT__regfile_0, vlSelf->Core__DOT__regfile__DOT__regfile_1, vlSelf->Core__DOT__regfile__DOT__regfile_2, vlSelf->Core__DOT__regfile__DOT__regfile_3, vlSelf->Core__DOT__regfile__DOT__regfile_4, vlSelf->Core__DOT__regfile__DOT__regfile_5, vlSelf->Core__DOT__regfile__DOT__regfile_6, vlSelf->Core__DOT__regfile__DOT__regfile_7, vlSelf->Core__DOT__regfile__DOT__regfile_8, vlSelf->Core__DOT__regfile__DOT__regfile_9, vlSelf->Core__DOT__regfile__DOT__regfile_10, vlSelf->Core__DOT__regfile__DOT__regfile_11, vlSelf->Core__DOT__regfile__DOT__regfile_12, vlSelf->Core__DOT__regfile__DOT__regfile_13, vlSelf->Core__DOT__regfile__DOT__regfile_14, vlSelf->Core__DOT__regfile__DOT__regfile_15, vlSelf->Core__DOT__regfile__DOT__regfile_16, vlSelf->Core__DOT__regfile__DOT__regfile_17, vlSelf->Core__DOT__regfile__DOT__regfile_18, vlSelf->Core__DOT__regfile__DOT__regfile_19, vlSelf->Core__DOT__regfile__DOT__regfile_20, vlSelf->Core__DOT__regfile__DOT__regfile_21, vlSelf->Core__DOT__regfile__DOT__regfile_22, vlSelf->Core__DOT__regfile__DOT__regfile_23, vlSelf->Core__DOT__regfile__DOT__regfile_24, vlSelf->Core__DOT__regfile__DOT__regfile_25, vlSelf->Core__DOT__regfile__DOT__regfile_26, vlSelf->Core__DOT__regfile__DOT__regfile_27, vlSelf->Core__DOT__regfile__DOT__regfile_28, vlSelf->Core__DOT__regfile__DOT__regfile_29, vlSelf->Core__DOT__regfile__DOT__regfile_30, vlSelf->Core__DOT__regfile__DOT__regfile_31);
@@ -247,31 +240,30 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__ID__DOT___T_1 = ((IData)(vlSelf->Core__DOT__ID__DOT__stall)
                                          ? vlSelf->Core__DOT__ID__DOT__lastinst
                                          : vlSelf->Core__DOT__IF_ID__DOT__ff_inst);
-    vlSelf->io_npc = vlSelf->io_if_axi_addr;
     vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o 
         = (vlSelf->Core__DOT__fetch__DOT__pc + ((0x63U 
                                                  == 
                                                  (0x7fU 
-                                                  & vlSelf->io_if_axi_rdata))
+                                                  & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))
                                                  ? vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm
                                                  : 
                                                 ((0x6fU 
                                                   == 
                                                   (0x7fU 
-                                                   & vlSelf->io_if_axi_rdata))
+                                                   & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))
                                                   ? 
-                                                 ((((vlSelf->io_if_axi_rdata 
+                                                 ((((vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
                                                      >> 0x1fU)
                                                      ? 0xfffU
                                                      : 0U) 
                                                    << 0x14U) 
                                                   | ((0xff000U 
-                                                      & vlSelf->io_if_axi_rdata) 
+                                                      & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data) 
                                                      | ((0x800U 
-                                                         & (vlSelf->io_if_axi_rdata 
+                                                         & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
                                                             >> 9U)) 
                                                         | (0x7feU 
-                                                           & (vlSelf->io_if_axi_rdata 
+                                                           & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
                                                               >> 0x14U)))))
                                                   : vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm)));
     vlSelf->Core__DOT__MEM__DOT__memAddr = ((0U != (IData)(vlSelf->Core__DOT__MEM__DOT__width)) 
@@ -2681,13 +2673,9 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                                 & (IData)(vlSelf->Core__DOT__csr__DOT___T_267)))))))))))))))))));
     vlSelf->Core__DOT__EX_MEM_io_stallPrev = ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
                                               | (IData)(vlSelf->Core__DOT__MEM_io_stallReq));
-    vlSelf->Core__DOT__ID_io_stallid = ((IData)(vlSelf->Core__DOT__MEM_io_stallReq) 
-                                        | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
-                                           | (IData)(vlSelf->Core__DOT__resoler_io_loadflag)));
-    vlSelf->Core__DOT__IF_ID_io_stallPrev = (1U & ((IData)(vlSelf->Core__DOT__MEM_io_stallReq) 
-                                                   | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
-                                                      | ((~ (IData)(vlSelf->io_if_axi_valid)) 
-                                                         | (IData)(vlSelf->Core__DOT__resoler_io_loadflag)))));
+    vlSelf->Core__DOT__IF_ID_io_stallPrev = ((IData)(vlSelf->Core__DOT__MEM_io_stallReq) 
+                                             | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
+                                                | (IData)(vlSelf->Core__DOT__resoler_io_loadflag)));
     vlSelf->Core__DOT__ID__DOT__addrFault = ((IData)(vlSelf->Core__DOT__ID__DOT__branchteke) 
                                              & (0U 
                                                 != 
@@ -2701,6 +2689,9 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                            ? 0ULL : vlSelf->Core__DOT__ID__DOT___T_791);
     vlSelf->Core__DOT__csr__DOT___T_319 = ((IData)(vlSelf->Core__DOT__csr__DOT__readable) 
                                            & (IData)(vlSelf->Core__DOT__csr__DOT__writable));
+    vlSelf->Core__DOT__IF_ID__DOT___GEN_4 = (1U & (
+                                                   (~ (IData)(vlSelf->Core__DOT__IF_ID_io_stallPrev)) 
+                                                   | (IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_valid)));
     vlSelf->Core__DOT__ID__DOT__branchmiss = (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take) 
                                                != (IData)(vlSelf->Core__DOT__ID__DOT__branchteke)) 
                                               | ((QData)((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc)) 

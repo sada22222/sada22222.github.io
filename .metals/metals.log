@@ -9958,3 +9958,580 @@ java.lang.AssertionError: assertion failed:
 信息: Unsupported notification method: $/setTrace
 10月 20, 2024 6:48:04 下午 org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 信息: Unsupported notification method: $/setTrace
+2024.10.23 15:36:32 INFO  Started: Metals version 1.3.5 in folders '/home/hujun/ysyx-workbench' for client Visual Studio Code 1.94.2.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@15c08d4c]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@2b55e948]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@15c08d4c]
+2024.10.23 15:36:34 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.23 15:36:34 INFO  Attempting to connect to the build server...
+2024.10.23 15:36:36 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:36 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+10月 23, 2024 3:36:39 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 4
+2024.10.23 15:36:39 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:39 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:39 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:39 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:39 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+10月 23, 2024 3:36:39 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 14
+2024.10.23 15:36:41 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:41 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.23 15:36:41 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:42 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:43 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:43 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:45 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:45 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 15:36:48 INFO  time: Connected to build server in 13s
+2024.10.23 15:36:48 INFO  Connected to Build server: Bloop v1.6.0
+2024.10.23 15:36:48 INFO  time: Imported build in 0.39s
+2024.10.23 15:36:48 INFO  running doctor check
+2024.10.23 15:36:48 INFO  java targets: npc-test, npc
+2024.10.23 15:36:48 WARN  2.12.10 is no longer supported in the current Metals versions, using the last known supported version 0.11.12
+2024.10.23 15:36:52 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 15:36:52 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 15:36:52 INFO  time: indexed workspace in 4.42s
+2024.10.23 17:09:22 INFO  Shutting down server
+2024.10.23 17:09:22 INFO  shutting down Metals
+2024.10.23 17:09:22 INFO  Shut down connection with build server.
+2024.10.23 17:09:22 INFO  Exiting server
+2024.10.23 19:38:18 INFO  Started: Metals version 1.3.5 in folders '/home/hujun/ysyx-workbench' for client Visual Studio Code 1.94.2.
+2024.10.23 19:38:18 INFO  time: initialize in 0.11s
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@393bdd05]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@5cc459a7]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@393bdd05]
+2024.10.23 19:38:21 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.23 19:38:23 INFO  Attempting to connect to the build server...
+2024.10.23 19:38:34 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 19:38:49 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.23 19:39:09 ERROR Timeout waiting for 'build/initialize' response
+2024.10.23 19:39:09 WARN  Retrying connection to the build server Bloop
+2024.10.23 19:39:09 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.23 19:39:30 ERROR Timeout waiting for 'build/initialize' response
+2024.10.23 19:39:30 WARN  Retrying connection to the build server Bloop
+2024.10.23 19:39:30 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.23 19:39:43 INFO  time: Connected to build server in 1m20s
+2024.10.23 19:39:43 INFO  Connected to Build server: Bloop v1.6.0
+2024.10.23 19:39:44 INFO  time: Imported build in 0.82s
+2024.10.23 19:39:45 INFO  running doctor check
+2024.10.23 19:39:45 INFO  java targets: npc-test, npc
+2024.10.23 19:39:45 WARN  2.12.10 is no longer supported in the current Metals versions, using the last known supported version 0.11.12
+2024.10.23 19:39:53 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 19:39:55 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 19:39:55 INFO  time: indexed workspace in 11s
+2024.10.23 19:40:01 INFO  time: code lens generation in 1.26s
+2024.10.23 19:40:01 INFO  time: code lens generation in 1.29s
+10月 23, 2024 7:47:21 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 42
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 58
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 61
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 75
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 76
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 60
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 80
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 59
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 63
+10月 23, 2024 7:47:34 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 83
+2024.10.23 19:47:38 INFO  compiling npc (1 scala source)
+2024.10.23 19:48:04 WARN  there were 122 feature warnings; re-run with -feature for details
+2024.10.23 19:48:06 INFO  time: compiled npc in 27s
+2024.10.23 20:22:11 INFO  Shutting down server
+2024.10.23 20:22:11 INFO  shutting down Metals
+2024.10.23 20:22:11 INFO  Shut down connection with build server.
+2024.10.23 20:22:11 INFO  Exiting server
+2024.10.23 20:29:54 INFO  Started: Metals version 1.3.5 in folders '/home/hujun/ysyx-workbench' for client Visual Studio Code 1.94.2.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@2f07a2e5]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@4c6ef8ef]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@2f07a2e5]
+2024.10.23 20:29:55 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.23 20:29:56 INFO  Attempting to connect to the build server...
+2024.10.23 20:29:58 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.23 20:29:59 INFO  time: Connected to build server in 2.46s
+2024.10.23 20:29:59 INFO  Connected to Build server: Bloop v1.6.0
+10月 23, 2024 8:30:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 3
+2024.10.23 20:30:00 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala. Using presentation compiler with project's scala-library version: 3.3.3
+10月 23, 2024 8:30:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 9
+2024.10.23 20:30:00 INFO  time: Imported build in 1.03s
+2024.10.23 20:30:03 INFO  running doctor check
+2024.10.23 20:30:03 INFO  java targets: npc-test, npc
+2024.10.23 20:30:03 WARN  2.12.10 is no longer supported in the current Metals versions, using the last known supported version 0.11.12
+2024.10.23 20:30:10 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 20:30:12 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 20:30:12 INFO  time: indexed workspace in 8.91s
+10月 23, 2024 8:40:11 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 134
+10月 23, 2024 8:40:11 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 137
+10月 23, 2024 8:40:25 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 178
+10月 23, 2024 8:40:27 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 188
+10月 23, 2024 8:40:27 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 189
+10月 23, 2024 8:40:27 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+严重: Internal error: java.lang.InterruptedException
+java.util.concurrent.CompletionException: java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:42)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.pc.VirtualFileParams.checkCanceled(VirtualFileParams.java:34)
+	at scala.meta.internal.pc.CompletionProvider.$anonfun$completions$1(CompletionProvider.scala:77)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:459)
+	at scala.collection.Iterator.toStream(Iterator.scala:1415)
+	at scala.collection.Iterator.toStream$(Iterator.scala:1414)
+	at scala.collection.AbstractIterator.toStream(Iterator.scala:1429)
+	at scala.collection.Iterator.$anonfun$toStream$1(Iterator.scala:1415)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1171)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1161)
+	at scala.collection.immutable.StreamIterator.$anonfun$next$1(Stream.scala:1061)
+	at scala.collection.immutable.StreamIterator$LazyCell.v$lzycompute(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator$LazyCell.v(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator.hasNext(Stream.scala:1055)
+	at scala.collection.convert.Wrappers$IteratorWrapper.hasNext(Wrappers.scala:31)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:134)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:40)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(TypeAdapterRuntimeTypeWrapper.java:73)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2.write(ReflectiveTypeAdapterFactory.java:247)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.write(ReflectiveTypeAdapterFactory.java:490)
+	at com.google.gson.Gson.toJson(Gson.java:944)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:440)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:56)
+	at com.google.gson.Gson.toJson(Gson.java:944)
+	at com.google.gson.Gson.toJson(Gson.java:899)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:149)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:144)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:59)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.lambda$handleRequest$1(RemoteEndpoint.java:290)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	... 8 more
+
+2024.10.23 20:40:29 INFO  compiling npc (1 scala source)
+10月 23, 2024 8:40:36 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 211
+10月 23, 2024 8:40:43 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 226
+10月 23, 2024 8:40:44 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 238
+2024.10.23 20:40:47 WARN  failed to generate semanticdb for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala:
+java.lang.IllegalArgumentException: 2269 is not a valid offset, allowed [0..2267]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$File.offsetToLine(Input.scala:51)
+	at scala.meta.inputs.Position$Range.endLine(Position.scala:41)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange$.toRange$extension(package.scala:47)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.tryFindSynthetic(TextDocumentOps.scala:580)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:722)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:210)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$2(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.atOwner(Trees.scala:2515)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$1(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.traverseStats(Trees.scala:2505)
+	at scala.reflect.internal.Trees.traverseComponents$1(Trees.scala:1270)
+	at scala.reflect.internal.Trees.itraverse(Trees.scala:1368)
+	at scala.reflect.internal.Trees.itraverse$(Trees.scala:1238)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.api.Trees$Traverser.traverse(Trees.scala:2483)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:783)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:210)
+	at scala.reflect.internal.Trees.$anonfun$itraverse$1(Trees.scala:1245)
+	at scala.reflect.api.Trees$Traverser.atOwner(Trees.scala:2515)
+	at scala.reflect.internal.Trees.traverseMemberDef$1(Trees.scala:1241)
+	at scala.reflect.internal.Trees.itraverse(Trees.scala:1366)
+	at scala.reflect.internal.Trees.itraverse$(Trees.scala:1238)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.api.Trees$Traverser.traverse(Trees.scala:2483)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:783)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:210)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$2(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.atOwner(Trees.scala:2515)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$1(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.traverseStats(Trees.scala:2505)
+	at scala.reflect.internal.Trees.itraverse(Trees.scala:1364)
+	at scala.reflect.internal.Trees.itraverse$(Trees.scala:1238)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.api.Trees$Traverser.traverse(Trees.scala:2483)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:783)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:786)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:54)
+	at scala.meta.internal.semanticdb.scalac.SemanticdbPipeline$SemanticdbTyperComponent$ComputeSemanticdbPhase.saveSemanticdbForCompilationUnit(SemanticdbPipeline.scala:60)
+	at scala.meta.internal.semanticdb.scalac.SemanticdbPipeline$SemanticdbTyperComponent$ComputeSemanticdbPhase.apply(SemanticdbPipeline.scala:67)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:453)
+	at scala.tools.nsc.Global$GlobalPhase.run(Global.scala:399)
+	at scala.meta.internal.semanticdb.scalac.SemanticdbPipeline$SemanticdbTyperComponent$ComputeSemanticdbPhase.run(SemanticdbPipeline.scala:77)
+	at scala.tools.nsc.Global$Run.compileUnitsInternal(Global.scala:1503)
+	at scala.tools.nsc.Global$Run.compileUnits(Global.scala:1487)
+	at scala.tools.nsc.Global$Run.compileSources(Global.scala:1480)
+	at scala.tools.nsc.Global$Run.compileFiles(Global.scala:1588)
+	at xsbt.CachedCompiler0.run(CompilerBridge.scala:165)
+	at xsbt.CachedCompiler0.run(CompilerBridge.scala:134)
+	at xsbt.CompilerBridge.run(CompilerBridge.scala:39)
+	at sbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:91)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.compileSources$1(BloopHighLevelCompiler.scala:133)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.$anonfun$compile$7(BloopHighLevelCompiler.scala:159)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.$anonfun$compile$1(BloopHighLevelCompiler.scala:71)
+	at bloop.tracing.NoopTracer$.trace(BraveTracer.scala:53)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.timed$1(BloopHighLevelCompiler.scala:70)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.$anonfun$compile$6(BloopHighLevelCompiler.scala:159)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at monix.eval.internal.TaskRunLoop$.startFull(TaskRunLoop.scala:81)
+	at monix.eval.internal.TaskRestartCallback.syncOnSuccess(TaskRestartCallback.scala:101)
+	at monix.eval.internal.TaskRestartCallback.onSuccess(TaskRestartCallback.scala:74)
+	at monix.eval.internal.TaskExecuteOn$AsyncRegister$$anon$1.run(TaskExecuteOn.scala:71)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+2024.10.23 20:40:56 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.23 20:40:57 INFO  time: compiled npc in 27s
+2024.10.23 20:41:00 INFO  compiling npc (1 scala source)
+10月 23, 2024 8:41:05 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 275
+10月 23, 2024 8:41:05 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 277
+10月 23, 2024 8:41:05 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 278
+10月 23, 2024 8:41:05 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 280
+10月 23, 2024 8:41:06 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 281
+10月 23, 2024 8:41:06 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 282
+10月 23, 2024 8:41:06 下午 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+信息: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2024.10.23 20:41:16 WARN  failed to generate semanticdb for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala:
+java.lang.IllegalArgumentException: 2269 is not a valid offset, allowed [0..2248]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$File.offsetToLine(Input.scala:51)
+	at scala.meta.inputs.Position$Range.endLine(Position.scala:41)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange$.toRange$extension(package.scala:47)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.tryFindSynthetic(TextDocumentOps.scala:580)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:722)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:210)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$2(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.atOwner(Trees.scala:2515)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$1(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.traverseStats(Trees.scala:2505)
+	at scala.reflect.internal.Trees.traverseComponents$1(Trees.scala:1270)
+	at scala.reflect.internal.Trees.itraverse(Trees.scala:1368)
+	at scala.reflect.internal.Trees.itraverse$(Trees.scala:1238)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.api.Trees$Traverser.traverse(Trees.scala:2483)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:783)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:210)
+	at scala.reflect.internal.Trees.$anonfun$itraverse$1(Trees.scala:1245)
+	at scala.reflect.api.Trees$Traverser.atOwner(Trees.scala:2515)
+	at scala.reflect.internal.Trees.traverseMemberDef$1(Trees.scala:1241)
+	at scala.reflect.internal.Trees.itraverse(Trees.scala:1366)
+	at scala.reflect.internal.Trees.itraverse$(Trees.scala:1238)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.api.Trees$Traverser.traverse(Trees.scala:2483)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:783)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:210)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$2(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.atOwner(Trees.scala:2515)
+	at scala.reflect.api.Trees$Traverser.$anonfun$traverseStats$1(Trees.scala:2506)
+	at scala.reflect.api.Trees$Traverser.traverseStats(Trees.scala:2505)
+	at scala.reflect.internal.Trees.itraverse(Trees.scala:1364)
+	at scala.reflect.internal.Trees.itraverse$(Trees.scala:1238)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.internal.SymbolTable.itraverse(SymbolTable.scala:28)
+	at scala.reflect.api.Trees$Traverser.traverse(Trees.scala:2483)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument$traverser$3$.traverse(TextDocumentOps.scala:783)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:786)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:54)
+	at scala.meta.internal.semanticdb.scalac.SemanticdbPipeline$SemanticdbTyperComponent$ComputeSemanticdbPhase.saveSemanticdbForCompilationUnit(SemanticdbPipeline.scala:60)
+	at scala.meta.internal.semanticdb.scalac.SemanticdbPipeline$SemanticdbTyperComponent$ComputeSemanticdbPhase.apply(SemanticdbPipeline.scala:67)
+	at scala.tools.nsc.Global$GlobalPhase.applyPhase(Global.scala:453)
+	at scala.tools.nsc.Global$GlobalPhase.run(Global.scala:399)
+	at scala.meta.internal.semanticdb.scalac.SemanticdbPipeline$SemanticdbTyperComponent$ComputeSemanticdbPhase.run(SemanticdbPipeline.scala:77)
+	at scala.tools.nsc.Global$Run.compileUnitsInternal(Global.scala:1503)
+	at scala.tools.nsc.Global$Run.compileUnits(Global.scala:1487)
+	at scala.tools.nsc.Global$Run.compileSources(Global.scala:1480)
+	at scala.tools.nsc.Global$Run.compileFiles(Global.scala:1588)
+	at xsbt.CachedCompiler0.run(CompilerBridge.scala:165)
+	at xsbt.CachedCompiler0.run(CompilerBridge.scala:134)
+	at xsbt.CompilerBridge.run(CompilerBridge.scala:39)
+	at sbt.internal.inc.AnalyzingCompiler.compile(AnalyzingCompiler.scala:91)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.compileSources$1(BloopHighLevelCompiler.scala:133)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.$anonfun$compile$7(BloopHighLevelCompiler.scala:159)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.$anonfun$compile$1(BloopHighLevelCompiler.scala:71)
+	at bloop.tracing.NoopTracer$.trace(BraveTracer.scala:53)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.timed$1(BloopHighLevelCompiler.scala:70)
+	at sbt.internal.inc.bloop.internal.BloopHighLevelCompiler.$anonfun$compile$6(BloopHighLevelCompiler.scala:159)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at monix.eval.internal.TaskRunLoop$.startFull(TaskRunLoop.scala:81)
+	at monix.eval.internal.TaskRestartCallback.syncOnSuccess(TaskRestartCallback.scala:101)
+	at monix.eval.internal.TaskRestartCallback.onSuccess(TaskRestartCallback.scala:74)
+	at monix.eval.internal.TaskExecuteOn$AsyncRegister$$anon$1.run(TaskExecuteOn.scala:71)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+10月 23, 2024 8:41:21 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 306
+2024.10.23 20:41:22 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.23 20:41:22 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:22 INFO  time: compiled npc in 22s
+2024.10.23 20:41:24 INFO  compiling npc (1 scala source)
+2024.10.23 20:41:24 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:28 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:31 INFO  time: compiled npc in 6.5s
+2024.10.23 20:41:31 INFO  compiling npc (1 scala source)
+10月 23, 2024 8:41:32 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 324
+10月 23, 2024 8:41:33 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 329
+2024.10.23 20:41:35 INFO  time: compiled npc in 3.61s
+2024.10.23 20:41:35 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:35 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:36 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:37 INFO  compiling npc (1 scala source)
+2024.10.23 20:41:38 WARN  Using indexes to guess the definition of valid
+2024.10.23 20:41:39 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:40 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 348
+10月 23, 2024 8:41:40 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 353
+10月 23, 2024 8:41:40 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 350
+10月 23, 2024 8:41:41 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 367
+10月 23, 2024 8:41:42 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 372
+10月 23, 2024 8:41:42 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 373
+10月 23, 2024 8:41:42 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 374
+2024.10.23 20:41:44 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:41:47 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:49 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 399
+10月 23, 2024 8:41:49 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 401
+2024.10.23 20:41:49 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:49 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 402
+10月 23, 2024 8:41:49 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 405
+2024.10.23 20:41:51 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:57 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 433
+10月 23, 2024 8:41:57 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 436
+2024.10.23 20:41:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 440
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 439
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 443
+2024.10.23 20:41:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 442
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 444
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 447
+2024.10.23 20:41:58 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 450
+10月 23, 2024 8:41:58 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+严重: Internal error: java.lang.InterruptedException
+java.util.concurrent.CompletionException: java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:722)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2147)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:42)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.pc.VirtualFileParams.checkCanceled(VirtualFileParams.java:34)
+	at scala.meta.internal.pc.CompletionProvider.$anonfun$completions$1(CompletionProvider.scala:77)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:459)
+	at scala.collection.Iterator.toStream(Iterator.scala:1415)
+	at scala.collection.Iterator.toStream$(Iterator.scala:1414)
+	at scala.collection.AbstractIterator.toStream(Iterator.scala:1429)
+	at scala.collection.Iterator.$anonfun$toStream$1(Iterator.scala:1415)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1171)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1161)
+	at scala.collection.immutable.StreamIterator.$anonfun$next$1(Stream.scala:1061)
+	at scala.collection.immutable.StreamIterator$LazyCell.v$lzycompute(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator$LazyCell.v(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator.hasNext(Stream.scala:1055)
+	at scala.collection.convert.Wrappers$IteratorWrapper.hasNext(Wrappers.scala:31)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:134)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:40)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(TypeAdapterRuntimeTypeWrapper.java:73)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2.write(ReflectiveTypeAdapterFactory.java:247)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.write(ReflectiveTypeAdapterFactory.java:490)
+	at com.google.gson.Gson.toJson(Gson.java:944)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:440)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:56)
+	at com.google.gson.Gson.toJson(Gson.java:944)
+	at com.google.gson.Gson.toJson(Gson.java:899)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:149)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:144)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:59)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.lambda$handleRequest$1(RemoteEndpoint.java:290)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	... 8 more
+
+2024.10.23 20:41:58 WARN  there were 22 feature warnings; re-run with -feature for details
+10月 23, 2024 8:41:59 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 449
+10月 23, 2024 8:41:59 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 451
+2024.10.23 20:41:59 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:41:59 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 458
+10月 23, 2024 8:41:59 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 457
+10月 23, 2024 8:41:59 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 459
+2024.10.23 20:41:58 INFO  time: compiled npc in 22s
+2024.10.23 20:41:58 INFO  compiling npc (1 scala source)
+10月 23, 2024 8:42:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 460
+10月 23, 2024 8:42:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 461
+10月 23, 2024 8:42:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 466
+10月 23, 2024 8:42:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 465
+10月 23, 2024 8:42:00 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 467
+2024.10.23 20:42:00 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:42:01 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 477
+10月 23, 2024 8:42:01 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 469
+10月 23, 2024 8:42:01 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 468
+2024.10.23 20:42:01 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+10月 23, 2024 8:42:02 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 481
+10月 23, 2024 8:42:02 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 487
+2024.10.23 20:42:02 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:42:06 INFO  time: compiled npc in 6.62s
+10月 23, 2024 8:42:06 下午 scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+信息: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+2024.10.23 20:42:07 INFO  compiling npc (1 scala source)
+2024.10.23 20:42:08 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 20:42:34 WARN  there were 22 feature warnings; re-run with -feature for details
+2024.10.23 20:42:34 INFO  time: compiled npc in 28s
+2024.10.23 20:42:34 INFO  compiling npc (1 scala source)
+2024.10.23 20:42:39 INFO  time: compiled npc in 3.68s
+2024.10.23 20:42:40 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+                                                                                                                                                                2024.10.23 22:02:43 INFO  Started: Metals version 1.3.5 in folders '/home/hujun/ysyx-workbench' for client Visual Studio Code 1.94.2.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@5a0ad369]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@332e118b]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@5a0ad369]
+2024.10.23 22:02:48 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.23 22:02:48 INFO  Attempting to connect to the build server...
+2024.10.23 22:02:50 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.23 22:02:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.23 22:03:03 INFO  time: Connected to build server in 15s
+2024.10.23 22:03:03 INFO  Connected to Build server: Bloop v1.6.0
+2024.10.23 22:03:04 INFO  time: Imported build in 0.47s
+2024.10.23 22:03:04 INFO  running doctor check
+2024.10.23 22:03:04 INFO  java targets: npc-test, npc
+2024.10.23 22:03:04 WARN  2.12.10 is no longer supported in the current Metals versions, using the last known supported version 0.11.12
+2024.10.23 22:03:09 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 22:03:09 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.23 22:03:09 INFO  time: indexed workspace in 6.05s
+2024.10.23 22:03:12 INFO  compiling npc (1 scala source)
+2024.10.23 22:03:23 WARN  there were 22 feature warnings; re-run with -feature for details
+2024.10.23 22:03:23 INFO  time: compiled npc in 11s
+2024.10.23 22:03:23 INFO  compiling npc (1 scala source)
+2024.10.23 22:03:25 INFO  time: compiled npc in 1.14s
+2024.10.23 22:03:25 INFO  compiling npc (1 scala source)
+2024.10.23 22:03:25 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 22:03:25 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 22:03:25 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 22:03:25 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.23 22:03:28 WARN  there were 22 feature warnings; re-run with -feature for details
+2024.10.23 22:03:28 INFO  time: compiled npc in 2.7s
+2024.10.23 22:03:28 INFO  compiling npc (1 scala source)
+2024.10.23 22:03:28 INFO  time: compiled npc in 0.77s
+2024.10.23 22:03:34 INFO  compiling npc (2 scala sources)
+2024.10.23 22:03:38 WARN  there were 142 feature warnings; re-run with -feature for details
+2024.10.23 22:03:38 INFO  time: compiled npc in 4.98s
+2024.10.23 22:05:29 INFO  compiling npc (1 scala source)
+2024.10.23 22:05:29 INFO  time: compiled npc in 0.41s
+2024.10.23 22:05:32 INFO  compiling npc (1 scala source)
+2024.10.23 22:05:32 INFO  time: compiled npc in 0.32s
+10月 23, 2024 10:05:43 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 157
+2024.10.23 22:05:43 INFO  compiling npc (1 scala source)
+2024.10.23 22:05:45 WARN  there were 22 feature warnings; re-run with -feature for details
+2024.10.23 22:05:45 INFO  time: compiled npc in 2.54s
+2024.10.23 22:07:36 INFO  compiling npc (1 scala source)
+2024.10.23 22:07:36 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.23 22:07:36 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.23 22:07:38 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.23 22:07:39 WARN  there were 120 feature warnings; re-run with -feature for details
+2024.10.23 22:07:39 INFO  time: compiled npc in 3.04s
+2024.10.23 22:07:39 INFO  compiling npc (1 scala source)
+2024.10.23 22:07:39 INFO  time: compiled npc in 0.31s
+2024.10.23 22:07:39 INFO  compiling npc (1 scala source)
+2024.10.23 22:07:40 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.23 22:07:41 WARN  there were 120 feature warnings; re-run with -feature for details
+2024.10.23 22:07:41 INFO  time: compiled npc in 1.81s
+2024.10.23 22:07:41 INFO  compiling npc (1 scala source)
+2024.10.23 22:07:41 INFO  time: compiled npc in 0.24s
+2024.10.23 22:07:42 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.23 22:07:58 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.23 22:08:22 INFO  compiling npc (2 scala sources)
+2024.10.23 22:08:25 WARN  there were 136 feature warnings; re-run with -feature for details
+2024.10.23 22:08:25 INFO  time: compiled npc in 3.13s
+10月 23, 2024 11:03:16 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 520

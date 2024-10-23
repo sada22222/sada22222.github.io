@@ -14,16 +14,9 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vtop__Syms(contextp(), _vcname__, this)}
     , clock{vlSymsp->TOP.clock}
     , reset{vlSymsp->TOP.reset}
-    , io_if_axi_en{vlSymsp->TOP.io_if_axi_en}
-    , io_if_axi_valid{vlSymsp->TOP.io_if_axi_valid}
-    , io_if_axi_fault{vlSymsp->TOP.io_if_axi_fault}
-    , io_if_axi_wen{vlSymsp->TOP.io_if_axi_wen}
     , io_timer{vlSymsp->TOP.io_timer}
     , io_soft{vlSymsp->TOP.io_soft}
     , io_extern{vlSymsp->TOP.io_extern}
-    , io_if_axi_addr{vlSymsp->TOP.io_if_axi_addr}
-    , io_if_axi_rdata{vlSymsp->TOP.io_if_axi_rdata}
-    , io_if_axi_wdata{vlSymsp->TOP.io_if_axi_wdata}
     , io_inst{vlSymsp->TOP.io_inst}
     , io_pc{vlSymsp->TOP.io_pc}
     , io_npc{vlSymsp->TOP.io_npc}

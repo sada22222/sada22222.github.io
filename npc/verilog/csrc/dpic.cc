@@ -15,13 +15,13 @@ void halt(uint32_t inst) {
 
 static int cnt = 0;
 uint32_t fetch(bool clk, bool rst, paddr_t pc) {
-     printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
+    printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
     if (rst && pc == 0) { 
         return NOP;
     }
     Assert(in_pmem(pc), "Out of bounds memory accsee!\n");
     uint32_t inst = paddr_read(pc, 4);
-     printf("pc = " FMT_PADDR ": " FMT_WORD " at %d\n", pc, inst, cnt ++);
+    printf("pc = " FMT_PADDR ": " FMT_WORD " at %d\n", pc, inst, cnt ++);
     return inst;
 }
 
@@ -42,7 +42,6 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
             exit(1);
         }
     }
-
     gprs[0] = dut_x0;
     gprs[1] = dut_x1;
     gprs[2] = dut_x2;
@@ -75,8 +74,6 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
     gprs[29] = dut_x29;
     gprs[30] = dut_x30;
     gprs[31] = dut_x31;
-    printf("set_gpr_ptr called, gprs[0] = %u, gprs[1] = %u, ..., gprs[31] = %u\n", gprs[0], gprs[1], gprs[31]);
-
 }
 
 

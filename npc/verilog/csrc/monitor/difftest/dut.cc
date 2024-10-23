@@ -13,7 +13,6 @@ void (*ref_difftest_exec)(uint64_t n) = NULL;
 CPU_state ref;
 
 void init_difftest(const char *ref_so_file, long img_size, int port) {
-    printf("img_size: %ld\n", img_size);
 
     Assert(ref_so_file != NULL, "Difftest file not found!");
 
@@ -25,7 +24,6 @@ void init_difftest(const char *ref_so_file, long img_size, int port) {
 
     ref_difftest_regcpy = (void (*)(void*, bool))dlsym(handle, "difftest_regcpy");
     Assert(ref_difftest_regcpy, "difftest_regcpy() cannot load!");
-    printf("host address: %p\n", guest_to_host(RESET_VECTOR));
 
     ref_difftest_exec = (void (*)(uint64_t))dlsym(handle, "difftest_exec");
     Assert(ref_difftest_exec, "difftest_exec() cannot load!");
@@ -41,11 +39,13 @@ void init_difftest(const char *ref_so_file, long img_size, int port) {
     ref_difftest_init(port);
     // Copy the pmem(npc) to pmem(nemu)
     ref_difftest_memcpy(RESET_VECTOR, guest_to_host(RESET_VECTOR), img_size, DIFFTEST_TO_REF);
+
     // Copy the  reg(npc) to  reg(nemu)
     ref_difftest_regcpy(&npc_cpu, DIFFTEST_TO_REF);
 }
 
 void difftest_step(paddr_t pc, paddr_t npc) {
+        printf(" npc_cpu.pc=0x%x\n", npc_cpu.pc);
     ref_difftest_exec(1);
 
     ref_difftest_regcpy(&ref, DIFFTEST_TO_DUT);
@@ -55,6 +55,7 @@ void difftest_step(paddr_t pc, paddr_t npc) {
         npc_state.halt_pc = pc;
         cmp_reg();
     }
+    
 }
 
 bool checkregs(CPU_state ref, paddr_t pc) {

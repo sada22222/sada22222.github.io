@@ -12,60 +12,12 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___ico_sequent__TOP__0\n"); );
     // Body
-    vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_taken_o 
-        = ((IData)(vlSelf->io_if_axi_valid) & ((IData)(
-                                                       (0x80000063U 
-                                                        == 
-                                                        (0x8000007fU 
-                                                         & vlSelf->io_if_axi_rdata))) 
-                                               | (0x6fU 
-                                                  == 
-                                                  (0x7fU 
-                                                   & vlSelf->io_if_axi_rdata))));
-    vlSelf->Core__DOT__IF_ID_io_stallPrev = (1U & ((IData)(vlSelf->Core__DOT__MEM_io_stallReq) 
-                                                   | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
-                                                      | ((~ (IData)(vlSelf->io_if_axi_valid)) 
-                                                         | (IData)(vlSelf->Core__DOT__resoler_io_loadflag)))));
-    vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm 
-        = ((((vlSelf->io_if_axi_rdata >> 0x1fU) ? 0xfffffU
-              : 0U) << 0xcU) | ((0x800U & (vlSelf->io_if_axi_rdata 
-                                           << 4U)) 
-                                | ((0x7e0U & (vlSelf->io_if_axi_rdata 
-                                              >> 0x14U)) 
-                                   | (0x1eU & (vlSelf->io_if_axi_rdata 
-                                               >> 7U)))));
     vlSelf->Core__DOT__csr__DOT__mip_ssip = ((IData)(vlSelf->Core__DOT__csr__DOT__mipReal_ssip) 
                                              | (IData)(vlSelf->io_soft));
     vlSelf->Core__DOT__csr__DOT__mip_stip = ((IData)(vlSelf->Core__DOT__csr__DOT__mipReal_stip) 
                                              | (IData)(vlSelf->io_timer));
     vlSelf->Core__DOT__csr__DOT__mip_seip = ((IData)(vlSelf->Core__DOT__csr__DOT__mipReal_seip) 
                                              | (IData)(vlSelf->io_extern));
-    vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o 
-        = (vlSelf->Core__DOT__fetch__DOT__pc + ((0x63U 
-                                                 == 
-                                                 (0x7fU 
-                                                  & vlSelf->io_if_axi_rdata))
-                                                 ? vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm
-                                                 : 
-                                                ((0x6fU 
-                                                  == 
-                                                  (0x7fU 
-                                                   & vlSelf->io_if_axi_rdata))
-                                                  ? 
-                                                 ((((vlSelf->io_if_axi_rdata 
-                                                     >> 0x1fU)
-                                                     ? 0xfffU
-                                                     : 0U) 
-                                                   << 0x14U) 
-                                                  | ((0xff000U 
-                                                      & vlSelf->io_if_axi_rdata) 
-                                                     | ((0x800U 
-                                                         & (vlSelf->io_if_axi_rdata 
-                                                            >> 9U)) 
-                                                        | (0x7feU 
-                                                           & (vlSelf->io_if_axi_rdata 
-                                                              >> 0x14U)))))
-                                                  : vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm)));
     vlSelf->Core__DOT__csr__DOT___T_92 = (((IData)(vlSelf->Core__DOT__csr__DOT__mip_seip) 
                                            << 9U) | 
                                           (((IData)(vlSelf->Core__DOT__csr__DOT__mip_stip) 
@@ -489,39 +441,6 @@ void Vtop___024root___eval_act(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_act\n"); );
 }
 
-VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__1(Vtop___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___nba_sequent__TOP__1\n"); );
-    // Body
-    vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o 
-        = (vlSelf->Core__DOT__fetch__DOT__pc + ((0x63U 
-                                                 == 
-                                                 (0x7fU 
-                                                  & vlSelf->io_if_axi_rdata))
-                                                 ? vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm
-                                                 : 
-                                                ((0x6fU 
-                                                  == 
-                                                  (0x7fU 
-                                                   & vlSelf->io_if_axi_rdata))
-                                                  ? 
-                                                 ((((vlSelf->io_if_axi_rdata 
-                                                     >> 0x1fU)
-                                                     ? 0xfffU
-                                                     : 0U) 
-                                                   << 0x14U) 
-                                                  | ((0xff000U 
-                                                      & vlSelf->io_if_axi_rdata) 
-                                                     | ((0x800U 
-                                                         & (vlSelf->io_if_axi_rdata 
-                                                            >> 9U)) 
-                                                        | (0x7feU 
-                                                           & (vlSelf->io_if_axi_rdata 
-                                                              >> 0x14U)))))
-                                                  : vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm)));
-}
-
 void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf);
 
 void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
@@ -532,7 +451,6 @@ void Vtop___024root___eval_nba(Vtop___024root* vlSelf) {
     if (vlSelf->__VnbaTriggered.at(0U)) {
         Vtop___024root___nba_sequent__TOP__0(vlSelf);
         vlSelf->__Vm_traceActivity[2U] = 1U;
-        Vtop___024root___nba_sequent__TOP__1(vlSelf);
     }
 }
 
@@ -569,7 +487,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__ico(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3814, "", "Input combinational region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3800, "", "Input combinational region did not converge.");
             }
             vlSelf->__VicoIterCount = ((IData)(1U) 
                                        + vlSelf->__VicoIterCount);
@@ -592,7 +510,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                     Vtop___024root___dump_triggers__act(vlSelf);
 #endif
-                    VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3814, "", "Active region did not converge.");
+                    VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3800, "", "Active region did not converge.");
                 }
                 vlSelf->__VactIterCount = ((IData)(1U) 
                                            + vlSelf->__VactIterCount);
@@ -607,7 +525,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__nba(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3814, "", "NBA region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3800, "", "NBA region did not converge.");
             }
             __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
             Vtop___024root___eval_nba(vlSelf);
@@ -625,10 +543,6 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
         Verilated::overWidthError("clock");}
     if (VL_UNLIKELY((vlSelf->reset & 0xfeU))) {
         Verilated::overWidthError("reset");}
-    if (VL_UNLIKELY((vlSelf->io_if_axi_valid & 0xfeU))) {
-        Verilated::overWidthError("io_if_axi_valid");}
-    if (VL_UNLIKELY((vlSelf->io_if_axi_fault & 0xfeU))) {
-        Verilated::overWidthError("io_if_axi_fault");}
     if (VL_UNLIKELY((vlSelf->io_timer & 0xfeU))) {
         Verilated::overWidthError("io_timer");}
     if (VL_UNLIKELY((vlSelf->io_soft & 0xfeU))) {

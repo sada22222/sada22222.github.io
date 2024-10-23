@@ -8,8 +8,6 @@ import axi.AxiLiteMaster
 
 class Core extends Module{
   val io=IO(new Bundle() {
-      val if_axi = new SramIO
-
       val timer   = Input(Bool())
       val soft    = Input(Bool())
       val extern  = Input(Bool())
@@ -36,7 +34,7 @@ class Core extends Module{
 
   
 
-  fetch.io.rom<>io.if_axi
+
   fetch.io.flush:=ctrl.io.flushIf
   fetch.io.stall:=ctrl.io.if_stall
   fetch.io.flush_pc:=ctrl.io.flushPc
@@ -70,8 +68,8 @@ class Core extends Module{
 
   WB.io.mem_i<>MEM_WB.io.next
   io.inst:=fetch.io.IF.inst
-  io.pc:=WB.io.wb_pc
-  io.npc:=fetch.io.IF.pc
+  io.pc:=fetch.io.IF.pc
+  io.npc:=WB.io.wb_pc
 
   regfile.io.read1      <> resoler.io.rs1
   regfile.io.read2      <> resoler.io.rs2

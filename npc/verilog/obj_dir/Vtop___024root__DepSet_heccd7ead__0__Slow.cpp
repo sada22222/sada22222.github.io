@@ -13,25 +13,12 @@ VL_ATTR_COLD void Vtop___024root___eval_static(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_static\n"); );
 }
 
-VL_ATTR_COLD void Vtop___024root___eval_initial__TOP(Vtop___024root* vlSelf);
-
 VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_initial\n"); );
     // Body
-    Vtop___024root___eval_initial__TOP(vlSelf);
     vlSelf->__Vtrigrprev__TOP__clock = vlSelf->clock;
-}
-
-VL_ATTR_COLD void Vtop___024root___eval_initial__TOP(Vtop___024root* vlSelf) {
-    if (false && vlSelf) {}  // Prevent unused
-    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_initial__TOP\n"); );
-    // Body
-    vlSelf->io_if_axi_en = 1U;
-    vlSelf->io_if_axi_wen = 0U;
-    vlSelf->io_if_axi_wdata = 0U;
 }
 
 VL_ATTR_COLD void Vtop___024root___eval_final(Vtop___024root* vlSelf) {
@@ -64,7 +51,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3814, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3800, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);
@@ -155,13 +142,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     // Body
     vlSelf->clock = VL_RAND_RESET_I(1);
     vlSelf->reset = VL_RAND_RESET_I(1);
-    vlSelf->io_if_axi_en = VL_RAND_RESET_I(1);
-    vlSelf->io_if_axi_valid = VL_RAND_RESET_I(1);
-    vlSelf->io_if_axi_fault = VL_RAND_RESET_I(1);
-    vlSelf->io_if_axi_wen = VL_RAND_RESET_I(4);
-    vlSelf->io_if_axi_addr = VL_RAND_RESET_I(32);
-    vlSelf->io_if_axi_rdata = VL_RAND_RESET_I(32);
-    vlSelf->io_if_axi_wdata = VL_RAND_RESET_I(32);
     vlSelf->io_timer = VL_RAND_RESET_I(1);
     vlSelf->io_soft = VL_RAND_RESET_I(1);
     vlSelf->io_extern = VL_RAND_RESET_I(1);
@@ -173,7 +153,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__ID_io_read1_data = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID_io_read2_en = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID_io_read2_data = VL_RAND_RESET_I(32);
-    vlSelf->Core__DOT__ID_io_stallid = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__EX_io_ex_o_load = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__EX_MEM_io_stallPrev = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM_io_stallReq = VL_RAND_RESET_I(1);
@@ -184,15 +163,16 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_taken_o = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__fetch__DOT__pc = VL_RAND_RESET_I(32);
-    vlSelf->Core__DOT__fetch__DOT___T_1 = VL_RAND_RESET_I(32);
-    vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__fetch__DOT___T_2 = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__IF_ID__DOT__ff_pc = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__IF_ID__DOT__ff_valid = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__IF_ID__DOT__ff_inst = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__IF_ID__DOT__ff_misaligned = VL_RAND_RESET_I(1);
+    vlSelf->Core__DOT__IF_ID__DOT___GEN_4 = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__stall = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__lastinst = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID__DOT___T_1 = VL_RAND_RESET_I(32);

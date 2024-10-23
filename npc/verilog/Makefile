@@ -30,8 +30,8 @@ default: run
 
 OBJ_DIR = obj_dir
 BIN = $(OBJ_DIR)/V$(TOP_MODULE)
-IMG ?= inst.txt
-LOAD_IMG =/home/hujun/ysyx-workbench/npc/verilog/bin/inst.txt
+
+LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.bin
 ARGS += $(LOAD_IMG)
 
 run: $(CSRC)

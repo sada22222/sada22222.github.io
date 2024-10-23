@@ -11,15 +11,8 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     // Init
     const int c = vlSymsp->__Vm_baseCode;
     // Body
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+238,"io_if_axi_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+239,"io_if_axi_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+240,"io_if_axi_fault",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+241,"io_if_axi_wen",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-    tracep->declBus(c+242,"io_if_axi_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+243,"io_if_axi_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+244,"io_if_axi_wdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+245,"io_timer",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+246,"io_soft",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+247,"io_extern",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -27,67 +20,54 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+249,"io_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+250,"io_npc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->pushNamePrefix("Core ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+238,"io_if_axi_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+239,"io_if_axi_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+240,"io_if_axi_fault",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+241,"io_if_axi_wen",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-    tracep->declBus(c+242,"io_if_axi_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+243,"io_if_axi_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+244,"io_if_axi_wdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+245,"io_timer",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+246,"io_soft",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+247,"io_extern",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+248,"io_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+249,"io_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+242,"io_npc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"fetch_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"fetch_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+239,"fetch_io_rom_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"fetch_io_rom_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+243,"fetch_io_rom_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"io_npc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"fetch_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"fetch_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"fetch_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+2,"fetch_io_flush_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+251,"fetch_io_stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+251,"fetch_io_stallreq",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"fetch_io_IF_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+239,"fetch_io_IF_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+249,"fetch_io_IF_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+248,"fetch_io_IF_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+252,"fetch_io_IF_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+3,"fetch_io_IF_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+26,"fetch_io_IF_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+27,"fetch_io_IF_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+28,"fetch_io_IF_misaligned",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+236,"IF_ID_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"IF_ID_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"IF_ID_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+5,"IF_ID_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"IF_ID_io_prev_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+239,"IF_ID_io_prev_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"IF_ID_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"IF_ID_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"IF_ID_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+29,"IF_ID_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+249,"IF_ID_io_prev_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+248,"IF_ID_io_prev_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+252,"IF_ID_io_prev_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+3,"IF_ID_io_prev_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+26,"IF_ID_io_prev_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+27,"IF_ID_io_prev_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+28,"IF_ID_io_prev_misaligned",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+29,"IF_ID_io_next_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+30,"IF_ID_io_next_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+31,"IF_ID_io_next_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+32,"IF_ID_io_next_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+33,"IF_ID_io_next_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+34,"IF_ID_io_next_misaligned",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+236,"ID_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+29,"ID_io_if_i_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+30,"ID_io_if_i_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+31,"ID_io_if_i_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+32,"ID_io_if_i_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+33,"ID_io_if_i_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+34,"ID_io_if_i_misaligned",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+35,"ID_io_read1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"ID_io_read1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+37,"ID_io_read1_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"ID_io_read2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"ID_io_read2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+40,"ID_io_read2_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+41,"ID_io_stallid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"ID_io_csrread_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+30,"IF_ID_io_next_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+31,"IF_ID_io_next_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+32,"IF_ID_io_next_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+33,"IF_ID_io_next_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+34,"IF_ID_io_next_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+35,"IF_ID_io_next_misaligned",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"ID_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+30,"ID_io_if_i_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+31,"ID_io_if_i_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+32,"ID_io_if_i_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+33,"ID_io_if_i_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+34,"ID_io_if_i_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+35,"ID_io_if_i_misaligned",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+36,"ID_io_read1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"ID_io_read1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+38,"ID_io_read1_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+39,"ID_io_read2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"ID_io_read2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+41,"ID_io_read2_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+29,"ID_io_stallid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+4,"ID_io_csrread_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"ID_io_csrread_csr_raddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"ID_io_csrread_csr_op",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"ID_io_csrread_csr_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
@@ -97,38 +77,38 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+48,"ID_io_id_o_opr1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+49,"ID_io_id_o_opr2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+50,"ID_io_id_o_lsuOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
-    tracep->declBus(c+40,"ID_io_id_o_lsuData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+41,"ID_io_id_o_lsuData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+51,"ID_io_id_o_regWen",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+52,"ID_io_id_o_regWaddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+43,"ID_io_id_o_csrOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBus(c+53,"ID_io_id_o_csrAddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBit(c+54,"ID_io_id_o_csren",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"ID_io_id_o_csrrData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"ID_io_id_o_csrrData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+55,"ID_io_id_o_csrwData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+56,"ID_io_id_o_excType",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+57,"ID_io_id_o_excValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+31,"ID_io_id_o_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+29,"ID_io_id_o_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"ID_EX_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"ID_EX_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"ID_EX_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+41,"ID_EX_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+32,"ID_io_id_o_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+30,"ID_io_id_o_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"ID_EX_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"ID_EX_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"ID_EX_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+29,"ID_EX_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+47,"ID_EX_io_prev_aluOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+48,"ID_EX_io_prev_opr1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+49,"ID_EX_io_prev_opr2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+50,"ID_EX_io_prev_lsuOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
-    tracep->declBus(c+40,"ID_EX_io_prev_lsuData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+41,"ID_EX_io_prev_lsuData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+51,"ID_EX_io_prev_regWen",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+52,"ID_EX_io_prev_regWaddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+43,"ID_EX_io_prev_csrOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBus(c+53,"ID_EX_io_prev_csrAddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBit(c+54,"ID_EX_io_prev_csren",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"ID_EX_io_prev_csrrData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"ID_EX_io_prev_csrrData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+55,"ID_EX_io_prev_csrwData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+56,"ID_EX_io_prev_excType",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+57,"ID_EX_io_prev_excValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+31,"ID_EX_io_prev_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+29,"ID_EX_io_prev_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+32,"ID_EX_io_prev_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+30,"ID_EX_io_prev_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+58,"ID_EX_io_next_aluOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+59,"ID_EX_io_next_opr1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+60,"ID_EX_io_next_opr2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -175,9 +155,9 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+71,"EX_io_ex_o_excValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+72,"EX_io_ex_o_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+73,"EX_io_ex_o_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"EX_MEM_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"EX_MEM_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"EX_MEM_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"EX_MEM_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"EX_MEM_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"EX_MEM_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+77,"EX_MEM_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+61,"EX_MEM_io_prev_lsuOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+62,"EX_MEM_io_prev_lsuData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -207,7 +187,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+89,"EX_MEM_io_next_excValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+90,"EX_MEM_io_next_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+91,"EX_MEM_io_next_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"MEM_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"MEM_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+78,"MEM_io_ex_i_lsuOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+79,"MEM_io_ex_i_lsuData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+80,"MEM_io_ex_i_reg_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
@@ -223,11 +203,11 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+90,"MEM_io_ex_i_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+91,"MEM_io_ex_i_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+92,"MEM_io_stallReq",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"MEM_io_except_hasTrap",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"MEM_io_except_hasTrap",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+93,"MEM_io_except_excCause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
     tracep->declBus(c+91,"MEM_io_except_excPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+94,"MEM_io_except_excValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+7,"MEM_io_csrHasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+5,"MEM_io_csrHasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+95,"MEM_io_csrBusy",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+80,"MEM_io_mem_o_reg_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+81,"MEM_io_mem_o_reg_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
@@ -237,9 +217,9 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+86,"MEM_io_mem_o_csr_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+87,"MEM_io_mem_o_csr_retired",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+91,"MEM_io_mem_o_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"MEM_WB_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"MEM_WB_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"MEM_WB_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"MEM_WB_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"MEM_WB_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"MEM_WB_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+92,"MEM_WB_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+80,"MEM_WB_io_prev_reg_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+81,"MEM_WB_io_prev_reg_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
@@ -256,7 +236,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"MEM_WB_io_next_csr_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"MEM_WB_io_next_csr_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"MEM_WB_io_next_csr_retired",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+249,"MEM_WB_io_next_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"MEM_WB_io_next_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+97,"WB_io_mem_i_reg_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+98,"WB_io_mem_i_reg_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+99,"WB_io_mem_i_reg_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -264,7 +244,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"WB_io_mem_i_csr_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"WB_io_mem_i_csr_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"WB_io_mem_i_csr_retired",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+249,"WB_io_mem_i_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"WB_io_mem_i_currentPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+97,"WB_io_regen",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+98,"WB_io_regaddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+99,"WB_io_regdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -272,7 +252,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"WB_io_csr_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"WB_io_csr_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"WB_io_csr_retired",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+249,"WB_io_wb_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"WB_io_wb_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+104,"dpic_s_regs_0",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+105,"dpic_s_regs_1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+106,"dpic_s_regs_2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -305,13 +285,13 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+133,"dpic_s_regs_29",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+134,"dpic_s_regs_30",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+135,"dpic_s_regs_31",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"regfile_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"regfile_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+35,"regfile_io_read1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"regfile_io_read1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+243,"regfile_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"regfile_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+36,"regfile_io_read1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"regfile_io_read1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+136,"regfile_io_read1_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"regfile_io_read2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"regfile_io_read2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+39,"regfile_io_read2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"regfile_io_read2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+137,"regfile_io_read2_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+97,"regfile_io_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+98,"regfile_io_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
@@ -348,23 +328,23 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+133,"regfile_io_s_regs_29",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+134,"regfile_io_s_regs_30",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+135,"regfile_io_s_regs_31",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+35,"resoler_io_id_read1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"resoler_io_id_read1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+37,"resoler_io_id_read1_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"resoler_io_id_read2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"resoler_io_id_read2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+40,"resoler_io_id_read2_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+6,"resoler_io_csrRead_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+36,"resoler_io_id_read1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"resoler_io_id_read1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+38,"resoler_io_id_read1_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+39,"resoler_io_id_read2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"resoler_io_id_read2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+41,"resoler_io_id_read2_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"resoler_io_csrRead_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"resoler_io_csrRead_csr_raddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"resoler_io_csrRead_csr_op",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"resoler_io_csrRead_csr_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+35,"resoler_io_rs1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"resoler_io_rs1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+36,"resoler_io_rs1_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"resoler_io_rs1_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+136,"resoler_io_rs1_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"resoler_io_rs2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"resoler_io_rs2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+39,"resoler_io_rs2_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"resoler_io_rs2_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+137,"resoler_io_rs2_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+6,"resoler_io_csr_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"resoler_io_csr_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"resoler_io_csr_csr_raddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"resoler_io_csr_csr_op",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"resoler_io_csr_csr_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
@@ -392,18 +372,18 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+92,"ctrl_io_mem_stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+138,"ctrl_io_loadflag",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+139,"ctrl_io_csrflag",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"ctrl_io_except_hasTrap",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+8,"ctrl_io_csrTvec",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+5,"ctrl_io_stallIf",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+41,"ctrl_io_stallId",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"ctrl_io_except_hasTrap",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+6,"ctrl_io_csrTvec",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+29,"ctrl_io_stallIf",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+29,"ctrl_io_stallId",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+77,"ctrl_io_stallEx",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+92,"ctrl_io_stallMm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"ctrl_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"ctrl_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"ctrl_io_flushIf",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+2,"ctrl_io_flushPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"csr_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"csr_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"csr_io_read_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"csr_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"csr_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+4,"csr_io_read_csr_rdata",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"csr_io_read_csr_raddr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"csr_io_read_csr_op",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"csr_io_read_csr_valid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
@@ -411,16 +391,16 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"csr_io_write_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"csr_io_write_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"csr_io_write_retired",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"csr_io_except_hasTrap",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"csr_io_except_hasTrap",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+93,"csr_io_except_excCause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
     tracep->declBus(c+91,"csr_io_except_excPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+94,"csr_io_except_excValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+245,"csr_io_timer",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+246,"csr_io_soft",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+247,"csr_io_extern",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+7,"csr_io_hasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+5,"csr_io_hasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+95,"csr_io_busy",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+8,"csr_io_trapVec",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+6,"csr_io_trapVec",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->pushNamePrefix("EX ");
     tracep->declBus(c+58,"io_id_i_aluOp",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+59,"io_id_i_opr1",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -456,9 +436,9 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declQuad(c+142,"result",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 62,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("EX_MEM ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+77,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+61,"io_prev_lsuOp",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+62,"io_prev_lsuData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -504,21 +484,21 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+91,"ff_currentPc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("ID ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+29,"io_if_i_pc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+30,"io_if_i_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+31,"io_if_i_inst",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+32,"io_if_i_bpu_take",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+33,"io_if_i_bpu_takepc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+34,"io_if_i_misaligned",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+35,"io_read1_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"io_read1_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+37,"io_read1_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"io_read2_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"io_read2_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+40,"io_read2_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+41,"io_stallid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"io_csrread_csr_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+30,"io_if_i_pc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+31,"io_if_i_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+32,"io_if_i_inst",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+33,"io_if_i_bpu_take",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+34,"io_if_i_bpu_takepc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+35,"io_if_i_misaligned",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+36,"io_read1_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"io_read1_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+38,"io_read1_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+39,"io_read2_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"io_read2_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+41,"io_read2_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+29,"io_stallid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+4,"io_csrread_csr_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"io_csrread_csr_raddr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"io_csrread_csr_op",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"io_csrread_csr_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -528,26 +508,26 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+48,"io_id_o_opr1",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+49,"io_id_o_opr2",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+50,"io_id_o_lsuOp",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-    tracep->declBus(c+40,"io_id_o_lsuData",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+41,"io_id_o_lsuData",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+51,"io_id_o_regWen",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+52,"io_id_o_regWaddr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+43,"io_id_o_csrOp",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBus(c+53,"io_id_o_csrAddr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBit(c+54,"io_id_o_csren",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"io_id_o_csrrData",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"io_id_o_csrrData",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+55,"io_id_o_csrwData",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+56,"io_id_o_excType",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+57,"io_id_o_excValue",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+31,"io_id_o_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+29,"io_id_o_currentPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+32,"io_id_o_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+30,"io_id_o_currentPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+144,"stall",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBus(c+145,"lastinst",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->declBus(c+146,"inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+52,"rd",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+36,"rs1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+39,"rs2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+37,"rs1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+40,"rs2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+53,"immI",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 11,0);
-    tracep->declBit(c+35,"regEn1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+36,"regEn1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+147,"aluSrc1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+148,"aluSrc2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+149,"branchOp",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 2,0);
@@ -569,26 +549,26 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declQuad(c+166,"exceptValue",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 32,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("ID_EX ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+41,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+29,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+47,"io_prev_aluOp",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+48,"io_prev_opr1",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+49,"io_prev_opr2",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+50,"io_prev_lsuOp",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
-    tracep->declBus(c+40,"io_prev_lsuData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+41,"io_prev_lsuData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+51,"io_prev_regWen",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+52,"io_prev_regWaddr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+43,"io_prev_csrOp",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBus(c+53,"io_prev_csrAddr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBit(c+54,"io_prev_csren",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"io_prev_csrrData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"io_prev_csrrData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+55,"io_prev_csrwData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+56,"io_prev_excType",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+57,"io_prev_excValue",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+31,"io_prev_inst",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+29,"io_prev_currentPc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+32,"io_prev_inst",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+30,"io_prev_currentPc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+58,"io_next_aluOp",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+59,"io_next_opr1",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+60,"io_next_opr2",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -623,31 +603,30 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+73,"ff_currentPc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("IF_ID ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+5,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"io_prev_pc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+239,"io_prev_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+29,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+249,"io_prev_pc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+248,"io_prev_inst",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+252,"io_prev_bpu_take",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+3,"io_prev_bpu_takepc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+26,"io_prev_bpu_take",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+27,"io_prev_bpu_takepc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+28,"io_prev_misaligned",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+29,"io_next_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+30,"io_next_valid",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+31,"io_next_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+32,"io_next_bpu_take",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+33,"io_next_bpu_takepc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+34,"io_next_misaligned",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+29,"ff_pc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
-    tracep->declBit(c+30,"ff_valid",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
-    tracep->declBus(c+31,"ff_inst",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
-    tracep->declBit(c+32,"ff_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
-    tracep->declBus(c+33,"ff_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
-    tracep->declBit(c+34,"ff_misaligned",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
+    tracep->declBus(c+30,"io_next_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+31,"io_next_valid",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+32,"io_next_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+33,"io_next_bpu_take",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+34,"io_next_bpu_takepc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+35,"io_next_misaligned",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+30,"ff_pc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
+    tracep->declBit(c+31,"ff_valid",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
+    tracep->declBus(c+32,"ff_inst",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
+    tracep->declBit(c+33,"ff_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
+    tracep->declBus(c+34,"ff_bpu_takepc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
+    tracep->declBit(c+35,"ff_misaligned",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("MEM ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+78,"io_ex_i_lsuOp",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 3,0);
     tracep->declBus(c+79,"io_ex_i_lsuData",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+80,"io_ex_i_reg_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -663,11 +642,11 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+90,"io_ex_i_inst",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+91,"io_ex_i_currentPc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+92,"io_stallReq",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_except_hasTrap",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_except_hasTrap",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+93,"io_except_excCause",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 30,0);
     tracep->declBus(c+91,"io_except_excPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+94,"io_except_excValue",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+7,"io_csrHasInt",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+5,"io_csrHasInt",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+95,"io_csrBusy",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+80,"io_mem_o_reg_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+81,"io_mem_o_reg_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
@@ -677,7 +656,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+86,"io_mem_o_csr_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+87,"io_mem_o_csr_retired",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+91,"io_mem_o_currentPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"mem_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"mem_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+168,"mem_wen",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+169,"mem_ren",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+170,"mem_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -699,7 +678,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+186,"excOther",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+187,"cause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
     tracep->pushNamePrefix("mem ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+168,"wen",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+169,"ren",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+170,"addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -709,9 +688,9 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+174,"rdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->popNamePrefix(2);
     tracep->pushNamePrefix("MEM_WB ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+92,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+80,"io_prev_reg_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+81,"io_prev_reg_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
@@ -728,7 +707,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"io_next_csr_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"io_next_csr_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"io_next_csr_retired",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+249,"io_next_currentPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"io_next_currentPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+97,"ff_reg_en",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBus(c+98,"ff_reg_addr",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 4,0);
     tracep->declBus(c+99,"ff_reg_data",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
@@ -746,7 +725,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"io_mem_i_csr_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"io_mem_i_csr_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"io_mem_i_csr_retired",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+249,"io_mem_i_currentPc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"io_mem_i_currentPc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+97,"io_regen",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+98,"io_regaddr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+99,"io_regdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -754,12 +733,12 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"io_csr_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"io_csr_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"io_csr_retired",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+249,"io_wb_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+250,"io_wb_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("csr ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+6,"io_read_csr_rdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+4,"io_read_csr_rdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"io_read_csr_raddr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"io_read_csr_op",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"io_read_csr_valid",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
@@ -767,16 +746,16 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"io_write_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBus(c+102,"io_write_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+103,"io_write_retired",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_except_hasTrap",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_except_hasTrap",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+93,"io_except_excCause",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 30,0);
     tracep->declBus(c+91,"io_except_excPc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+94,"io_except_excValue",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+245,"io_timer",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+246,"io_soft",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+247,"io_extern",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+7,"io_hasInt",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+5,"io_hasInt",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+95,"io_busy",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+8,"io_trapVec",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+6,"io_trapVec",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+189,"mode",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 1,0);
     tracep->declBit(c+190,"mstatus_sum",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBus(c+191,"mstatus_mpp",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 1,0);
@@ -821,31 +800,31 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+225,"stval_data",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->declBit(c+226,"satp_mode",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1);
     tracep->declBus(c+227,"satp_ppn",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 21,0);
-    tracep->declBit(c+9,"mip_ssip",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+10,"mip_stip",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+11,"mip_seip",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+7,"mip_ssip",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+8,"mip_stip",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+9,"mip_seip",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+228,"readable",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+229,"writable",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+230,"readValid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+231,"modeValid",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+12,"csrData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+10,"csrData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+95,"writeEn",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+13,"writeData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+14,"flagIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+15,"flagIntM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+16,"hasIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+17,"hasIntM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+7,"hasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+18,"handIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+19,"hasExc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+20,"hasExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+21,"handExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+22,"intCauseS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
-    tracep->declBus(c+23,"intCauseM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
-    tracep->declBus(c+24,"intCause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
-    tracep->declBus(c+25,"cause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+26,"trapVecS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+27,"trapVecM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+11,"writeData",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+12,"flagIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+13,"flagIntM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+14,"hasIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+15,"hasIntM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+5,"hasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+16,"handIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+17,"hasExc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+18,"hasExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+19,"handExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+20,"intCauseS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
+    tracep->declBus(c+21,"intCauseM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
+    tracep->declBus(c+22,"intCause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
+    tracep->declBus(c+23,"cause",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+24,"trapVecS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+25,"trapVecM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("ctrl ");
     tracep->declBit(c+251,"io_if_stall",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -854,16 +833,16 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+92,"io_mem_stall",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+138,"io_loadflag",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+139,"io_csrflag",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_except_hasTrap",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+8,"io_csrTvec",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+5,"io_stallIf",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+41,"io_stallId",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_except_hasTrap",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+6,"io_csrTvec",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+29,"io_stallIf",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+29,"io_stallId",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+77,"io_stallEx",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+92,"io_stallMm",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+4,"io_flush",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+3,"io_flush",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"io_flushIf",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+2,"io_flushPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+253,"stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+232,"stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("dpic ");
     tracep->declBus(c+104,"s_regs_0",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -900,60 +879,52 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+135,"s_regs_31",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("fetch ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+239,"io_rom_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"io_rom_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+243,"io_rom_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+2,"io_flush_pc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+251,"io_stall",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+251,"io_stallreq",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"io_IF_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+239,"io_IF_valid",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+249,"io_IF_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+248,"io_IF_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+252,"io_IF_bpu_take",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+3,"io_IF_bpu_takepc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+26,"io_IF_bpu_take",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+27,"io_IF_bpu_takepc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+28,"io_IF_misaligned",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+243,"bpu_io_inst_i",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+239,"bpu_io_inst_valid_i",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"bpu_io_pc_i",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+252,"bpu_io_prdt_taken_o",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+3,"bpu_io_prdt_addr_o",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+242,"read_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+249,"read_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+248,"read_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"read_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"read_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+232,"pc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
+    tracep->declBit(c+243,"read_clock",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"read_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+248,"bpu_io_inst_i",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+249,"bpu_io_pc_i",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+26,"bpu_io_prdt_taken_o",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+27,"bpu_io_prdt_addr_o",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+233,"pc",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->pushNamePrefix("bpu ");
-    tracep->declBus(c+243,"io_inst_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+239,"io_inst_valid_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+242,"io_pc_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+252,"io_prdt_taken_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+3,"io_prdt_addr_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+254,"opcode",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 6,0);
-    tracep->declBit(c+255,"inst_type_branch",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+256,"inst_jal",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+257,"inst_b_type_imm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+258,"inst_j_type_imm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+259,"prdt_taken",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+260,"prdt_imm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+248,"io_inst_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+249,"io_pc_i",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+26,"io_prdt_taken_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+27,"io_prdt_addr_o",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+234,"opcode",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 6,0);
+    tracep->declBit(c+235,"inst_type_branch",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+236,"inst_jal",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+237,"inst_b_type_imm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+238,"inst_j_type_imm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+239,"prdt_imm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("read ");
-    tracep->declBus(c+242,"addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+249,"addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+248,"data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+233,"fetched_data",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
+    tracep->declBus(c+240,"fetched_data",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->popNamePrefix(2);
     tracep->pushNamePrefix("regfile ");
-    tracep->declBit(c+236,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+237,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+35,"io_read1_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"io_read1_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+243,"clock",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+244,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+36,"io_read1_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"io_read1_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+136,"io_read1_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"io_read2_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"io_read2_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+39,"io_read2_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"io_read2_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+137,"io_read2_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+97,"io_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+98,"io_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
@@ -1024,23 +995,23 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+135,"regfile_31",-1, FST_VD_IMPLICIT,FST_VT_SV_LOGIC, false,-1, 31,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("resoler ");
-    tracep->declBit(c+35,"io_id_read1_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"io_id_read1_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+37,"io_id_read1_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"io_id_read2_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"io_id_read2_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
-    tracep->declBus(c+40,"io_id_read2_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+6,"io_csrRead_csr_rdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+36,"io_id_read1_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"io_id_read1_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+38,"io_id_read1_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBit(c+39,"io_id_read2_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"io_id_read2_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBus(c+41,"io_id_read2_data",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"io_csrRead_csr_rdata",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"io_csrRead_csr_raddr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"io_csrRead_csr_op",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"io_csrRead_csr_valid",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+35,"io_rs1_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+36,"io_rs1_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+36,"io_rs1_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+37,"io_rs1_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+136,"io_rs1_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+38,"io_rs2_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBus(c+39,"io_rs2_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
+    tracep->declBit(c+39,"io_rs2_en",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBus(c+40,"io_rs2_addr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+137,"io_rs2_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBus(c+6,"io_csr_csr_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
+    tracep->declBus(c+4,"io_csr_csr_rdata",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+42,"io_csr_csr_raddr",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+43,"io_csr_csr_op",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 2,0);
     tracep->declBit(c+44,"io_csr_csr_valid",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
@@ -1062,8 +1033,8 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+101,"io_wb_csr_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 11,0);
     tracep->declBit(c+138,"io_loadflag",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+139,"io_csrflag",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+234,"load1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+235,"load2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+241,"load1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+242,"load2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->popNamePrefix(2);
 }
 
@@ -1126,10 +1097,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                           : (QData)((IData)(
                                                             ((IData)(4U) 
                                                              + vlSelf->Core__DOT__IF_ID__DOT__ff_pc))))))),32);
-    bufp->fullIData(oldp+3,(vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o),32);
-    bufp->fullBit(oldp+4,(vlSelf->Core__DOT__IF_ID_io_flush));
-    bufp->fullBit(oldp+5,(vlSelf->Core__DOT__IF_ID_io_stallPrev));
-    bufp->fullIData(oldp+6,(((0xc00U == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
+    bufp->fullBit(oldp+3,(vlSelf->Core__DOT__IF_ID_io_flush));
+    bufp->fullIData(oldp+4,(((0xc00U == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                               ? (IData)(vlSelf->Core__DOT__csr__DOT__mcycle_data)
                               : ((0xc02U == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                   ? (IData)(vlSelf->Core__DOT__csr__DOT__minstret_data)
@@ -1187,8 +1156,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                             ? 0U
                                                             : vlSelf->Core__DOT__csr__DOT___T_235))))))))))))))))),32);
-    bufp->fullBit(oldp+7,(vlSelf->Core__DOT__csr__DOT__hasInt));
-    bufp->fullIData(oldp+8,(((IData)(vlSelf->Core__DOT__csr__DOT___T_605)
+    bufp->fullBit(oldp+5,(vlSelf->Core__DOT__csr__DOT__hasInt));
+    bufp->fullIData(oldp+6,(((IData)(vlSelf->Core__DOT__csr__DOT___T_605)
                               ? ((vlSelf->Core__DOT__csr__DOT__stvec_base 
                                   + (((IData)(vlSelf->Core__DOT__csr__DOT__stvec_mode) 
                                       & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
@@ -1199,23 +1168,23 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                       & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
                                       ? vlSelf->Core__DOT__csr__DOT__cause
                                       : 0U)) << 2U))),32);
-    bufp->fullBit(oldp+9,(vlSelf->Core__DOT__csr__DOT__mip_ssip));
-    bufp->fullBit(oldp+10,(vlSelf->Core__DOT__csr__DOT__mip_stip));
-    bufp->fullBit(oldp+11,(vlSelf->Core__DOT__csr__DOT__mip_seip));
-    bufp->fullIData(oldp+12,(vlSelf->Core__DOT__csr__DOT__csrData),32);
-    bufp->fullIData(oldp+13,(vlSelf->Core__DOT__csr__DOT__writeData),32);
-    bufp->fullIData(oldp+14,(vlSelf->Core__DOT__csr__DOT__flagIntS),32);
-    bufp->fullIData(oldp+15,(vlSelf->Core__DOT__csr__DOT__flagIntM),32);
-    bufp->fullBit(oldp+16,((((1U > (IData)(vlSelf->Core__DOT__csr__DOT__mode)) 
+    bufp->fullBit(oldp+7,(vlSelf->Core__DOT__csr__DOT__mip_ssip));
+    bufp->fullBit(oldp+8,(vlSelf->Core__DOT__csr__DOT__mip_stip));
+    bufp->fullBit(oldp+9,(vlSelf->Core__DOT__csr__DOT__mip_seip));
+    bufp->fullIData(oldp+10,(vlSelf->Core__DOT__csr__DOT__csrData),32);
+    bufp->fullIData(oldp+11,(vlSelf->Core__DOT__csr__DOT__writeData),32);
+    bufp->fullIData(oldp+12,(vlSelf->Core__DOT__csr__DOT__flagIntS),32);
+    bufp->fullIData(oldp+13,(vlSelf->Core__DOT__csr__DOT__flagIntM),32);
+    bufp->fullBit(oldp+14,((((1U > (IData)(vlSelf->Core__DOT__csr__DOT__mode)) 
                              | ((1U == (IData)(vlSelf->Core__DOT__csr__DOT__mode)) 
                                 & (IData)(vlSelf->Core__DOT__csr__DOT__mstatus_sie))) 
                             & (0U != (vlSelf->Core__DOT__csr__DOT__flagIntS 
                                       & vlSelf->Core__DOT__csr__DOT__mideleg_data)))));
-    bufp->fullBit(oldp+17,(vlSelf->Core__DOT__csr__DOT__hasIntM));
-    bufp->fullBit(oldp+18,(vlSelf->Core__DOT__csr__DOT__handIntS));
-    bufp->fullBit(oldp+19,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->fullBit(oldp+15,(vlSelf->Core__DOT__csr__DOT__hasIntM));
+    bufp->fullBit(oldp+16,(vlSelf->Core__DOT__csr__DOT__handIntS));
+    bufp->fullBit(oldp+17,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                             & (IData)(vlSelf->Core__DOT__IF_ID_io_flush))));
-    bufp->fullBit(oldp+20,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->fullBit(oldp+18,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                              & (IData)(vlSelf->Core__DOT__IF_ID_io_flush)) 
                             & (vlSelf->Core__DOT__csr__DOT__medeleg_data 
                                >> ((5U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
@@ -1234,15 +1203,15 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                                     ? 4U
                                                     : 0xdU)
                                                    : 0U)))))))));
-    bufp->fullBit(oldp+21,(vlSelf->Core__DOT__csr__DOT__handExcS));
-    bufp->fullIData(oldp+22,(vlSelf->Core__DOT__csr__DOT__intCauseS),31);
-    bufp->fullIData(oldp+23,(((0x800U & vlSelf->Core__DOT__csr__DOT__flagIntM)
+    bufp->fullBit(oldp+19,(vlSelf->Core__DOT__csr__DOT__handExcS));
+    bufp->fullIData(oldp+20,(vlSelf->Core__DOT__csr__DOT__intCauseS),31);
+    bufp->fullIData(oldp+21,(((0x800U & vlSelf->Core__DOT__csr__DOT__flagIntM)
                                ? 0xbU : ((8U & vlSelf->Core__DOT__csr__DOT__flagIntM)
                                           ? 3U : ((0x80U 
                                                    & vlSelf->Core__DOT__csr__DOT__flagIntM)
                                                    ? 7U
                                                    : vlSelf->Core__DOT__csr__DOT__intCauseS)))),31);
-    bufp->fullIData(oldp+24,(((IData)(vlSelf->Core__DOT__csr__DOT__handIntS)
+    bufp->fullIData(oldp+22,(((IData)(vlSelf->Core__DOT__csr__DOT__handIntS)
                                ? vlSelf->Core__DOT__csr__DOT__intCauseS
                                : ((0x800U & vlSelf->Core__DOT__csr__DOT__flagIntM)
                                    ? 0xbU : ((8U & vlSelf->Core__DOT__csr__DOT__flagIntM)
@@ -1251,31 +1220,33 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                                & vlSelf->Core__DOT__csr__DOT__flagIntM)
                                                ? 7U
                                                : vlSelf->Core__DOT__csr__DOT__intCauseS))))),31);
-    bufp->fullIData(oldp+25,(vlSelf->Core__DOT__csr__DOT__cause),32);
-    bufp->fullIData(oldp+26,(((vlSelf->Core__DOT__csr__DOT__stvec_base 
+    bufp->fullIData(oldp+23,(vlSelf->Core__DOT__csr__DOT__cause),32);
+    bufp->fullIData(oldp+24,(((vlSelf->Core__DOT__csr__DOT__stvec_base 
                                + (((IData)(vlSelf->Core__DOT__csr__DOT__stvec_mode) 
                                    & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
                                    ? vlSelf->Core__DOT__csr__DOT__cause
                                    : 0U)) << 2U)),32);
-    bufp->fullIData(oldp+27,(((vlSelf->Core__DOT__csr__DOT__mtvec_base 
+    bufp->fullIData(oldp+25,(((vlSelf->Core__DOT__csr__DOT__mtvec_base 
                                + (((IData)(vlSelf->Core__DOT__csr__DOT__mtvec_mode) 
                                    & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
                                    ? vlSelf->Core__DOT__csr__DOT__cause
                                    : 0U)) << 2U)),32);
+    bufp->fullBit(oldp+26,(vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_taken_o));
+    bufp->fullIData(oldp+27,(vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o),32);
     bufp->fullBit(oldp+28,((0U != (3U & vlSelf->Core__DOT__fetch__DOT__pc))));
-    bufp->fullIData(oldp+29,(vlSelf->Core__DOT__IF_ID__DOT__ff_pc),32);
-    bufp->fullBit(oldp+30,(vlSelf->Core__DOT__IF_ID__DOT__ff_valid));
-    bufp->fullIData(oldp+31,(vlSelf->Core__DOT__IF_ID__DOT__ff_inst),32);
-    bufp->fullBit(oldp+32,(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take));
-    bufp->fullIData(oldp+33,(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc),32);
-    bufp->fullBit(oldp+34,(vlSelf->Core__DOT__IF_ID__DOT__ff_misaligned));
-    bufp->fullBit(oldp+35,(vlSelf->Core__DOT__ID__DOT__regEn1));
-    bufp->fullCData(oldp+36,(vlSelf->Core__DOT__ID__DOT__rs1),5);
-    bufp->fullIData(oldp+37,(vlSelf->Core__DOT__ID_io_read1_data),32);
-    bufp->fullBit(oldp+38,(vlSelf->Core__DOT__ID_io_read2_en));
-    bufp->fullCData(oldp+39,(vlSelf->Core__DOT__ID__DOT__rs2),5);
-    bufp->fullIData(oldp+40,(vlSelf->Core__DOT__ID_io_read2_data),32);
-    bufp->fullBit(oldp+41,(vlSelf->Core__DOT__ID_io_stallid));
+    bufp->fullBit(oldp+29,(vlSelf->Core__DOT__IF_ID_io_stallPrev));
+    bufp->fullIData(oldp+30,(vlSelf->Core__DOT__IF_ID__DOT__ff_pc),32);
+    bufp->fullBit(oldp+31,(vlSelf->Core__DOT__IF_ID__DOT__ff_valid));
+    bufp->fullIData(oldp+32,(vlSelf->Core__DOT__IF_ID__DOT__ff_inst),32);
+    bufp->fullBit(oldp+33,(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take));
+    bufp->fullIData(oldp+34,(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc),32);
+    bufp->fullBit(oldp+35,(vlSelf->Core__DOT__IF_ID__DOT__ff_misaligned));
+    bufp->fullBit(oldp+36,(vlSelf->Core__DOT__ID__DOT__regEn1));
+    bufp->fullCData(oldp+37,(vlSelf->Core__DOT__ID__DOT__rs1),5);
+    bufp->fullIData(oldp+38,(vlSelf->Core__DOT__ID_io_read1_data),32);
+    bufp->fullBit(oldp+39,(vlSelf->Core__DOT__ID_io_read2_en));
+    bufp->fullCData(oldp+40,(vlSelf->Core__DOT__ID__DOT__rs2),5);
+    bufp->fullIData(oldp+41,(vlSelf->Core__DOT__ID_io_read2_data),32);
     bufp->fullIData(oldp+42,(vlSelf->Core__DOT__ID__DOT___T_839),32);
     bufp->fullCData(oldp+43,(vlSelf->Core__DOT__ID__DOT__csrActOp),3);
     bufp->fullBit(oldp+44,((((1U == (IData)(vlSelf->Core__DOT__ID__DOT__csrActOp))
@@ -2226,69 +2197,55 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                    ? (3U & (vlSelf->Core__DOT__ID__DOT___T_1 
                                             >> 0x1cU))
                                    : 0U) : 0U) <= (IData)(vlSelf->Core__DOT__csr__DOT__mode))));
-    bufp->fullIData(oldp+232,(vlSelf->Core__DOT__fetch__DOT__pc),32);
-    bufp->fullIData(oldp+233,(vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data),32);
-    bufp->fullBit(oldp+234,(((IData)(vlSelf->Core__DOT__ID__DOT__regEn1) 
+    bufp->fullCData(oldp+232,(((IData)(vlSelf->Core__DOT__MEM_io_stallReq)
+                                ? 0x1eU : ((IData)(vlSelf->Core__DOT__resoler_io_csrflag)
+                                            ? 0x1cU
+                                            : ((IData)(vlSelf->Core__DOT__resoler_io_loadflag)
+                                                ? 0x18U
+                                                : 0U)))),5);
+    bufp->fullIData(oldp+233,(vlSelf->Core__DOT__fetch__DOT__pc),32);
+    bufp->fullCData(oldp+234,((0x7fU & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data)),7);
+    bufp->fullBit(oldp+235,((0x63U == (0x7fU & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))));
+    bufp->fullBit(oldp+236,((0x6fU == (0x7fU & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))));
+    bufp->fullIData(oldp+237,(vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm),32);
+    bufp->fullIData(oldp+238,(((((vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                  >> 0x1fU) ? 0xfffU
+                                  : 0U) << 0x14U) | 
+                               ((0xff000U & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data) 
+                                | ((0x800U & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                              >> 9U)) 
+                                   | (0x7feU & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                                >> 0x14U)))))),32);
+    bufp->fullIData(oldp+239,(((0x63U == (0x7fU & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))
+                                ? vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm
+                                : ((0x6fU == (0x7fU 
+                                              & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data))
+                                    ? ((((vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                          >> 0x1fU)
+                                          ? 0xfffU : 0U) 
+                                        << 0x14U) | 
+                                       ((0xff000U & vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data) 
+                                        | ((0x800U 
+                                            & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                               >> 9U)) 
+                                           | (0x7feU 
+                                              & (vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data 
+                                                 >> 0x14U)))))
+                                    : vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm))),32);
+    bufp->fullIData(oldp+240,(vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data),32);
+    bufp->fullBit(oldp+241,(((IData)(vlSelf->Core__DOT__ID__DOT__regEn1) 
                              & ((IData)(vlSelf->Core__DOT__EX_io_ex_o_load) 
                                 & (IData)(vlSelf->Core__DOT__resoler__DOT___T_2)))));
-    bufp->fullBit(oldp+235,(((IData)(vlSelf->Core__DOT__ID_io_read2_en) 
+    bufp->fullBit(oldp+242,(((IData)(vlSelf->Core__DOT__ID_io_read2_en) 
                              & ((IData)(vlSelf->Core__DOT__EX_io_ex_o_load) 
                                 & (IData)(vlSelf->Core__DOT__resoler__DOT___T_10)))));
-    bufp->fullBit(oldp+236,(vlSelf->clock));
-    bufp->fullBit(oldp+237,(vlSelf->reset));
-    bufp->fullBit(oldp+238,(vlSelf->io_if_axi_en));
-    bufp->fullBit(oldp+239,(vlSelf->io_if_axi_valid));
-    bufp->fullBit(oldp+240,(vlSelf->io_if_axi_fault));
-    bufp->fullCData(oldp+241,(vlSelf->io_if_axi_wen),4);
-    bufp->fullIData(oldp+242,(vlSelf->io_if_axi_addr),32);
-    bufp->fullIData(oldp+243,(vlSelf->io_if_axi_rdata),32);
-    bufp->fullIData(oldp+244,(vlSelf->io_if_axi_wdata),32);
+    bufp->fullBit(oldp+243,(vlSelf->clock));
+    bufp->fullBit(oldp+244,(vlSelf->reset));
     bufp->fullBit(oldp+245,(vlSelf->io_timer));
     bufp->fullBit(oldp+246,(vlSelf->io_soft));
     bufp->fullBit(oldp+247,(vlSelf->io_extern));
     bufp->fullIData(oldp+248,(vlSelf->io_inst),32);
     bufp->fullIData(oldp+249,(vlSelf->io_pc),32);
     bufp->fullIData(oldp+250,(vlSelf->io_npc),32);
-    bufp->fullBit(oldp+251,((1U & (~ (IData)(vlSelf->io_if_axi_valid)))));
-    bufp->fullBit(oldp+252,(vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_taken_o));
-    bufp->fullCData(oldp+253,(((IData)(vlSelf->Core__DOT__MEM_io_stallReq)
-                                ? 0x1eU : ((IData)(vlSelf->Core__DOT__resoler_io_csrflag)
-                                            ? 0x1cU
-                                            : ((IData)(vlSelf->Core__DOT__resoler_io_loadflag)
-                                                ? 0x18U
-                                                : ((IData)(vlSelf->io_if_axi_valid)
-                                                    ? 0U
-                                                    : 0x10U))))),5);
-    bufp->fullCData(oldp+254,((0x7fU & vlSelf->io_if_axi_rdata)),7);
-    bufp->fullBit(oldp+255,((0x63U == (0x7fU & vlSelf->io_if_axi_rdata))));
-    bufp->fullBit(oldp+256,((0x6fU == (0x7fU & vlSelf->io_if_axi_rdata))));
-    bufp->fullIData(oldp+257,(vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm),32);
-    bufp->fullIData(oldp+258,(((((vlSelf->io_if_axi_rdata 
-                                  >> 0x1fU) ? 0xfffU
-                                  : 0U) << 0x14U) | 
-                               ((0xff000U & vlSelf->io_if_axi_rdata) 
-                                | ((0x800U & (vlSelf->io_if_axi_rdata 
-                                              >> 9U)) 
-                                   | (0x7feU & (vlSelf->io_if_axi_rdata 
-                                                >> 0x14U)))))),32);
-    bufp->fullBit(oldp+259,(((IData)((0x80000063U == 
-                                      (0x8000007fU 
-                                       & vlSelf->io_if_axi_rdata))) 
-                             | (0x6fU == (0x7fU & vlSelf->io_if_axi_rdata)))));
-    bufp->fullIData(oldp+260,(((0x63U == (0x7fU & vlSelf->io_if_axi_rdata))
-                                ? vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm
-                                : ((0x6fU == (0x7fU 
-                                              & vlSelf->io_if_axi_rdata))
-                                    ? ((((vlSelf->io_if_axi_rdata 
-                                          >> 0x1fU)
-                                          ? 0xfffU : 0U) 
-                                        << 0x14U) | 
-                                       ((0xff000U & vlSelf->io_if_axi_rdata) 
-                                        | ((0x800U 
-                                            & (vlSelf->io_if_axi_rdata 
-                                               >> 9U)) 
-                                           | (0x7feU 
-                                              & (vlSelf->io_if_axi_rdata 
-                                                 >> 0x14U)))))
-                                    : vlSelf->Core__DOT__fetch__DOT__bpu__DOT__inst_b_type_imm))),32);
+    bufp->fullBit(oldp+251,(0U));
 }

@@ -30,16 +30,9 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clock,0,0);
     VL_IN8(&reset,0,0);
-    VL_OUT8(&io_if_axi_en,0,0);
-    VL_IN8(&io_if_axi_valid,0,0);
-    VL_IN8(&io_if_axi_fault,0,0);
-    VL_OUT8(&io_if_axi_wen,3,0);
     VL_IN8(&io_timer,0,0);
     VL_IN8(&io_soft,0,0);
     VL_IN8(&io_extern,0,0);
-    VL_OUT(&io_if_axi_addr,31,0);
-    VL_IN(&io_if_axi_rdata,31,0);
-    VL_OUT(&io_if_axi_wdata,31,0);
     VL_OUT(&io_inst,31,0);
     VL_OUT(&io_pc,31,0);
     VL_OUT(&io_npc,31,0);

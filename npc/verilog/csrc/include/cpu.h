@@ -9,6 +9,7 @@ typedef struct {
     paddr_t pc;
 } CPU_state;
 extern word_t* gprs;
+
 extern CPU_state npc_cpu;
 
 extern Vtop* dut;
