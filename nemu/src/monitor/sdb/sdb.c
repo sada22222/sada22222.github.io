@@ -18,27 +18,13 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
+#include "memory/vaddr.h"
+#include "memory/paddr.h"
 
 static int is_batch_mode = false;
 
 void init_regex();
 void init_wp_pool();
-bool new_wp(char *args);
-bool free_wp(int delNO);
-
-void wp_display();
-uint32_t paddr_read(paddr_t addr, int len);
-
-static int cmd_help(char *args);
-static int cmd_c(char *args);
-static int cmd_q(char *args);
-static int cmd_si(char *args);
-static int cmd_info(char *args);
-static int cmd_x(char *args);
-static int cmd_p(char *args);
-static int cmd_w(char *args);
-static int cmd_d(char *args);
-static int cmd_dis(char *args);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -58,25 +44,109 @@ static char* rl_gets() {
   return line_read;
 }
 
+static int cmd_c(char *args) {
+  cpu_exec(-1);
+  return 0;
+}
+
+static int cmd_q(char *args) {
+  return -1;
+}
+
+static int cmd_help(char *args);
+
+static int cmd_s(char *args) {
+  int count = 1;
+  if (args != NULL) {
+    count = atoi(args);
+  }
+  cpu_exec(count); 
+  return 0;
+}
+
+static int cmd_info(char *args) {
+  bool info_r = strcmp(args, "r") && strcmp(args, "reg") && strcmp(args, "regs") && 
+                strcmp(args, "register") && strcmp(args, "registers");
+  bool info_w = strcmp(args, "watchpoint") && strcmp(args, "wp") && strcmp(args, "w");
+  if (info_r == 0) {
+    isa_reg_display();
+  }
+  else if (info_w == 0) {
+    wp_display();
+  }
+  return 0;
+}
+
+static int cmd_x(char *args) {
+  const char* delim = " ";
+  char *str = strtok(args, delim);
+  bool *success = &(bool){true};
+  int64_t n = strtol(str, NULL, 10);
+
+  str = strtok(NULL, "");
+  if (str == NULL) {
+    printf("Please input x N expr");
+    return 0;
+  }
+  paddr_t addr = expr(str, success);
+  if (*success == false || !in_pmem(addr)) assert(0);
+  for (int i = 0; i < n; i ++) {
+    #if defined(CONFIG_ISA_riscv32)
+    word_t data = vaddr_read(addr + i * 4, 4); 
+    printf("0x%x:\t0x%x(%d)\n", addr + i * 4, data, data);
+    #elif defined(CONFIG_ISA_riscv64)
+    word_t data = vaddr_read(addr + i * 4, 4); 
+    printf("0x%x:\t0x%lx(%ld)\n", addr + i * 4, data, data);
+    #endif
+  }
+  return 0;
+}
+
+static int cmd_p(char *args) {
+  bool *success = &(bool){true};
+  #if defined(CONFIG_ISA_riscv32)
+  word_t ans = expr(args, success);
+  printf("0x%x(%d)\n", ans, ans);
+  #elif defined(CONFIG_ISA_riscv64)
+  word_t ans = expr(args, success);
+  printf("0x%lx(%ld)\n", ans, ans);
+  #endif
+  if (*success == false) assert(0);
+  return 0;
+}
+
+static int cmd_w(char *args) {
+  bool *success = &(bool){true}; 
+  new_wp(args, success);
+  if (*success == false) assert(0);
+  return 0;
+}
+
+static int cmd_d(char *args) {
+  int no = strtol(args, NULL, 10);
+  free_wp(no);
+  return 0;
+}
 
 static struct {
   const char *name;
   const char *description;
-  int (*handler) (char *);
+  int (*handler) ();
 } cmd_table [] = {
   { "help", "Display information about all supported commands", cmd_help },
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
- 
-  /* TODO: Add more commands */
-  { "si", "Step execute N instructions", cmd_si },  
-  { "info", "Print information", cmd_info }, 
-  { "x", "Examine memory", cmd_x },  
-  { "p", "Calculate the value of a regular expression", cmd_p},
-  { "w", "Create a new watch point with the expression", cmd_w},
-  { "d", "Delete a watch point from link list.", cmd_d},  
-  { "display", "Display all watch point from link list.", cmd_dis}, 
 
+  /* TODO: Add more commands */
+
+  { "s", "Step the instructions one by one", cmd_s },
+  { "si", "Step the instructions one by one", cmd_s },
+  { "info", "Display information about register(r) or break(b)", cmd_info},
+  { "i", "Display information about register(r) or break(b)", cmd_info},
+  { "x", "Output consecutive N 4bytes hex", cmd_x },
+  { "p", "Caculate the regular expression", cmd_p},
+  { "w", "Set a watch point to monitor a variety", cmd_w},
+  { "d", "Delete a watch point from pool", cmd_d},
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -100,113 +170,6 @@ static int cmd_help(char *args) {
       }
     }
     printf("Unknown command '%s'\n", arg);
-  }
-  return 0;
-}
-
-static int cmd_c(char *args) {
-  cpu_exec(-1);
-  return 0;
-}
-
-
-static int cmd_q(char *args) {
-  return -1;
-}
-
-static int cmd_si(char *args) {
-  int N = 1;  
-
-  if (args != NULL) {
-    sscanf(args, "%d", &N);  // 将字符串转换为整数
-  }
-
-  cpu_exec(N);  
-
-  printf("Step executed: N=%d\n", N);  
-  return 0;
-}
-
-static int cmd_info(char *args) {
-  if (args == NULL) {
-    printf("Usage: info r or w\n");
-    return 0;
-  }
-  if (strcmp(args, "r") == 0) {
-    isa_reg_display();
-  }else if(strcmp(args, "w") == 0){
-  if (head == NULL) {
-    printf("There are no watch points.\n");
-  } else {
-    wp_display();  // 显示所有监视点
-  }
- }
-  else {
-    printf("Unknown argument for info: %s\n", args);
-  }
-  return 0;
-}
-
-static int cmd_x(char *args) {
-  char *argN = strtok(args, " ");
-  char *argEXPR = strtok(NULL, " ");
-
-  if (argN == NULL || argEXPR == NULL) {
-    printf("Usage: x <N> <EXPR>\n");
-    return 0;
-  }
-
-  char *ptrN = NULL;
-  char *ptrEXPR = NULL;
-  uint32_t N = strtoul(argN, &ptrN, 10); 
-  uint32_t EXPR = strtoul(argEXPR, &ptrEXPR, 16); 
-
-  if (((argN + strlen(argN)) != ptrN) || ((argEXPR + strlen(argEXPR)) != ptrEXPR)) {
-    printf("Check your input cmd, args can not contain non-numeric letters!\n");
-    return 0;
-  }
-
-  for (int i = 0; i < N; i++) {
-    uint32_t paddr = EXPR + i * 4;  // 这里假设按4字节读取
-    printf("0x%08x:\t0x%08x\n", paddr, paddr_read(paddr, 4));
-  }
-  
-  return 0;
-}
-
-static int cmd_p(char *args) {
-  bool success;
-  uint32_t EXPR;
-  EXPR = expr(args, &success);
-  if(success){
-    printf("input expression == %d\n",EXPR);
-  }
-  else{
-    printf("Error!Check your inpur expression!!\n");
-  }
-  return 0;
-}
-
-static int cmd_w(char *args) {
-  if(!new_wp(args)){
-    printf("fail to add watch point.check your watch point expression.");
-  }
-  return 0;
-}
-
-static int cmd_d(char *args) {
-  if(!free_wp(strtoul(args,NULL,10))){
-    printf("del wp failure\n");
-  }
-  return 0;
-}
-
-static int cmd_dis(char *args) {
-  // 检查是否有任何活动的监视点
-  if (head == NULL) {
-    printf("There are no watch points.\n");
-  } else {
-    wp_display();  // 显示所有监视点
   }
   return 0;
 }
@@ -244,7 +207,10 @@ void sdb_mainloop() {
     int i;
     for (i = 0; i < NR_CMD; i ++) {
       if (strcmp(cmd, cmd_table[i].name) == 0) {
-        if (cmd_table[i].handler(args) < 0) { return; }
+        if (cmd_table[i].handler(args) < 0) {
+            nemu_state.state = NEMU_QUIT;
+            return; 
+        }
         break;
       }
     }

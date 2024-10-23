@@ -17,17 +17,11 @@
 #define __SDB_H__
 
 #include <common.h>
-typedef struct watchpoint {
-  int NO;
-  char expr[128];
-  uint32_t oldval;
-  uint32_t newval;
-  struct watchpoint *next;
-} WP;
 
-// 声明全局变量
-extern WP *head;
-extern WP *free_;
-uint32_t expr(char *e, bool *success);
+word_t expr(char *e, bool *success);
+
+void new_wp(char *args, bool *success);
+void free_wp(int no);
+void wp_display();
 
 #endif

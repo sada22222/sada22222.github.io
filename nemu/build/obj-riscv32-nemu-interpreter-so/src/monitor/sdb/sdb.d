@@ -3,6 +3,8 @@ cmd_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/mo
 source_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/monitor/sdb/sdb.o := src/monitor/sdb/sdb.c
 
 deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/monitor/sdb/sdb.o := \
+    $(wildcard include/config/isa/riscv32.h) \
+    $(wildcard include/config/isa/riscv64.h) \
     $(wildcard include/config/device.h) \
   /home/hujun/ysyx-workbench/nemu/include/isa.h \
   /home/hujun/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h \
@@ -17,6 +19,9 @@ deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/m
     $(wildcard include/config/target/native/elf.h) \
   /home/hujun/ysyx-workbench/nemu/include/cpu/cpu.h \
   src/monitor/sdb/sdb.h \
+  /home/hujun/ysyx-workbench/nemu/include/memory/vaddr.h \
+  /home/hujun/ysyx-workbench/nemu/include/memory/paddr.h \
+    $(wildcard include/config/pc/reset/offset.h) \
 
 /home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/monitor/sdb/sdb.o: $(deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/monitor/sdb/sdb.o)
 

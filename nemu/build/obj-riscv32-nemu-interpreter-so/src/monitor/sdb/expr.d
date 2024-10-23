@@ -14,7 +14,7 @@ deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/m
   /home/hujun/ysyx-workbench/nemu/include/debug.h \
   /home/hujun/ysyx-workbench/nemu/include/utils.h \
     $(wildcard include/config/target/native/elf.h) \
-  src/monitor/sdb/sdb.h \
+  /home/hujun/ysyx-workbench/nemu/include/memory/vaddr.h \
 
 /home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/monitor/sdb/expr.o: $(deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/monitor/sdb/expr.o)
 
