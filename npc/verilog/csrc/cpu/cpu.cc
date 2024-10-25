@@ -53,8 +53,8 @@ void cpu_init() { // exe the first instruction
     npc_eval();
 
     printf("npc_cpu.pc=%x\n",npc_cpu.pc);
-    if (npc_cpu.pc >=0x80000000) {
-    IFDEF(CONFIG_DIFFTEST, difftest_step(npc_cpu.pc, npc_cpu.pc + 4));}
+    
+    IFDEF(CONFIG_DIFFTEST, difftest_step(npc_cpu.pc, npc_cpu.pc + 4));
 }    
 
 
