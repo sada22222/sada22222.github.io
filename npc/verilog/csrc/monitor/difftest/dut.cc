@@ -12,8 +12,19 @@ void (*ref_difftest_regcpy)(void *dut, bool direction) = NULL;
 void (*ref_difftest_exec)(uint64_t n) = NULL;
 CPU_state ref;
 
-void init_difftest(const char *ref_so_file, long img_size, int port) {
+static bool is_skip_ref = false;
 
+void difftest_skip_ref() {
+    is_skip_ref = true;
+}
+
+void syn_difftest() {
+    // Copy the  reg(npc) to  reg(nemu)
+    printf("%x\n", npc_cpu.pc);
+    ref_difftest_regcpy(&npc_cpu, DIFFTEST_TO_REF);
+}
+
+void init_difftest(const char *ref_so_file, long img_size, int port) {
     Assert(ref_so_file != NULL, "Difftest file not found!");
 
     void *handle = dlopen(ref_so_file, RTLD_LAZY);
@@ -31,7 +42,7 @@ void init_difftest(const char *ref_so_file, long img_size, int port) {
     void (*ref_difftest_init)(int) = (void (*)(int))dlsym(handle, "difftest_init");
     assert(ref_difftest_init);
 
-     Log("Differential testing: %s", ANSI_FMT("ON", GREEN_TXT));
+    // Log("Differential testing: %s", ANSI_FMT("ON", GREEN_TXT));
     // Log("The result of every instruction will be compared with %s. "
     //     "This will help you a lot for debugging, but also significantly reduce the performance. "
     //     "If it is not necessary, you can turn it off in autoconfig.", ref_so_file);
@@ -39,44 +50,47 @@ void init_difftest(const char *ref_so_file, long img_size, int port) {
     ref_difftest_init(port);
     // Copy the pmem(npc) to pmem(nemu)
     ref_difftest_memcpy(RESET_VECTOR, guest_to_host(RESET_VECTOR), img_size, DIFFTEST_TO_REF);
-
     // Copy the  reg(npc) to  reg(nemu)
     ref_difftest_regcpy(&npc_cpu, DIFFTEST_TO_REF);
 }
 
 void difftest_step(paddr_t pc, paddr_t npc) {
-        printf(" npc_cpu.pc=0x%x\n", npc_cpu.pc);
-    ref_difftest_exec(1);
+    if (is_skip_ref == 0) {
+        ref_difftest_exec(1);
+    } else {
+        // save regs and stall one cycle for nemu
+        ref_difftest_regcpy(&npc_cpu, DIFFTEST_TO_REF);
+        is_skip_ref = false;
+    }
 
     ref_difftest_regcpy(&ref, DIFFTEST_TO_DUT);
 
     if(checkregs(ref, pc) == 0) {
         npc_state.state = NPC_ABORT;
         npc_state.halt_pc = pc;
-        cmp_reg();
     }
-    
 }
+
+#define dump(s, x, y) printf("%4s -->", s); \
+                      printf(" npc: 0x%08x(%010d) !=", x, x); \
+                      printf(" nemu: 0x%08x(%010d)\n", y, y);
 
 bool checkregs(CPU_state ref, paddr_t pc) {
     bool ok = 1;
     for (int i = 0; i < 32; i ++) {
         if (ref.gpr[i] == npc_cpu.gpr[i]) continue;
+        printf("npc ");
+        isa_reg_display(npc_cpu);
+        printf("nemu ");
+        isa_reg_display(ref);
         ok = 0;
     }
-    if (ref.pc != npc_cpu.pc) ok = 0;
-    return ok;
-}
 
-void dump_gpr(CPU_state ref) {
-    printf(BOLD_TXT "NEMU Registers:\n" RESET_TXT);
-    printf("pc\t0x%x(%d)\n", ref.pc, ref.pc);
-    for (int i = 0; i < 32; i ++) {
-        printf("%4s: 0x%08x(%010d)%c", regs[i], ref.gpr[i], ref.gpr[i], i % 4 == 3? '\n': ' ');
+    if (ref.pc != npc_cpu.pc) {
+        dump("PC", npc_cpu.pc, ref.pc);
+        ok = 0;
     }
-}
 
-void cmp_reg () {
-    isa_reg_display();
-    dump_gpr(ref);
+
+    return ok;
 }

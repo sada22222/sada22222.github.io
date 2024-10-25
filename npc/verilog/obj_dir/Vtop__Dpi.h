@@ -18,6 +18,8 @@ extern "C" {
     // DPI IMPORTS
     // DPI import at /home/hujun/ysyx-workbench/npc/verilog/vsrc/read.v:2:29
     extern int fetch(svBit clk, svBit rst, int pc);
+    // DPI import at /home/hujun/ysyx-workbench/npc/verilog/vsrc/DpiBlackBox.v:10:32
+    extern void get_diff_commit(svBit commit);
     // DPI import at /home/hujun/ysyx-workbench/npc/verilog/vsrc/read.v:3:30
     extern void halt(int inst);
     // DPI import at /home/hujun/ysyx-workbench/npc/verilog/vsrc/DpiBlackBox.v:2:30

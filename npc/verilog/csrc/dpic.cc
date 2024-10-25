@@ -12,6 +12,10 @@ void halt(uint32_t inst) {
         ebreak();
     }
 }
+extern bool diff_commit;
+extern "C" void get_diff_commit(svBit commit){
+  diff_commit = commit;
+}
 
 static int cnt = 0;
 uint32_t fetch(bool clk, bool rst, paddr_t pc) {

@@ -105,7 +105,7 @@ class MEM extends Module {
 
   // 从DPI-C模块读取数据
   val loadData = mem.io.rdata
-  val reg_data = Mux(io.ex_i.load, loadData, io.ex_i.reg.data)
+  val reg_data = Mux(ren, loadData, io.ex_i.reg.data)
 
   // 地址对齐检查
   val memAddr = MuxLookup(width, false.B, Seq(

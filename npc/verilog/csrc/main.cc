@@ -12,6 +12,7 @@
 Vtop* dut = NULL;
 VerilatedFstC* tfp = NULL;
 uint32_t time_counter = TIME_RESET;
+bool diff_commit  = true;
 
 int main(int argc, char** argv) {
     welcome(argc, argv);

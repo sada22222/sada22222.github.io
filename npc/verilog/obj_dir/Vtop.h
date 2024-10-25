@@ -33,9 +33,20 @@ class Vtop VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&io_timer,0,0);
     VL_IN8(&io_soft,0,0);
     VL_IN8(&io_extern,0,0);
+    VL_OUT8(&io_flush,0,0);
+    VL_OUT8(&io_stall,0,0);
+    VL_OUT8(&io_bputake,0,0);
     VL_OUT(&io_inst,31,0);
     VL_OUT(&io_pc,31,0);
     VL_OUT(&io_npc,31,0);
+    VL_OUT(&io_next,31,0);
+    VL_OUT(&io_flushpc,31,0);
+    VL_OUT(&io_id_inst,31,0);
+    VL_OUT(&io_bpuaddr,31,0);
+    VL_OUT(&io_idpc,31,0);
+    VL_OUT(&io_expc,31,0);
+    VL_OUT(&io_mempc,31,0);
+    VL_OUT(&io_result,31,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

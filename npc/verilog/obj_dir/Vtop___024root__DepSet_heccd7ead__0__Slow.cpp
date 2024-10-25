@@ -51,7 +51,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3800, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3809, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);
@@ -148,20 +148,26 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->io_inst = VL_RAND_RESET_I(32);
     vlSelf->io_pc = VL_RAND_RESET_I(32);
     vlSelf->io_npc = VL_RAND_RESET_I(32);
-    vlSelf->Core__DOT__IF_ID_io_flush = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__IF_ID_io_stallPrev = VL_RAND_RESET_I(1);
+    vlSelf->io_next = VL_RAND_RESET_I(32);
+    vlSelf->io_flushpc = VL_RAND_RESET_I(32);
+    vlSelf->io_flush = VL_RAND_RESET_I(1);
+    vlSelf->io_stall = VL_RAND_RESET_I(1);
+    vlSelf->io_id_inst = VL_RAND_RESET_I(32);
+    vlSelf->io_bputake = VL_RAND_RESET_I(1);
+    vlSelf->io_bpuaddr = VL_RAND_RESET_I(32);
+    vlSelf->io_idpc = VL_RAND_RESET_I(32);
+    vlSelf->io_expc = VL_RAND_RESET_I(32);
+    vlSelf->io_mempc = VL_RAND_RESET_I(32);
+    vlSelf->io_result = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID_io_read1_data = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID_io_read2_en = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID_io_read2_data = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__ID_EX_io_stallNext = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__EX_io_ex_o_load = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__EX_MEM_io_stallPrev = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__MEM_io_stallReq = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM_io_except_excValue = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__MEM_io_mem_o_reg_data = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__resoler_io_loadflag = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__resoler_io_csrflag = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_taken_o = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__fetch__DOT__bpu_io_prdt_addr_o = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__fetch__DOT__pc = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__fetch__DOT___T_2 = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__fetch__DOT__read__DOT__fetched_data = VL_RAND_RESET_I(32);
@@ -172,6 +178,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__IF_ID__DOT__ff_misaligned = VL_RAND_RESET_I(1);
+    vlSelf->Core__DOT__IF_ID__DOT___T_3 = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__IF_ID__DOT___GEN_4 = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__stall = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__lastinst = VL_RAND_RESET_I(32);
@@ -218,8 +225,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__ID__DOT__branchmiss = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__addrFault = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__csrActOp = VL_RAND_RESET_I(3);
-    vlSelf->Core__DOT__ID__DOT___T_839 = VL_RAND_RESET_I(12);
-    vlSelf->Core__DOT__ID__DOT___T_848 = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__ID__DOT___T_841 = VL_RAND_RESET_I(12);
+    vlSelf->Core__DOT__ID__DOT___T_850 = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0 = 0;
     vlSelf->Core__DOT__ID__DOT____VdfgTmp_h7417a8e6__0 = 0;
     vlSelf->Core__DOT__ID_EX__DOT__ff_aluOp = VL_RAND_RESET_I(4);
@@ -238,13 +245,13 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__ID_EX__DOT__ff_excValue = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID_EX__DOT__ff_inst = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID_EX__DOT__ff_currentPc = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__ID_EX__DOT___T_3 = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__EX__DOT__result = VL_RAND_RESET_Q(63);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_lsuOp = VL_RAND_RESET_I(4);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_lsuData = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_reg_en = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_reg_addr = VL_RAND_RESET_I(5);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_reg_data = VL_RAND_RESET_I(32);
-    vlSelf->Core__DOT__EX_MEM__DOT__ff_load = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_csr_op = VL_RAND_RESET_I(3);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_csr_addr = VL_RAND_RESET_I(12);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_csr_data = VL_RAND_RESET_I(32);
@@ -253,6 +260,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__EX_MEM__DOT__ff_excValue = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_inst = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_currentPc = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__EX_MEM__DOT___T_3 = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM__DOT__mem_wen = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM__DOT__mem_ren = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM__DOT__mem_rdata = VL_RAND_RESET_I(32);
@@ -268,6 +276,8 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__MEM_WB__DOT__ff_csr_data = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__MEM_WB__DOT__ff_csr_retired = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM_WB__DOT__ff_currentPc = VL_RAND_RESET_I(32);
+    vlSelf->Core__DOT__MEM_WB__DOT___T_2 = VL_RAND_RESET_I(1);
+    vlSelf->Core__DOT__MEM_WB__DOT___T_3 = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__regfile__DOT__regfile_0 = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__regfile__DOT__regfile_1 = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__regfile__DOT__regfile_2 = VL_RAND_RESET_I(32);

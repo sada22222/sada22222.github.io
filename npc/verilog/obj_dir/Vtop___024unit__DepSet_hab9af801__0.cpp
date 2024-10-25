@@ -80,6 +80,16 @@ VL_INLINE_OPT void Vtop___024unit____Vdpiimwrap_set_gpr_ptr_TOP____024unit(IData
     set_gpr_ptr(dut_x0__Vcvt, dut_x1__Vcvt, dut_x2__Vcvt, dut_x3__Vcvt, dut_x4__Vcvt, dut_x5__Vcvt, dut_x6__Vcvt, dut_x7__Vcvt, dut_x8__Vcvt, dut_x9__Vcvt, dut_x10__Vcvt, dut_x11__Vcvt, dut_x12__Vcvt, dut_x13__Vcvt, dut_x14__Vcvt, dut_x15__Vcvt, dut_x16__Vcvt, dut_x17__Vcvt, dut_x18__Vcvt, dut_x19__Vcvt, dut_x20__Vcvt, dut_x21__Vcvt, dut_x22__Vcvt, dut_x23__Vcvt, dut_x24__Vcvt, dut_x25__Vcvt, dut_x26__Vcvt, dut_x27__Vcvt, dut_x28__Vcvt, dut_x29__Vcvt, dut_x30__Vcvt, dut_x31__Vcvt);
 }
 
+extern "C" void get_diff_commit(svBit commit);
+
+VL_INLINE_OPT void Vtop___024unit____Vdpiimwrap_get_diff_commit_TOP____024unit(CData/*0:0*/ commit) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop___024unit____Vdpiimwrap_get_diff_commit_TOP____024unit\n"); );
+    // Body
+    svBit commit__Vcvt;
+    for (size_t commit__Vidx = 0; commit__Vidx < 1; ++commit__Vidx) commit__Vcvt = commit;
+    get_diff_commit(commit__Vcvt);
+}
+
 extern "C" int fetch(svBit clk, svBit rst, int pc);
 
 VL_INLINE_OPT void Vtop___024unit____Vdpiimwrap_fetch_TOP____024unit(CData/*0:0*/ clk, CData/*0:0*/ rst, IData/*31:0*/ pc, IData/*31:0*/ &fetch__Vfuncrtn) {

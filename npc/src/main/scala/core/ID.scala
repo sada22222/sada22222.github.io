@@ -12,7 +12,7 @@ import configs.ExceptType._
 class ID extends Module{
   val io=IO(new Bundle() {
     val if_i=Input(new IF_IO)
-
+    val IMMU=Output(UInt(32.W))
     val read1 = new RegReadIO
     val read2 = new RegReadIO
 
@@ -42,9 +42,7 @@ class ID extends Module{
   val immB  = Cat(inst(31), inst(7), inst(30, 25), inst(11, 8), 0.U(1.W))
   val immU  = Cat(inst(31, 12), 0.U(12.W))
   val immJ  = Cat(inst(31), inst(19, 12), inst(20), inst(30, 21), 0.U(1.W))
-
-
-
+  io.IMMU:=immU
   def generateOpr(oprSel: UInt) =
     MuxLookup(oprSel, 0.S, Seq(
       OPR_REG1  -> io.read1.data.asSInt,
@@ -79,7 +77,7 @@ class ID extends Module{
       BR_GEU -> (io.read1.data >= io.read2.data),
   ))
 
-  val branchmiss = (io.if_i.bpu_take =/= branchteke) || (io.if_i.bpu_takepc =/= takepc)
+  val branchmiss = (branchOp=/=BR_N)&&((io.if_i.bpu_take =/= branchteke) || (io.if_i.bpu_takepc =/= takepc))
   val flushpc = Mux(branchmiss,takepc,io.if_i.pc+4.U)
   val addrFault   = branchteke && takepc(1, 0) =/= 0.U
 

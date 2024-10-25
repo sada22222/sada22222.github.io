@@ -17,9 +17,20 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , io_timer{vlSymsp->TOP.io_timer}
     , io_soft{vlSymsp->TOP.io_soft}
     , io_extern{vlSymsp->TOP.io_extern}
+    , io_flush{vlSymsp->TOP.io_flush}
+    , io_stall{vlSymsp->TOP.io_stall}
+    , io_bputake{vlSymsp->TOP.io_bputake}
     , io_inst{vlSymsp->TOP.io_inst}
     , io_pc{vlSymsp->TOP.io_pc}
     , io_npc{vlSymsp->TOP.io_npc}
+    , io_next{vlSymsp->TOP.io_next}
+    , io_flushpc{vlSymsp->TOP.io_flushpc}
+    , io_id_inst{vlSymsp->TOP.io_id_inst}
+    , io_bpuaddr{vlSymsp->TOP.io_bpuaddr}
+    , io_idpc{vlSymsp->TOP.io_idpc}
+    , io_expc{vlSymsp->TOP.io_expc}
+    , io_mempc{vlSymsp->TOP.io_mempc}
+    , io_result{vlSymsp->TOP.io_result}
     , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {

@@ -47,7 +47,7 @@ class EX extends Module{
   io.ex_o.csr.addr     := io.id_i.csrAddr
   io.ex_o.csr.data     := io.id_i.csrwData
   io.ex_o.csr.retired  := retired
-  io.ex_o.excType     := io.id_i.excType
+  io.ex_o.excType      := io.id_i.excType
   io.ex_o.excValue     := io.id_i.excValue
   io.ex_o.valid        := io.id_i.valid
   io.ex_o.inst         := io.id_i.inst

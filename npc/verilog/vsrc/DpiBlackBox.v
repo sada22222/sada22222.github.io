@@ -7,8 +7,10 @@ import "DPI-C" function void set_gpr_ptr(
     input int dut_x27, input int dut_x28, input int dut_x29, input int dut_x30, input int dut_x31
     
 );
+  import "DPI-C" function void get_diff_commit(input bit commit);
 
 module DpiBlackBox (
+    input        wb_commit,
     input [31:0] s_regs_0,
     input [31:0] s_regs_1,
     input [31:0] s_regs_2,
@@ -43,10 +45,11 @@ module DpiBlackBox (
     input [31:0] s_regs_31
 );
   always @(*) begin
-    set_gpr_ptr(s_regs_0, s_regs_1, s_regs_2, s_regs_3, s_regs_4, s_regs_5, s_regs_6, s_regs_7, s_regs_8, s_regs_9,
+    set_gpr_ptr( s_regs_0, s_regs_1, s_regs_2, s_regs_3, s_regs_4, s_regs_5, s_regs_6, s_regs_7, s_regs_8, s_regs_9,
                  s_regs_10, s_regs_11, s_regs_12, s_regs_13, s_regs_14, s_regs_15, s_regs_16, s_regs_17, s_regs_18, s_regs_19,
                  s_regs_20, s_regs_21, s_regs_22, s_regs_23, s_regs_24, s_regs_25, s_regs_26, s_regs_27, s_regs_28, s_regs_29,
                  s_regs_30, s_regs_31);
+    get_diff_commit(wb_commit);
   end
  
 endmodule

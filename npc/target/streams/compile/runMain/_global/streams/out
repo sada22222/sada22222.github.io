@@ -1,20 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.addr <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.en <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.wdata <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.wen <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 4 errors detected![0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.PassExceptions: [0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.addr <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.en <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.wdata <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.if_axi.wen <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 4 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 31:19] : [module Core]  Reference fetch is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : fetch.io.nextpc <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 31:19] : [module Core]  Reference fetch is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : fetch.io.nextpc <= VOID[0m

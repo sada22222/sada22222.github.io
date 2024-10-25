@@ -22,7 +22,7 @@ class top extends Module{
   //core.io.ls_axi<>axi.io.lsaxi  
   io.inst:=core.io.inst
   io.pc:=core.io.pc
-  io.npc:=core.io.npc
+  //io.npc:=core.io.npc
   core.io.soft:=io.soft
   core.io.timer:=io.timer
   core.io.extern:=io.extern

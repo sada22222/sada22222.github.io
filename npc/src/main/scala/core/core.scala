@@ -14,7 +14,18 @@ class Core extends Module{
 
       val inst    = Output(UInt(32.W))
       val pc   = Output(UInt(32.W))
-      val npc   = Output(UInt(32.W))
+      val npc   = Output(UInt(32.W))     
+      val next   = Output(UInt(32.W))
+      val flushpc       = Output(UInt(32.W))
+      val flush        =Output(Bool())
+      val stall       = Output(Bool())
+      val id_inst       = Output(UInt(32.W))
+      val bputake       = Output(Bool())
+      val bpuaddr       = Output(UInt(32.W))
+      val idpc       = Output(UInt(32.W)) 
+      val expc       = Output(UInt(32.W))   
+      val mempc       = Output(UInt(32.W))                              
+      val result       = Output(UInt(32.W))  
   })
 
   val fetch=Module(new IF)
@@ -32,16 +43,15 @@ class Core extends Module{
   val ctrl=Module(new crtl)
   val csr=Module(new csr)
 
-  
 
 
   fetch.io.flush:=ctrl.io.flushIf
-  fetch.io.stall:=ctrl.io.if_stall
+  fetch.io.stall:=ctrl.io.stallIf
   fetch.io.flush_pc:=ctrl.io.flushPc
-
-  IF_ID.io.prev:=fetch.io.IF
-  IF_ID.io.flush:=ctrl.io.flush
+  IF_ID.io.prev<>fetch.io.IF
+  IF_ID.io.flush:=ctrl.io.flushIf
   IF_ID.io.stallPrev:=ctrl.io.stallIf
+  IF_ID.io.stallNext:=ctrl.io.stallId
 
   ID.io.if_i<>IF_ID.io.next
   ID.io.read1<>resoler.io.id_read1
@@ -50,14 +60,14 @@ class Core extends Module{
   ID_EX.io.prev<>ID.io.id_o
   ID_EX.io.flush:=ctrl.io.flush
   ID_EX.io.stallPrev:=ctrl.io.stallId
-
+  ID_EX.io.stallNext:=ctrl.io.stallEx
 
   EX.io.id_i<>ID_EX.io.next
-
   EX_MEM.io.prev<>EX.io.ex_o
   EX_MEM.io.flush:=ctrl.io.flush
   EX_MEM.io.stallPrev:=ctrl.io.stallEx
-
+  EX_MEM.io.stallNext:=ctrl.io.stallMm
+  
   MEM.io.ex_i<>EX_MEM.io.next
   MEM.io.csrBusy:=csr.io.busy
   MEM.io.csrHasInt:=csr.io.hasInt
@@ -65,11 +75,12 @@ class Core extends Module{
   MEM_WB.io.prev<>MEM.io.mem_o
   MEM_WB.io.flush:=ctrl.io.flush
   MEM_WB.io.stallPrev:=ctrl.io.stallMm
+  MEM_WB.io.stallNext:=ctrl.io.stallWb
 
   WB.io.mem_i<>MEM_WB.io.next
   io.inst:=fetch.io.IF.inst
-  io.pc:=fetch.io.IF.pc
-  io.npc:=WB.io.wb_pc
+  io.pc:=WB.io.wb_pc
+  io.npc:=fetch.io.IF.pc  
 
   regfile.io.read1      <> resoler.io.rs1
   regfile.io.read2      <> resoler.io.rs2
@@ -108,6 +119,20 @@ class Core extends Module{
   csr.io.read<>resoler.io.csr
 
   dpic.io.s_regs:=regfile.io.s_regs
+
+  
+
+  io.flush:=ctrl.io.flush
+  io.stall:=ctrl.io.stallIf
+  io.flushpc:=ctrl.io.flushPc
+  io.id_inst:=IF_ID.io.prev.inst
+  io.next:=fetch.io.nextpc
+  io.bputake:=fetch.io.prdt_taken_o
+  io.bpuaddr:=fetch.io.prdt_addr_o
+  io.idpc:=ID.io.if_i.pc
+  io.expc:=EX.io.id_i.currentPc
+  io.mempc:=MEM.io.ex_i.currentPc
+  io.result:=WB.io.regdata
 }
 
 object Core extends App {
