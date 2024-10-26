@@ -1473,8 +1473,7 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
                 vlSelf->Core__DOT__IF_ID__DOT__ff_inst 
                     = vlSelf->io_inst;
             }
-            if ((1U & (~ ((IData)(vlSelf->io_stallo) 
-                          | (IData)(vlSelf->io_stall))))) {
+            if ((1U & (~ (IData)(vlSelf->io_stall)))) {
                 vlSelf->Core__DOT__fetch__DOT__pc = 
                     ((IData)(vlSelf->io_bputake) ? vlSelf->io_bpuaddr
                       : vlSelf->Core__DOT__fetch__DOT___T_2);

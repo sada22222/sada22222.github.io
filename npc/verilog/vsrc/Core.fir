@@ -3167,8 +3167,7 @@ circuit Core :
     csr.clock <= clock
     csr.reset <= reset
     fetch.io.flush <= ctrl.io.flushIf @[core.scala 49:17]
-    node _T = or(ctrl.io.stallIf, io.stall) @[core.scala 50:34]
-    fetch.io.stall <= _T @[core.scala 50:17]
+    fetch.io.stall <= io.stall @[core.scala 50:17]
     fetch.io.flush_pc <= ctrl.io.flushPc @[core.scala 51:20]
     IF_ID.io.prev.misaligned <= fetch.io.IF.misaligned @[core.scala 52:16]
     IF_ID.io.prev.bpu_takepc <= fetch.io.IF.bpu_takepc @[core.scala 52:16]

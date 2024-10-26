@@ -4630,7 +4630,7 @@ module Core(
   assign fetch_reset = reset;
   assign fetch_io_flush = ctrl_io_flushIf; // @[core.scala 49:17]
   assign fetch_io_flush_pc = ctrl_io_flushPc; // @[core.scala 51:20]
-  assign fetch_io_stall = ctrl_io_stallIf | io_stall; // @[core.scala 50:17]
+  assign fetch_io_stall = io_stall; // @[core.scala 50:17]
   assign IF_ID_clock = clock;
   assign IF_ID_reset = reset;
   assign IF_ID_io_flush = ctrl_io_flushIf; // @[core.scala 53:17]

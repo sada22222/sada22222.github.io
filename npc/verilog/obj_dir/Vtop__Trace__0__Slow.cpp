@@ -56,7 +56,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+235,"fetch_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"fetch_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+244,"fetch_io_flush_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+254,"fetch_io_stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+239,"fetch_io_stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+242,"fetch_io_IF_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+240,"fetch_io_IF_inst",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+248,"fetch_io_IF_bpu_take",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
@@ -248,7 +248,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+235,"MEM_WB_reset",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+245,"MEM_WB_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+69,"MEM_WB_io_stallPrev",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+257,"MEM_WB_io_stallNext",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+256,"MEM_WB_io_stallNext",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+72,"MEM_WB_io_prev_reg_en",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+73,"MEM_WB_io_prev_reg_addr",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+85,"MEM_WB_io_prev_reg_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -281,7 +281,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBus(c+90,"WB_io_csr_data",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+91,"WB_io_csr_retired",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+241,"WB_io_wb_pc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+257,"dpic_wb_commit",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+256,"dpic_wb_commit",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+92,"dpic_s_regs_0",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+93,"dpic_s_regs_1",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+94,"dpic_s_regs_2",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -406,7 +406,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+246,"ctrl_io_stallId",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+50,"ctrl_io_stallEx",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+69,"ctrl_io_stallMm",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+257,"ctrl_io_stallWb",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+256,"ctrl_io_stallWb",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+245,"ctrl_io_flush",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"ctrl_io_flushIf",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+244,"ctrl_io_flushPc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -720,7 +720,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+235,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+245,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+69,"io_stallPrev",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+257,"io_stallNext",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+256,"io_stallNext",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+72,"io_prev_reg_en",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+73,"io_prev_reg_addr",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->declBus(c+85,"io_prev_reg_data",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -845,8 +845,8 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+13,"hasIntM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+3,"hasInt",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+14,"handIntS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+255,"hasExc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+256,"hasExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+254,"hasExc",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+255,"hasExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+15,"handExcS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+16,"intCauseS",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
     tracep->declBus(c+17,"intCauseM",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 30,0);
@@ -867,14 +867,14 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+246,"io_stallId",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+50,"io_stallEx",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+69,"io_stallMm",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
-    tracep->declBit(c+257,"io_stallWb",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+256,"io_stallWb",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+245,"io_flush",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"io_flushIf",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+244,"io_flushPc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+224,"stall",-1, FST_VD_IMPLICIT,FST_VT_VCD_WIRE, false,-1, 4,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("dpic ");
-    tracep->declBit(c+257,"wb_commit",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+256,"wb_commit",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+92,"s_regs_0",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+93,"s_regs_1",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+94,"s_regs_2",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
@@ -913,7 +913,7 @@ VL_ATTR_COLD void Vtop___024root__trace_init_sub__TOP__0(Vtop___024root* vlSelf,
     tracep->declBit(c+235,"reset",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBit(c+1,"io_flush",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+244,"io_flush_pc",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
-    tracep->declBit(c+254,"io_stall",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
+    tracep->declBit(c+239,"io_stall",-1,FST_VD_INPUT,FST_VT_VCD_WIRE, false,-1);
     tracep->declBus(c+242,"io_IF_pc",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBus(c+240,"io_IF_inst",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1, 31,0);
     tracep->declBit(c+248,"io_IF_bpu_take",-1,FST_VD_OUTPUT,FST_VT_VCD_WIRE, false,-1);
@@ -2239,11 +2239,9 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
     bufp->fullIData(oldp+251,(vlSelf->io_expc),32);
     bufp->fullIData(oldp+252,(vlSelf->io_mempc),32);
     bufp->fullIData(oldp+253,(vlSelf->io_result),32);
-    bufp->fullBit(oldp+254,(((IData)(vlSelf->io_stallo) 
-                             | (IData)(vlSelf->io_stall))));
-    bufp->fullBit(oldp+255,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->fullBit(oldp+254,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                              & (IData)(vlSelf->io_flush))));
-    bufp->fullBit(oldp+256,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->fullBit(oldp+255,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                               & (IData)(vlSelf->io_flush)) 
                              & (vlSelf->Core__DOT__csr__DOT__medeleg_data 
                                 >> ((5U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
@@ -2262,5 +2260,5 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_0(Vtop___024root* vlSelf, Veril
                                                      ? 4U
                                                      : 0xdU)
                                                     : 0U)))))))));
-    bufp->fullBit(oldp+257,(0U));
+    bufp->fullBit(oldp+256,(0U));
 }

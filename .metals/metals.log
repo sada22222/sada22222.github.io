@@ -12847,3 +12847,15 @@ java.lang.RuntimeException: invalid symbol format
 2024.10.26 10:19:07 INFO  time: compiled npc in 2.47s
 10月 26, 2024 10:19:26 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 警告: Unmatched cancel notification for request id 258
+2024.10.26 10:39:54 INFO  compiling npc (1 scala source)
+2024.10.26 10:39:55 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:39:56 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:39:56 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:39:57 WARN  there were 150 feature warnings; re-run with -feature for details
+2024.10.26 10:39:57 INFO  time: compiled npc in 3.04s
+2024.10.26 10:42:34 INFO  compiling npc (1 scala source)
+2024.10.26 10:42:37 WARN  there were 150 feature warnings; re-run with -feature for details
+2024.10.26 10:42:37 INFO  time: compiled npc in 2.94s
+2024.10.26 10:42:37 INFO  compiling npc (1 scala source)
+2024.10.26 10:42:37 WARN  there were 14 feature warnings; re-run with -feature for details
+2024.10.26 10:42:37 INFO  time: compiled npc in 0.86s

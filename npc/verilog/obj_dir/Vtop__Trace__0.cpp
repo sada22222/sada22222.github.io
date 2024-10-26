@@ -1192,11 +1192,9 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buffe
     bufp->chgIData(oldp+250,(vlSelf->io_expc),32);
     bufp->chgIData(oldp+251,(vlSelf->io_mempc),32);
     bufp->chgIData(oldp+252,(vlSelf->io_result),32);
-    bufp->chgBit(oldp+253,(((IData)(vlSelf->io_stallo) 
-                            | (IData)(vlSelf->io_stall))));
-    bufp->chgBit(oldp+254,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->chgBit(oldp+253,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                             & (IData)(vlSelf->io_flush))));
-    bufp->chgBit(oldp+255,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->chgBit(oldp+254,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                              & (IData)(vlSelf->io_flush)) 
                             & (vlSelf->Core__DOT__csr__DOT__medeleg_data 
                                >> ((5U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))

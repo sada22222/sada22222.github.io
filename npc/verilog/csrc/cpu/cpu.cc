@@ -17,17 +17,11 @@ void cpu_init() { // exe the first instruction
     dut->clock = 1; dut->reset = 1; dut->eval(); // pc -> 0x8000_0000
     tfp->dump(time_counter ++);
 
- 
-    
     npc_cpu.pc = dut->io_npc;
 
     // Execute the first instruction
     dut->reset = 0;
-    dut->clock = 0; dut->io_stall = 1; dut->eval();
-    tfp->dump(time_counter ++);
-    dut->clock = 1; dut->io_stall = 1; dut->eval(); // pc -> 0x8000_0000
-    tfp->dump(time_counter ++);
-    dut->io_stall = 0;
+
 
     IFDEF(CONFIG_ITRACE, itrace(dut->io_npc, dut->io_inst));
 
