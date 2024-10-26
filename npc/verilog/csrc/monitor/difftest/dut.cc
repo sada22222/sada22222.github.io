@@ -83,11 +83,12 @@ bool checkregs(CPU_state ref, paddr_t pc) {
         isa_reg_display(npc_cpu);
         printf("nemu ");
         isa_reg_display(ref);
+        printf("nemu pc=0x%x      nemu pc=0x%x\n",ref.pc,dut->io_pc);
         ok = 0;
     }
 
-    if (ref.pc != npc_cpu.pc) {
-        dump("PC", npc_cpu.pc, ref.pc);
+    if (ref.pc != dut->io_pc-4) {
+        dump("PC", dut->io_pc, ref.pc);
         ok = 0;
     }
 

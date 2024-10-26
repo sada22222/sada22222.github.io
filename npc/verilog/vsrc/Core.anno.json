@@ -47,7 +47,7 @@
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"Core.read",
     "name":"read.v",
-    "text":"\r\nimport \"DPI-C\" function int fetch(bit clk, bit rst, int pc);\r\nimport \"DPI-C\" function void halt(int inst);\r\nmodule read (\r\n    input  [31:0] addr,\r\n    input         clock,\r\n    input         reset,\r\n    output [31:0] data\r\n);\r\n    reg [31:0] fetched_data;\r\n    always @(posedge clock) begin\r\n        if (reset) begin\r\n            fetched_data <= 32'h13;//NOP\r\n        end else begin\r\n            fetched_data <= fetch(clock, reset, addr); // 调用DPI-C读函数\r\n            halt(fetched_data); // 处理指令的halt逻辑\r\n        end\r\n    end\r\n    assign data = fetched_data;\r\nendmodule\r\n    "
+    "text":"\r\nimport \"DPI-C\" function int fetch(bit clk, bit rst, int pc);\r\nimport \"DPI-C\" function void halt(int inst);\r\nmodule read (\r\n    input  [31:0] addr,\r\n    input         clock,\r\n    input         reset,\r\n    output [31:0] data\r\n);\r\n    reg [31:0] fetched_data;\r\n    always @(posedge clock) begin\r\n        if (reset) begin\r\n            fetched_data <= 32'h13;//NOP 13\r\n        end else begin\r\n            fetched_data <= fetch(clock, reset, addr); // 调用DPI-C读函数\r\n            halt(fetched_data); // 处理指令的halt逻辑\r\n        end\r\n    end\r\n    assign data = fetched_data;\r\nendmodule\r\n    "
   },
   {
     "class":"firrtl.options.OutputAnnotationFileAnnotation",

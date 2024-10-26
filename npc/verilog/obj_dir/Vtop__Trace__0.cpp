@@ -1177,23 +1177,26 @@ void Vtop___024root__trace_chg_sub_0(Vtop___024root* vlSelf, VerilatedFst::Buffe
     bufp->chgBit(oldp+235,(vlSelf->io_timer));
     bufp->chgBit(oldp+236,(vlSelf->io_soft));
     bufp->chgBit(oldp+237,(vlSelf->io_extern));
-    bufp->chgIData(oldp+238,(vlSelf->io_inst),32);
-    bufp->chgIData(oldp+239,(vlSelf->io_pc),32);
-    bufp->chgIData(oldp+240,(vlSelf->io_npc),32);
-    bufp->chgIData(oldp+241,(vlSelf->io_next),32);
-    bufp->chgIData(oldp+242,(vlSelf->io_flushpc),32);
-    bufp->chgBit(oldp+243,(vlSelf->io_flush));
-    bufp->chgBit(oldp+244,(vlSelf->io_stall));
-    bufp->chgIData(oldp+245,(vlSelf->io_id_inst),32);
-    bufp->chgBit(oldp+246,(vlSelf->io_bputake));
-    bufp->chgIData(oldp+247,(vlSelf->io_bpuaddr),32);
-    bufp->chgIData(oldp+248,(vlSelf->io_idpc),32);
-    bufp->chgIData(oldp+249,(vlSelf->io_expc),32);
-    bufp->chgIData(oldp+250,(vlSelf->io_mempc),32);
-    bufp->chgIData(oldp+251,(vlSelf->io_result),32);
-    bufp->chgBit(oldp+252,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->chgBit(oldp+238,(vlSelf->io_stall));
+    bufp->chgIData(oldp+239,(vlSelf->io_inst),32);
+    bufp->chgIData(oldp+240,(vlSelf->io_pc),32);
+    bufp->chgIData(oldp+241,(vlSelf->io_npc),32);
+    bufp->chgIData(oldp+242,(vlSelf->io_next),32);
+    bufp->chgIData(oldp+243,(vlSelf->io_flushpc),32);
+    bufp->chgBit(oldp+244,(vlSelf->io_flush));
+    bufp->chgBit(oldp+245,(vlSelf->io_stallo));
+    bufp->chgIData(oldp+246,(vlSelf->io_id_inst),32);
+    bufp->chgBit(oldp+247,(vlSelf->io_bputake));
+    bufp->chgIData(oldp+248,(vlSelf->io_bpuaddr),32);
+    bufp->chgIData(oldp+249,(vlSelf->io_idpc),32);
+    bufp->chgIData(oldp+250,(vlSelf->io_expc),32);
+    bufp->chgIData(oldp+251,(vlSelf->io_mempc),32);
+    bufp->chgIData(oldp+252,(vlSelf->io_result),32);
+    bufp->chgBit(oldp+253,(((IData)(vlSelf->io_stallo) 
+                            | (IData)(vlSelf->io_stall))));
+    bufp->chgBit(oldp+254,(((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                             & (IData)(vlSelf->io_flush))));
-    bufp->chgBit(oldp+253,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
+    bufp->chgBit(oldp+255,((((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
                              & (IData)(vlSelf->io_flush)) 
                             & (vlSelf->Core__DOT__csr__DOT__medeleg_data 
                                >> ((5U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))

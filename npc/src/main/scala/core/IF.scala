@@ -25,7 +25,7 @@ class read extends BlackBox with HasBlackBoxInline {
       |    reg [31:0] fetched_data;
       |    always @(posedge clock) begin
       |        if (reset) begin
-      |            fetched_data <= 32'h13;//NOP
+      |            fetched_data <= 32'h13;//NOP 13
       |        end else begin
       |            fetched_data <= fetch(clock, reset, addr); // 调用DPI-C读函数
       |            halt(fetched_data); // 处理指令的halt逻辑
@@ -67,7 +67,7 @@ class IF extends Module {
   bpu.io.inst_valid_i := valid
 
   // 选择下一个PC值，处理跳转、刷线、停止
-  val nextPc = Wire(UInt(32.W))
+  val nextPc = WireInit("h80000000".U(32.W))
   nextPc := Mux(io.flush, io.flush_pc,  // 如果flush有效，跳转到flush_pc
                 Mux(io.stall, pc,        // 如果stall有效，保持当前PC
                 Mux(bpu.io.prdt_taken_o, bpu.io.prdt_addr_o, pc + 4.U)))  // 否则，按顺序执行

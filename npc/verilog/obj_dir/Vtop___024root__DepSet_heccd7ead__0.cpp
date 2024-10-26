@@ -394,7 +394,7 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
                                             | (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2));
     vlSelf->Core__DOT__ID_EX__DOT___T_3 = ((IData)(vlSelf->io_flush) 
                                            | ((~ (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)) 
-                                              & (IData)(vlSelf->io_stall)));
+                                              & (IData)(vlSelf->io_stallo)));
     vlSelf->Core__DOT__EX_MEM__DOT___T_3 = ((IData)(vlSelf->io_flush) 
                                             | ((~ (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2)) 
                                                & (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)));
@@ -575,5 +575,7 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
         Verilated::overWidthError("io_soft");}
     if (VL_UNLIKELY((vlSelf->io_extern & 0xfeU))) {
         Verilated::overWidthError("io_extern");}
+    if (VL_UNLIKELY((vlSelf->io_stall & 0xfeU))) {
+        Verilated::overWidthError("io_stall");}
 }
 #endif  // VL_DEBUG

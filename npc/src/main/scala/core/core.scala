@@ -11,6 +11,7 @@ class Core extends Module{
       val timer   = Input(Bool())
       val soft    = Input(Bool())
       val extern  = Input(Bool())
+      val stall   = Input(Bool())
 
       val inst    = Output(UInt(32.W))
       val pc   = Output(UInt(32.W))
@@ -18,7 +19,7 @@ class Core extends Module{
       val next   = Output(UInt(32.W))
       val flushpc       = Output(UInt(32.W))
       val flush        =Output(Bool())
-      val stall       = Output(Bool())
+      val stallo       = Output(Bool())
       val id_inst       = Output(UInt(32.W))
       val bputake       = Output(Bool())
       val bpuaddr       = Output(UInt(32.W))
@@ -46,7 +47,7 @@ class Core extends Module{
 
 
   fetch.io.flush:=ctrl.io.flushIf
-  fetch.io.stall:=ctrl.io.stallIf
+  fetch.io.stall:=ctrl.io.stallIf||io.stall
   fetch.io.flush_pc:=ctrl.io.flushPc
   IF_ID.io.prev<>fetch.io.IF
   IF_ID.io.flush:=ctrl.io.flushIf
@@ -123,7 +124,7 @@ class Core extends Module{
   
 
   io.flush:=ctrl.io.flush
-  io.stall:=ctrl.io.stallIf
+  io.stallo:=ctrl.io.stallIf
   io.flushpc:=ctrl.io.flushPc
   io.id_inst:=IF_ID.io.prev.inst
   io.next:=fetch.io.nextpc

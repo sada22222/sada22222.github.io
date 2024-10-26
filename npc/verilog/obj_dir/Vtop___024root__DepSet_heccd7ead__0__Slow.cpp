@@ -145,13 +145,14 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->io_timer = VL_RAND_RESET_I(1);
     vlSelf->io_soft = VL_RAND_RESET_I(1);
     vlSelf->io_extern = VL_RAND_RESET_I(1);
+    vlSelf->io_stall = VL_RAND_RESET_I(1);
     vlSelf->io_inst = VL_RAND_RESET_I(32);
     vlSelf->io_pc = VL_RAND_RESET_I(32);
     vlSelf->io_npc = VL_RAND_RESET_I(32);
     vlSelf->io_next = VL_RAND_RESET_I(32);
     vlSelf->io_flushpc = VL_RAND_RESET_I(32);
     vlSelf->io_flush = VL_RAND_RESET_I(1);
-    vlSelf->io_stall = VL_RAND_RESET_I(1);
+    vlSelf->io_stallo = VL_RAND_RESET_I(1);
     vlSelf->io_id_inst = VL_RAND_RESET_I(32);
     vlSelf->io_bputake = VL_RAND_RESET_I(1);
     vlSelf->io_bpuaddr = VL_RAND_RESET_I(32);

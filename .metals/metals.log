@@ -12400,3 +12400,450 @@ SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@ec1b211
 2024.10.25 18:11:22 INFO  compiling npc (1 scala source)
 2024.10.25 18:11:24 WARN  there were 150 feature warnings; re-run with -feature for details
 2024.10.25 18:11:24 INFO  time: compiled npc in 2.21s
+2024.10.25 21:08:56 INFO  compiling npc (1 scala source)
+2024.10.25 21:08:58 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 21:08:58 INFO  time: compiled npc in 2.02s
+2024.10.25 21:09:08 INFO  compiling npc (1 scala source)
+2024.10.25 21:09:09 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 21:09:09 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 21:09:09 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 21:09:09 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 21:09:09 INFO  time: compiled npc in 1.4s
+10月 25, 2024 9:09:11 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 5370
+2024.10.25 21:10:08 INFO  compiling npc (1 scala source)
+2024.10.25 21:10:10 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 21:10:10 INFO  time: compiled npc in 1.55s
+2024.10.25 21:10:10 INFO  compiling npc (1 scala source)
+2024.10.25 21:10:11 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 21:10:11 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 21:10:13 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 21:10:13 INFO  time: compiled npc in 1.94s
+2024.10.25 23:09:28 INFO  compiling npc (1 scala source)
+2024.10.25 23:09:29 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:28 INFO  time: compiled npc in 0.4s
+2024.10.25 23:09:29 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:40 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:43 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:44 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:45 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:46 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:47 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:47 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:49 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:50 INFO  compiling npc (1 scala source)
+2024.10.25 23:09:51 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:50 INFO  time: compiled npc in 0.28s
+2024.10.25 23:09:51 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:55 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:55 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:09:55 WARN  Using indexes to guess the definition of io
+2024.10.25 23:10:07 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:12 WARN  Using indexes to guess the definition of io
+2024.10.25 23:10:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:14 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:17 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:19 INFO  compiling npc (1 scala source)
+2024.10.25 23:10:19 INFO  time: compiled npc in 0.3s
+2024.10.25 23:10:19 INFO  compiling npc (1 scala source)
+2024.10.25 23:10:19 INFO  time: compiled npc in 0.27s
+2024.10.25 23:10:19 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:53 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:10:59 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:00 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:01 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:06 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:06 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:07 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:11 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:12 INFO  compiling npc (1 scala source)
+2024.10.25 23:11:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:12 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:13 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:11:14 WARN  there were 155 feature warnings; re-run with -feature for details
+2024.10.25 23:11:14 INFO  time: compiled npc in 2.05s
+2024.10.25 23:11:14 INFO  compiling npc (1 scala source)
+2024.10.25 23:11:14 WARN  there were 14 feature warnings; re-run with -feature for details
+2024.10.25 23:11:14 INFO  time: compiled npc in 0.35s
+2024.10.25 23:11:20 INFO  compiling npc (1 scala source)
+2024.10.25 23:11:22 WARN  there were 155 feature warnings; re-run with -feature for details
+2024.10.25 23:11:22 INFO  time: compiled npc in 1.92s
+2024.10.25 23:19:18 INFO  compiling npc (1 scala source)
+2024.10.25 23:19:18 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.25 23:19:20 WARN  there were 150 feature warnings; re-run with -feature for details
+2024.10.25 23:19:20 INFO  time: compiled npc in 2.24s
+2024.10.25 23:19:20 INFO  compiling npc (1 scala source)
+2024.10.25 23:19:20 WARN  there were 14 feature warnings; re-run with -feature for details
+2024.10.25 23:19:20 INFO  time: compiled npc in 0.48s
+2024.10.25 23:20:50 INFO  compiling npc (1 scala source)
+2024.10.25 23:20:52 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 23:20:52 INFO  time: compiled npc in 1.41s
+2024.10.25 23:43:18 INFO  compiling npc (1 scala source)
+2024.10.25 23:43:18 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 23:43:18 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 23:43:18 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 23:43:18 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 23:43:18 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 23:43:20 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 23:43:20 INFO  time: compiled npc in 1.99s
+10月 25, 2024 11:43:31 下午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 6125
+2024.10.25 23:43:44 INFO  compiling npc (1 scala source)
+2024.10.25 23:43:45 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 23:43:45 INFO  time: compiled npc in 1.7s
+2024.10.25 23:46:55 INFO  compiling npc (1 scala source)
+2024.10.25 23:46:56 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala
+2024.10.25 23:46:57 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.25 23:46:57 INFO  time: compiled npc in 1.55s
+2024.10.26 00:33:28 INFO  Shutting down server
+2024.10.26 00:33:28 INFO  shutting down Metals
+2024.10.26 00:33:28 INFO  Shut down connection with build server.
+2024.10.26 00:33:28 INFO  Exiting server
+2024.10.26 10:09:37 INFO  Started: Metals version 1.4.0 in folders '/home/hujun/ysyx-workbench' for client Visual Studio Code 1.94.2.
+2024.10.26 10:09:38 WARN  Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2024.10.26 10:09:38 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.26 10:09:39 INFO  Attempting to connect to the build server...
+2024.10.26 10:09:39 INFO  No running Bloop server found, starting one.
+2024.10.26 10:09:39 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/jps -l' failed
+java.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/jps" (in directory "/home/hujun/.local/share/scalacli/bloop"): error=2, No such file or directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1143)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.builds.ShellRunner$.runSync(ShellRunner.scala:169)
+	at scala.meta.internal.metals.BloopServers.$anonfun$checkOldBloopRunning$1(BloopServers.scala:244)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BloopServers.checkOldBloopRunning(BloopServers.scala:242)
+	at scala.meta.internal.metals.BloopServers.connect(BloopServers.scala:363)
+	at scala.meta.internal.metals.BloopServers.$anonfun$newServer$1(BloopServers.scala:103)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:600)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:668)
+	at scala.meta.internal.metals.BloopServers.newServer(BloopServers.scala:95)
+	at scala.meta.internal.bsp.BspConnector.connect$1(BspConnector.scala:108)
+	at scala.meta.internal.bsp.BspConnector.connect(BspConnector.scala:215)
+	at scala.meta.internal.metals.ConnectionProvider$Connect$.$anonfun$createSession$4(ConnectionProvider.scala:477)
+	at scala.meta.internal.metals.TimerProvider.withTimer(TimerProvider.scala:38)
+	at scala.meta.internal.metals.TimerProvider.timed(TimerProvider.scala:14)
+	at scala.meta.internal.metals.ConnectionProvider$Connect$.$anonfun$createSession$3(ConnectionProvider.scala:477)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:314)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1110)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:48)
+	at scala.meta.internal.builds.ShellRunner$.runSync(ShellRunner.scala:169)
+	at scala.meta.internal.metals.BloopServers.$anonfun$checkOldBloopRunning$1(BloopServers.scala:244)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.BloopServers.checkOldBloopRunning(BloopServers.scala:242)
+	at scala.meta.internal.metals.BloopServers.connect(BloopServers.scala:363)
+	at scala.meta.internal.metals.BloopServers.$anonfun$newServer$1(BloopServers.scala:103)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:600)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:668)
+	at scala.meta.internal.metals.BloopServers.newServer(BloopServers.scala:95)
+	at scala.meta.internal.bsp.BspConnector.connect$1(BspConnector.scala:108)
+	at scala.meta.internal.bsp.BspConnector.connect(BspConnector.scala:215)
+	at scala.meta.internal.metals.ConnectionProvider$Connect$.$anonfun$createSession$4(ConnectionProvider.scala:477)
+	at scala.meta.internal.metals.TimerProvider.withTimer(TimerProvider.scala:38)
+	at scala.meta.internal.metals.TimerProvider.timed(TimerProvider.scala:14)
+	at scala.meta.internal.metals.ConnectionProvider$Connect$.$anonfun$createSession$3(ConnectionProvider.scala:477)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:09:49 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.26 10:09:51 INFO  Starting compilation server
+2024.10.26 10:09:57 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /home/hujun/ysyx-workbench/.metals/bsp.trace.json or /home/hujun/.cache/metals/bsp.trace.json
+2024.10.26 10:10:02 INFO  time: Connected to build server in 23s
+2024.10.26 10:10:02 INFO  Connected to Build server: Bloop v2.0.3
+2024.10.26 10:10:03 INFO  time: Imported build in 0.37s
+2024.10.26 10:10:03 INFO  running doctor check
+2024.10.26 10:10:03 INFO  java targets: npc-test, npc
+2024.10.26 10:10:03 WARN  2.12.10 is no longer supported in the current Metals versions, using the last known supported version 0.11.12
+2024.10.26 10:10:10 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.26 10:10:10 WARN  Could not find java sources in /usr/lib/jvm/src.zip, /usr/lib/jvm/lib/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/src.zip, /usr/lib/jvm/java-17-openjdk-amd64/lib/src.zip. Java symbols will not be available.
+2024.10.26 10:10:10 INFO  time: indexed workspace in 7.47s
+2024.10.26 10:10:12 INFO  compiling npc (23 scala sources)
+2024.10.26 10:10:13 INFO  Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.10. Compiling...
+2024.10.26 10:10:34 INFO  Compilation completed in 20.735s.
+2024.10.26 10:11:01 WARN  there were 613 feature warnings; re-run with -feature for details
+2024.10.26 10:11:01 INFO  time: compiled npc in 49s
+2024.10.26 10:13:06 INFO  compiling npc (1 scala source)
+2024.10.26 10:13:09 WARN  there were 27 feature warnings; re-run with -feature for details
+2024.10.26 10:13:09 INFO  time: compiled npc in 3.28s
+2024.10.26 10:18:31 INFO  compiling npc (1 scala source)
+2024.10.26 10:18:34 WARN  there were 151 feature warnings; re-run with -feature for details
+2024.10.26 10:18:34 INFO  time: compiled npc in 3.94s
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 156
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 164
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 165
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 169
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 167
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 173
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 176
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 168
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 177
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 181
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 182
+10月 26, 2024 10:18:53 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 186
+2024.10.26 10:18:56 INFO  compiling npc (1 scala source)
+2024.10.26 10:18:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:18:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:18:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:18:57 ERROR searching for `.` failed
+java.lang.RuntimeException: invalid symbol format
+.
+^
+	at scala.sys.package$.error(package.scala:27)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.fail(Scala.scala:164)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.readChar(Scala.scala:176)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseValue(Scala.scala:192)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseDescriptor(Scala.scala:211)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.entryPoint(Scala.scala:232)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser$.apply(Scala.scala:240)
+	at scala.meta.internal.semanticdb.Scala$ScalaSymbolOps$.owner$extension(Scala.scala:80)
+	at scala.meta.internal.mtags.Symbol.toplevel(Symbol.scala:50)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:200)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:177)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:142)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:142)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.findInIndex$1(FallbackDefinitionProvider.scala:125)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$15(FallbackDefinitionProvider.scala:132)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$3(FallbackDefinitionProvider.scala:131)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$2(FallbackDefinitionProvider.scala:43)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$1(FallbackDefinitionProvider.scala:40)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.search(FallbackDefinitionProvider.scala:39)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$3(DefinitionProvider.scala:120)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$2(DefinitionProvider.scala:120)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:18:57 ERROR searching for `#` failed
+java.lang.RuntimeException: invalid symbol format
+#
+^
+	at scala.sys.package$.error(package.scala:27)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.fail(Scala.scala:164)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.readChar(Scala.scala:176)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseValue(Scala.scala:192)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseDescriptor(Scala.scala:214)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.entryPoint(Scala.scala:232)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser$.apply(Scala.scala:240)
+	at scala.meta.internal.semanticdb.Scala$ScalaSymbolOps$.owner$extension(Scala.scala:80)
+	at scala.meta.internal.mtags.Symbol.toplevel(Symbol.scala:50)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:200)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:177)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:142)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:142)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.findInIndex$1(FallbackDefinitionProvider.scala:125)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$15(FallbackDefinitionProvider.scala:132)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$3(FallbackDefinitionProvider.scala:131)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$2(FallbackDefinitionProvider.scala:43)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$1(FallbackDefinitionProvider.scala:40)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.search(FallbackDefinitionProvider.scala:39)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$3(DefinitionProvider.scala:120)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$2(DefinitionProvider.scala:120)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:18:57 ERROR searching for `().` failed
+java.lang.RuntimeException: invalid symbol format
+().
+^
+	at scala.sys.package$.error(package.scala:27)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.fail(Scala.scala:164)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.readChar(Scala.scala:176)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseValue(Scala.scala:192)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseDescriptor(Scala.scala:209)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.entryPoint(Scala.scala:232)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser$.apply(Scala.scala:240)
+	at scala.meta.internal.semanticdb.Scala$ScalaSymbolOps$.owner$extension(Scala.scala:80)
+	at scala.meta.internal.mtags.Symbol.toplevel(Symbol.scala:50)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:200)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:177)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:142)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:142)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.findInIndex$1(FallbackDefinitionProvider.scala:125)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$15(FallbackDefinitionProvider.scala:132)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$3(FallbackDefinitionProvider.scala:131)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$2(FallbackDefinitionProvider.scala:43)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$1(FallbackDefinitionProvider.scala:40)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.search(FallbackDefinitionProvider.scala:39)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$3(DefinitionProvider.scala:120)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$2(DefinitionProvider.scala:120)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:18:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:18:57 WARN  Could not find 'W' using presentation compiler nor semanticdb. Trying to guess the definition using available information from local class context. 
+2024.10.26 10:18:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:18:57 ERROR searching for `.` failed
+java.lang.RuntimeException: invalid symbol format
+.
+^
+	at scala.sys.package$.error(package.scala:27)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.fail(Scala.scala:164)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.readChar(Scala.scala:176)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseValue(Scala.scala:192)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseDescriptor(Scala.scala:211)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.entryPoint(Scala.scala:232)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser$.apply(Scala.scala:240)
+	at scala.meta.internal.semanticdb.Scala$ScalaSymbolOps$.owner$extension(Scala.scala:80)
+	at scala.meta.internal.mtags.Symbol.toplevel(Symbol.scala:50)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:200)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:177)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:142)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:142)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.findInIndex$1(FallbackDefinitionProvider.scala:125)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$15(FallbackDefinitionProvider.scala:132)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$3(FallbackDefinitionProvider.scala:131)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$2(FallbackDefinitionProvider.scala:43)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$1(FallbackDefinitionProvider.scala:40)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.search(FallbackDefinitionProvider.scala:39)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$3(DefinitionProvider.scala:120)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$2(DefinitionProvider.scala:120)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:18:57 ERROR searching for `#` failed
+java.lang.RuntimeException: invalid symbol format
+#
+^
+	at scala.sys.package$.error(package.scala:27)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.fail(Scala.scala:164)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.readChar(Scala.scala:176)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseValue(Scala.scala:192)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseDescriptor(Scala.scala:214)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.entryPoint(Scala.scala:232)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser$.apply(Scala.scala:240)
+	at scala.meta.internal.semanticdb.Scala$ScalaSymbolOps$.owner$extension(Scala.scala:80)
+	at scala.meta.internal.mtags.Symbol.toplevel(Symbol.scala:50)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:200)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:177)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:142)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:142)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.findInIndex$1(FallbackDefinitionProvider.scala:125)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$15(FallbackDefinitionProvider.scala:132)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$3(FallbackDefinitionProvider.scala:131)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$2(FallbackDefinitionProvider.scala:43)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$1(FallbackDefinitionProvider.scala:40)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.search(FallbackDefinitionProvider.scala:39)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$3(DefinitionProvider.scala:120)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$2(DefinitionProvider.scala:120)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:18:57 ERROR searching for `().` failed
+java.lang.RuntimeException: invalid symbol format
+().
+^
+	at scala.sys.package$.error(package.scala:27)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.fail(Scala.scala:164)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.readChar(Scala.scala:176)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseValue(Scala.scala:192)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.parseDescriptor(Scala.scala:209)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser.entryPoint(Scala.scala:232)
+	at scala.meta.internal.semanticdb.Scala$DescriptorParser$.apply(Scala.scala:240)
+	at scala.meta.internal.semanticdb.Scala$ScalaSymbolOps$.owner$extension(Scala.scala:80)
+	at scala.meta.internal.mtags.Symbol.toplevel(Symbol.scala:50)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query0(SymbolIndexBucket.scala:200)
+	at scala.meta.internal.mtags.SymbolIndexBucket.query(SymbolIndexBucket.scala:177)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.$anonfun$findSymbolDefinition$1(OnDemandSymbolIndex.scala:142)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.findSymbolDefinition(OnDemandSymbolIndex.scala:142)
+	at scala.meta.internal.mtags.OnDemandSymbolIndex.definition(OnDemandSymbolIndex.scala:48)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.findInIndex$1(FallbackDefinitionProvider.scala:125)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$15(FallbackDefinitionProvider.scala:132)
+	at scala.collection.immutable.List.flatMap(List.scala:294)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$3(FallbackDefinitionProvider.scala:131)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$2(FallbackDefinitionProvider.scala:43)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.$anonfun$search$1(FallbackDefinitionProvider.scala:40)
+	at scala.Option.flatMap(Option.scala:283)
+	at scala.meta.internal.metals.FallbackDefinitionProvider.search(FallbackDefinitionProvider.scala:39)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$3(DefinitionProvider.scala:120)
+	at scala.Option.orElse(Option.scala:477)
+	at scala.meta.internal.metals.DefinitionProvider.$anonfun$definition$2(DefinitionProvider.scala:120)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.10.26 10:18:57 WARN  Could not load snapshot text for /home/hujun/ysyx-workbench/npc/src/main/scala/core/core.scala
+2024.10.26 10:18:57 WARN  Could not find 'W' using presentation compiler nor semanticdb. Trying to guess the definition using available information from local class context. 
+2024.10.26 10:18:59 WARN  there were 151 feature warnings; re-run with -feature for details
+2024.10.26 10:18:59 INFO  time: compiled npc in 3.04s
+2024.10.26 10:18:59 INFO  compiling npc (1 scala source)
+2024.10.26 10:18:59 WARN  there were 14 feature warnings; re-run with -feature for details
+2024.10.26 10:19:00 INFO  time: compiled npc in 1.01s
+2024.10.26 10:19:05 INFO  compiling npc (1 scala source)
+2024.10.26 10:19:07 WARN  there were 151 feature warnings; re-run with -feature for details
+2024.10.26 10:19:07 INFO  time: compiled npc in 2.47s
+10月 26, 2024 10:19:26 上午 org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+警告: Unmatched cancel notification for request id 258

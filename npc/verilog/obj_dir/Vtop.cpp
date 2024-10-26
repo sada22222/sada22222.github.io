@@ -17,8 +17,9 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , io_timer{vlSymsp->TOP.io_timer}
     , io_soft{vlSymsp->TOP.io_soft}
     , io_extern{vlSymsp->TOP.io_extern}
-    , io_flush{vlSymsp->TOP.io_flush}
     , io_stall{vlSymsp->TOP.io_stall}
+    , io_flush{vlSymsp->TOP.io_flush}
+    , io_stallo{vlSymsp->TOP.io_stallo}
     , io_bputake{vlSymsp->TOP.io_bputake}
     , io_inst{vlSymsp->TOP.io_inst}
     , io_pc{vlSymsp->TOP.io_pc}

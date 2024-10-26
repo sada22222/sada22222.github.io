@@ -2669,9 +2669,9 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                                 & ((0xf14U 
                                                                                 != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
                                                                                 & (IData)(vlSelf->Core__DOT__csr__DOT___T_267)))))))))))))))))));
-    vlSelf->io_stall = ((IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2) 
-                        | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
-                           | (IData)(vlSelf->Core__DOT__resoler_io_loadflag)));
+    vlSelf->io_stallo = ((IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2) 
+                         | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
+                            | (IData)(vlSelf->Core__DOT__resoler_io_loadflag)));
     vlSelf->Core__DOT__ID_EX_io_stallNext = ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
                                              | (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2));
     vlSelf->Core__DOT__ID__DOT__addrFault = ((IData)(vlSelf->Core__DOT__ID__DOT__branchteke) 
@@ -2688,11 +2688,11 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__csr__DOT___T_319 = ((IData)(vlSelf->Core__DOT__csr__DOT__readable) 
                                            & (IData)(vlSelf->Core__DOT__csr__DOT__writable));
     vlSelf->Core__DOT__IF_ID__DOT___GEN_4 = (1U & (
-                                                   (~ (IData)(vlSelf->io_stall)) 
+                                                   (~ (IData)(vlSelf->io_stallo)) 
                                                    | (IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_valid)));
     vlSelf->Core__DOT__ID_EX__DOT___T_3 = ((IData)(vlSelf->io_flush) 
                                            | ((~ (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)) 
-                                              & (IData)(vlSelf->io_stall)));
+                                              & (IData)(vlSelf->io_stallo)));
     vlSelf->Core__DOT__EX_MEM__DOT___T_3 = ((IData)(vlSelf->io_flush) 
                                             | ((~ (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2)) 
                                                & (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)));

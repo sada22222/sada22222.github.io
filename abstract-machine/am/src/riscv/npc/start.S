@@ -3,11 +3,6 @@
 .type _start, @function
 
 _start:
-  li x1,1
-  li x1,1
-  li x1,1
-  li x1,1
-  li x1,1
-  li x1,1
+  mv s0, zero
   la sp, _stack_pointer
   jal _trm_init
