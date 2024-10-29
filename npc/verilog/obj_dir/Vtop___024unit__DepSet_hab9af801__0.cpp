@@ -106,16 +106,6 @@ VL_INLINE_OPT void Vtop___024unit____Vdpiimwrap_fetch_TOP____024unit(CData/*0:0*
     fetch__Vfuncrtn = fetch__Vfuncrtn__Vcvt;
 }
 
-extern "C" void halt(int inst);
-
-VL_INLINE_OPT void Vtop___024unit____Vdpiimwrap_halt_TOP____024unit(IData/*31:0*/ inst) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+        Vtop___024unit____Vdpiimwrap_halt_TOP____024unit\n"); );
-    // Body
-    int inst__Vcvt;
-    for (size_t inst__Vidx = 0; inst__Vidx < 1; ++inst__Vidx) inst__Vcvt = inst;
-    halt(inst__Vcvt);
-}
-
 extern "C" void vaddr_write(int addr, char mask, int data);
 
 VL_INLINE_OPT void Vtop___024unit____Vdpiimwrap_vaddr_write_TOP____024unit(IData/*31:0*/ addr, CData/*7:0*/ mask, IData/*31:0*/ data) {

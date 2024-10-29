@@ -19,12 +19,15 @@ class Core extends Module{
       val flushpc       = Output(UInt(32.W))
       val flush        =Output(Bool())
       val stall       = Output(Bool())
-      val id_inst       = Output(UInt(32.W))
+      val wbinst       = Output(UInt(32.W))
       val bputake       = Output(Bool())
       val bpuaddr       = Output(UInt(32.W))
       val idpc       = Output(UInt(32.W)) 
-      val expc       = Output(UInt(32.W))   
-      val mempc       = Output(UInt(32.W))                              
+      val idinst       = Output(UInt(32.W))
+      val expc       = Output(UInt(32.W)) 
+      val exinst       = Output(UInt(32.W))
+      val mempc       = Output(UInt(32.W))
+      val meminst       = Output(UInt(32.W))                              
       val result       = Output(UInt(32.W))  
   })
 
@@ -122,16 +125,19 @@ class Core extends Module{
 
   
 
-  io.flush:=ctrl.io.flush
-  io.stall:=ctrl.io.stallIf
+  io.flush:=ctrl.io.flushIf
+  io.stall:=ctrl.io.stallId
   io.flushpc:=ctrl.io.flushPc
-  io.id_inst:=IF_ID.io.prev.inst
-  io.next:=fetch.io.nextpc
+  io.next:=MEM.io.ex_i.excType
   io.bputake:=fetch.io.prdt_taken_o
   io.bpuaddr:=fetch.io.prdt_addr_o
   io.idpc:=ID.io.if_i.pc
+  io.idinst:=IF_ID.io.next.inst
   io.expc:=EX.io.id_i.currentPc
+  io.exinst:=EX.io.id_i.inst
   io.mempc:=MEM.io.ex_i.currentPc
+  io.meminst:=MEM.io.ex_i.inst
+  io.wbinst:=WB.io.wbinst
   io.result:=WB.io.regdata
 }
 

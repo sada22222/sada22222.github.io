@@ -2,6 +2,7 @@
 1722009178708:clean
 1722009182483:runMain GCD
 1722009304873:runMain gcd.GCD
+<<<<<<< HEAD
 1728825897404:sbt compile
 1728826094253:compile
 1728826101468:runMain core.Top
@@ -13,3 +14,5 @@
 1728826364014:runMain core.Top
 1728826367906:compile
 1728826369819:runMain core.Top
+=======
+>>>>>>> c17e80c8a4852a648241cd6fb2a486081b17268a

@@ -12,7 +12,7 @@ import configs.ExceptType._
 class ID extends Module{
   val io=IO(new Bundle() {
     val if_i=Input(new IF_IO)
-    val IMMU=Output(UInt(32.W))
+    
     val read1 = new RegReadIO
     val read2 = new RegReadIO
 
@@ -24,11 +24,17 @@ class ID extends Module{
     val id_o = Output(new ID_IO)
 
   })
-  val stall=RegNext(io.stallid)
-  val lastinst = Reg(UInt(32.W))
-  when(stall){lastinst:=io.if_i.inst}
-  val inst=Mux(!io.if_i.valid,NOP,
-    Mux(stall,lastinst,io.if_i.inst))
+  
+  val stall = RegNext(io.stallid)                 // 延迟一个周期，避免组合环路
+  val lastinst = RegInit("h13".U(32.W))           // 初始值为 NOP 指令
+  when (stall) {
+    lastinst := lastinst                          // 如果 stall 为真，保持 lastinst 不变
+  }.otherwise {
+    lastinst := io.if_i.inst                      // 否则更新为当前指令
+  }
+  val inst =   Mux(!io.if_i.valid, "h13".U,         // 如果无效则返回 NOP
+               Mux(stall, lastinst, io.if_i.inst)) // 否则根据 stall 决定 inst 值
+
 
   // regfile addresses
   val rd  = inst(11, 7)
@@ -42,7 +48,7 @@ class ID extends Module{
   val immB  = Cat(inst(31), inst(7), inst(30, 25), inst(11, 8), 0.U(1.W))
   val immU  = Cat(inst(31, 12), 0.U(12.W))
   val immJ  = Cat(inst(31), inst(19, 12), inst(20), inst(30, 21), 0.U(1.W))
-  io.IMMU:=immU
+  
   def generateOpr(oprSel: UInt) =
     MuxLookup(oprSel, 0.S, Seq(
       OPR_REG1  -> io.read1.data.asSInt,
@@ -60,9 +66,9 @@ class ID extends Module{
     mduOp :: excType :: Nil) = ListLookup(inst, DEFAULT, TABLE)
 
   val all_jump = branchOp === BR_AL
-  val jal_pc   = (io.if_i.pc.asSInt  + immJ.asSInt).asUInt
-  val imm_jalr  = (io.read1.data.asSInt + immI.asSInt).asUInt
-  val jalr_pc =   Cat(imm_jalr,0.U(1.W))
+  val jal_pc =  (io.if_i.pc.asSInt + immJ.asSInt).asUInt
+  val imm_jalr = io.read1.data.asSInt + immI.asSInt 
+  val jalr_pc = Cat(imm_jalr(31,1), 0.U(1.W)) 
   val pc_j = Mux(regEn1,jalr_pc,jal_pc)
   val pc_b = (io.if_i.pc.asSInt + immB.asSInt).asUInt
   val takepc = Mux(branchOp === BR_N,0.U,
@@ -78,7 +84,7 @@ class ID extends Module{
   ))
 
   val branchmiss = (branchOp=/=BR_N)&&((io.if_i.bpu_take =/= branchteke) || (io.if_i.bpu_takepc =/= takepc))
-  val flushpc = Mux(branchmiss,takepc,io.if_i.pc+4.U)
+  val flushpc = Mux(branchteke,takepc,io.if_i.pc+4.U)
   val addrFault   = branchteke && takepc(1, 0) =/= 0.U
 
   // CSR related signals
@@ -124,7 +130,7 @@ class ID extends Module{
   io.id_o.opr2 := generateOpr(aluSrc2).asUInt
   io.id_o.excType:=exceptType
   io.id_o.excValue:=exceptValue
-  io.id_o.inst := io.if_i.inst
+  io.id_o.inst := inst
   io.id_o.valid := io.if_i.valid
   io.id_o.currentPc := io.if_i.pc
   io.id_o.regWen     := regWen

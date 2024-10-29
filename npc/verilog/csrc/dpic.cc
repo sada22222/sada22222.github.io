@@ -19,7 +19,7 @@ extern "C" void get_diff_commit(svBit commit){
 
 static int cnt = 0;
 uint32_t fetch(bool clk, bool rst, paddr_t pc) {
-    printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
+    //printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
     if (rst && pc == 0) { 
         return NOP;
     }
@@ -83,22 +83,32 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
 
 
 word_t vaddr_read(bool is_signed, paddr_t addr, uint8_t mask) {
-    sword_t data = paddr_read(addr, 1 << mask);
+    int len=0;
+    switch (mask) {
+    case 0b1111: len=4; break;//32位
+    case 0b0011: len=2; break;//低16   
+    case 0b0001: len=1; break;//低8 
+    }
+    sword_t data = paddr_read(addr, len);
     if (is_signed) {
         int size_of_word = sizeof(data) * 8;
         switch (mask) {
-            case 0: data = (data << size_of_word -  8) >> size_of_word -  8; break;
-            case 1: data = (data << size_of_word - 16) >> size_of_word - 16; printf("data: %x\n", (0x8000 << 16) >> 16); break;
-            // lwu: rv64
-            IFDEF(CONFIG_ISA64, case 2: data = (data << size_of_word - 32) >> size_of_word - 32; break;);
+            case 0b0001: data = (data << size_of_word -  8) >> size_of_word -  8; break;
+            case 0b0011: data = (data << size_of_word - 16) >> size_of_word - 16; printf("data: %x\n", (0x8000 << 16) >> 16); break;
         }
     }
     IFDEF(CONFIG_MTRACE, mtrace('r', addr, data));
-    printf("addr is %x",&addr);
+    printf("addr is %x\n",&addr);
     return data;
 }
 
 void vaddr_write(paddr_t addr, uint8_t mask, word_t data) {
+    int len=0;
+    switch (mask) {
+    case 0b1111: len=4; break;//32位
+    case 0b0011: len=2; break;//低16  
+    case 0b0001: len=1; break;//低8   
+    }
     IFDEF(CONFIG_MTRACE, mtrace('w', addr, data));
-    paddr_write(addr, 1 << mask, data);
+    paddr_write(addr, len, data);
 }

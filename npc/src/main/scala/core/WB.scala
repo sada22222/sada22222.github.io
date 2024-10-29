@@ -12,13 +12,13 @@ class WB extends Module{
     val regdata  = Output(UInt(32.W))
     val csr   = new CsrWriteIO
     val wb_pc =Output(UInt(32.W))
+    val wbinst=Output(UInt(32.W))
   })
   io.regen:=io.mem_i.reg.en
   io.regaddr:=io.mem_i.reg.addr
   io.regdata:=io.mem_i.reg.data
   io.csr<>io.mem_i.csr
   io.wb_pc:=io.mem_i.currentPc
-
-
+  io.wbinst:=io.mem_i.inst
   
 }

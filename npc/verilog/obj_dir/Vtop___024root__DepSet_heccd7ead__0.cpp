@@ -295,13 +295,12 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
                                                      : 0U))));
     vlSelf->Core__DOT__csr__DOT__handIntS = ((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasIntM)) 
                                              & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt));
-    vlSelf->io_flush = (((((7U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType)) 
-                           | (5U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))) 
-                          | ((8U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType)) 
-                             & (IData)(vlSelf->Core__DOT__MEM__DOT__memAddr))) 
-                         | ((1U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType)) 
-                            | (2U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType)))) 
-                        | (IData)(vlSelf->Core__DOT__csr__DOT__hasInt));
+    vlSelf->Core__DOT__ID_EX_io_flush = (((((7U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType)) 
+                                            | (5U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))) 
+                                           | ((8U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType)) 
+                                              & (IData)(vlSelf->Core__DOT__MEM__DOT__memAddr))) 
+                                          | (1U == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))) 
+                                         | (IData)(vlSelf->Core__DOT__csr__DOT__hasInt));
     vlSelf->Core__DOT__csr__DOT___T_768 = (((QData)((IData)(vlSelf->Core__DOT__csr__DOT__writeData)) 
                                             << 0x20U) 
                                            | (QData)((IData)(vlSelf->Core__DOT__csr__DOT__mcycle_data)));
@@ -377,31 +376,27 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
                                                     == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
                                                     ? 0xbU
                                                     : 
-                                                   ((2U 
+                                                   ((8U 
                                                      == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
-                                                     ? 3U
-                                                     : 
-                                                    ((8U 
-                                                      == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
-                                                      ? 
-                                                     ((IData)(vlSelf->Core__DOT__MEM__DOT__memAddr)
-                                                       ? 4U
-                                                       : 0xdU)
-                                                      : 0U))))));
-    vlSelf->Core__DOT__IF_ID__DOT___T_3 = ((IData)(vlSelf->io_flush) 
-                                           | (IData)(vlSelf->Core__DOT__ID__DOT__branchmiss));
-    vlSelf->Core__DOT__MEM_WB__DOT___T_3 = ((IData)(vlSelf->io_flush) 
+                                                     ? 
+                                                    ((IData)(vlSelf->Core__DOT__MEM__DOT__memAddr)
+                                                      ? 4U
+                                                      : 0xdU)
+                                                     : 0U)))));
+    vlSelf->io_flush = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
+                        | (IData)(vlSelf->Core__DOT__ID__DOT__branchmiss));
+    vlSelf->Core__DOT__MEM_WB__DOT___T_3 = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
                                             | (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2));
-    vlSelf->Core__DOT__ID_EX__DOT___T_3 = ((IData)(vlSelf->io_flush) 
+    vlSelf->Core__DOT__ID_EX__DOT___T_3 = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
                                            | ((~ (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)) 
-                                              & (IData)(vlSelf->io_stallo)));
-    vlSelf->Core__DOT__EX_MEM__DOT___T_3 = ((IData)(vlSelf->io_flush) 
+                                              & (IData)(vlSelf->io_stall)));
+    vlSelf->Core__DOT__EX_MEM__DOT___T_3 = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
                                             | ((~ (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2)) 
                                                & (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)));
     vlSelf->Core__DOT__csr__DOT__handExcS = ((~ ((IData)(vlSelf->Core__DOT__csr__DOT__mode) 
                                                  >> 1U)) 
                                              & (((~ (IData)(vlSelf->Core__DOT__csr__DOT__hasInt)) 
-                                                 & (IData)(vlSelf->io_flush)) 
+                                                 & (IData)(vlSelf->Core__DOT__ID_EX_io_flush)) 
                                                 & (vlSelf->Core__DOT__csr__DOT__medeleg_data 
                                                    >> 
                                                    ((5U 
@@ -416,22 +411,18 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
                                                        == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
                                                        ? 0xbU
                                                        : 
-                                                      ((2U 
+                                                      ((8U 
                                                         == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
-                                                        ? 3U
-                                                        : 
-                                                       ((8U 
-                                                         == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_excType))
-                                                         ? 
-                                                        ((IData)(vlSelf->Core__DOT__MEM__DOT__memAddr)
-                                                          ? 4U
-                                                          : 0xdU)
-                                                         : 0U))))))));
+                                                        ? 
+                                                       ((IData)(vlSelf->Core__DOT__MEM__DOT__memAddr)
+                                                         ? 4U
+                                                         : 0xdU)
+                                                        : 0U)))))));
     vlSelf->Core__DOT__csr__DOT___T_605 = ((IData)(vlSelf->Core__DOT__csr__DOT__handIntS) 
                                            | (IData)(vlSelf->Core__DOT__csr__DOT__handExcS));
     vlSelf->Core__DOT__csr__DOT___GEN_67 = ((IData)(vlSelf->Core__DOT__csr__DOT___T_605) 
                                             & (IData)(vlSelf->Core__DOT__csr__DOT__mstatus_mie));
-    vlSelf->io_flushpc = ((IData)(vlSelf->io_flush)
+    vlSelf->io_flushpc = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush)
                            ? ((IData)(vlSelf->Core__DOT__csr__DOT___T_605)
                                ? ((vlSelf->Core__DOT__csr__DOT__stvec_base 
                                    + (((IData)(vlSelf->Core__DOT__csr__DOT__stvec_mode) 
@@ -443,11 +434,9 @@ VL_INLINE_OPT void Vtop___024root___ico_sequent__TOP__0(Vtop___024root* vlSelf) 
                                        & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
                                        ? vlSelf->Core__DOT__csr__DOT__cause
                                        : 0U)) << 2U))
-                           : (IData)(((IData)(vlSelf->Core__DOT__ID__DOT__branchmiss)
-                                       ? vlSelf->Core__DOT__ID__DOT__takepc
-                                       : (QData)((IData)(
-                                                         ((IData)(4U) 
-                                                          + vlSelf->Core__DOT__IF_ID__DOT__ff_pc))))));
+                           : ((IData)(vlSelf->Core__DOT__ID__DOT__branchmiss)
+                               ? vlSelf->Core__DOT__ID__DOT__takepc
+                               : ((IData)(4U) + vlSelf->Core__DOT__IF_ID__DOT__ff_pc)));
 }
 
 void Vtop___024root___eval_ico(Vtop___024root* vlSelf) {
@@ -513,7 +502,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__ico(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3809, "", "Input combinational region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3826, "", "Input combinational region did not converge.");
             }
             vlSelf->__VicoIterCount = ((IData)(1U) 
                                        + vlSelf->__VicoIterCount);
@@ -536,7 +525,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                     Vtop___024root___dump_triggers__act(vlSelf);
 #endif
-                    VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3809, "", "Active region did not converge.");
+                    VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3826, "", "Active region did not converge.");
                 }
                 vlSelf->__VactIterCount = ((IData)(1U) 
                                            + vlSelf->__VactIterCount);
@@ -551,7 +540,7 @@ void Vtop___024root___eval(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__nba(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3809, "", "NBA region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3826, "", "NBA region did not converge.");
             }
             __VnbaIterCount = ((IData)(1U) + __VnbaIterCount);
             Vtop___024root___eval_nba(vlSelf);
@@ -575,7 +564,5 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
         Verilated::overWidthError("io_soft");}
     if (VL_UNLIKELY((vlSelf->io_extern & 0xfeU))) {
         Verilated::overWidthError("io_extern");}
-    if (VL_UNLIKELY((vlSelf->io_stall & 0xfeU))) {
-        Verilated::overWidthError("io_stall");}
 }
 #endif  // VL_DEBUG

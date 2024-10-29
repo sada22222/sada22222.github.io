@@ -4,6 +4,7 @@
 #include "Vtop.h"
 #include "paddr.h"
 #include "isa.h"
+#define EBREAK 0x100073
 typedef struct {
     word_t gpr[32];
     paddr_t pc;

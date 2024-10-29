@@ -88,6 +88,7 @@ class MEM_IO extends StageIO{
   // to CSR
   val csr       = new CsrCommitIO
   val currentPc = UInt(32.W)
+  val inst = UInt(32.W)
 
 }
 

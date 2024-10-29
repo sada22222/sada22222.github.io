@@ -3,6 +3,7 @@ export TARGET_DIR = $(TOP_DIR)/verilog/vsrc
 export SRC_DIR = $(TOP_DIR)/src/main/scala
 export TEST_DIR = $(TOP_DIR)/src/test/scala
 
+
 TOP_SRC := $(wildcard $(SRC_DIR)/*.scala)
 TOP_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
 

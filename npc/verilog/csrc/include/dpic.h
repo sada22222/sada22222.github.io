@@ -7,7 +7,6 @@
 #define EBREAK 0x100073
 #define NOP    0x13
 
-extern "C" void halt(uint32_t inst);
 extern "C" uint32_t fetch(bool clk, bool rst, paddr_t pc);
 extern "C" void  set_gpr_ptr(  uint32_t dut_x0,  uint32_t dut_x1,  uint32_t dut_x2,  uint32_t dut_x3,  uint32_t dut_x4,  uint32_t dut_x5,
                   uint32_t dut_x6,  uint32_t dut_x7,  uint32_t dut_x8,  uint32_t dut_x9,  uint32_t dut_x10, uint32_t dut_x11, uint32_t dut_x12,

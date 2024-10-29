@@ -13,6 +13,7 @@ class EX extends Module{
     val stallReq=Output(Bool())
     val ex_o = Output(new EX_IO)
   })
+  
 
   val opr1 = io.id_i.opr1
   val opr2 = io.id_i.opr2
@@ -26,8 +27,8 @@ class EX extends Module{
     ALU_SLL ->  (opr1<<opr2(4,0)),
     ALU_SRA ->  (opr1.asSInt>>opr2(4,0)).asUInt,
     ALU_SRL ->  (opr1>>opr2(4,0)),
-    ALU_SLT ->  (opr1.asSInt<opr2.asSInt).asUInt,
-    ALU_SLTU->  (opr1>opr2)
+    ALU_SLT ->  (opr1.asSInt < opr2.asSInt).asUInt,
+    ALU_SLTU->  (opr1 < opr2)
   ))
 
   val result = Mux(io.id_i.csren,io.id_i.csrrData,Aluresult)

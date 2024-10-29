@@ -69,6 +69,7 @@ void difftest_step(paddr_t pc, paddr_t npc) {
         npc_state.state = NPC_ABORT;
         npc_state.halt_pc = pc;
     }
+    
 }
 
 #define dump(s, x, y) printf("%4s -->", s); \
@@ -83,11 +84,11 @@ bool checkregs(CPU_state ref, paddr_t pc) {
         isa_reg_display(npc_cpu);
         printf("nemu ");
         isa_reg_display(ref);
-        printf("nemu pc=0x%x      nemu pc=0x%x\n",ref.pc,dut->io_pc);
+        printf("nemu pc=0x%x      npc pc=0x%x\n",ref.pc,dut->io_pc);
         ok = 0;
     }
 
-    if (ref.pc != dut->io_pc-4) {
+    if (ref.pc != dut->io_pc) {
         dump("PC", dut->io_pc, ref.pc);
         ok = 0;
     }

@@ -21,7 +21,7 @@ void cpu_init() { // exe the first instruction
 
     // Execute the first instruction
     dut->reset = 0;
-
+    
 
     IFDEF(CONFIG_ITRACE, itrace(dut->io_npc, dut->io_inst));
 
@@ -36,22 +36,21 @@ void cpu_init() { // exe the first instruction
 }
 
 void exec_once() {
-    dut->clock = 1 - dut->clock; // 0
+    dut->clock = 0; // 0
     dut->eval();
     tfp->dump(time_counter ++);
     
-    dut->clock = 1 - dut->clock; // 1
+    dut->clock = 1 ; // 1
     dut->eval();
     tfp->dump(time_counter ++);
-    printf("next=%x flushpc=%x  flush=%x   stall=%x   id_inst=%x   bputake=%x  bpuaddr=%x  \n ifpc=%x  idpc=%x  expc=%x  mempc=%x  wbpc=%x  result=%x\n" ,dut->io_next,dut->io_flushpc,dut->io_flush,dut->io_stall,dut->io_id_inst,dut->io_bputake,dut->io_bpuaddr,
-    dut->io_npc,dut->io_idpc,dut->io_expc,dut->io_mempc,dut->io_pc,dut->io_result);
-
+    printf("next=%x flushpc=%x  flush=%x   stall=%x   id_inst=%x   bputake=%x  bpuaddr=%x  \n " ,dut->io_next,dut->io_flushpc,dut->io_flush,dut->io_stall,dut->io_idinst,dut->io_bputake,dut->io_bpuaddr);
+    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x\n",  dut->io_npc,dut->io_inst,dut->io_idpc,dut->io_idinst,dut->io_expc,dut->io_exinst,dut->io_mempc,dut->io_meminst,dut->io_pc,dut->io_wbinst,dut->io_result);
     IFDEF(CONFIG_ITRACE, itrace(dut->io_npc, dut->io_inst));
 
     npc_eval();
 
-    if(dut->io_pc>=0x80000008)
-    IFDEF(CONFIG_DIFFTEST, difftest_step(npc_cpu.pc, npc_cpu.pc + 4));
+    if(dut->io_pc>=0x80000004){
+    IFDEF(CONFIG_DIFFTEST, difftest_step(npc_cpu.pc, npc_cpu.pc + 4));}
 }
 
 void cpu_exec(uint64_t n) {
@@ -67,12 +66,13 @@ void cpu_exec(uint64_t n) {
         if (npc_state.state != NPC_RUNNING) break;
 
         IFDEF(CONFIG_DEVICE, device_update());
+        ebreak();
     }
 
     IFDEF(CONFIG_MTRACE, mtraceDisplay());
 
     IFDEF(CONFIG_ITRACE, itraceDisplay());
-
+   
     switch (npc_state.state) {
         case NPC_RUNNING:
             npc_state.state = NPC_STOP;
@@ -90,8 +90,10 @@ void cpu_exec(uint64_t n) {
 
 
 void ebreak() {
-    npc_state.halt_ret = 1;
-    npc_state.halt_pc = npc_cpu.pc;
+    if (dut->io_wbinst == EBREAK || dut->io_wbinst == 0x6f) {
+        npc_state.halt_ret = 1;
+        npc_state.halt_pc = npc_cpu.pc;
+    }
 }
 
 void npc_eval() {

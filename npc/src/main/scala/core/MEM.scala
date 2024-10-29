@@ -70,13 +70,11 @@ class MEM extends Module {
   val sel = io.ex_i.reg.data(1, 0)
 
   // 写使能
-  val selWord = "b1111".U(4.W)
   val writeEn = MuxLookup(width, 0.U, Seq(
-    LS_DATA_BYTE -> ("b1".U(4.W) << sel),
-    LS_DATA_HALF -> ("b11".U(4.W) << sel),
-    LS_DATA_WORD -> selWord,
+    LS_DATA_BYTE -> ("b0001".U(4.W) ),
+    LS_DATA_HALF -> ("b0011".U(4.W) ),
+    LS_DATA_WORD -> ("b1111".U(4.W) ),
   ))
-  val ramWen = Mux(wen, writeEn, selWord)
 
   // 写数据逻辑
   def mapWriteData(i: Int, w: Int) =
@@ -99,9 +97,9 @@ class MEM extends Module {
   mem.io.wen := wen                // 写使能信号
   mem.io.ren := !wen && ren        // 读使能信号
   mem.io.addr := addr              // 地址
-  mem.io.mask := ramWen            // 掩码
+  mem.io.mask := writeEn            // 掩码
   mem.io.sign := signed            // 有符号/无符号
-  mem.io.wdata := wdata            // 写入数据
+  mem.io.wdata := io.ex_i.lsuData            // 写入数据
 
   // 从DPI-C模块读取数据
   val loadData = mem.io.rdata
@@ -119,12 +117,12 @@ class MEM extends Module {
   val instAddr  = io.ex_i.excType === EXC_IADDR
   val instIllg  = io.ex_i.excType === EXC_ILLEG
   val excMem    = io.ex_i.excType === EXC_LOAD && memExcept
-  val excOther  = io.ex_i.excType === EXC_ECALL || io.ex_i.excType === EXC_EBRK
+  val excOther  = io.ex_i.excType === EXC_ECALL //|| io.ex_i.excType === EXC_EBRK
 
   val hasTrap   = instAddr || instIllg || excMem || excOther || io.csrHasInt
   val cause     = MuxLookup(io.ex_i.excType, 0.U, Seq(
     EXC_ECALL -> EXC_M_ECALL,
-    EXC_EBRK  -> EXC_BRK_POINT,
+    //EXC_EBRK  -> EXC_BRK_POINT,
     EXC_LOAD  -> Mux(memAddr, EXC_LOAD_ADDR, EXC_LOAD_PAGE)
   ))
   val excCause  = Mux(instIllg, EXC_ILL_INST, Mux(instAddr, EXC_INST_ADDR, cause))
@@ -144,6 +142,7 @@ class MEM extends Module {
 
   // 更新内存输出
   io.mem_o.currentPc := io.ex_i.currentPc
+  io.mem_o.inst := io.ex_i.inst
   io.mem_o.reg.en := io.ex_i.reg.en
   io.mem_o.reg.addr := io.ex_i.reg.addr
   io.mem_o.reg.data := reg_data
