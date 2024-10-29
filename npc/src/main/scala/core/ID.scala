@@ -83,7 +83,7 @@ class ID extends Module{
       BR_GEU -> (io.read1.data >= io.read2.data),
   ))
 
-  val branchmiss = (branchOp=/=BR_N)&&((io.if_i.bpu_take =/= branchteke) || (io.if_i.bpu_takepc =/= takepc))
+  val branchmiss = ((io.if_i.bpu_take =/= branchteke) || (io.if_i.bpu_takepc =/= takepc))
   val flushpc = Mux(branchteke,takepc,io.if_i.pc+4.U)
   val addrFault   = branchteke && takepc(1, 0) =/= 0.U
 
