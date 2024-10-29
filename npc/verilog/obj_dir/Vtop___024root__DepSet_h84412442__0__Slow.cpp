@@ -298,17 +298,17 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                         << 3U) 
                                                        | ((IData)(vlSelf->Core__DOT__csr__DOT__mip_ssip) 
                                                           << 1U))))));
-    vlSelf->Core__DOT__ID__DOT___T_850 = (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_valid)
+    vlSelf->Core__DOT__ID__DOT___T_848 = (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_valid)
                                             ? (vlSelf->Core__DOT__ID__DOT___GEN_0 
                                                >> 0xcU)
                                             : 0U) << 0xcU);
     if (vlSelf->Core__DOT__IF_ID__DOT__ff_valid) {
         vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0 
             = (vlSelf->Core__DOT__ID__DOT___GEN_0 >> 0x1fU);
-        vlSelf->Core__DOT__ID__DOT__rd = (0x1fU & (vlSelf->Core__DOT__ID__DOT___GEN_0 
-                                                   >> 7U));
         vlSelf->Core__DOT__ID__DOT__immI = (vlSelf->Core__DOT__ID__DOT___GEN_0 
                                             >> 0x14U);
+        vlSelf->Core__DOT__ID__DOT__rd = (0x1fU & (vlSelf->Core__DOT__ID__DOT___GEN_0 
+                                                   >> 7U));
         vlSelf->Core__DOT__ID__DOT__rs2 = (0x1fU & 
                                            (vlSelf->Core__DOT__ID__DOT___GEN_0 
                                             >> 0x14U));
@@ -318,8 +318,8 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelf->Core__DOT__ID__DOT__inst = vlSelf->Core__DOT__ID__DOT___GEN_0;
     } else {
         vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0 = 0U;
-        vlSelf->Core__DOT__ID__DOT__rd = 0U;
         vlSelf->Core__DOT__ID__DOT__immI = 0U;
+        vlSelf->Core__DOT__ID__DOT__rd = 0U;
         vlSelf->Core__DOT__ID__DOT__rs2 = 0U;
         vlSelf->Core__DOT__ID__DOT__rs1 = 0U;
         vlSelf->Core__DOT__ID__DOT__inst = 0x13U;
@@ -435,15 +435,15 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                 : 0U))))))))))))))))));
     vlSelf->Core__DOT__csr__DOT__flagIntM = (vlSelf->Core__DOT__csr__DOT___T_142 
                                              & vlSelf->Core__DOT__csr__DOT___T_47);
+    vlSelf->Core__DOT__ID__DOT___GEN_2 = (((- (IData)((IData)(vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0))) 
+                                           << 0xcU) 
+                                          | (IData)(vlSelf->Core__DOT__ID__DOT__immI));
     vlSelf->Core__DOT__ID__DOT____VdfgTmp_h7417a8e6__0 
         = (((- (IData)((IData)(vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0))) 
             << 0xcU) | ((((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_valid)
                            ? (vlSelf->Core__DOT__ID__DOT___GEN_0 
                               >> 0x19U) : 0U) << 5U) 
                         | (IData)(vlSelf->Core__DOT__ID__DOT__rd)));
-    vlSelf->Core__DOT__ID__DOT___GEN_2 = (((- (IData)((IData)(vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0))) 
-                                           << 0xcU) 
-                                          | (IData)(vlSelf->Core__DOT__ID__DOT__immI));
     vlSelf->Core__DOT__regfile__DOT___GEN_53 = ((0x15U 
                                                  == (IData)(vlSelf->Core__DOT__ID__DOT__rs2))
                                                  ? vlSelf->Core__DOT__regfile__DOT__regfile_21
@@ -857,92 +857,6 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                   & vlSelf->Core__DOT__ID__DOT__inst))
                                                                  ? 2U
                                                                  : 0U)))))))))))))));
-    vlSelf->Core__DOT__ID__DOT___T_629 = ((0x1003U 
-                                           == (0x707fU 
-                                               & vlSelf->Core__DOT__ID__DOT__inst))
-                                           ? 0U : (
-                                                   (0x2003U 
-                                                    == 
-                                                    (0x707fU 
-                                                     & vlSelf->Core__DOT__ID__DOT__inst))
-                                                    ? 0U
-                                                    : 
-                                                   ((0x4003U 
-                                                     == 
-                                                     (0x707fU 
-                                                      & vlSelf->Core__DOT__ID__DOT__inst))
-                                                     ? 0U
-                                                     : 
-                                                    ((0x5003U 
-                                                      == 
-                                                      (0x707fU 
-                                                       & vlSelf->Core__DOT__ID__DOT__inst))
-                                                      ? 0U
-                                                      : 
-                                                     ((0x23U 
-                                                       == 
-                                                       (0x707fU 
-                                                        & vlSelf->Core__DOT__ID__DOT__inst))
-                                                       ? 0U
-                                                       : 
-                                                      ((0x1023U 
-                                                        == 
-                                                        (0x707fU 
-                                                         & vlSelf->Core__DOT__ID__DOT__inst))
-                                                        ? 0U
-                                                        : 
-                                                       ((0x2023U 
-                                                         == 
-                                                         (0x707fU 
-                                                          & vlSelf->Core__DOT__ID__DOT__inst))
-                                                         ? 0U
-                                                         : 
-                                                        ((0xfU 
-                                                          == 
-                                                          (0xf00fffffU 
-                                                           & vlSelf->Core__DOT__ID__DOT__inst))
-                                                          ? 0U
-                                                          : 
-                                                         ((0x100fU 
-                                                           == vlSelf->Core__DOT__ID__DOT__inst)
-                                                           ? 0U
-                                                           : 
-                                                          ((0x1073U 
-                                                            == 
-                                                            (0x707fU 
-                                                             & vlSelf->Core__DOT__ID__DOT__inst))
-                                                            ? 3U
-                                                            : 
-                                                           ((0x2073U 
-                                                             == 
-                                                             (0x707fU 
-                                                              & vlSelf->Core__DOT__ID__DOT__inst))
-                                                             ? 4U
-                                                             : 
-                                                            ((0x3073U 
-                                                              == 
-                                                              (0x707fU 
-                                                               & vlSelf->Core__DOT__ID__DOT__inst))
-                                                              ? 5U
-                                                              : 
-                                                             ((0x5073U 
-                                                               == 
-                                                               (0x707fU 
-                                                                & vlSelf->Core__DOT__ID__DOT__inst))
-                                                               ? 3U
-                                                               : 
-                                                              ((0x6073U 
-                                                                == 
-                                                                (0x707fU 
-                                                                 & vlSelf->Core__DOT__ID__DOT__inst))
-                                                                ? 4U
-                                                                : 
-                                                               ((0x7073U 
-                                                                 == 
-                                                                 (0x707fU 
-                                                                  & vlSelf->Core__DOT__ID__DOT__inst))
-                                                                 ? 5U
-                                                                 : 0U)))))))))))))));
     vlSelf->Core__DOT__ID__DOT___T_529 = ((0x3013U 
                                            == (0x707fU 
                                                & vlSelf->Core__DOT__ID__DOT__inst))
@@ -1030,6 +944,92 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                  (0x707fU 
                                                                   & vlSelf->Core__DOT__ID__DOT__inst))
                                                                  ? 1U
+                                                                 : 0U)))))))))))))));
+    vlSelf->Core__DOT__ID__DOT___T_629 = ((0x1003U 
+                                           == (0x707fU 
+                                               & vlSelf->Core__DOT__ID__DOT__inst))
+                                           ? 0U : (
+                                                   (0x2003U 
+                                                    == 
+                                                    (0x707fU 
+                                                     & vlSelf->Core__DOT__ID__DOT__inst))
+                                                    ? 0U
+                                                    : 
+                                                   ((0x4003U 
+                                                     == 
+                                                     (0x707fU 
+                                                      & vlSelf->Core__DOT__ID__DOT__inst))
+                                                     ? 0U
+                                                     : 
+                                                    ((0x5003U 
+                                                      == 
+                                                      (0x707fU 
+                                                       & vlSelf->Core__DOT__ID__DOT__inst))
+                                                      ? 0U
+                                                      : 
+                                                     ((0x23U 
+                                                       == 
+                                                       (0x707fU 
+                                                        & vlSelf->Core__DOT__ID__DOT__inst))
+                                                       ? 0U
+                                                       : 
+                                                      ((0x1023U 
+                                                        == 
+                                                        (0x707fU 
+                                                         & vlSelf->Core__DOT__ID__DOT__inst))
+                                                        ? 0U
+                                                        : 
+                                                       ((0x2023U 
+                                                         == 
+                                                         (0x707fU 
+                                                          & vlSelf->Core__DOT__ID__DOT__inst))
+                                                         ? 0U
+                                                         : 
+                                                        ((0xfU 
+                                                          == 
+                                                          (0xf00fffffU 
+                                                           & vlSelf->Core__DOT__ID__DOT__inst))
+                                                          ? 0U
+                                                          : 
+                                                         ((0x100fU 
+                                                           == vlSelf->Core__DOT__ID__DOT__inst)
+                                                           ? 0U
+                                                           : 
+                                                          ((0x1073U 
+                                                            == 
+                                                            (0x707fU 
+                                                             & vlSelf->Core__DOT__ID__DOT__inst))
+                                                            ? 3U
+                                                            : 
+                                                           ((0x2073U 
+                                                             == 
+                                                             (0x707fU 
+                                                              & vlSelf->Core__DOT__ID__DOT__inst))
+                                                             ? 4U
+                                                             : 
+                                                            ((0x3073U 
+                                                              == 
+                                                              (0x707fU 
+                                                               & vlSelf->Core__DOT__ID__DOT__inst))
+                                                              ? 5U
+                                                              : 
+                                                             ((0x5073U 
+                                                               == 
+                                                               (0x707fU 
+                                                                & vlSelf->Core__DOT__ID__DOT__inst))
+                                                               ? 3U
+                                                               : 
+                                                              ((0x6073U 
+                                                                == 
+                                                                (0x707fU 
+                                                                 & vlSelf->Core__DOT__ID__DOT__inst))
+                                                                ? 4U
+                                                                : 
+                                                               ((0x7073U 
+                                                                 == 
+                                                                 (0x707fU 
+                                                                  & vlSelf->Core__DOT__ID__DOT__inst))
+                                                                 ? 5U
                                                                  : 0U)))))))))))))));
     vlSelf->Core__DOT__ID__DOT___T_153 = ((0x5073U 
                                            != (0x707fU 
@@ -2230,7 +2230,7 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                          ? 4U
                                                          : 0xdU)
                                                         : 0U)))))));
-    vlSelf->Core__DOT__ID__DOT___T_841 = ((0U != (IData)(vlSelf->Core__DOT__ID__DOT__csrActOp))
+    vlSelf->Core__DOT__ID__DOT___T_839 = ((0U != (IData)(vlSelf->Core__DOT__ID__DOT__csrActOp))
                                            ? (IData)(vlSelf->Core__DOT__ID__DOT__immI)
                                            : 0U);
     vlSelf->Core__DOT__ID_io_read2_data = (((IData)(vlSelf->Core__DOT__ID_io_read2_en) 
@@ -2362,112 +2362,112 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__csr__DOT___T_605 = ((IData)(vlSelf->Core__DOT__csr__DOT__handIntS) 
                                            | (IData)(vlSelf->Core__DOT__csr__DOT__handExcS));
     vlSelf->Core__DOT__csr__DOT___T_235 = ((0xf13U 
-                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                             ? 0U : 
                                            ((0xf14U 
-                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                              ? 0U : 
                                             ((0x300U 
-                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                               ? vlSelf->Core__DOT__csr__DOT___T_31
                                               : ((0x301U 
-                                                  == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                  == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                   ? 0x40141101U
                                                   : 
                                                  ((0x302U 
-                                                   == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                   == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                    ? vlSelf->Core__DOT__csr__DOT__medeleg_data
                                                    : 
                                                   ((0x303U 
-                                                    == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                    == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                     ? vlSelf->Core__DOT__csr__DOT__mideleg_data
                                                     : 
                                                    ((0x304U 
-                                                     == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                     == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                      ? vlSelf->Core__DOT__csr__DOT___T_47
                                                      : 
                                                     ((0x305U 
-                                                      == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                      == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                       ? vlSelf->Core__DOT__csr__DOT___T_129
                                                       : 
                                                      ((0x306U 
-                                                       == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                       == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                        ? 0U
                                                        : 
                                                       ((0x340U 
-                                                        == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                        == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                         ? vlSelf->Core__DOT__csr__DOT__mscratch_data
                                                         : 
                                                        ((0x341U 
-                                                         == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                         == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                          ? vlSelf->Core__DOT__csr__DOT__mepc_data
                                                          : 
                                                         ((0x342U 
-                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                           ? vlSelf->Core__DOT__csr__DOT___T_130
                                                           : 
                                                          ((0x343U 
-                                                           == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                           == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                            ? vlSelf->Core__DOT__csr__DOT__mtval_data
                                                            : 
                                                           ((0x344U 
-                                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                             ? vlSelf->Core__DOT__csr__DOT___T_142
                                                             : 
                                                            ((0xb00U 
-                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                              ? (IData)(vlSelf->Core__DOT__csr__DOT__mcycle_data)
                                                              : 
                                                             ((0xb02U 
-                                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                               ? (IData)(vlSelf->Core__DOT__csr__DOT__minstret_data)
                                                               : 
                                                              ((0xb80U 
-                                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                                ? (IData)(
                                                                          (vlSelf->Core__DOT__csr__DOT__mcycle_data 
                                                                           >> 0x20U))
                                                                : 
                                                               ((0xb82U 
-                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))
+                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))
                                                                 ? (IData)(
                                                                           (vlSelf->Core__DOT__csr__DOT__minstret_data 
                                                                            >> 0x20U))
                                                                 : 0U))))))))))))))))));
     vlSelf->Core__DOT__csr__DOT___T_267 = ((0x300U 
-                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                            | ((0x301U 
-                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                               | ((0x302U 
-                                                  == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                  == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                  | ((0x303U 
-                                                     == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                     == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                     | ((0x304U 
-                                                        == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                        == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                        | ((0x305U 
-                                                           == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                           == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                           | ((0x306U 
-                                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                              | ((0x340U 
-                                                                 == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                 == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                 | ((0x341U 
-                                                                    == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                    == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                    | ((0x342U 
-                                                                       == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                       == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                       | ((0x343U 
-                                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                          | ((0x344U 
-                                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                             | ((0xb00U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                | ((0xb02U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xb80U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xb82U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | (0x320U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841))))))))))))))))));
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839))))))))))))))))));
     vlSelf->Core__DOT__resoler_io_csrflag = (((0U != (IData)(vlSelf->Core__DOT__ID__DOT__csrActOp)) 
                                               & (2U 
                                                  != (IData)(vlSelf->Core__DOT__ID__DOT__csrActOp))) 
@@ -2475,16 +2475,16 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                     != (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_csr_op)) 
                                                    & (1U 
                                                       != (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_csr_op))) 
-                                                  & ((IData)(vlSelf->Core__DOT__ID__DOT___T_841) 
+                                                  & ((IData)(vlSelf->Core__DOT__ID__DOT___T_839) 
                                                      == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_csr_addr))) 
                                                  | ((IData)(vlSelf->Core__DOT__resoler__DOT___T_35) 
-                                                    & ((IData)(vlSelf->Core__DOT__ID__DOT___T_841) 
+                                                    & ((IData)(vlSelf->Core__DOT__ID__DOT___T_839) 
                                                        == (IData)(vlSelf->Core__DOT__MEM_WB__DOT__ff_csr_addr)))) 
                                                 | (((0U 
                                                      != (IData)(vlSelf->Core__DOT__ID_EX__DOT__ff_csrOp)) 
                                                     & (1U 
                                                        != (IData)(vlSelf->Core__DOT__ID_EX__DOT__ff_csrOp))) 
-                                                   & ((IData)(vlSelf->Core__DOT__ID__DOT___T_841) 
+                                                   & ((IData)(vlSelf->Core__DOT__ID__DOT___T_839) 
                                                       == (IData)(vlSelf->Core__DOT__ID_EX__DOT__ff_csrAddr)))));
     vlSelf->Core__DOT__ID__DOT__branchteke = ((1U == (IData)(vlSelf->Core__DOT__ID__DOT__branchOp)) 
                                               | ((2U 
@@ -2576,78 +2576,78 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__csr__DOT___GEN_67 = ((IData)(vlSelf->Core__DOT__csr__DOT___T_605) 
                                             & (IData)(vlSelf->Core__DOT__csr__DOT__mstatus_mie));
     vlSelf->Core__DOT__csr__DOT__readable = ((0xc00U 
-                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                              == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                              | ((0xc02U 
-                                                 == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                 == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                 | ((0xc80U 
-                                                    == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                    == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                    | ((0xc82U 
-                                                       == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                       == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                       | ((0x100U 
-                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                          | ((0x104U 
-                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                             | ((0x105U 
-                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                | ((0x106U 
-                                                                   == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                   == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                   | ((0x140U 
-                                                                      == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                      == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                      | ((0x141U 
-                                                                         == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                         == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                         | ((0x142U 
-                                                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                            | ((0x143U 
-                                                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                               | ((0x144U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0x180U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xf11U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xf12U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xf13U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xf14U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | (IData)(vlSelf->Core__DOT__csr__DOT___T_267)))))))))))))))))));
     vlSelf->Core__DOT__csr__DOT__writable = ((0xc00U 
-                                              != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                              != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                              & ((0xc02U 
-                                                 != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                 != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                 & ((0xc80U 
-                                                    != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                    != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                    & ((0xc82U 
-                                                       != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                       != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                       & ((0x100U 
-                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                          == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                          | ((0x104U 
-                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                             == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                             | ((0x105U 
-                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                | ((0x106U 
-                                                                   == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                   == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                   | ((0x140U 
-                                                                      == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                      == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                      | ((0x141U 
-                                                                         == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                         == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                         | ((0x142U 
-                                                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                            == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                            | ((0x143U 
-                                                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                               == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                               | ((0x144U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0x180U 
-                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                == (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 | ((0xf11U 
-                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 & ((0xf12U 
-                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 & ((0xf13U 
-                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 & ((0xf14U 
-                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_841)) 
+                                                                                != (IData)(vlSelf->Core__DOT__ID__DOT___T_839)) 
                                                                                 & (IData)(vlSelf->Core__DOT__csr__DOT___T_267)))))))))))))))))));
     vlSelf->io_stall = ((IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2) 
                         | ((IData)(vlSelf->Core__DOT__resoler_io_csrflag) 
@@ -2676,13 +2676,11 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__EX_MEM__DOT___T_3 = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
                                             | ((~ (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2)) 
                                                & (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)));
-    vlSelf->Core__DOT__ID__DOT__branchmiss = ((0U != (IData)(vlSelf->Core__DOT__ID__DOT__branchOp)) 
-                                              & (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take) 
-                                                  != (IData)(vlSelf->Core__DOT__ID__DOT__branchteke)) 
-                                                 | (vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc 
-                                                    != vlSelf->Core__DOT__ID__DOT__takepc)));
     vlSelf->io_flush = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
-                        | (IData)(vlSelf->Core__DOT__ID__DOT__branchmiss));
+                        | (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take) 
+                            != (IData)(vlSelf->Core__DOT__ID__DOT__branchteke)) 
+                           | (vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc 
+                              != vlSelf->Core__DOT__ID__DOT__takepc)));
     vlSelf->io_flushpc = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush)
                            ? ((IData)(vlSelf->Core__DOT__csr__DOT___T_605)
                                ? ((vlSelf->Core__DOT__csr__DOT__stvec_base 
@@ -2695,7 +2693,7 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                        & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
                                        ? vlSelf->Core__DOT__csr__DOT__cause
                                        : 0U)) << 2U))
-                           : ((IData)(vlSelf->Core__DOT__ID__DOT__branchmiss)
+                           : ((IData)(vlSelf->Core__DOT__ID__DOT__branchteke)
                                ? vlSelf->Core__DOT__ID__DOT__takepc
                                : ((IData)(4U) + vlSelf->Core__DOT__IF_ID__DOT__ff_pc)));
 }
