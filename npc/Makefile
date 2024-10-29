@@ -1,10 +1,9 @@
-# directories
 export TOP_DIR = $(shell if [ "$$PWD" != "" ]; then echo $$PWD; else pwd; fi)
 export TARGET_DIR = $(TOP_DIR)/verilog/vsrc
 export SRC_DIR = $(TOP_DIR)/src/main/scala
 export TEST_DIR = $(TOP_DIR)/src/test/scala
 
-# files
+
 TOP_SRC := $(wildcard $(SRC_DIR)/*.scala)
 TOP_SRC += $(wildcard $(SRC_DIR)/**/*.scala)
 
@@ -23,7 +22,7 @@ $(TARGET_DIR)/keyboard.v: $(TARGET_DIR) $(TOP_SRC)
 keyboard: $(TARGET_DIR)/keyboard.v
 
 $(TARGET_DIR)/top.v: $(TARGET_DIR) $(TOP_SRC)
-	sbt "runMain core.top --target-dir $(TARGET_DIR) --output-file top.v"
+	sbt "runMain npc.core.Core --target-dir $(TARGET_DIR) --output-file top.v"
 
 top: $(TARGET_DIR)/top.v
 

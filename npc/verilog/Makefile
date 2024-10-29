@@ -1,42 +1,62 @@
-CSRC += $(shell find $(abspath ./csrc) -name "*.cpp")
-VSRC += $(shell find $(abspath ./vsrc) -name "*.v")
-TOP_NAME := top
-SEARCHPATH := $(NPC_HOME)/verilog/vsrc
+TOP_MODULE = top
+VERILATOR = verilator
+VERILATOR_INC_PATH = $(addprefix -I, $(abspath ./vsrc))
+VERILATOR_FLAGS = -cc --exe --build --trace-fst
+VERILATOR_FLAGS += $(VERILATOR_INC_PATH)
+VERILATOR_FLAGS += -Wno-WIDTHEXPAND -Wno-WIDTHTRUNC
+VERILATOR_FLAGS += --timescale "1ns/1ns" --no-timing
 
-VERILATOR_FLAGS += -I$(SEARCHPATH)
-VERILATOR_FLAGS += --top $(TOP_NAME)
-VERILATOR_FLAGS += --trace --debug --cc --exe --build
-VERILATOR_FLAGS += -Wno-UNUSED
+WORK_DIR = $(shell pwd)
 
-INC_PATH		?= $(NPC_HOME)/sim/include
-CFLAGS			+= -g -I$(INC_PATH)
-CFLAGS			+= -I$(INC_PATH)
-LDFLAGS			+= -lreadline -lSDL2 -ldl
+CSRC = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*.cpp")
+VSRC = $(shell find $(abspath ./vsrc) -name "*.v") 
 
-DIFFTEST		:= $(NEMU_HOME)/build/riscv32-nemu-interpreter-so
-OBJ_DIR			:= ./obj_dir
-BIN				:= $(OBJ_DIR)/V$(TOP_NAME)
+FILELIST_MK = $(shell find ./csrc -name filelist.mk)
+-include $(FILELIST_MK)
 
-IMG				?= /home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.bin
+DIFFTEST_MK = $(shell find ./csrc -name difftest.mk)
+-include $(DIFFTEST_MK)
 
-RUN_FLAGS		:= --img=${IMG} --diff=${DIFFTEST}
-NPC_EXEC		:= ${BIN} ${RUN_FLAGS}
+CXX_INC_PATH = $(addprefix -I, $(INC_PATH))
+CXX_FLAGS    = $(addprefix -CFLAGS , $(CXX_INC_PATH))
+CXX_FLAGS   += $(addprefix -CFLAGS , -Wno-pointer-arith)  # ignore warning: (void*) arithmetic
+CXX_FLAGS   += $(addprefix -CFLAGS , -Wno-return-type)    # ignore warning: no return
+CXX_FLAGS   += $(addprefix -CFLAGS , -fpermissive)
+LIB         += -fsanitize=address -lasan
+LD_FLAGS     = $(addprefix -LDFLAGS , $(LIB))
 
-.PHONY:run gdb wave clean
+default: run
 
-com:${CSRC} ${VSRC}
-	@verilator ${VERILATOR_FLAGS} ${CSRC} ${VSRC} $(addprefix -CFLAGS , $(CFLAGS)) -LDFLAGS -lSDL2 -LDFLAGS -lreadline
 
-run:com
-	$(call git_commit, "sim NPC")
-	@${NPC_EXEC}
+OBJ_DIR = obj_dir
+BIN = $(OBJ_DIR)/V$(TOP_MODULE)
 
-gdb:com ${DIFFTEST}
-	$(call git_commit, "gdb NPC")
-	@gdb --silent -s ${BIN} --args ${NPC_EXEC}
+LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/unalign-riscv32e-npc.bin
+ARGS += $(LOAD_IMG)
 
-wave:
-	@gtkwave $(OBJ_DIR)/dump.vcd
+run: $(CSRC)
+	@echo "\033[0;1;36mVerilator the project: \033[0m"
+	@rm -rf $(OBJ_DIR)
+	$(VERILATOR) $(VERILATOR_FLAGS) $(VSRC) $(CXX_FLAGS) $(LD_FLAGS) $(CSRC) #> /dev/null 2>&1
+	@# echo "\033[0;35m$(ARGS)\033[0m"
+	@echo -n "(npc run) "
+	$(BIN) $(ARGS)
+
+SIM = sim.fst
+
+sim:
+	@echo "Run sim"
+	$(call git_commit, "sim RTL") # DO NOT REMOVE THIS LINE!!!
+
+# 增加 GDB 的目标规则
+gdb: $(LOAD_IMG)
+	@echo "Starting GDB with $(ARGS)"
+	gdb $(OBJ_DIR)/V$(TOP_MODULE) -ex "run $(ARGS)"
+
+
 
 clean:
-	rm -rf ${OBJ_DIR}
+	rm -rf $(OBJ)
+.PHONY: run sim default rm
+
+include ../Makefile

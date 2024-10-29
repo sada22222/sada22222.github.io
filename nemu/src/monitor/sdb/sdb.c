@@ -23,22 +23,6 @@ static int is_batch_mode = false;
 
 void init_regex();
 void init_wp_pool();
-bool new_wp(char *args);
-bool free_wp(int delNO);
-
-void wp_display();
-uint32_t paddr_read(paddr_t addr, int len);
-
-static int cmd_help(char *args);
-static int cmd_c(char *args);
-static int cmd_q(char *args);
-static int cmd_si(char *args);
-static int cmd_info(char *args);
-static int cmd_x(char *args);
-static int cmd_p(char *args);
-static int cmd_w(char *args);
-static int cmd_d(char *args);
-static int cmd_dis(char *args);
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 static char* rl_gets() {
@@ -58,6 +42,17 @@ static char* rl_gets() {
   return line_read;
 }
 
+static int cmd_c(char *args) {
+  cpu_exec(-1);
+  return 0;
+}
+
+
+static int cmd_q(char *args) {
+  return -1;
+}
+
+static int cmd_help(char *args);
 
 static struct {
   const char *name;
@@ -67,15 +62,8 @@ static struct {
   { "help", "Display information about all supported commands", cmd_help },
   { "c", "Continue the execution of the program", cmd_c },
   { "q", "Exit NEMU", cmd_q },
- 
+
   /* TODO: Add more commands */
-  { "si", "Step execute N instructions", cmd_si },  
-  { "info", "Print information", cmd_info }, 
-  { "x", "Examine memory", cmd_x },  
-  { "p", "Calculate the value of a regular expression", cmd_p},
-  { "w", "Create a new watch point with the expression", cmd_w},
-  { "d", "Delete a watch point from link list.", cmd_d},  
-  { "display", "Display all watch point from link list.", cmd_dis}, 
 
 };
 
@@ -100,113 +88,6 @@ static int cmd_help(char *args) {
       }
     }
     printf("Unknown command '%s'\n", arg);
-  }
-  return 0;
-}
-
-static int cmd_c(char *args) {
-  cpu_exec(-1);
-  return 0;
-}
-
-
-static int cmd_q(char *args) {
-  return -1;
-}
-
-static int cmd_si(char *args) {
-  int N = 1;  
-
-  if (args != NULL) {
-    sscanf(args, "%d", &N);  // 将字符串转换为整数
-  }
-
-  cpu_exec(N);  
-
-  printf("Step executed: N=%d\n", N);  
-  return 0;
-}
-
-static int cmd_info(char *args) {
-  if (args == NULL) {
-    printf("Usage: info r or w\n");
-    return 0;
-  }
-  if (strcmp(args, "r") == 0) {
-    isa_reg_display();
-  }else if(strcmp(args, "w") == 0){
-  if (head == NULL) {
-    printf("There are no watch points.\n");
-  } else {
-    wp_display();  // 显示所有监视点
-  }
- }
-  else {
-    printf("Unknown argument for info: %s\n", args);
-  }
-  return 0;
-}
-
-static int cmd_x(char *args) {
-  char *argN = strtok(args, " ");
-  char *argEXPR = strtok(NULL, " ");
-
-  if (argN == NULL || argEXPR == NULL) {
-    printf("Usage: x <N> <EXPR>\n");
-    return 0;
-  }
-
-  char *ptrN = NULL;
-  char *ptrEXPR = NULL;
-  uint32_t N = strtoul(argN, &ptrN, 10); 
-  uint32_t EXPR = strtoul(argEXPR, &ptrEXPR, 16); 
-
-  if (((argN + strlen(argN)) != ptrN) || ((argEXPR + strlen(argEXPR)) != ptrEXPR)) {
-    printf("Check your input cmd, args can not contain non-numeric letters!\n");
-    return 0;
-  }
-
-  for (int i = 0; i < N; i++) {
-    uint32_t paddr = EXPR + i * 4;  // 这里假设按4字节读取
-    printf("0x%08x:\t0x%08x\n", paddr, paddr_read(paddr, 4));
-  }
-  
-  return 0;
-}
-
-static int cmd_p(char *args) {
-  bool success;
-  uint32_t EXPR;
-  EXPR = expr(args, &success);
-  if(success){
-    printf("input expression == %d\n",EXPR);
-  }
-  else{
-    printf("Error!Check your inpur expression!!\n");
-  }
-  return 0;
-}
-
-static int cmd_w(char *args) {
-  if(!new_wp(args)){
-    printf("fail to add watch point.check your watch point expression.");
-  }
-  return 0;
-}
-
-static int cmd_d(char *args) {
-  if(!free_wp(strtoul(args,NULL,10))){
-    printf("del wp failure\n");
-  }
-  return 0;
-}
-
-static int cmd_dis(char *args) {
-  // 检查是否有任何活动的监视点
-  if (head == NULL) {
-    printf("There are no watch points.\n");
-  } else {
-    wp_display();  // 显示所有监视点
   }
   return 0;
 }
