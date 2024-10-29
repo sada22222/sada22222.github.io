@@ -51,7 +51,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3821, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3803, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);
@@ -225,7 +225,6 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__ID__DOT___T_791 = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID__DOT__takepc = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__ID__DOT__branchteke = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__ID__DOT__branchmiss = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__addrFault = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__ID__DOT__csrActOp = VL_RAND_RESET_I(3);
     vlSelf->Core__DOT__ID__DOT___T_841 = VL_RAND_RESET_I(12);

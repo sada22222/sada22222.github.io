@@ -305,10 +305,10 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     if (vlSelf->Core__DOT__IF_ID__DOT__ff_valid) {
         vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0 
             = (vlSelf->Core__DOT__ID__DOT___GEN_0 >> 0x1fU);
-        vlSelf->Core__DOT__ID__DOT__rd = (0x1fU & (vlSelf->Core__DOT__ID__DOT___GEN_0 
-                                                   >> 7U));
         vlSelf->Core__DOT__ID__DOT__immI = (vlSelf->Core__DOT__ID__DOT___GEN_0 
                                             >> 0x14U);
+        vlSelf->Core__DOT__ID__DOT__rd = (0x1fU & (vlSelf->Core__DOT__ID__DOT___GEN_0 
+                                                   >> 7U));
         vlSelf->Core__DOT__ID__DOT__rs2 = (0x1fU & 
                                            (vlSelf->Core__DOT__ID__DOT___GEN_0 
                                             >> 0x14U));
@@ -318,8 +318,8 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
         vlSelf->Core__DOT__ID__DOT__inst = vlSelf->Core__DOT__ID__DOT___GEN_0;
     } else {
         vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0 = 0U;
-        vlSelf->Core__DOT__ID__DOT__rd = 0U;
         vlSelf->Core__DOT__ID__DOT__immI = 0U;
+        vlSelf->Core__DOT__ID__DOT__rd = 0U;
         vlSelf->Core__DOT__ID__DOT__rs2 = 0U;
         vlSelf->Core__DOT__ID__DOT__rs1 = 0U;
         vlSelf->Core__DOT__ID__DOT__inst = 0x13U;
@@ -339,9 +339,7 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                ((1U 
                                                                  == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_lsuOp)) 
                                                                 | (2U 
-                                                                   == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_lsuOp))), 
-                                                               (0xfffffffcU 
-                                                                & vlSelf->Core__DOT__EX_MEM__DOT__ff_reg_data), 
+                                                                   == (IData)(vlSelf->Core__DOT__EX_MEM__DOT__ff_lsuOp))), vlSelf->Core__DOT__EX_MEM__DOT__ff_reg_data, 
                                                                ((0U 
                                                                  == (IData)(vlSelf->Core__DOT__MEM__DOT__width))
                                                                  ? 1U
@@ -435,15 +433,15 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                 : 0U))))))))))))))))));
     vlSelf->Core__DOT__csr__DOT__flagIntM = (vlSelf->Core__DOT__csr__DOT___T_142 
                                              & vlSelf->Core__DOT__csr__DOT___T_47);
+    vlSelf->Core__DOT__ID__DOT___GEN_2 = (((- (IData)((IData)(vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0))) 
+                                           << 0xcU) 
+                                          | (IData)(vlSelf->Core__DOT__ID__DOT__immI));
     vlSelf->Core__DOT__ID__DOT____VdfgTmp_h7417a8e6__0 
         = (((- (IData)((IData)(vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0))) 
             << 0xcU) | ((((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_valid)
                            ? (vlSelf->Core__DOT__ID__DOT___GEN_0 
                               >> 0x19U) : 0U) << 5U) 
                         | (IData)(vlSelf->Core__DOT__ID__DOT__rd)));
-    vlSelf->Core__DOT__ID__DOT___GEN_2 = (((- (IData)((IData)(vlSelf->Core__DOT__ID__DOT____VdfgTmp_h8afae4a5__0))) 
-                                           << 0xcU) 
-                                          | (IData)(vlSelf->Core__DOT__ID__DOT__immI));
     vlSelf->Core__DOT__regfile__DOT___GEN_53 = ((0x15U 
                                                  == (IData)(vlSelf->Core__DOT__ID__DOT__rs2))
                                                  ? vlSelf->Core__DOT__regfile__DOT__regfile_21
@@ -857,92 +855,6 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                   & vlSelf->Core__DOT__ID__DOT__inst))
                                                                  ? 2U
                                                                  : 0U)))))))))))))));
-    vlSelf->Core__DOT__ID__DOT___T_629 = ((0x1003U 
-                                           == (0x707fU 
-                                               & vlSelf->Core__DOT__ID__DOT__inst))
-                                           ? 0U : (
-                                                   (0x2003U 
-                                                    == 
-                                                    (0x707fU 
-                                                     & vlSelf->Core__DOT__ID__DOT__inst))
-                                                    ? 0U
-                                                    : 
-                                                   ((0x4003U 
-                                                     == 
-                                                     (0x707fU 
-                                                      & vlSelf->Core__DOT__ID__DOT__inst))
-                                                     ? 0U
-                                                     : 
-                                                    ((0x5003U 
-                                                      == 
-                                                      (0x707fU 
-                                                       & vlSelf->Core__DOT__ID__DOT__inst))
-                                                      ? 0U
-                                                      : 
-                                                     ((0x23U 
-                                                       == 
-                                                       (0x707fU 
-                                                        & vlSelf->Core__DOT__ID__DOT__inst))
-                                                       ? 0U
-                                                       : 
-                                                      ((0x1023U 
-                                                        == 
-                                                        (0x707fU 
-                                                         & vlSelf->Core__DOT__ID__DOT__inst))
-                                                        ? 0U
-                                                        : 
-                                                       ((0x2023U 
-                                                         == 
-                                                         (0x707fU 
-                                                          & vlSelf->Core__DOT__ID__DOT__inst))
-                                                         ? 0U
-                                                         : 
-                                                        ((0xfU 
-                                                          == 
-                                                          (0xf00fffffU 
-                                                           & vlSelf->Core__DOT__ID__DOT__inst))
-                                                          ? 0U
-                                                          : 
-                                                         ((0x100fU 
-                                                           == vlSelf->Core__DOT__ID__DOT__inst)
-                                                           ? 0U
-                                                           : 
-                                                          ((0x1073U 
-                                                            == 
-                                                            (0x707fU 
-                                                             & vlSelf->Core__DOT__ID__DOT__inst))
-                                                            ? 3U
-                                                            : 
-                                                           ((0x2073U 
-                                                             == 
-                                                             (0x707fU 
-                                                              & vlSelf->Core__DOT__ID__DOT__inst))
-                                                             ? 4U
-                                                             : 
-                                                            ((0x3073U 
-                                                              == 
-                                                              (0x707fU 
-                                                               & vlSelf->Core__DOT__ID__DOT__inst))
-                                                              ? 5U
-                                                              : 
-                                                             ((0x5073U 
-                                                               == 
-                                                               (0x707fU 
-                                                                & vlSelf->Core__DOT__ID__DOT__inst))
-                                                               ? 3U
-                                                               : 
-                                                              ((0x6073U 
-                                                                == 
-                                                                (0x707fU 
-                                                                 & vlSelf->Core__DOT__ID__DOT__inst))
-                                                                ? 4U
-                                                                : 
-                                                               ((0x7073U 
-                                                                 == 
-                                                                 (0x707fU 
-                                                                  & vlSelf->Core__DOT__ID__DOT__inst))
-                                                                 ? 5U
-                                                                 : 0U)))))))))))))));
     vlSelf->Core__DOT__ID__DOT___T_529 = ((0x3013U 
                                            == (0x707fU 
                                                & vlSelf->Core__DOT__ID__DOT__inst))
@@ -1030,6 +942,92 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                                                  (0x707fU 
                                                                   & vlSelf->Core__DOT__ID__DOT__inst))
                                                                  ? 1U
+                                                                 : 0U)))))))))))))));
+    vlSelf->Core__DOT__ID__DOT___T_629 = ((0x1003U 
+                                           == (0x707fU 
+                                               & vlSelf->Core__DOT__ID__DOT__inst))
+                                           ? 0U : (
+                                                   (0x2003U 
+                                                    == 
+                                                    (0x707fU 
+                                                     & vlSelf->Core__DOT__ID__DOT__inst))
+                                                    ? 0U
+                                                    : 
+                                                   ((0x4003U 
+                                                     == 
+                                                     (0x707fU 
+                                                      & vlSelf->Core__DOT__ID__DOT__inst))
+                                                     ? 0U
+                                                     : 
+                                                    ((0x5003U 
+                                                      == 
+                                                      (0x707fU 
+                                                       & vlSelf->Core__DOT__ID__DOT__inst))
+                                                      ? 0U
+                                                      : 
+                                                     ((0x23U 
+                                                       == 
+                                                       (0x707fU 
+                                                        & vlSelf->Core__DOT__ID__DOT__inst))
+                                                       ? 0U
+                                                       : 
+                                                      ((0x1023U 
+                                                        == 
+                                                        (0x707fU 
+                                                         & vlSelf->Core__DOT__ID__DOT__inst))
+                                                        ? 0U
+                                                        : 
+                                                       ((0x2023U 
+                                                         == 
+                                                         (0x707fU 
+                                                          & vlSelf->Core__DOT__ID__DOT__inst))
+                                                         ? 0U
+                                                         : 
+                                                        ((0xfU 
+                                                          == 
+                                                          (0xf00fffffU 
+                                                           & vlSelf->Core__DOT__ID__DOT__inst))
+                                                          ? 0U
+                                                          : 
+                                                         ((0x100fU 
+                                                           == vlSelf->Core__DOT__ID__DOT__inst)
+                                                           ? 0U
+                                                           : 
+                                                          ((0x1073U 
+                                                            == 
+                                                            (0x707fU 
+                                                             & vlSelf->Core__DOT__ID__DOT__inst))
+                                                            ? 3U
+                                                            : 
+                                                           ((0x2073U 
+                                                             == 
+                                                             (0x707fU 
+                                                              & vlSelf->Core__DOT__ID__DOT__inst))
+                                                             ? 4U
+                                                             : 
+                                                            ((0x3073U 
+                                                              == 
+                                                              (0x707fU 
+                                                               & vlSelf->Core__DOT__ID__DOT__inst))
+                                                              ? 5U
+                                                              : 
+                                                             ((0x5073U 
+                                                               == 
+                                                               (0x707fU 
+                                                                & vlSelf->Core__DOT__ID__DOT__inst))
+                                                               ? 3U
+                                                               : 
+                                                              ((0x6073U 
+                                                                == 
+                                                                (0x707fU 
+                                                                 & vlSelf->Core__DOT__ID__DOT__inst))
+                                                                ? 4U
+                                                                : 
+                                                               ((0x7073U 
+                                                                 == 
+                                                                 (0x707fU 
+                                                                  & vlSelf->Core__DOT__ID__DOT__inst))
+                                                                 ? 5U
                                                                  : 0U)))))))))))))));
     vlSelf->Core__DOT__ID__DOT___T_153 = ((0x5073U 
                                            != (0x707fU 
@@ -2676,13 +2674,12 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__EX_MEM__DOT___T_3 = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
                                             | ((~ (IData)(vlSelf->Core__DOT__MEM_WB__DOT___T_2)) 
                                                & (IData)(vlSelf->Core__DOT__ID_EX_io_stallNext)));
-    vlSelf->Core__DOT__ID__DOT__branchmiss = ((0U != (IData)(vlSelf->Core__DOT__ID__DOT__branchOp)) 
-                                              & (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take) 
-                                                  != (IData)(vlSelf->Core__DOT__ID__DOT__branchteke)) 
-                                                 | (vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc 
-                                                    != vlSelf->Core__DOT__ID__DOT__takepc)));
     vlSelf->io_flush = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush) 
-                        | (IData)(vlSelf->Core__DOT__ID__DOT__branchmiss));
+                        | ((0U != (IData)(vlSelf->Core__DOT__ID__DOT__branchOp)) 
+                           & (((IData)(vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_take) 
+                               != (IData)(vlSelf->Core__DOT__ID__DOT__branchteke)) 
+                              | (vlSelf->Core__DOT__IF_ID__DOT__ff_bpu_takepc 
+                                 != vlSelf->Core__DOT__ID__DOT__takepc))));
     vlSelf->io_flushpc = ((IData)(vlSelf->Core__DOT__ID_EX_io_flush)
                            ? ((IData)(vlSelf->Core__DOT__csr__DOT___T_605)
                                ? ((vlSelf->Core__DOT__csr__DOT__stvec_base 
@@ -2695,7 +2692,7 @@ VL_ATTR_COLD void Vtop___024root___stl_sequent__TOP__0(Vtop___024root* vlSelf) {
                                        & (IData)(vlSelf->Core__DOT__csr__DOT__hasInt))
                                        ? vlSelf->Core__DOT__csr__DOT__cause
                                        : 0U)) << 2U))
-                           : ((IData)(vlSelf->Core__DOT__ID__DOT__branchmiss)
+                           : ((IData)(vlSelf->Core__DOT__ID__DOT__branchteke)
                                ? vlSelf->Core__DOT__ID__DOT__takepc
                                : ((IData)(4U) + vlSelf->Core__DOT__IF_ID__DOT__ff_pc)));
 }
