@@ -68,13 +68,13 @@ class MEM extends Module {
 
   val addr = Cat(io.ex_i.reg.data(31, 2), 0.U(2.W)) // 地址对齐
   val sel = io.ex_i.reg.data(1, 0)
-
   // 写使能
   val writeEn = MuxLookup(width, 0.U, Seq(
-    LS_DATA_BYTE -> ("b0001".U(4.W) ),
-    LS_DATA_HALF -> ("b0011".U(4.W) ),
-    LS_DATA_WORD -> ("b1111".U(4.W) ),
+    LS_DATA_BYTE -> ("b0001".U(4.W)),
+    LS_DATA_HALF -> ("b0011".U(4.W)),
+    LS_DATA_WORD -> ("b1111".U(4.W)),
   ))
+
 
   // 写数据逻辑
   def mapWriteData(i: Int, w: Int) =
@@ -99,7 +99,7 @@ class MEM extends Module {
   mem.io.addr := addr              // 地址
   mem.io.mask := writeEn            // 掩码
   mem.io.sign := signed            // 有符号/无符号
-  mem.io.wdata := io.ex_i.lsuData            // 写入数据
+  mem.io.wdata := wdata            // 写入数据
 
   // 从DPI-C模块读取数据
   val loadData = mem.io.rdata

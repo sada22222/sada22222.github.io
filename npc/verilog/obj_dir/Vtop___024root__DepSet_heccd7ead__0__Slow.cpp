@@ -51,7 +51,7 @@ VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
 #ifdef VL_DEBUG
                 Vtop___024root___dump_triggers__stl(vlSelf);
 #endif
-                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3826, "", "Settle region did not converge.");
+                VL_FATAL_MT("/home/hujun/ysyx-workbench/npc/verilog/vsrc/top.v", 3821, "", "Settle region did not converge.");
             }
             vlSelf->__VstlIterCount = ((IData)(1U) 
                                        + vlSelf->__VstlIterCount);
@@ -264,12 +264,10 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     vlSelf->Core__DOT__EX_MEM__DOT__ff_inst = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__EX_MEM__DOT__ff_currentPc = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__EX_MEM__DOT___T_3 = VL_RAND_RESET_I(1);
-    vlSelf->Core__DOT__MEM__DOT__mem_wen = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM__DOT__mem_ren = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM__DOT__mem_rdata = VL_RAND_RESET_I(32);
     vlSelf->Core__DOT__MEM__DOT__ren = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM__DOT__width = VL_RAND_RESET_I(2);
-    vlSelf->Core__DOT__MEM__DOT__writeEn = VL_RAND_RESET_I(7);
     vlSelf->Core__DOT__MEM__DOT__memAddr = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM_WB__DOT__ff_reg_en = VL_RAND_RESET_I(1);
     vlSelf->Core__DOT__MEM_WB__DOT__ff_reg_addr = VL_RAND_RESET_I(5);

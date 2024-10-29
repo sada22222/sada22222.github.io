@@ -93,11 +93,9 @@ class Vtop___024root final : public VerilatedModule {
         CData/*0:0*/ Core__DOT__EX_MEM__DOT__ff_csr_retired;
         CData/*3:0*/ Core__DOT__EX_MEM__DOT__ff_excType;
         CData/*0:0*/ Core__DOT__EX_MEM__DOT___T_3;
-        CData/*0:0*/ Core__DOT__MEM__DOT__mem_wen;
         CData/*0:0*/ Core__DOT__MEM__DOT__mem_ren;
         CData/*0:0*/ Core__DOT__MEM__DOT__ren;
         CData/*1:0*/ Core__DOT__MEM__DOT__width;
-        CData/*6:0*/ Core__DOT__MEM__DOT__writeEn;
         CData/*0:0*/ Core__DOT__MEM__DOT__memAddr;
         CData/*0:0*/ Core__DOT__MEM_WB__DOT__ff_reg_en;
         CData/*4:0*/ Core__DOT__MEM_WB__DOT__ff_reg_addr;
@@ -149,10 +147,10 @@ class Vtop___024root final : public VerilatedModule {
         SData/*11:0*/ Core__DOT__ID__DOT__immI;
         SData/*11:0*/ Core__DOT__ID__DOT___T_841;
         SData/*11:0*/ Core__DOT__ID_EX__DOT__ff_csrAddr;
-    };
-    struct {
         SData/*11:0*/ Core__DOT__EX_MEM__DOT__ff_csr_addr;
         SData/*11:0*/ Core__DOT__MEM_WB__DOT__ff_csr_addr;
+    };
+    struct {
         VL_OUT(io_inst,31,0);
         VL_OUT(io_pc,31,0);
         VL_OUT(io_npc,31,0);
@@ -215,10 +213,10 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_7;
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_8;
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_9;
-    };
-    struct {
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_10;
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_11;
+    };
+    struct {
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_12;
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_13;
         IData/*31:0*/ Core__DOT__regfile__DOT__regfile_14;
@@ -281,10 +279,10 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ __Vfunc_vaddr_read__2__Vfuncout;
         IData/*31:0*/ __VstlIterCount;
         IData/*31:0*/ __VicoIterCount;
-    };
-    struct {
         IData/*31:0*/ __VactIterCount;
         QData/*62:0*/ Core__DOT__EX__DOT__result;
+    };
+    struct {
         QData/*63:0*/ Core__DOT__csr__DOT__mcycle_data;
         QData/*63:0*/ Core__DOT__csr__DOT__minstret_data;
         QData/*63:0*/ Core__DOT__csr__DOT___T_617;

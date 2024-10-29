@@ -84,7 +84,7 @@ class ID extends Module{
   ))
 
   val branchmiss = (branchOp=/=BR_N)&&((io.if_i.bpu_take =/= branchteke) || (io.if_i.bpu_takepc =/= takepc))
-  val flushpc = Mux(branchteke,takepc,io.if_i.pc+4.U)
+  val flushpc = Mux(branchmiss,takepc,io.if_i.pc+4.U)
   val addrFault   = branchteke && takepc(1, 0) =/= 0.U
 
   // CSR related signals
