@@ -23496,3 +23496,25 @@ java.util.concurrent.TimeoutException
 
 2024.10.30 10:09:58 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/ID.scala. Using presentation compiler with project's scala-library version: 3.3.4
 2024.10.30 10:09:59 INFO  time: code lens generation in 1.29s
+2024.10.30 10:42:43 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:43 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:43 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/IF.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:47 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:47 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:47 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:49 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:50 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:50 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:55 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:55 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:59 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:59 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:42:59 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:02 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:06 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:06 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:06 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:07 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:07 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/MEM.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:16 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/ID.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.10.30 10:43:18 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/ID.scala. Using presentation compiler with project's scala-library version: 3.3.4
