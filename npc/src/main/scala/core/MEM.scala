@@ -66,7 +66,7 @@ class MEM extends Module {
   // 解码加载/存储单元操作
   val (wen: Bool) ::(ren: Bool):: width :: (signed: Bool) :: Nil = ListLookup(io.ex_i.lsuOp, DEFAULT, TABLE)
 
-  val addr = Cat(io.ex_i.reg.data(31, 2), 0.U(2.W)) // 地址对齐
+  val addr = io.ex_i.reg.data // 地址对齐
   val sel = io.ex_i.reg.data(1, 0)
   // 写使能
   val writeEn = MuxLookup(width, 0.U, Seq(
@@ -99,7 +99,7 @@ class MEM extends Module {
   mem.io.addr := addr              // 地址
   mem.io.mask := writeEn            // 掩码
   mem.io.sign := signed            // 有符号/无符号
-  mem.io.wdata := wdata            // 写入数据
+  mem.io.wdata := io.ex_i.lsuData            // 写入数据
 
   // 从DPI-C模块读取数据
   val loadData = mem.io.rdata

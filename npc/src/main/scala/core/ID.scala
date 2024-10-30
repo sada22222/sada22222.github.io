@@ -23,7 +23,10 @@ class ID extends Module{
     val flushpc = Output(UInt(32.W))
     val id_o = Output(new ID_IO)
 
-  })
+    val branchteke=Output(Bool())
+    val takepc=Output(UInt(32.W))
+
+  })  
   
   val stall = RegNext(io.stallid)                 // 延迟一个周期，避免组合环路
   val lastinst = RegInit("h13".U(32.W))           // 初始值为 NOP 指令
@@ -74,7 +77,7 @@ class ID extends Module{
   val takepc = Mux(branchOp === BR_N,0.U,
                Mux(all_jump,pc_j,pc_b))
   val branchteke=MuxLookup(branchOp,false.B,Seq(
-      BR_AL -> true.B,
+      BR_AL ->  true.B,
       BR_EQ ->  (io.read1.data === io.read2.data),
       BR_NE ->  (io.read1.data =/= io.read2.data),
       BR_LT ->  (io.read1.data.asSInt < io.read2.data.asSInt),
@@ -108,15 +111,14 @@ class ID extends Module{
   // pipeline control
   io.flush  := !io.stallid && !addrFault && branchmiss
   io.flushpc  := flushpc
-
+  io.branchteke:=branchteke
+  io.takepc:=takepc
   // regfile read signals
   io.read1.en   := regEn1
   io.read1.addr := rs1
   io.read2.en   := regEn2
   io.read2.addr := rs2
 
-  io.flush := branchmiss
-  io.flushpc := flushpc
   io.id_o.aluOp:=aluOp
   io.id_o.csrOp:=csrActOp
   io.id_o.csrAddr:= immI

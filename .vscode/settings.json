@@ -15,7 +15,16 @@
         "reg.h": "c",
         "decode.h": "c",
         "cpu.h": "c",
+<<<<<<< HEAD
         "difftest.h": "c",
-        "paddr.h": "c"
+        "array": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "optional": "cpp",
+        "*.tcc": "cpp",
+        "fstream": "cpp"
+=======
+        "difftest.h": "c"
+>>>>>>> c17e80c8a4852a648241cd6fb2a486081b17268a
     }
 }

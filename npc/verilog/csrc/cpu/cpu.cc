@@ -44,7 +44,7 @@ void exec_once() {
     dut->eval();
     tfp->dump(time_counter ++);
     printf("next=%x flushpc=%x  flush=%x   stall=%x   id_inst=%x   bputake=%x  bpuaddr=%x  \n " ,dut->io_next,dut->io_flushpc,dut->io_flush,dut->io_stall,dut->io_idinst,dut->io_bputake,dut->io_bpuaddr);
-    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x\n",  dut->io_npc,dut->io_inst,dut->io_idpc,dut->io_idinst,dut->io_expc,dut->io_exinst,dut->io_mempc,dut->io_meminst,dut->io_pc,dut->io_wbinst,dut->io_result);
+    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x  waddr=%d\n\n",  dut->io_npc,dut->io_inst,dut->io_idpc,dut->io_idinst,dut->io_expc,dut->io_exinst,dut->io_mempc,dut->io_meminst,dut->io_pc,dut->io_wbinst,dut->io_result,dut->io_waddr);
     IFDEF(CONFIG_ITRACE, itrace(dut->io_npc, dut->io_inst));
 
     npc_eval();

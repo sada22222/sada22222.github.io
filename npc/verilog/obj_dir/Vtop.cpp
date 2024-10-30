@@ -34,6 +34,7 @@ Vtop::Vtop(VerilatedContext* _vcontextp__, const char* _vcname__)
     , io_mempc{vlSymsp->TOP.io_mempc}
     , io_meminst{vlSymsp->TOP.io_meminst}
     , io_result{vlSymsp->TOP.io_result}
+    , io_waddr{vlSymsp->TOP.io_waddr}
     , __PVT____024unit{vlSymsp->TOP.__PVT____024unit}
     , rootp{&(vlSymsp->TOP)}
 {

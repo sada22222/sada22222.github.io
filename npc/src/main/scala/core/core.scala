@@ -29,6 +29,7 @@ class Core extends Module{
       val mempc       = Output(UInt(32.W))
       val meminst       = Output(UInt(32.W))                              
       val result       = Output(UInt(32.W))  
+      val waddr        = Output(UInt(32.W))
   })
 
   val fetch=Module(new IF)
@@ -125,20 +126,21 @@ class Core extends Module{
 
   
 
-  io.flush:=ctrl.io.flushIf
-  io.stall:=ctrl.io.stallId
+  io.flush:=ctrl.io.flush
+  io.stall:=ctrl.io.stallIf
   io.flushpc:=ctrl.io.flushPc
-  io.next:=MEM.io.ex_i.excType
-  io.bputake:=fetch.io.prdt_taken_o
-  io.bpuaddr:=fetch.io.prdt_addr_o
+  io.next:=MEM.io.ex_i.reg.data
+  io.bputake:=ID.io.if_i.bpu_take
+  io.bpuaddr:=ID.io.if_i.bpu_takepc
   io.idpc:=ID.io.if_i.pc
-  io.idinst:=IF_ID.io.next.inst
+  io.idinst:=ID.io.if_i.inst
   io.expc:=EX.io.id_i.currentPc
   io.exinst:=EX.io.id_i.inst
   io.mempc:=MEM.io.ex_i.currentPc
   io.meminst:=MEM.io.ex_i.inst
   io.wbinst:=WB.io.wbinst
   io.result:=WB.io.regdata
+  io.waddr:=WB.io.regaddr
 }
 
 object Core extends App {

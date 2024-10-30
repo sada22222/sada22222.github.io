@@ -21,6 +21,7 @@ class BPU extends Module {
   // B-type和J-type指令的立即数
   val inst_b_type_imm = Cat(Fill(20, io.inst_i(31)), io.inst_i(7), io.inst_i(30, 25), io.inst_i(11, 8), 0.U(1.W))
   val inst_j_type_imm = Cat(Fill(12, io.inst_i(31)), io.inst_i(19, 12), io.inst_i(20), io.inst_i(30, 21), 0.U(1.W))
+
   val prdt_imm = WireDefault(0.U(32.W))
 
 
@@ -31,7 +32,7 @@ class BPU extends Module {
   }
 
   // 分支预测：B-type的预测基于立即数的符号位，JAL总是预测跳转
-  val prdt_taken = Mux(inst_type_branch, inst_b_type_imm , inst_jal)
+  val prdt_taken = (inst_type_branch & inst_b_type_imm(31)) | inst_jal
 
   // 如果指令有效，输出预测结果，否则输出默认值
   io.prdt_taken_o := Mux(io.inst_valid_i, prdt_taken, false.B)

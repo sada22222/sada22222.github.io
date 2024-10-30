@@ -1,5 +1,5 @@
 #include <trace.h>
-#define IRINGBUF 1024
+#define IRINGBUF 8192
 
 static uint32_t p = 0;
 static int32_t  cursor = -1; 
