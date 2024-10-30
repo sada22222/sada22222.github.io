@@ -163,7 +163,7 @@ class AxiLiteRamSlave(val addrWidth: Int, val dataWidth: Int, val depth: Int) ex
       // 使用 DPI-C 写操作
       writeModule.io.addr := writeAddrReg
       writeModule.io.mask := writeMaskReg
-      writeModule.io.data := writeDataReg
+      writeModule.io.wdata := writeDataReg
       state := sWriteResp
     }
 
