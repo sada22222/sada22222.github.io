@@ -21,8 +21,8 @@ typedef struct watchpoint {
   int NO;
   struct watchpoint *next;
 
-  /* TODO: Add more members if necessary */
-
+  char *expr;
+  word_t old_val;
 } WP;
 
 static WP wp_pool[NR_WP] = {};
@@ -39,5 +39,63 @@ void init_wp_pool() {
   free_ = wp_pool;
 }
 
-/* TODO: Implement the functionality of watchpoint */
+void new_wp(char *args, bool *success) {
+  if (free_ == NULL) assert(0);
+  WP *p = free_;
+  free_ = free_->next;
 
+  { // New watchpoint
+    p->next = head;
+    p->old_val = expr(args, success);
+    p->expr = strdup(args);
+  }
+  head = p; 
+}
+
+void free_wp(int no) {
+  WP *ptr = head, *pre = NULL;
+  while (ptr != NULL) {
+    if (ptr->NO == no) break;
+    pre = ptr;
+    ptr = ptr->next;
+  }
+  if (pre != NULL) pre->next = ptr->next;
+  else head = NULL;
+  if (ptr == NULL || ptr->NO != no) printf("Can't find watch point !\n"), assert(0);
+
+  { // Free watchpoint(ptr)
+    ptr->next = free_;
+    free_ = ptr;
+  }
+}
+
+void wp_display() {
+  WP *ptr = head;
+  if (head == NULL) {
+    printf("No watchpoint !\n");
+  } 
+  else {
+    printf("Display watchpoints:\n");
+    for(; ptr != NULL; ptr = ptr->next) {
+      #if defined(CONFIG_ISA_riscv32)
+      printf("%d\t%s\t%d\n", ptr->NO, ptr->expr, ptr->old_val);
+      #elif defined(CONFIG_ISA_riscv64)
+      printf("%d\t%s\t%ld\n", ptr->NO, ptr->expr, ptr->old_val);
+      #endif
+    }
+  }
+}
+
+void scan_wp() {
+  for (WP *p = head; p != NULL; p = p->next) {
+    bool *success = &(bool){true};
+    word_t new_val = expr(p->expr, success);
+    if (*success == false) assert(0);
+    if (p->old_val != new_val) {
+      nemu_state.state = NEMU_STOP;
+      p->old_val = new_val;
+      printf("watchpoint %d has triggered !\n", p->NO);
+      break;
+    }
+  }
+}
