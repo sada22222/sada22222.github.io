@@ -18,8 +18,6 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
-#include "memory/vaddr.h"
-#include "memory/paddr.h"
 
 static int is_batch_mode = false;
 
@@ -49,89 +47,17 @@ static int cmd_c(char *args) {
   return 0;
 }
 
+
 static int cmd_q(char *args) {
   return -1;
 }
 
 static int cmd_help(char *args);
 
-static int cmd_s(char *args) {
-  int count = 1;
-  if (args != NULL) {
-    count = atoi(args);
-  }
-  cpu_exec(count); 
-  return 0;
-}
-
-static int cmd_info(char *args) {
-  bool info_r = strcmp(args, "r") && strcmp(args, "reg") && strcmp(args, "regs") && 
-                strcmp(args, "register") && strcmp(args, "registers");
-  bool info_w = strcmp(args, "watchpoint") && strcmp(args, "wp") && strcmp(args, "w");
-  if (info_r == 0) {
-    isa_reg_display();
-  }
-  else if (info_w == 0) {
-    wp_display();
-  }
-  return 0;
-}
-
-static int cmd_x(char *args) {
-  const char* delim = " ";
-  char *str = strtok(args, delim);
-  bool *success = &(bool){true};
-  int64_t n = strtol(str, NULL, 10);
-
-  str = strtok(NULL, "");
-  if (str == NULL) {
-    printf("Please input x N expr");
-    return 0;
-  }
-  paddr_t addr = expr(str, success);
-  if (*success == false || !in_pmem(addr)) assert(0);
-  for (int i = 0; i < n; i ++) {
-    #if defined(CONFIG_ISA_riscv32)
-    word_t data = vaddr_read(addr + i * 4, 4); 
-    printf("0x%x:\t0x%x(%d)\n", addr + i * 4, data, data);
-    #elif defined(CONFIG_ISA_riscv64)
-    word_t data = vaddr_read(addr + i * 4, 4); 
-    printf("0x%x:\t0x%lx(%ld)\n", addr + i * 4, data, data);
-    #endif
-  }
-  return 0;
-}
-
-static int cmd_p(char *args) {
-  bool *success = &(bool){true};
-  #if defined(CONFIG_ISA_riscv32)
-  word_t ans = expr(args, success);
-  printf("0x%x(%d)\n", ans, ans);
-  #elif defined(CONFIG_ISA_riscv64)
-  word_t ans = expr(args, success);
-  printf("0x%lx(%ld)\n", ans, ans);
-  #endif
-  if (*success == false) assert(0);
-  return 0;
-}
-
-static int cmd_w(char *args) {
-  bool *success = &(bool){true}; 
-  new_wp(args, success);
-  if (*success == false) assert(0);
-  return 0;
-}
-
-static int cmd_d(char *args) {
-  int no = strtol(args, NULL, 10);
-  free_wp(no);
-  return 0;
-}
-
 static struct {
   const char *name;
   const char *description;
-  int (*handler) ();
+  int (*handler) (char *);
 } cmd_table [] = {
   { "help", "Display information about all supported commands", cmd_help },
   { "c", "Continue the execution of the program", cmd_c },
@@ -139,14 +65,6 @@ static struct {
 
   /* TODO: Add more commands */
 
-  { "s", "Step the instructions one by one", cmd_s },
-  { "si", "Step the instructions one by one", cmd_s },
-  { "info", "Display information about register(r) or break(b)", cmd_info},
-  { "i", "Display information about register(r) or break(b)", cmd_info},
-  { "x", "Output consecutive N 4bytes hex", cmd_x },
-  { "p", "Caculate the regular expression", cmd_p},
-  { "w", "Set a watch point to monitor a variety", cmd_w},
-  { "d", "Delete a watch point from pool", cmd_d},
 };
 
 #define NR_CMD ARRLEN(cmd_table)
@@ -207,10 +125,7 @@ void sdb_mainloop() {
     int i;
     for (i = 0; i < NR_CMD; i ++) {
       if (strcmp(cmd, cmd_table[i].name) == 0) {
-        if (cmd_table[i].handler(args) < 0) {
-            nemu_state.state = NEMU_QUIT;
-            return; 
-        }
+        if (cmd_table[i].handler(args) < 0) { return; }
         break;
       }
     }
