@@ -88,7 +88,7 @@ extern "C" void init_disasm(const char *triple) {
       AsmInfo->getAssemblerDialect(), *AsmInfo, *gMII, *gMRI);
   gIP->setPrintImmHex(true);
   gIP->setPrintBranchImmAsAddress(true);
-  if (isa == "riscv32" )
+  if (isa == "riscv32" || isa == "riscv64")
     gIP->applyTargetSpecificCLOption("no-aliases");
 }
 
