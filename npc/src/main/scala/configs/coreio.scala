@@ -135,3 +135,40 @@ class ExceptInfoIO extends Bundle {
   val excValue  = UInt(32.W)
 }
 
+class AxiMaster extends Bundle {
+// AXI4 Master interface
+  val master_awready = Input(Bool())
+  val master_awvalid = Output(Bool())
+  val master_awaddr  = Output(UInt(32.W))
+  val master_awid    = Output(UInt(4.W))
+  val master_awlen   = Output(UInt(8.W))
+  val master_awsize  = Output(UInt(3.W))
+  val master_awburst = Output(UInt(2.W))
+
+  val master_wready  = Input(Bool())
+  val master_wvalid  = Output(Bool())
+  val master_wdata   = Output(UInt(32.W))
+  val master_wstrb   = Output(UInt(4.W))
+  val master_wlast   = Output(Bool())
+
+  val master_bready  = Output(Bool())
+  val master_bvalid  = Input(Bool())
+  val master_bresp   = Input(UInt(2.W))
+  val master_bid     = Input(UInt(4.W))
+
+  val master_arready = Input(Bool())
+  val master_arvalid = Output(Bool())
+  val master_araddr  = Output(UInt(32.W))
+  val master_arid    = Output(UInt(4.W))
+  val master_arlen   = Output(UInt(8.W))
+  val master_arsize  = Output(UInt(3.W))
+  val master_arburst = Output(UInt(2.W))
+
+  val master_rready  = Output(Bool())
+  val master_rvalid  = Input(Bool())
+  val master_rresp   = Input(UInt(2.W))
+  val master_rdata   = Input(UInt(32.W))
+  val master_rlast   = Input(Bool())
+  val master_rid     = Input(UInt(4.W))
+}
+

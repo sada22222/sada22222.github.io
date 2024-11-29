@@ -6,14 +6,14 @@ import chisel3.util._
 // 定义 DPI-C 写接口的 BlackBox
 class awrite extends BlackBox with HasBlackBoxInline {
   val io = IO(new Bundle {
-      val clock = Input(Clock())
-      val wen = Input(Bool())     // 写使能
-      val ren = Input(Bool())     // 读使能
-      val addr = Input(UInt(32.W))
-      val mask = Input(UInt(4.W))
-      val sign = Input(Bool())
-      val wdata = Input(UInt(32.W))
-      val rdata = Output(UInt(32.W))
+    val clock = Input(Clock())
+    val wen   = Input(Bool())
+    val ren   = Input(Bool())
+    val addr  = Input(UInt(32.W))
+    val mask  = Input(UInt(4.W))
+    val sign  = Input(Bool())
+    val wdata = Input(UInt(32.W))
+    val rdata = Output(UInt(32.W))
   })
 
   setInline("awrite.v",
@@ -23,157 +23,114 @@ class awrite extends BlackBox with HasBlackBoxInline {
       |
       |module awrite (
       |    input         clock,
-      |    input         wen,       
-      |    input         ren,        
-      |    input  [31:0] addr,       // 地址
-      |    input  [ 3:0] mask,       // 字节掩码
-      |    input         sign,       // 是否有符号
-      |    input  [31:0] wdata,      
-      |    output reg [31:0] rdata   
+      |    input         wen,
+      |    input         ren,
+      |    input  [31:0] addr,
+      |    input  [ 3:0] mask,
+      |    input         sign,
+      |    input  [31:0] wdata,
+      |    output reg [31:0] rdata
       |);
       |
       |    always @(posedge clock) begin
       |        if (wen) begin
-      |            vaddr_write(addr, mask, wdata);  // 调用DPI-C写函数
+      |            vaddr_write(addr, mask, wdata);
       |        end
       |    end
       |
       |    always @(*) begin
       |        if (ren) begin
-      |            rdata = vaddr_read(sign, addr, mask); // 调用DPI-C读函数
+      |            rdata = vaddr_read(sign, addr, mask);
       |        end else begin
       |            rdata = 32'b0;
       |        end
       |    end
       |endmodule
-      |
     """.stripMargin)
 }
 
-// 定义 DPI-C 读接口的 BlackBox
-class read extends BlackBox with HasBlackBoxInline {
+// AXI4 RAM Slave模块，集成DPI-C读写操作
+class Axi4RamSlave extends Module {
   val io = IO(new Bundle {
-    val addr = Input(UInt(32.W))
-    val data = Output(UInt(32.W))
-  })
-
-  setInline("read.v",
-    """
-      |import "DPI-C" function int vaddr_read(int addr);
-      |module read (
-      |    input  [31:0] addr,
-      |    output [31:0] data
-      |);
-      |  assign data = vaddr_read(addr); // 调用DPI-C读函数
-      |endmodule
-    """.stripMargin)
-}
-
-// AXI-Lite RAM Slave模块，集成DPI-C读写操作
-class AxiLiteRamSlave(val addrWidth: Int, val dataWidth: Int, val depth: Int) extends Module {
-  val io = IO(new Bundle {
-    val axi = new AxiLiteSlave(addrWidth, dataWidth) // AXI-Lite从设备接口
+    val axi = new Axi4Slave
+    val state=Output(UInt(32.W))
   })
 
   // 引入 DPI-C 读写模块
-  val readModule = Module(new read)
-  val writeModule = Module(new awrite)
-
-  // 读地址寄存器，用于保存收到的地址
-  val readAddrReg = RegInit(0.U(addrWidth.W))
-
-  // 写地址寄存器，用于保存写请求地址
-  val writeAddrReg = RegInit(0.U(addrWidth.W))
-
-  // 写数据寄存器，用于保存写请求数据
-  val writeDataReg = RegInit(0.U(dataWidth.W))
-
-  // 写掩码寄存器，用于保存写请求掩码
-  val writeMaskReg = RegInit(0.U(4.W))
-
-  // ------------------- 初始化信号 -------------------
-  io.axi.readAddr.ready := false.B
-  io.axi.readData.valid := false.B
-  io.axi.readData.bits.data := 0.U
-  io.axi.readData.bits.resp := 0.U // 00 表示成功响应
-  
-  io.axi.writeAddr.ready := false.B
-  io.axi.writeData.ready := false.B
-  io.axi.writeResp.valid := false.B
-  io.axi.writeResp.bits := 0.U // 00 表示成功响应
+  val awrite = Module(new awrite)
+  awrite.io.clock := clock
+  // 默认初始化所有 AXI4 信号
+  io.axi.slave_arready := false.B
+  io.axi.slave_rvalid  := false.B
+  io.axi.slave_rdata   := 0.U
+  io.axi.slave_rid     := 0.U
+  io.axi.slave_rlast   := false.B
+  io.axi.slave_rresp   := 0.U
+  io.axi.slave_awready := false.B
+  io.axi.slave_wready  := false.B
+  io.axi.slave_bvalid  := false.B
+  io.axi.slave_bresp   := 0.U
+  io.axi.slave_bid     := 0.U
 
   // 定义握手信号
-  val ar_hs = io.axi.readAddr.valid && io.axi.readAddr.ready  // 读地址握手
-  val r_hs = io.axi.readData.valid && io.axi.readData.ready   // 读数据握手
-  val aw_hs = io.axi.writeAddr.valid && io.axi.writeAddr.ready // 写地址握手
-  val w_hs = io.axi.writeData.valid && io.axi.writeData.ready  // 写数据握手
-  val b_hs = io.axi.writeResp.valid && io.axi.writeResp.ready  // 写响应握手
+  val arHandshake = io.axi.slave_arvalid && io.axi.slave_arready
+  val rHandshake  = io.axi.slave_rvalid && io.axi.slave_rready
+  val awHandshake = io.axi.slave_awvalid && io.axi.slave_awready
+  val wHandshake  = io.axi.slave_wvalid && io.axi.slave_wready
+  val bHandshake  = io.axi.slave_bvalid && io.axi.slave_bready
 
   // 状态机
-  val sIdle :: sReadReq :: sReadResp :: sWriteReq :: sWriteData :: sWriteResp :: Nil = Enum(6)
+  val sIdle :: sReadReq :: sReadResp :: sWriteReq :: sWriteResp :: Nil = Enum(5)
   val state = RegInit(sIdle)
-
+  io.state:=state
   switch(state) {
-    // 空闲状态，等待读或写请求
     is(sIdle) {
-      // 处理读请求
-      when(io.axi.readAddr.valid) {
-        io.axi.readAddr.ready := true.B
-        when(ar_hs) {
-          readAddrReg := io.axi.readAddr.bits.addr
-          state := sReadReq
-        }
-      }
-      // 处理写请求
-      when(io.axi.writeAddr.valid) {
-        io.axi.writeAddr.ready := true.B
-        when(aw_hs) {
-          writeAddrReg := io.axi.writeAddr.bits.addr
-          writeMaskReg := io.axi.writeData.bits.strb  // 写掩码
-          state := sWriteReq
-        }
+      awrite.io.wen := false.B
+      awrite.io.ren := false.B
+      when(arHandshake) {
+        state := sReadReq
+      } .elsewhen(awHandshake) {
+        state := sWriteReq
       }
     }
 
-    // 处理读请求，使用 `vaddr_read` 读取数据
     is(sReadReq) {
-      // 通过DPI-C读取数据
-      readModule.io.addr := readAddrReg
-      io.axi.readData.bits.data := readModule.io.data
-      io.axi.readData.bits.resp := 0.U // OKAY
-      io.axi.readData.valid := true.B
-      when(r_hs) {
+      awrite.io.addr := io.axi.slave_araddr
+      awrite.io.wen := false.B
+      awrite.io.ren := true.B
+      io.axi.slave_rdata := awrite.io.rdata
+      io.axi.slave_rlast := true.B
+      io.axi.slave_rid := io.axi.slave_arid
+      when(rHandshake) {
         state := sIdle
       }
     }
 
-    // 处理写请求
     is(sWriteReq) {
-      when(io.axi.writeData.valid) {
-        io.axi.writeData.ready := true.B
-        when(w_hs) {
-          writeDataReg := io.axi.writeData.bits.data
-          state := sWriteData
-        }
+      awrite.io.addr := io.axi.slave_awaddr
+      awrite.io.mask := io.axi.slave_wstrb
+      awrite.io.wdata := io.axi.slave_wdata
+      awrite.io.wen := true.B
+      awrite.io.ren := false.B
+      when(wHandshake) {
+        state := sWriteResp
       }
     }
 
-    // 使用DPI-C的`vaddr_write`函数进行写操作
-    is(sWriteData) {
-      // 使用 DPI-C 写操作
-      writeModule.io.addr := writeAddrReg
-      writeModule.io.mask := writeMaskReg
-      writeModule.io.wdata := writeDataReg
-      state := sWriteResp
-    }
-
-    // 发送写响应
     is(sWriteResp) {
-      io.axi.writeResp.valid := true.B
-      io.axi.writeResp.bits := 0.U // OKAY
-      when(b_hs) {
+      io.axi.slave_bid := io.axi.slave_awid
+      io.axi.slave_bresp := 0.U // 写响应成功
+      io.axi.slave_bvalid := true.B
+      when(bHandshake) {
         state := sIdle
       }
     }
   }
+
+  // AXI接口信号
+  io.axi.slave_arready := (state === sIdle)
+  io.axi.slave_awready := (state === sIdle)
+  io.axi.slave_rvalid  := (state === sReadReq)
+  io.axi.slave_wready  := (state === sWriteReq)
+  io.axi.slave_bvalid  := (state === sWriteResp)
 }

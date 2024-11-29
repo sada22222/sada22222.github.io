@@ -7,11 +7,7 @@
 #include <verilated.h>
 #include "verilated_dpi.h"
 
-void halt(uint32_t inst) {
-    if (inst == EBREAK || inst == 0x6f) {
-        ebreak();
-    }
-}
+
 extern bool diff_commit;
 extern "C" void get_diff_commit(svBit commit){
   diff_commit = commit;
@@ -19,14 +15,16 @@ extern "C" void get_diff_commit(svBit commit){
 
 static int cnt = 0;
 uint32_t fetch(bool clk, bool rst, paddr_t pc) {
-    //printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
-    if (rst && pc == 0) { 
+    printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
+    if (rst || pc == 0) { 
         return NOP;
-    }
+    } else {
     Assert(in_pmem(pc), "Out of bounds memory accsee!\n");
     uint32_t inst = paddr_read(pc, 4);
     printf("pc = " FMT_PADDR ": " FMT_WORD " at %d\n", pc, inst, cnt ++);
     return inst;
+    }
+
 }
 
 word_t* gprs = NULL;
@@ -84,29 +82,31 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
 
 word_t vaddr_read(bool is_signed, paddr_t addr, uint8_t mask) { 
     int len = 0;
+     
     switch (mask) {
         case 0b1111: len = 4; break; // 32位
         case 0b0011: len = 2; break; // 低16位
         case 0b0001: len = 1; break; // 低8位
     }
     sword_t data = paddr_read(addr, len);
-    printf("data=%x\n",data);
-    
-    if (is_signed) {
-        int size_of_word = sizeof(data) * 8;
+    printf("data=%x\n",data); printf("addr is %x\n", addr);
+
         switch (mask) {
-            case 0b0001:  data = (data << (size_of_word - 8)) >> (size_of_word - 8);   break;
-            case 0b0011:  data = (data << (size_of_word - 16)) >> (size_of_word - 16); break;
+            case 0b0001:  data = data & 0x000000FF;     break; // 截取低 8 位
+            case 0b0011:  data = data & 0x0000FFFF;     break; // 截取低 16 位
+            case 0b1111:  data = data;                  break;
         }
-    }
+
+    printf("mask=%d  addr=%x   data=%x\n",mask,addr,data);
 
     IFDEF(CONFIG_MTRACE, mtrace('r', addr, data));
-    printf("addr is %x\n", &addr);
+   
     return data;
 }
 
 
 void vaddr_write(paddr_t addr, uint8_t mask, word_t data) {
+     printf("mask=%d",mask);
     int len=0;
     switch (mask) {
     case 0b1111: len=4; break;//32位

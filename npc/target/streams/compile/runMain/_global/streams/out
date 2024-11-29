@@ -1,4 +1,48 @@
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.waddr <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.CheckInitialization$RefNotInitializedException:  : [module Core]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.waddr <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rlast <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rresp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rdata <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rvalid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_bvalid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_wready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_bid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_bresp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_awready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_arready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 11 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.PassExceptions: [0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rlast <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rresp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rdata <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rvalid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_rid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_bvalid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_wready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_bid <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_bresp <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_awready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 84:25] : [module Core]  Reference arbiter is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : arbiter.io.selectedMaster.master_arready <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 11 errors detected![0m

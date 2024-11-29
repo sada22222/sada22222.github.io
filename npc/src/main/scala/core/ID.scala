@@ -27,16 +27,8 @@ class ID extends Module{
     val takepc=Output(UInt(32.W))
 
   })  
-  
-  val stall = RegNext(io.stallid)                 // 延迟一个周期，避免组合环路
-  val lastinst = RegInit("h13".U(32.W))           // 初始值为 NOP 指令
-  when (stall) {
-    lastinst := lastinst                          // 如果 stall 为真，保持 lastinst 不变
-  }.otherwise {
-    lastinst := io.if_i.inst                      // 否则更新为当前指令
-  }
-  val inst =   Mux(!io.if_i.valid, "h13".U,         // 如果无效则返回 NOP
-               Mux(stall, lastinst, io.if_i.inst)) // 否则根据 stall 决定 inst 值
+ 
+  val inst =   Mux(!io.if_i.valid, "h13".U, io.if_i.inst) // 否则根据 stall 决定 inst 值
 
 
   // regfile addresses

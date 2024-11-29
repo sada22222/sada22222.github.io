@@ -84,23 +84,24 @@ bool checkregs(CPU_state ref, paddr_t pc) {
 
         // 打印出不相同的寄存器名称和索引
         printf("Register x%d mismatch: npc = 0x%x, nemu = 0x%x\n", i, npc_cpu.gpr[i], ref.gpr[i]);
-
+            
         // 显示所有寄存器状态
         printf("npc ");
         isa_reg_display(npc_cpu);
         printf("nemu ");
         isa_reg_display(ref);
 
+
         // 打印程序计数器 (PC) 的值
-        printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, dut->io_pc);
+        printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, npc_cpu.pc );
 
         // 标记校验失败
         ok = 0;
     }
 
     // 比较程序计数器 (PC) 的值
-    if (ref.pc != dut->io_pc) {
-        dump("PC", dut->io_pc, ref.pc);
+    if (ref.pc != npc_cpu.pc ) {
+        dump("PC", npc_cpu.pc , ref.pc);
         ok = 0;
     }
 

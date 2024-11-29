@@ -118,9 +118,9 @@ object LsuDecode {
   // decode logic
   val DEFAULT =
     //
-    //                        wen ren   width   signed
-    //                         | |      |        |
-                          List(N,N,LS_DATA_BYTE, N)
+    //                        wen ren   width    signed
+    //                         | |       |         |
+                          List(N,N, LS_DATA_BYTE, N)
   val TABLE = Array(
     BitPat(LSU_LB)    ->  List(N,Y, LS_DATA_BYTE, Y),
     BitPat(LSU_LH)    ->  List(N,Y, LS_DATA_HALF, Y),

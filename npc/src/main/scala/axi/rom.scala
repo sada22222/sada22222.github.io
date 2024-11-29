@@ -3,69 +3,82 @@ package axi
 import chisel3._
 import chisel3.util._
 
-class AxiLiteRomSlave(val addrWidth: Int, val dataWidth: Int) extends Module {
+class read extends BlackBox with HasBlackBoxInline {
   val io = IO(new Bundle {
-    val axi = new AxiLiteSlave(addrWidth, dataWidth) // AXI-Lite从设备接口
+    val addr = Input(UInt(32.W))
+    val data = Output(UInt(32.W))
+    val clock = Input(Clock())
+    val reset = Input(Bool())
   })
 
-  // 实例化read模块用于调用DPI-C函数vaddr_read
+  setInline("read.v",
+    """
+      |import "DPI-C" function int fetch(bit clk, bit rst, int pc);
+      |module read (
+      |    input  [31:0] addr,
+      |    input         clock,
+      |    input         reset,
+      |    output [31:0] data
+      |);
+      |    reg [31:0] fetched_data;
+      |    always @(posedge clock) begin
+      |        if (reset) begin
+      |            fetched_data <= 32'h413; // NOP
+      |        end else begin
+      |            fetched_data <= fetch(clock, reset, addr);
+      |        end
+      |    end
+      |    assign data = fetched_data;
+      |endmodule
+    """.stripMargin)
+}
+
+class AxiLiteRomSlave extends Module {
+  val io = IO(new Bundle {
+    val axi = new Axi4Slave
+    val state=Output(Bool())
+  })
+  
+  io.axi.slave_arready := false.B
+  io.axi.slave_rvalid  := false.B
+  io.axi.slave_rdata   := 0.U
+  io.axi.slave_rid     := 0.U
+  io.axi.slave_rlast   := false.B
+  io.axi.slave_rresp   := 0.U
+  io.axi.slave_awready := false.B
+  io.axi.slave_wready  := false.B
+  io.axi.slave_bvalid  := false.B
+  io.axi.slave_bresp   := 0.U
+  io.axi.slave_bid     := 0.U
+  // 实例化 read 模块
   val readModule = Module(new read)
+  readModule.io.clock := clock
+  readModule.io.reset := reset.asBool
 
-  // 读地址寄存器，用于保存收到的地址
-  val readAddrReg = RegInit("h80000000".U(addrWidth.W))
 
-  // 定义寄存器来控制 valid 信号，避免组合环路
-  val readDataValidReg = RegInit(false.B)
-
-  // ------------------- 初始化信号 -------------------
-  io.axi.readAddr.ready := false.B
-  io.axi.readData.valid := readDataValidReg // 使用寄存器控制 valid 信号
-  io.axi.readData.bits.data := 0.U
-  io.axi.readData.bits.resp := 0.U // 00 表示成功响应
-
-  io.axi.writeAddr.ready := false.B // ROM 不处理写请求
-  io.axi.writeData.ready := false.B // ROM 不处理写请求
-  io.axi.writeResp.valid := false.B // ROM 不处理写响应
-  io.axi.writeResp.bits := 0.U // 默认为成功响应（OKAY）
-
-  // 状态机用于处理读请求
-  val sIdle :: sReadReq :: sReadResp :: Nil = Enum(3)
+  // 状态机定义
+  val sIdle  :: sReadResp :: Nil = Enum(2)
   val state = RegInit(sIdle)
 
-  // 加入握手信号
-  val ar_hs = io.axi.readAddr.valid && io.axi.readAddr.ready
-  val r_hs  = readDataValidReg && io.axi.readData.ready // 使用寄存器替代组合逻辑
+  val ar_hs = io.axi.slave_arvalid && io.axi.slave_arready // 地址握手
+  val r_hs  = io.axi.slave_rvalid  && io.axi.slave_rready // 数据握手
 
   switch(state) {
     is(sIdle) {
-      io.axi.readAddr.ready := true.B // 主动准备接收请求
-
       when(ar_hs) {
-        // 接收到读请求，保存地址并进入处理状态
-        readAddrReg := io.axi.readAddr.bits.addr
-        state := sReadReq
+        state := sReadResp
       }
     }
 
-    // 发起数据读取请求
-    is(sReadReq) {
-      // 设置read模块的输入地址
-      readModule.io.addr := readAddrReg
-
-      // 设置握手机制，检查AXI-Lite主设备是否准备好接收数据
-      io.axi.readData.bits.data := readModule.io.data // 读取数据
-      io.axi.readData.bits.resp := 0.U // 成功响应 (OKAY)
-      readDataValidReg := true.B // 设置valid为true，表示数据有效
-      state := sReadResp
-    }
-
-    // 发送读数据并等待主设备接收
     is(sReadResp) {
+        readModule.io.addr := io.axi.slave_araddr
+        io.axi.slave_rdata := readModule.io.data
       when(r_hs) {
-        // 主设备接收数据，回到空闲状态
-        readDataValidReg := false.B // 数据发送完成后将 valid 清除
         state := sIdle
       }
     }
   }
+   io.axi.slave_arready := true.B
+   io.axi.slave_rvalid  := (state===sReadResp)
+   io.state:=state
 }

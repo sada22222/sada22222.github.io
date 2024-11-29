@@ -17,7 +17,7 @@ map.o: /home/hujun/ysyx-workbench/npc/verilog/csrc/device/io/map.cc \
  /usr/local/share/verilator/include/verilated_funcs.h \
  /usr/local/share/verilator/include/verilated_trace.h \
  /usr/local/share/verilator/include/verilated_trace_defs.h \
- /usr/local/share/verilator/include/gtkwave/fstapi.h Vtop.h \
+ /usr/local/share/verilator/include/gtkwave/fstapi.h VysyxSoCFull.h \
  /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/vltstd/svdpi.h \
  /home/hujun/ysyx-workbench/npc/verilog/csrc/include/isa.h \
