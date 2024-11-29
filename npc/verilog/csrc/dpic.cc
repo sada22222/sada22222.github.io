@@ -13,28 +13,26 @@ extern "C" void get_diff_commit(svBit commit){
   diff_commit = commit;
 }
 
-static int cnt = 0;
-uint32_t fetch(bool clk, bool rst, paddr_t pc) {
-    printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
-    if (rst || pc == 0) { 
-        return NOP;
-    } else {
-    Assert(in_pmem(pc), "Out of bounds memory accsee!\n");
-    uint32_t inst = paddr_read(pc, 4);
-    printf("pc = " FMT_PADDR ": " FMT_WORD " at %d\n", pc, inst, cnt ++);
-    return inst;
-    }
+extern "C" void flash_read(int32_t addr, int32_t *data) { assert(0); }
+extern "C" void mrom_read(int32_t addr, int32_t *data) { data=0x6f; }
 
-}
 
 word_t* gprs = NULL;
-void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut_x3, 
-                 uint32_t dut_x4, uint32_t dut_x5, uint32_t dut_x6, uint32_t dut_x7, uint32_t dut_x8, 
-                 uint32_t dut_x9, uint32_t dut_x10, uint32_t dut_x11, uint32_t dut_x12, uint32_t dut_x13, 
-                 uint32_t dut_x14, uint32_t dut_x15, uint32_t dut_x16, uint32_t dut_x17, uint32_t dut_x18, 
-                 uint32_t dut_x19, uint32_t dut_x20, uint32_t dut_x21, uint32_t dut_x22, uint32_t dut_x23, 
-                 uint32_t dut_x24, uint32_t dut_x25, uint32_t dut_x26, uint32_t dut_x27, uint32_t dut_x28, 
-                 uint32_t dut_x29, uint32_t dut_x30, uint32_t dut_x31) {
+word_t* npc = NULL;
+word_t* pc = NULL;
+word_t* awbinst = NULL;
+void  set_gpr_ptr(uint32_t dut_x0,  uint32_t dut_x1,  uint32_t dut_x2,  uint32_t dut_x3,  uint32_t dut_x4,  uint32_t dut_x5,
+                  uint32_t dut_x6,  uint32_t dut_x7,  uint32_t dut_x8,  uint32_t dut_x9,  uint32_t dut_x10, uint32_t dut_x11, uint32_t dut_x12,
+                  uint32_t dut_x13, uint32_t dut_x14, uint32_t dut_x15, uint32_t dut_x16, uint32_t dut_x17, uint32_t dut_x18, uint32_t dut_x19,
+                  uint32_t dut_x20, uint32_t dut_x21, uint32_t dut_x22, uint32_t dut_x23, uint32_t dut_x24, uint32_t dut_x25, uint32_t dut_x26,
+                  uint32_t dut_x27, uint32_t dut_x28, uint32_t dut_x29, uint32_t dut_x30, uint32_t dut_x31, 
+                  uint32_t inst,    uint32_t pc,      uint32_t npc,  uint32_t flushpc, uint32_t flush, uint32_t  stall,
+                  uint32_t wbinst,  uint32_t bputake, uint32_t bpuaddr,uint32_t idpc, uint32_t idinst,uint32_t expc,
+                  uint32_t exinst,  uint32_t mempc, uint32_t meminst,   uint32_t result,   uint32_t waddr,   uint32_t state){
+                    
+    printf(" flushpc=%x  flush=%x   stall=%x   ifstate=%x   bputake=%x  bpuaddr=%x  \n " ,flushpc,flush,stall,state,bputake,bpuaddr);
+    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x  waddr=%x\n\n",  npc,inst,idpc,idinst,expc,exinst,mempc,meminst,pc,wbinst,result,waddr);
+    
 
     // 如果 gprs 没有初始化，则分配内存
     if (gprs == NULL) {
@@ -44,6 +42,10 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
             exit(1);
         }
     }
+    npc     = npc;
+    pc      = pc;
+    awbinst  = wbinst;
+    
     gprs[0] = dut_x0;
     gprs[1] = dut_x1;
     gprs[2] = dut_x2;
@@ -78,9 +80,21 @@ void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut
     gprs[31] = dut_x31;
 }
 
+/*static int cnt = 0;
+uint32_t fetch(bool clk, bool rst, paddr_t pc) {
+    printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);
+    if (rst || pc == 0) { 
+        return NOP;
+    } else {
+    Assert(in_pmem(pc), "Out of bounds memory accsee!\n");
+    uint32_t inst = paddr_read(pc, 4);
+    printf("pc = " FMT_PADDR ": " FMT_WORD " at %d\n", pc, inst, cnt ++);
+    return inst;
+    }
 
+}
 
-word_t vaddr_read(bool is_signed, paddr_t addr, uint8_t mask) { 
+/*word_t vaddr_read(bool is_signed, paddr_t addr, uint8_t mask) { 
     int len = 0;
      
     switch (mask) {
@@ -115,4 +129,4 @@ void vaddr_write(paddr_t addr, uint8_t mask, word_t data) {
     }
     IFDEF(CONFIG_MTRACE, mtrace('w', addr, data));
     paddr_write(addr, len, data);
-}
+}*/
