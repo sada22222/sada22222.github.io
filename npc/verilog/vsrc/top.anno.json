@@ -1,0 +1,60 @@
+[
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~top|top>io_flush",
+    "sources":[
+      "~top|top>io_soft",
+      "~top|top>io_extern",
+      "~top|top>io_timer"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~top|top>io_flushpc",
+    "sources":[
+      "~top|top>io_soft",
+      "~top|top>io_extern",
+      "~top|top>io_timer"
+    ]
+  },
+  {
+    "class":"logger.LogLevelAnnotation",
+    "globalLogLevel":{
+      
+    }
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"/home/hujun/ysyx-workbench/npc/verilog/vsrc"
+  },
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"top.awrite",
+    "name":"awrite.v",
+    "text":"\nimport \"DPI-C\" function void vaddr_write(int addr, byte mask, int data);\nimport \"DPI-C\" function int vaddr_read(bit is_signed, int addr, byte mask);\n\nmodule awrite (\n    input         clock,\n    input         wen,\n    input         ren,\n    input  [31:0] addr,\n    input  [ 3:0] mask,\n    input         sign,\n    input  [31:0] wdata,\n    output reg [31:0] rdata\n);\n\n    always @(posedge clock) begin\n        if (wen) begin\n            vaddr_write(addr, mask, wdata);\n        end\n    end\n\n    always @(*) begin\n        if (ren) begin\n            rdata = vaddr_read(sign, addr, mask);\n        end else begin\n            rdata = 32'b0;\n        end\n    end\nendmodule\n    "
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"top.read",
+    "name":"read.v",
+    "text":"\nimport \"DPI-C\" function int fetch(bit clk, bit rst, int pc);\nmodule read (\n    input  [31:0] addr,\n    input         clock,\n    input         reset,\n    output [31:0] data\n);\n    reg [31:0] fetched_data;\n    always @(posedge clock) begin\n        if (reset) begin\n            fetched_data <= 32'h413; // NOP\n        end else begin\n            fetched_data <= fetch(clock, reset, addr);\n        end\n    end\n    assign data = fetched_data;\nendmodule\n    "
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"top.DpiBlackBox",
+    "name":"DpiBlackBox.v",
+    "text":"\nimport \"DPI-C\" function void set_gpr_ptr(\n    input int dut_x0, input int dut_x1, input int dut_x2, input int dut_x3, input int dut_x4, input int dut_x5,\n    input int dut_x6, input int dut_x7, input int dut_x8, input int dut_x9, input int dut_x10, input int dut_x11, input int dut_x12,\n    input int dut_x13, input int dut_x14, input int dut_x15, input int dut_x16, input int dut_x17, input int dut_x18, input int dut_x19,\n    input int dut_x20, input int dut_x21, input int dut_x22, input int dut_x23, input int dut_x24, input int dut_x25, input int dut_x26,\n    input int dut_x27, input int dut_x28, input int dut_x29, input int dut_x30, input int dut_x31\n    \n);\n  import \"DPI-C\" function void get_diff_commit(input bit commit);\n\nmodule DpiBlackBox (\n    input        wb_commit,\n    input [31:0] s_regs_0,\n    input [31:0] s_regs_1,\n    input [31:0] s_regs_2,\n    input [31:0] s_regs_3,\n    input [31:0] s_regs_4,\n    input [31:0] s_regs_5,\n    input [31:0] s_regs_6,\n    input [31:0] s_regs_7,\n    input [31:0] s_regs_8,\n    input [31:0] s_regs_9,\n    input [31:0] s_regs_10,\n    input [31:0] s_regs_11,\n    input [31:0] s_regs_12,\n    input [31:0] s_regs_13,\n    input [31:0] s_regs_14,\n    input [31:0] s_regs_15,\n    input [31:0] s_regs_16,\n    input [31:0] s_regs_17,\n    input [31:0] s_regs_18,\n    input [31:0] s_regs_19,\n    input [31:0] s_regs_20,\n    input [31:0] s_regs_21,\n    input [31:0] s_regs_22,\n    input [31:0] s_regs_23,\n    input [31:0] s_regs_24,\n    input [31:0] s_regs_25,\n    input [31:0] s_regs_26,\n    input [31:0] s_regs_27,\n    input [31:0] s_regs_28,\n    input [31:0] s_regs_29,\n    input [31:0] s_regs_30,\n    input [31:0] s_regs_31\n);\n  always @(*) begin\n    set_gpr_ptr( s_regs_0, s_regs_1, s_regs_2, s_regs_3, s_regs_4, s_regs_5, s_regs_6, s_regs_7, s_regs_8, s_regs_9,\n                 s_regs_10, s_regs_11, s_regs_12, s_regs_13, s_regs_14, s_regs_15, s_regs_16, s_regs_17, s_regs_18, s_regs_19,\n                 s_regs_20, s_regs_21, s_regs_22, s_regs_23, s_regs_24, s_regs_25, s_regs_26, s_regs_27, s_regs_28, s_regs_29,\n                 s_regs_30, s_regs_31);\n    get_diff_commit(wb_commit);\n  end\n \nendmodule\n      "
+  },
+  {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"top"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"/home/hujun/ysyx-workbench/npc/verilog/vsrc"
+  }
+]
