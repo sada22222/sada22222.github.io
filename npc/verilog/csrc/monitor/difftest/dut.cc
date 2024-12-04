@@ -55,7 +55,6 @@ void init_difftest(const char *ref_so_file, long img_size, int port) {
 }
 
 void difftest_step(paddr_t pc, paddr_t npc) {
-    printf("pc=%x\n",pc);
     if (is_skip_ref == 0) {
         ref_difftest_exec(1);
     } else {
@@ -79,32 +78,21 @@ void difftest_step(paddr_t pc, paddr_t npc) {
 
 bool checkregs(CPU_state ref, paddr_t pc) {
     bool ok = 1;
-    for (int i = 0; i < 32; i++) {
+    for (int i = 0; i < 32; i ++) {
         if (ref.gpr[i] == npc_cpu.gpr[i]) continue;
-
-        // 打印出不相同的寄存器名称和索引
-        printf("Register x%d mismatch: npc = 0x%x, nemu = 0x%x\n", i, npc_cpu.gpr[i], ref.gpr[i]);
-            
-        // 显示所有寄存器状态
         printf("npc ");
         isa_reg_display(npc_cpu);
         printf("nemu ");
         isa_reg_display(ref);
-
-
-        // 打印程序计数器 (PC) 的值
-        printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, npc_cpu.pc );
-
-        // 标记校验失败
+        printf("nemu pc=0x%x      npc pc=0x%x\n",ref.pc,dut->io_pc);
         ok = 0;
     }
 
-    // 比较程序计数器 (PC) 的值
-    if (ref.pc != npc_cpu.pc ) {
-        dump("PC", npc_cpu.pc , ref.pc);
+    if (ref.pc != dut->io_pc) {
+        dump("PC", dut->io_pc, ref.pc);
         ok = 0;
     }
+
 
     return ok;
 }
-

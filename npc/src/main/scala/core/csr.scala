@@ -140,8 +140,8 @@ class csr extends Module{
   val hasExcS   = hasExc && medeleg.asUInt()(io.except.excCause(4, 0))
   val handExcS  = !mode(1) && hasExcS
   val intCauseS = Mux(flagIntS(EXC_S_EXT_INT), EXC_S_EXT_INT,
-    Mux(flagIntS(EXC_S_SOFT_INT), EXC_S_SOFT_INT,
-      EXC_S_TIMER_INT))
+                  Mux(flagIntS(EXC_S_SOFT_INT), EXC_S_SOFT_INT,
+        EXC_S_TIMER_INT))
   val intCauseM = Mux(flagIntM(EXC_M_EXT_INT), EXC_M_EXT_INT,
     Mux(flagIntM(EXC_M_SOFT_INT), EXC_M_SOFT_INT,
       Mux(flagIntM(EXC_M_TIMER_INT), EXC_M_TIMER_INT,

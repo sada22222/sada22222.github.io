@@ -24,12 +24,11 @@ deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/c
   /home/hujun/ysyx-workbench/nemu/include/cpu/decode.h \
   /home/hujun/ysyx-workbench/nemu/include/isa.h \
   /home/hujun/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h \
-    $(wildcard include/config/rve.h) \
-    $(wildcard include/config/rv64.h) \
   /home/hujun/ysyx-workbench/nemu/include/cpu/difftest.h \
   /home/hujun/ysyx-workbench/nemu/include/difftest-def.h \
     $(wildcard include/config/isa/mips32.h) \
-    $(wildcard include/config/isa/riscv.h) \
+    $(wildcard include/config/isa/riscv32.h) \
+    $(wildcard include/config/isa/riscv64.h) \
   /home/hujun/ysyx-workbench/nemu/src/monitor/trace/trace.h \
   /home/hujun/ysyx-workbench/nemu/include/memory/paddr.h \
     $(wildcard include/config/pc/reset/offset.h) \

@@ -23,8 +23,6 @@ deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/memo
   /home/hujun/ysyx-workbench/nemu/include/device/mmio.h \
   /home/hujun/ysyx-workbench/nemu/include/isa.h \
   /home/hujun/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h \
-    $(wildcard include/config/rve.h) \
-    $(wildcard include/config/rv64.h) \
 
 /home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/memory/paddr.o: $(deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/memory/paddr.o)
 

@@ -8,8 +8,6 @@ deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/m
     $(wildcard include/config/device.h) \
   /home/hujun/ysyx-workbench/nemu/include/isa.h \
   /home/hujun/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h \
-    $(wildcard include/config/rve.h) \
-    $(wildcard include/config/rv64.h) \
   /home/hujun/ysyx-workbench/nemu/include/common.h \
     $(wildcard include/config/target/am.h) \
     $(wildcard include/config/mbase.h) \

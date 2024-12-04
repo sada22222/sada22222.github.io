@@ -5,8 +5,6 @@ source_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/de
 deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/device/io/map.o := \
   /home/hujun/ysyx-workbench/nemu/include/isa.h \
   /home/hujun/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h \
-    $(wildcard include/config/rve.h) \
-    $(wildcard include/config/rv64.h) \
   /home/hujun/ysyx-workbench/nemu/include/common.h \
     $(wildcard include/config/target/am.h) \
     $(wildcard include/config/mbase.h) \
@@ -26,6 +24,8 @@ deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/devi
     $(wildcard include/config/isa/x86.h) \
     $(wildcard include/config/isa/mips32.h) \
     $(wildcard include/config/isa/riscv.h) \
+    $(wildcard include/config/rv64.h) \
+    $(wildcard include/config/rve.h) \
     $(wildcard include/config/isa/loongarch32r.h) \
 
 /home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/device/io/map.o: $(deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter/src/device/io/map.o)

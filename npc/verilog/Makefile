@@ -1,23 +1,22 @@
-TOP_MODULE = ysyxSoCFull
+TOP_MODULE = top
 VERILATOR = verilator
 # Include directories for Verilator
 VERILATOR_INC_PATH = $(addprefix -I, $(abspath ./vsrc)) \
-                     $(addprefix -I, $(abspath /home/hujun/ysyx-workbench/ysyxSoC/perip/uart16550/rtl)) \
-                     $(addprefix -I, $(abspath /home/hujun/ysyx-workbench/ysyxSoC/perip/spi/rtl))
+
 
 # Verilator flags
 VERILATOR_FLAGS = -cc --exe --build --trace-fst
 VERILATOR_FLAGS += $(VERILATOR_INC_PATH)
 VERILATOR_FLAGS += -Wno-WIDTHEXPAND -Wno-WIDTHTRUNC
 VERILATOR_FLAGS += --timescale "1ns/1ns" --no-timing
-VERILATOR_FLAGS += --top-module ysyxSoCFull
+
 
 
 WORK_DIR = $(shell pwd)
 
 CSRC = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*.cpp")
 VSRC = $(shell find $(abspath ./vsrc) -name "*.v") 
-VSRC += $(shell find $(abspath /home/hujun/ysyx-workbench/ysyxSoC/perip) -name "*.v") 
+
 
 FILELIST_MK = $(shell find ./csrc -name filelist.mk)
 -include $(FILELIST_MK)
@@ -39,7 +38,7 @@ default: run
 OBJ_DIR = obj_dir
 BIN = $(OBJ_DIR)/V$(TOP_MODULE)
 
-LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32e-npc.bin
+LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.txt
 ARGS += $(LOAD_IMG)
 
 run: $(CSRC)

@@ -22,8 +22,8 @@ class IF extends Module {
   })
 
   // 初始 PC
-  val pc = RegInit("h20000000".U(32.W))
-  val nextPc = WireInit("h20000000".U(32.W))
+  val pc = RegInit("h80000000".U(32.W))
+  val nextPc = WireInit("h80000000".U(32.W))
 
   // 状态定义
   val sIdle :: sWaitReq :: sWaitRsp :: Nil = Enum(3)

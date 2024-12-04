@@ -1,4 +1,4 @@
-/*package npc
+package npc
 import chisel3._
 import chisel3.util._
 
@@ -42,7 +42,6 @@ class top extends Module{
   })
   
   val core    = Module(new Core)
-  val arbiter = Module(new AxiLiteArbiter)
   val xbar    = Module(new AxiLiteArbiterSelector)
   val rom     = Module(new AxiLiteRomSlave)
   val ram     = Module(new Axi4RamSlave)  
@@ -62,7 +61,7 @@ class top extends Module{
   io.mempc:=core.io.mempc
   io.meminst:=core.io.meminst
   io.wbinst:=core.io.wbinst
-  io.result:=arbiter.io.selectedMasterId
+  io.result:=core.io.result
   io.waddr:=core.io.state
   io.state:=ram.io.state
   // ROM地址和数据信号映射
@@ -72,19 +71,21 @@ class top extends Module{
   io.romdataready := ram.io.axi.slave_wready
 
   // IF地址和数据信号映射
-  io.ifaddrvalid := core.io.lsaxim.master_awvalid
-  io.ifaddrready := core.io.lsaxim.master_awready
-  io.ifdatavalid := core.io.lsaxim.master_wvalid
-  io.ifdataready := core.io.lsaxim.master_wready
+  io.ifaddrvalid := core.io.axi.master_awvalid
+  io.ifaddrready := core.io.axi.master_awready
+  io.ifdatavalid := core.io.axi.master_wvalid
+  io.ifdataready := core.io.axi.master_wready
 
 
   core.io.soft:=io.soft
   core.io.timer:=io.timer
   core.io.extern:=io.extern
 
-  core.io.ifaxim<>arbiter.io.ifaxi
-  core.io.lsaxim<>arbiter.io.lsaxi
-  xbar.io.selectedMaster <> arbiter.io.selectedMaster
+  
+  xbar.io.selectedMaster <> core.io.axi
   rom.io.axi<>xbar.io.slaves(0.U)
   ram.io.axi<>xbar.io.slaves(1.U)
-}*/
+}
+  object top extends App {
+  Driver.execute(args, () => new top)
+}

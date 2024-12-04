@@ -6,10 +6,11 @@ import configs.Instructions.NOP
 import configs.AluOp._
 import configs._
 import configs.LsuOp.LSU_NOP
-
+import configs.MduOp.MDU_NOP
 class EX extends Module{
   val io=IO(new Bundle() {
     val id_i = Input(new ID_IO)
+    val flush= Input(Bool())
     val stallReq=Output(Bool())
     val ex_o = Output(new EX_IO)
   })
@@ -31,12 +32,20 @@ class EX extends Module{
     ALU_SLTU->  (opr1 < opr2)
   ))
 
-  val result = Mux(io.id_i.csren,io.id_i.csrrData,Aluresult)
+  val mdu = Module(new MDU)
+  mdu.io.op:=io.id_i.mduOp
+  mdu.io.opr1:=opr1
+  mdu.io.opr2:=opr2
+  mdu.io.flush:=io.flush
+  val mduResult = Mux(mdu.io.valid, mdu.io.result, 0.U)
+
+  val result = Mux(io.id_i.csren,io.id_i.csrrData,
+               Mux(io.id_i.mduOp =/= MDU_NOP,mduResult ,Aluresult))
   val load    = io.id_i.lsuOp =/= LSU_NOP && io.id_i.regWen
   val retired = io.id_i.inst =/= NOP
 
 
-  io.stallReq          := false.B 
+  io.stallReq          := !mdu.io.valid
   io.ex_o.lsuOp        := io.id_i.lsuOp
   io.ex_o.lsuData      := io.id_i.lsuData
   io.ex_o.reg.en       := io.id_i.regWen
