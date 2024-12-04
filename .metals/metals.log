@@ -14917,3 +14917,6 @@ java.util.concurrent.TimeoutException
 2024.12.04 21:06:29 WARN  no build target for: /home/hujun/ysyx-workbench/npc/src/main/scala/axi/xbar.scala
 2024.12.04 21:06:29 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/axi/xbar.scala. Using presentation compiler with project's scala-library version: 3.3.4
 2024.12.04 21:08:04 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/core/WB.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.04 21:13:22 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/axi/xbar.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.04 21:13:22 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/axi/xbar.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2024.12.04 21:13:22 INFO  no build target found for /home/hujun/ysyx-workbench/npc/src/main/scala/axi/xbar.scala. Using presentation compiler with project's scala-library version: 3.3.4
