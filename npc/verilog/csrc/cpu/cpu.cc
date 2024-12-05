@@ -42,7 +42,7 @@ void exec_once() {
     dut->eval();
     tfp->dump(time_counter ++);
     printf(" flushpc=%x  flush=%x   stall=%x   ifstate=%x   bputake=%x  bpuaddr=%x  \n " ,dut->io_flushpc,dut->io_flush,dut->io_stall,dut->io_state,dut->io_bputake,dut->io_bpuaddr);
-    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x  waddr=%d\n",  dut->io_npc,dut->io_inst,dut->io_idpc,dut->io_idinst,dut->io_expc,dut->io_exinst,dut->io_mempc,dut->io_meminst,dut->io_pc,dut->io_wbinst,dut->io_result,dut->io_waddr);
+    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x  waddr=%x\n",  dut->io_npc,dut->io_inst,dut->io_idpc,dut->io_idinst,dut->io_expc,dut->io_exinst,dut->io_mempc,dut->io_meminst,dut->io_pc,dut->io_wbinst,dut->io_result,dut->io_waddr);
     printf("romaddrvalid=%x    romaddrready=%x     romdatavalid=%x    romadataready=%x\n",dut->io_romaddrvalid,dut->io_romaddrready,dut->io_romdatavalid,dut->io_romdataready);
     printf("ifaddrvalid=%x     ifaddrready=%x      ifdatavalid=%x     ifadataready=%x\n\n", dut->io_ifaddrvalid,dut->io_ifaddrready,dut->io_ifdatavalid,dut->io_ifdataready);   
     IFDEF(CONFIG_ITRACE, itrace(dut->io_pc, dut->io_wbinst));
