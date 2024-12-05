@@ -8,31 +8,40 @@ import axi.AxiLiteMaster
 
 class Core extends Module {
   val io = IO(new Bundle() {
-    val timer   = Input(Bool())
-    val soft    = Input(Bool())
-    val extern  = Input(Bool())
 
-  
-    val axi =new AxiLiteMaster
+  val master_awready = Input(Bool())
+  val master_awvalid = Output(Bool())
+  val master_awaddr  = Output(UInt(32.W))
+  val master_awid    = Output(UInt(4.W))
+  val master_awlen   = Output(UInt(8.W))
+  val master_awsize  = Output(UInt(3.W))
+  val master_awburst = Output(UInt(2.W))
 
-    val inst    = Output(UInt(32.W))
-    val pc      = Output(UInt(32.W))
-    val npc     = Output(UInt(32.W))
-    val flushpc = Output(UInt(32.W))
-    val flush   = Output(Bool())
-    val stall   = Output(Bool())
-    val wbinst  = Output(UInt(32.W))
-    val bputake = Output(Bool())
-    val bpuaddr = Output(UInt(32.W))
-    val idpc    = Output(UInt(32.W))
-    val idinst  = Output(UInt(32.W))
-    val expc    = Output(UInt(32.W))
-    val exinst  = Output(UInt(32.W))
-    val mempc   = Output(UInt(32.W))
-    val meminst = Output(UInt(32.W))
-    val result  = Output(UInt(32.W))
-    val waddr   = Output(UInt(32.W))
-    val state   = Output(UInt(32.W))
+  val master_wready  = Input(Bool())
+  val master_wvalid  = Output(Bool())
+  val master_wdata   = Output(UInt(32.W))
+  val master_wstrb   = Output(UInt(4.W))
+  val master_wlast   = Output(Bool())
+
+  val master_bready  = Output(Bool())
+  val master_bvalid  = Input(Bool())
+  val master_bresp   = Input(UInt(2.W))
+  val master_bid     = Input(UInt(4.W))
+
+  val master_arready = Input(Bool())
+  val master_arvalid = Output(Bool())
+  val master_araddr  = Output(UInt(32.W))
+  val master_arid    = Output(UInt(4.W))
+  val master_arlen   = Output(UInt(8.W))
+  val master_arsize  = Output(UInt(3.W))
+  val master_arburst = Output(UInt(2.W))
+
+  val master_rready  = Output(Bool())
+  val master_rvalid  = Input(Bool())
+  val master_rresp   = Input(UInt(2.W))
+  val master_rdata   = Input(UInt(32.W))
+  val master_rlast   = Input(Bool())
+  val master_rid     = Input(UInt(4.W))
   })
 
   val fetch     = Module(new IF)
@@ -119,15 +128,13 @@ class Core extends Module {
 
   csr.io.write          <> WB.io.csr
   csr.io.except         <> MEM.io.except
-  csr.io.timer          := io.timer
-  csr.io.soft           := io.soft
-  csr.io.extern         := io.extern
+  csr.io.timer          := false.B
+  csr.io.soft           := false.B
+  csr.io.extern         := false.B
   csr.io.read           <> resoler.io.csr
 
-  dpic.io.s_regs        := regfile.io.s_regs
+  
 
-  arbiter.io.selectedMaster<>io.axi
-/*
 // AW通道 (Address Write Channel)
 arbiter.io.selectedMaster.master_awready := io.master_awready
 io.master_awvalid := arbiter.io.selectedMaster.master_awvalid
@@ -166,29 +173,31 @@ arbiter.io.selectedMaster.master_rdata  := io.master_rdata
 arbiter.io.selectedMaster.master_rlast  := io.master_rlast
 arbiter.io.selectedMaster.master_rid    := io.master_rid
 io.master_rready := arbiter.io.selectedMaster.master_rready
-*/
 
 
-  io.state:=MEM.io.state
-  io.inst := fetch.io.IF.inst
-  io.pc := WB.io.wb_pc
-  io.npc := fetch.io.IF.pc
-  io.flush := ctrl.io.flushIf
-  io.stall := ctrl.io.stallIf
-  io.flushpc := ctrl.io.flushPc
-  io.bputake := fetch.io.bputake
-  io.bpuaddr := fetch.io.bpuaddr
-  io.idpc := ID.io.if_i.pc
-  io.idinst := ID.io.if_i.inst
-  io.expc := EX.io.id_i.currentPc
-  io.exinst := EX.io.id_i.inst
-  io.mempc := MEM.io.ex_i.currentPc
-  io.meminst := MEM.io.ex_i.inst
-  io.wbinst := WB.io.wbinst
-  io.result := MEM.io.ex_i.reg.data
-  io.waddr := WB.io.regaddr
+  dpic.io.s_regs        := regfile.io.s_regs
+  dpic.io.state:=fetch.io.state
+  dpic.io.inst := fetch.io.IF.inst
+  dpic.io.pc := WB.io.wb_pc
+  dpic.io.npc := fetch.io.IF.pc
+  dpic.io.flush := io.master_arready
+  dpic.io.stall := fetch.io.axi.master_arready
+  dpic.io.flushpc := ctrl.io.flushPc
+  dpic.io.bputake := arbiter.io.selectedMasterId
+  dpic.io.bpuaddr := fetch.io.bpuaddr
+  dpic.io.idpc := ID.io.if_i.pc
+  dpic.io.idinst := ID.io.if_i.inst
+  dpic.io.expc := EX.io.id_i.currentPc
+  dpic.io.exinst := EX.io.id_i.inst
+  dpic.io.mempc := MEM.io.ex_i.currentPc
+  dpic.io.meminst := MEM.io.ex_i.inst
+  dpic.io.wbinst := WB.io.wbinst
+  dpic.io.result := WB.io.regdata
+  dpic.io.waddr := WB.io.regaddr
+
 }
 
-
-
+object Core extends App {
+  Driver.execute(args, () => new Core)
+}
 

@@ -112,14 +112,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/configs/ExceptCause$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc[0m
-[0m[[0m[0mdebug[0m] [0m[0m	npc/top$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/top$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	npc/top.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/top.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	npc/top$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/top$delayedInit$body.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	npc/top$$anon$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/top$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/SieCsr$.class[0m
@@ -132,6 +124,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/resolver$$anon$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/SscratchCsr$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/SscratchCsr$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	npc/core/Core$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/Core$delayedInit$body.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/IF.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/IF.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/StvecCsr$.class[0m
@@ -254,6 +248,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/MisaCsr.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/AxiLiteArbiter.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/AxiLiteArbiter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	npc/core/Core$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/Core$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/MisaCsr$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/hujun/ysyx-workbench/npc/target/scala-2.12/classes/npc/core/MisaCsr$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	npc/core/EX.class[0m

@@ -22,8 +22,8 @@ class IF extends Module {
   })
 
   // 初始 PC
-  val pc = RegInit("h80000000".U(32.W))
-  val nextPc = WireInit("h80000000".U(32.W))
+  val pc = RegInit("h20000000".U(32.W))
+  val nextPc = WireInit("h20000000".U(32.W))
 
   // 状态定义
   val sIdle :: sWaitReq :: sWaitRsp :: Nil = Enum(3)
@@ -93,7 +93,7 @@ class IF extends Module {
   val misaligned = pc(1, 0) =/= 0.U
 
   // AXI Lite 读通道信号
-  io.axi.master_arvalid :=(state =/= sIdle)
+  io.axi.master_arvalid :=(state === sWaitReq)
   io.axi.master_araddr := pc
   io.axi.master_arid := 0.U
   io.axi.master_arlen := 0.U
@@ -105,7 +105,7 @@ class IF extends Module {
   // 输出到 IF 阶段
   io.IF.pc := pc
   io.IF.valid := (state === sWaitRsp && r_hs) // 读数据成功
-  io.IF.inst := Mux(r_hs, io.axi.master_rdata, "h13".U)
+  io.IF.inst :=io.axi.master_rdata// Mux(r_hs, io.axi.master_rdata, "h13".U)
   io.IF.bpu_take := bpu.io.prdt_taken_o
   io.IF.bpu_takepc := bpu.io.prdt_addr_o
   io.IF.misaligned := misaligned

@@ -16,9 +16,9 @@ class AxiLiteArbiter extends Module {
   // 仲裁逻辑：优先级 - `ifaxi` 高于 `lsaxi`
   val ifaxiValid = io.ifaxi.master_arvalid || io.ifaxi.master_awvalid
   val lsaxiValid = io.lsaxi.master_arvalid || io.lsaxi.master_awvalid
-
-  val selectIfaxi = ifaxiValid // 优先选择 ifaxi
-  val selectLsaxi = !ifaxiValid && lsaxiValid // 只有 ifaxi 无效时选择 lsaxi
+  val grant      = WireI(Bool())
+  val selectIfaxi = grant // 优先选择 ifaxi
+  val selectLsaxi = !grant // 只有 ifaxi 无效时选择 lsaxi
 
   io.selectedMasterId := lsaxiValid
 

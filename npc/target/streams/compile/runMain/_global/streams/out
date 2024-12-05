@@ -1,12 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassExceptions: [0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module EX]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.op1 <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module EX]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.op2 <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 2 errors detected![0m
-[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.PassExceptions: [0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module EX]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.op1 <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  : [module EX]  Reference io is not fully initialized.[0m
-[0m[[0m[31merror[0m] [0m[0m   : io.op2 <= VOID[0m
-[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.PassException: 2 errors detected![0m
+[0m[[0m[31merror[0m] [0m[0mfirrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 51:25] : [module Core]  Reference EX is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : EX.io.flush <= VOID[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) firrtl.passes.CheckInitialization$RefNotInitializedException:  @[core.scala 51:25] : [module Core]  Reference EX is not fully initialized.[0m
+[0m[[0m[31merror[0m] [0m[0m   : EX.io.flush <= VOID[0m

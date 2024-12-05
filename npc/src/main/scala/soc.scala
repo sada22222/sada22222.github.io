@@ -1,4 +1,4 @@
-package npc
+/*package npc
 import chisel3._
 import chisel3.util._
 
@@ -85,4 +85,4 @@ class top extends Module{
   xbar.io.selectedMaster <> core.io.axi
   rom.io.axi<>xbar.io.slaves(0.U)
   ram.io.axi<>xbar.io.slaves(1.U)
-}
+}*/

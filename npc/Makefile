@@ -22,7 +22,7 @@ $(TARGET_DIR)/keyboard.v: $(TARGET_DIR) $(TOP_SRC)
 keyboard: $(TARGET_DIR)/keyboard.v
 
 $(TARGET_DIR)/top.v: $(TARGET_DIR) $(TOP_SRC)
-	sbt "runMain npc.Core --target-dir $(TARGET_DIR) --output-file top.v"
+	sbt "runMain npc.core.Core --target-dir $(TARGET_DIR) --output-file top.v"
 
 top: $(TARGET_DIR)/top.v
 
