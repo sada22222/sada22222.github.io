@@ -4089,7 +4089,7 @@ module MEM(
   assign io_mem_o_csr_retired = io_ex_i_csr_retired; // @[MEM.scala 147:16]
   assign io_mem_o_currentPc = io_ex_i_currentPc; // @[MEM.scala 142:22]
   assign io_mem_o_inst = io_ex_i_inst; // @[MEM.scala 143:17]
-  assign io_axi_master_awvalid = state != 3'h0; // @[MEM.scala 85:25]
+  assign io_axi_master_awvalid = state == 3'h1; // @[MEM.scala 85:25]
   assign io_axi_master_awaddr = io_ex_i_reg_data; // @[MEM.scala 86:24]
   assign io_axi_master_wvalid = state == 3'h2; // @[MEM.scala 91:24]
   assign io_axi_master_wdata = io_ex_i_lsuData; // @[MEM.scala 92:23]
@@ -6136,6 +6136,8 @@ end // initial
   end
 endmodule
 module AxiLiteArbiter(
+  input         clock,
+  input         reset,
   output        io_ifaxi_master_arready,
   input         io_ifaxi_master_arvalid,
   input  [31:0] io_ifaxi_master_araddr,
@@ -6177,32 +6179,80 @@ module AxiLiteArbiter(
   input  [31:0] io_selectedMaster_master_rdata,
   output        io_selectedMasterId
 );
-  wire  lsaxiValid = io_lsaxi_master_arvalid | io_lsaxi_master_awvalid; // @[arbiter.scala 18:44]
-  wire  _GEN_0 = lsaxiValid ? 1'h0 : 1'h1; // @[arbiter.scala 22:25]
-  wire  grant = io_ifaxi_master_arvalid | _GEN_0; // @[arbiter.scala 20:19]
-  wire  selectLsaxi = ~grant; // @[arbiter.scala 28:21]
-  assign io_ifaxi_master_arready = grant & io_selectedMaster_master_arready; // @[arbiter.scala 56:27]
-  assign io_ifaxi_master_rvalid = grant & io_selectedMaster_master_rvalid; // @[arbiter.scala 62:26]
-  assign io_ifaxi_master_rdata = io_selectedMaster_master_rdata; // @[arbiter.scala 63:25]
-  assign io_lsaxi_master_awready = selectLsaxi & io_selectedMaster_master_awready; // @[arbiter.scala 69:27]
-  assign io_lsaxi_master_wready = selectLsaxi & io_selectedMaster_master_wready; // @[arbiter.scala 70:26]
-  assign io_lsaxi_master_bvalid = selectLsaxi & io_selectedMaster_master_bvalid; // @[arbiter.scala 71:26]
-  assign io_lsaxi_master_arready = selectLsaxi & io_selectedMaster_master_arready; // @[arbiter.scala 68:27]
-  assign io_lsaxi_master_rvalid = selectLsaxi & io_selectedMaster_master_rvalid; // @[arbiter.scala 74:26]
-  assign io_lsaxi_master_rdata = io_selectedMaster_master_rdata; // @[arbiter.scala 75:25]
-  assign io_selectedMaster_master_awvalid = grant ? 1'h0 : io_lsaxi_master_awvalid; // @[arbiter.scala 40:36]
-  assign io_selectedMaster_master_awaddr = grant ? 32'h0 : io_lsaxi_master_awaddr; // @[arbiter.scala 41:35]
-  assign io_selectedMaster_master_awsize = grant ? 3'h0 : 3'h2; // @[arbiter.scala 44:35]
-  assign io_selectedMaster_master_awburst = grant ? 2'h0 : 2'h1; // @[arbiter.scala 45:36]
-  assign io_selectedMaster_master_wvalid = grant ? 1'h0 : io_lsaxi_master_wvalid; // @[arbiter.scala 47:35]
-  assign io_selectedMaster_master_wdata = grant ? 32'h0 : io_lsaxi_master_wdata; // @[arbiter.scala 48:34]
-  assign io_selectedMaster_master_wstrb = grant ? 4'h0 : io_lsaxi_master_wstrb; // @[arbiter.scala 49:34]
-  assign io_selectedMaster_master_wlast = grant ? 1'h0 : 1'h1; // @[arbiter.scala 50:34]
-  assign io_selectedMaster_master_bready = grant ? 1'h0 : io_lsaxi_master_bready; // @[arbiter.scala 52:35]
-  assign io_selectedMaster_master_arvalid = grant ? io_ifaxi_master_arvalid : io_lsaxi_master_arvalid; // @[arbiter.scala 33:36]
-  assign io_selectedMaster_master_araddr = grant ? io_ifaxi_master_araddr : io_lsaxi_master_araddr; // @[arbiter.scala 34:35]
-  assign io_selectedMaster_master_rready = grant ? io_ifaxi_master_rready : io_lsaxi_master_rready; // @[arbiter.scala 53:35]
-  assign io_selectedMasterId = io_lsaxi_master_arvalid | io_lsaxi_master_awvalid; // @[arbiter.scala 30:23]
+  wire  lsaxiValid = io_lsaxi_master_arvalid | io_lsaxi_master_awvalid; // @[arbiter.scala 19:44]
+  reg  grant; // @[arbiter.scala 22:22]
+  reg [31:0] _RAND_0;
+  wire  _GEN_0 = lsaxiValid | grant; // @[arbiter.scala 27:26]
+  wire  _T = ~grant; // @[arbiter.scala 36:15]
+  assign io_ifaxi_master_arready = _T & io_selectedMaster_master_arready; // @[arbiter.scala 63:27]
+  assign io_ifaxi_master_rvalid = _T & io_selectedMaster_master_rvalid; // @[arbiter.scala 69:27]
+  assign io_ifaxi_master_rdata = io_selectedMaster_master_rdata; // @[arbiter.scala 70:27]
+  assign io_lsaxi_master_awready = grant & io_selectedMaster_master_awready; // @[arbiter.scala 76:27]
+  assign io_lsaxi_master_wready = grant & io_selectedMaster_master_wready; // @[arbiter.scala 77:27]
+  assign io_lsaxi_master_bvalid = grant & io_selectedMaster_master_bvalid; // @[arbiter.scala 78:27]
+  assign io_lsaxi_master_arready = grant & io_selectedMaster_master_arready; // @[arbiter.scala 75:27]
+  assign io_lsaxi_master_rvalid = grant & io_selectedMaster_master_rvalid; // @[arbiter.scala 81:27]
+  assign io_lsaxi_master_rdata = io_selectedMaster_master_rdata; // @[arbiter.scala 82:27]
+  assign io_selectedMaster_master_awvalid = _T ? 1'h0 : io_lsaxi_master_awvalid; // @[arbiter.scala 47:36]
+  assign io_selectedMaster_master_awaddr = _T ? 32'h0 : io_lsaxi_master_awaddr; // @[arbiter.scala 48:36]
+  assign io_selectedMaster_master_awsize = _T ? 3'h0 : 3'h2; // @[arbiter.scala 51:36]
+  assign io_selectedMaster_master_awburst = _T ? 2'h0 : 2'h1; // @[arbiter.scala 52:36]
+  assign io_selectedMaster_master_wvalid = _T ? 1'h0 : io_lsaxi_master_wvalid; // @[arbiter.scala 54:35]
+  assign io_selectedMaster_master_wdata = _T ? 32'h0 : io_lsaxi_master_wdata; // @[arbiter.scala 55:35]
+  assign io_selectedMaster_master_wstrb = _T ? 4'h0 : io_lsaxi_master_wstrb; // @[arbiter.scala 56:35]
+  assign io_selectedMaster_master_wlast = _T ? 1'h0 : 1'h1; // @[arbiter.scala 57:35]
+  assign io_selectedMaster_master_bready = _T ? 1'h0 : io_lsaxi_master_bready; // @[arbiter.scala 59:35]
+  assign io_selectedMaster_master_arvalid = _T ? io_ifaxi_master_arvalid : io_lsaxi_master_arvalid; // @[arbiter.scala 40:36]
+  assign io_selectedMaster_master_araddr = _T ? io_ifaxi_master_araddr : io_lsaxi_master_araddr; // @[arbiter.scala 41:36]
+  assign io_selectedMaster_master_rready = _T ? io_ifaxi_master_rready : io_lsaxi_master_rready; // @[arbiter.scala 60:35]
+  assign io_selectedMasterId = grant; // @[arbiter.scala 32:23]
+`ifdef RANDOMIZE_GARBAGE_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_INVALID_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_REG_INIT
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+`define RANDOMIZE
+`endif
+`ifndef RANDOM
+`define RANDOM $random
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+  integer initvar;
+`endif
+`ifndef SYNTHESIS
+initial begin
+  `ifdef RANDOMIZE
+    `ifdef INIT_RANDOM
+      `INIT_RANDOM
+    `endif
+    `ifndef VERILATOR
+      `ifdef RANDOMIZE_DELAY
+        #`RANDOMIZE_DELAY begin end
+      `else
+        #0.002 begin end
+      `endif
+    `endif
+  `ifdef RANDOMIZE_REG_INIT
+  _RAND_0 = {1{`RANDOM}};
+  grant = _RAND_0[0:0];
+  `endif // RANDOMIZE_REG_INIT
+  `endif // RANDOMIZE
+end // initial
+`endif // SYNTHESIS
+  always @(posedge clock) begin
+    if (reset) begin
+      grant <= 1'h0;
+    end else if (io_ifaxi_master_arvalid) begin
+      grant <= 1'h0;
+    end else begin
+      grant <= _GEN_0;
+    end
+  end
 endmodule
 module Core(
   input         clock,
@@ -6666,6 +6716,8 @@ module Core(
   wire  csr_io_hasInt; // @[core.scala 60:25]
   wire  csr_io_busy; // @[core.scala 60:25]
   wire [31:0] csr_io_trapVec; // @[core.scala 60:25]
+  wire  arbiter_clock; // @[core.scala 61:25]
+  wire  arbiter_reset; // @[core.scala 61:25]
   wire  arbiter_io_ifaxi_master_arready; // @[core.scala 61:25]
   wire  arbiter_io_ifaxi_master_arvalid; // @[core.scala 61:25]
   wire [31:0] arbiter_io_ifaxi_master_araddr; // @[core.scala 61:25]
@@ -7164,6 +7216,8 @@ module Core(
     .io_trapVec(csr_io_trapVec)
   );
   AxiLiteArbiter arbiter ( // @[core.scala 61:25]
+    .clock(arbiter_clock),
+    .reset(arbiter_reset),
     .io_ifaxi_master_arready(arbiter_io_ifaxi_master_arready),
     .io_ifaxi_master_arvalid(arbiter_io_ifaxi_master_arvalid),
     .io_ifaxi_master_araddr(arbiter_io_ifaxi_master_araddr),
@@ -7396,7 +7450,7 @@ module Core(
   assign dpic_pc = WB_io_wb_pc; // @[core.scala 181:14]
   assign dpic_npc = fetch_io_IF_pc; // @[core.scala 182:15]
   assign dpic_flushpc = ctrl_io_flushPc; // @[core.scala 185:19]
-  assign dpic_flush = io_master_arvalid; // @[core.scala 183:17]
+  assign dpic_flush = io_master_arready; // @[core.scala 183:17]
   assign dpic_stall = fetch_io_axi_master_arready; // @[core.scala 184:17]
   assign dpic_wbinst = WB_io_wbinst; // @[core.scala 194:18]
   assign dpic_bputake = arbiter_io_selectedMasterId; // @[core.scala 186:19]
@@ -7465,6 +7519,8 @@ module Core(
   assign csr_io_except_excCause = MEM_io_except_excCause; // @[core.scala 130:25]
   assign csr_io_except_excPc = MEM_io_except_excPc; // @[core.scala 130:25]
   assign csr_io_except_excValue = MEM_io_except_excValue; // @[core.scala 130:25]
+  assign arbiter_clock = clock;
+  assign arbiter_reset = reset;
   assign arbiter_io_ifaxi_master_arvalid = fetch_io_axi_master_arvalid; // @[core.scala 63:30]
   assign arbiter_io_ifaxi_master_araddr = fetch_io_axi_master_araddr; // @[core.scala 63:30]
   assign arbiter_io_ifaxi_master_rready = fetch_io_axi_master_rready; // @[core.scala 63:30]
