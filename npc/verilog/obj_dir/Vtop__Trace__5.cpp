@@ -5737,17 +5737,21 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
     }
     if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[2U])) {
         bufp->chgIData(oldp+1018,(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_awaddr),32);
-        bufp->chgIData(oldp+1019,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))
-                                    ? 0U : vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_lsuData)),32);
-        bufp->chgCData(oldp+1020,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))
-                                    ? 0U : ((0U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
-                                             ? 1U : 
-                                            ((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
-                                              ? 3U : 
-                                             ((2U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
-                                               ? 0xfU
-                                               : 0U))))),4);
-        bufp->chgBit(oldp+1021,(((0U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+        bufp->chgIData(oldp+1019,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)
+                                    ? vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_lsuData
+                                    : 0U)),32);
+        bufp->chgCData(oldp+1020,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)
+                                    ? ((0U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
+                                        ? 1U : ((1U 
+                                                 == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
+                                                 ? 3U
+                                                 : 
+                                                ((2U 
+                                                  == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
+                                                  ? 0xfU
+                                                  : 0U)))
+                                    : 0U)),4);
+        bufp->chgBit(oldp+1021,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))));
         bufp->chgBit(oldp+1022,(((IData)(vlSelf->top__DOT__xbar__DOT____VdfgTmp_hca0e4086__0) 
                                  & (4U == (IData)(vlSelf->top__DOT__ram__DOT__state)))));
@@ -5767,7 +5771,7 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                         ? vlSelf->top__DOT__rom__DOT__readModule__DOT__fetched_data
                                         : 0U) : 0U)),32);
         bufp->chgBit(oldp+1033,(((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedWriteSlave)) 
-                                 & ((0U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+                                 & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                     & (3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))))));
         bufp->chgBit(oldp+1034,((4U == (IData)(vlSelf->top__DOT__ram__DOT__state))));
         bufp->chgBit(oldp+1035,(((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedReadSlave)) 
@@ -5775,11 +5779,11 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
         bufp->chgBit(oldp+1036,(((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedReadSlave)) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rready))));
         bufp->chgBit(oldp+1037,((1U == (IData)(vlSelf->top__DOT__ram__DOT__state))));
-        bufp->chgBit(oldp+1038,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+        bufp->chgBit(oldp+1038,(((~ (IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready))));
-        bufp->chgBit(oldp+1039,((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))));
+        bufp->chgBit(oldp+1039,((1U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))));
         bufp->chgBit(oldp+1040,((2U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))));
-        bufp->chgBit(oldp+1041,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+        bufp->chgBit(oldp+1041,(((~ (IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rvalid))));
         bufp->chgBit(oldp+1042,(vlSelf->top__DOT__core__DOT__fetch__DOT__bpu_io_inst_valid_i));
         bufp->chgBit(oldp+1043,((0U != (3U & vlSelf->top__DOT__core__DOT__fetch__DOT__pc))));
@@ -6098,7 +6102,7 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
         bufp->chgIData(oldp+1094,(vlSelf->top__DOT__core__DOT__MEM_io_except_excValue),32);
         bufp->chgBit(oldp+1095,(vlSelf->top__DOT__core__DOT__resoler__DOT___T_35));
         bufp->chgIData(oldp+1096,(vlSelf->top__DOT__core__DOT__MEM_io_mem_o_reg_data),32);
-        bufp->chgBit(oldp+1097,((0U != (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
+        bufp->chgBit(oldp+1097,((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
         bufp->chgBit(oldp+1098,((2U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
         bufp->chgCData(oldp+1099,(((0U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
                                     ? 1U : ((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
@@ -6107,14 +6111,14 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                               ? 0xfU
                                               : 0U)))),4);
         bufp->chgBit(oldp+1100,((3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
-        bufp->chgBit(oldp+1101,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+        bufp->chgBit(oldp+1101,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & ((IData)(vlSelf->top__DOT__xbar__DOT____VdfgTmp_hca0e4086__0) 
                                     & (4U == (IData)(vlSelf->top__DOT__ram__DOT__state))))));
-        bufp->chgBit(oldp+1102,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+        bufp->chgBit(oldp+1102,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready))));
         bufp->chgBit(oldp+1103,((4U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
         bufp->chgBit(oldp+1104,((5U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
-        bufp->chgBit(oldp+1105,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+        bufp->chgBit(oldp+1105,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rvalid))));
         bufp->chgBit(oldp+1106,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_reg_en));
         bufp->chgCData(oldp+1107,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_reg_addr),5);
@@ -6541,7 +6545,7 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                  | (2U == (IData)(vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_lsuOp)))));
         bufp->chgCData(oldp+1209,((3U & vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_reg_data)),2);
         bufp->chgBit(oldp+1210,(((4U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                                 & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+                                 & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                     & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready)))));
         bufp->chgBit(oldp+1211,(vlSelf->top__DOT__core__DOT__MEM__DOT__r_hs));
         bufp->chgBit(oldp+1212,(vlSelf->top__DOT__core__DOT__MEM__DOT__b_hs));
@@ -6577,8 +6581,8 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
         bufp->chgIData(oldp+1221,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_currentPc),32);
         bufp->chgIData(oldp+1222,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_inst),32);
         bufp->chgBit(oldp+1223,(((4U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                                 | (0U != (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))));
-        bufp->chgBit(oldp+1224,(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi));
+                                 | (1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))));
+        bufp->chgBit(oldp+1224,(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant));
         bufp->chgCData(oldp+1225,(vlSelf->top__DOT__core__DOT__csr__DOT__mode),2);
         bufp->chgBit(oldp+1226,(vlSelf->top__DOT__core__DOT__csr__DOT__mstatus_sum));
         bufp->chgCData(oldp+1227,(vlSelf->top__DOT__core__DOT__csr__DOT__mstatus_mpp),2);
@@ -6643,8 +6647,8 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                                     : 0U)))),5);
         bufp->chgIData(oldp+1269,(vlSelf->top__DOT__core__DOT__fetch__DOT__pc),32);
         bufp->chgCData(oldp+1270,(vlSelf->top__DOT__core__DOT__fetch__DOT__state),2);
-        bufp->chgBit(oldp+1271,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
-                                 & ((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+        bufp->chgBit(oldp+1271,(((1U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+                                 & ((~ (IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)) 
                                     & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready)))));
         bufp->chgBit(oldp+1272,(vlSelf->top__DOT__core__DOT__fetch__DOT__r_hs));
         bufp->chgCData(oldp+1273,(vlSelf->top__DOT__core__DOT__fetch__DOT__bpu__DOT__opcode),7);
@@ -6757,7 +6761,7 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                     & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rready)))));
         bufp->chgBit(oldp+1285,(((4U == (IData)(vlSelf->top__DOT__ram__DOT__state)) 
                                  & ((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedWriteSlave)) 
-                                    & ((0U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+                                    & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                        & (3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))))));
         bufp->chgCData(oldp+1286,(vlSelf->top__DOT__ram__DOT__state),3);
         bufp->chgIData(oldp+1287,(vlSelf->top__DOT__rom__DOT__readModule__DOT__fetched_data),32);
@@ -6809,15 +6813,15 @@ void Vtop___024root__trace_chg_sub_5(Vtop___024root* vlSelf, VerilatedFst::Buffe
                                     != (IData)(vlSelf->top__DOT__core__DOT__ID__DOT__branchteke)) 
                                    | (vlSelf->top__DOT__core__DOT__IF_ID__DOT__ff_bpu_takepc 
                                       != vlSelf->top__DOT__core__DOT__ID__DOT__takepc))))));
-    bufp->chgBit(oldp+1324,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->chgBit(oldp+1324,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                              & (IData)(vlSelf->io_ifaddrready))));
-    bufp->chgBit(oldp+1325,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->chgBit(oldp+1325,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                              & (IData)(vlSelf->io_ifdataready))));
-    bufp->chgBit(oldp+1326,(((0U != (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                             & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->chgBit(oldp+1326,(((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
+                             & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                 & (IData)(vlSelf->io_ifaddrready)))));
     bufp->chgBit(oldp+1327,(((2U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                             & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+                             & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                 & (IData)(vlSelf->io_ifdataready)))));
     bufp->chgBit(oldp+1328,(((~ (IData)(vlSelf->io_romaddrready)) 
                              & (1U != (IData)(vlSelf->top__DOT__ram__DOT__state)))));

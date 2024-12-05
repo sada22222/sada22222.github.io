@@ -5539,19 +5539,18 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                                                & (vlSymsp->TOP__top__DOT__core__DOT__EX__DOT__mdu__DOT__mul__DOT__CarrySaveAdder_15.__PVT___T_317 
                                                   >> 8U)))))));
     bufp->fullIData(oldp+9378,(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_awaddr),32);
-    bufp->fullIData(oldp+9379,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))
-                                 ? 0U : vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_lsuData)),32);
-    bufp->fullCData(oldp+9380,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))
-                                 ? 0U : ((0U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
-                                          ? 1U : ((1U 
-                                                   == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
-                                                   ? 3U
-                                                   : 
-                                                  ((2U 
-                                                    == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
-                                                    ? 0xfU
-                                                    : 0U))))),4);
-    bufp->fullBit(oldp+9381,(((0U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+    bufp->fullIData(oldp+9379,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)
+                                 ? vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_lsuData
+                                 : 0U)),32);
+    bufp->fullCData(oldp+9380,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)
+                                 ? ((0U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
+                                     ? 1U : ((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
+                                              ? 3U : 
+                                             ((2U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
+                                               ? 0xfU
+                                               : 0U)))
+                                 : 0U)),4);
+    bufp->fullBit(oldp+9381,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                               & (3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))));
     bufp->fullBit(oldp+9382,(((IData)(vlSelf->top__DOT__xbar__DOT____VdfgTmp_hca0e4086__0) 
                               & (4U == (IData)(vlSelf->top__DOT__ram__DOT__state)))));
@@ -5571,7 +5570,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                                      ? vlSelf->top__DOT__rom__DOT__readModule__DOT__fetched_data
                                      : 0U) : 0U)),32);
     bufp->fullBit(oldp+9393,(((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedWriteSlave)) 
-                              & ((0U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))))));
     bufp->fullBit(oldp+9394,((4U == (IData)(vlSelf->top__DOT__ram__DOT__state))));
     bufp->fullBit(oldp+9395,(((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedReadSlave)) 
@@ -5579,11 +5578,11 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
     bufp->fullBit(oldp+9396,(((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedReadSlave)) 
                               & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rready))));
     bufp->fullBit(oldp+9397,((1U == (IData)(vlSelf->top__DOT__ram__DOT__state))));
-    bufp->fullBit(oldp+9398,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+    bufp->fullBit(oldp+9398,(((~ (IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)) 
                               & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready))));
-    bufp->fullBit(oldp+9399,((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))));
+    bufp->fullBit(oldp+9399,((1U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))));
     bufp->fullBit(oldp+9400,((2U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state))));
-    bufp->fullBit(oldp+9401,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+    bufp->fullBit(oldp+9401,(((~ (IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)) 
                               & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rvalid))));
     bufp->fullBit(oldp+9402,(vlSelf->top__DOT__core__DOT__fetch__DOT__bpu_io_inst_valid_i));
     bufp->fullBit(oldp+9403,((0U != (3U & vlSelf->top__DOT__core__DOT__fetch__DOT__pc))));
@@ -5909,7 +5908,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
     bufp->fullIData(oldp+9454,(vlSelf->top__DOT__core__DOT__MEM_io_except_excValue),32);
     bufp->fullBit(oldp+9455,(vlSelf->top__DOT__core__DOT__resoler__DOT___T_35));
     bufp->fullIData(oldp+9456,(vlSelf->top__DOT__core__DOT__MEM_io_mem_o_reg_data),32);
-    bufp->fullBit(oldp+9457,((0U != (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
+    bufp->fullBit(oldp+9457,((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
     bufp->fullBit(oldp+9458,((2U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
     bufp->fullCData(oldp+9459,(((0U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
                                  ? 1U : ((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__width))
@@ -5918,14 +5917,14 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                                                    ? 0xfU
                                                    : 0U)))),4);
     bufp->fullBit(oldp+9460,((3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
-    bufp->fullBit(oldp+9461,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->fullBit(oldp+9461,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                               & ((IData)(vlSelf->top__DOT__xbar__DOT____VdfgTmp_hca0e4086__0) 
                                  & (4U == (IData)(vlSelf->top__DOT__ram__DOT__state))))));
-    bufp->fullBit(oldp+9462,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->fullBit(oldp+9462,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                               & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready))));
     bufp->fullBit(oldp+9463,((4U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
     bufp->fullBit(oldp+9464,((5U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state))));
-    bufp->fullBit(oldp+9465,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->fullBit(oldp+9465,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                               & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rvalid))));
     bufp->fullBit(oldp+9466,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_reg_en));
     bufp->fullCData(oldp+9467,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_reg_addr),5);
@@ -6350,7 +6349,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                               | (2U == (IData)(vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_lsuOp)))));
     bufp->fullCData(oldp+9569,((3U & vlSelf->top__DOT__core__DOT__EX_MEM__DOT__ff_reg_data)),2);
     bufp->fullBit(oldp+9570,(((4U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready)))));
     bufp->fullBit(oldp+9571,(vlSelf->top__DOT__core__DOT__MEM__DOT__r_hs));
     bufp->fullBit(oldp+9572,(vlSelf->top__DOT__core__DOT__MEM__DOT__b_hs));
@@ -6385,8 +6384,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
     bufp->fullIData(oldp+9581,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_currentPc),32);
     bufp->fullIData(oldp+9582,(vlSelf->top__DOT__core__DOT__MEM_WB__DOT__ff_inst),32);
     bufp->fullBit(oldp+9583,(((4U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                              | (0U != (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))));
-    bufp->fullBit(oldp+9584,(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi));
+                              | (1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))));
+    bufp->fullBit(oldp+9584,(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant));
     bufp->fullCData(oldp+9585,(vlSelf->top__DOT__core__DOT__csr__DOT__mode),2);
     bufp->fullBit(oldp+9586,(vlSelf->top__DOT__core__DOT__csr__DOT__mstatus_sum));
     bufp->fullCData(oldp+9587,(vlSelf->top__DOT__core__DOT__csr__DOT__mstatus_mpp),2);
@@ -6449,8 +6448,8 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                                                  : 0U)))),5);
     bufp->fullIData(oldp+9629,(vlSelf->top__DOT__core__DOT__fetch__DOT__pc),32);
     bufp->fullCData(oldp+9630,(vlSelf->top__DOT__core__DOT__fetch__DOT__state),2);
-    bufp->fullBit(oldp+9631,(((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
-                              & ((0U != (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+    bufp->fullBit(oldp+9631,(((1U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+                              & ((~ (IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant)) 
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_arready)))));
     bufp->fullBit(oldp+9632,(vlSelf->top__DOT__core__DOT__fetch__DOT__r_hs));
     bufp->fullCData(oldp+9633,(vlSelf->top__DOT__core__DOT__fetch__DOT__bpu__DOT__opcode),7);
@@ -6556,7 +6555,7 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                                  & (IData)(vlSelf->top__DOT__core__DOT__arbiter_io_selectedMaster_master_rready)))));
     bufp->fullBit(oldp+9645,(((4U == (IData)(vlSelf->top__DOT__ram__DOT__state)) 
                               & ((1U == (IData)(vlSelf->top__DOT__xbar__DOT__selectedWriteSlave)) 
-                                 & ((0U == (IData)(vlSelf->top__DOT__core__DOT__fetch__DOT__state)) 
+                                 & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                     & (3U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)))))));
     bufp->fullCData(oldp+9646,(vlSelf->top__DOT__ram__DOT__state),3);
     bufp->fullIData(oldp+9647,(vlSelf->top__DOT__rom__DOT__readModule__DOT__fetched_data),32);
@@ -6607,15 +6606,15 @@ VL_ATTR_COLD void Vtop___024root__trace_full_sub_5(Vtop___024root* vlSelf, Veril
                                      != (IData)(vlSelf->top__DOT__core__DOT__ID__DOT__branchteke)) 
                                     | (vlSelf->top__DOT__core__DOT__IF_ID__DOT__ff_bpu_takepc 
                                        != vlSelf->top__DOT__core__DOT__ID__DOT__takepc))))));
-    bufp->fullBit(oldp+9684,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->fullBit(oldp+9684,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                               & (IData)(vlSelf->io_ifaddrready))));
-    bufp->fullBit(oldp+9685,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->fullBit(oldp+9685,(((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                               & (IData)(vlSelf->io_ifdataready))));
-    bufp->fullBit(oldp+9686,(((0U != (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+    bufp->fullBit(oldp+9686,(((1U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
+                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (IData)(vlSelf->io_ifaddrready)))));
     bufp->fullBit(oldp+9687,(((2U == (IData)(vlSelf->top__DOT__core__DOT__MEM__DOT__state)) 
-                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__selectLsaxi) 
+                              & ((IData)(vlSelf->top__DOT__core__DOT__arbiter__DOT__grant) 
                                  & (IData)(vlSelf->io_ifdataready)))));
     bufp->fullBit(oldp+9688,(((~ (IData)(vlSelf->io_romaddrready)) 
                               & (1U != (IData)(vlSelf->top__DOT__ram__DOT__state)))));

@@ -82,7 +82,7 @@ class MEM extends Module {
   io.axi.master_arburst := "b01".U // INCR burst
   io.axi.master_rready := (state === sReadData)
 
-  io.axi.master_awvalid := (state =/= sIdle)
+  io.axi.master_awvalid := (state === sWriteAddr)
   io.axi.master_awaddr := addr
   io.axi.master_awid := 0.U
   io.axi.master_awlen := 0.U

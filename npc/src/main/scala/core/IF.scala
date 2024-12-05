@@ -93,7 +93,7 @@ class IF extends Module {
   val misaligned = pc(1, 0) =/= 0.U
 
   // AXI Lite 读通道信号
-  io.axi.master_arvalid :=(state =/= sIdle)
+  io.axi.master_arvalid :=(state === sWaitReq)
   io.axi.master_araddr := pc
   io.axi.master_arid := 0.U
   io.axi.master_arlen := 0.U

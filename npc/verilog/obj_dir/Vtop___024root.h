@@ -232,9 +232,10 @@ class Vtop___024root final : public VerilatedModule {
         CData/*0:0*/ top__DOT__core__DOT__csr__DOT__handExcS;
         CData/*0:0*/ top__DOT__core__DOT__csr__DOT___T_605;
         CData/*0:0*/ top__DOT__core__DOT__csr__DOT___GEN_67;
-        CData/*0:0*/ top__DOT__core__DOT__arbiter__DOT__selectLsaxi;
+        CData/*0:0*/ top__DOT__core__DOT__arbiter__DOT__grant;
     };
     struct {
+        CData/*0:0*/ top__DOT__core__DOT__arbiter__DOT___GEN_0;
         CData/*0:0*/ top__DOT__xbar__DOT___T_2;
         CData/*0:0*/ top__DOT__xbar__DOT___T_5;
         CData/*1:0*/ top__DOT__xbar__DOT__selectedReadSlave;
@@ -298,9 +299,9 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT__core__DOT__ID_EX__DOT__ff_csrwData;
         IData/*31:0*/ top__DOT__core__DOT__ID_EX__DOT__ff_excValue;
         IData/*31:0*/ top__DOT__core__DOT__ID_EX__DOT__ff_inst;
-        IData/*31:0*/ top__DOT__core__DOT__ID_EX__DOT__ff_currentPc;
     };
     struct {
+        IData/*31:0*/ top__DOT__core__DOT__ID_EX__DOT__ff_currentPc;
         IData/*31:0*/ top__DOT__core__DOT__EX__DOT__mdu__DOT__mul_io_mul1;
         IData/*31:0*/ top__DOT__core__DOT__EX__DOT__mdu__DOT__div_io_divident;
         IData/*31:0*/ top__DOT__core__DOT__EX__DOT__mdu__DOT__div_io_divisor;
@@ -364,9 +365,9 @@ class Vtop___024root final : public VerilatedModule {
         IData/*31:0*/ top__DOT__core__DOT__csr__DOT__mtval_data;
         IData/*31:0*/ top__DOT__core__DOT__csr__DOT___T_31;
         IData/*31:0*/ top__DOT__core__DOT__csr__DOT___T_47;
-        IData/*29:0*/ top__DOT__core__DOT__csr__DOT__stvec_base;
     };
     struct {
+        IData/*29:0*/ top__DOT__core__DOT__csr__DOT__stvec_base;
         IData/*31:0*/ top__DOT__core__DOT__csr__DOT__sscratch_data;
         IData/*31:0*/ top__DOT__core__DOT__csr__DOT__sepc_data;
         IData/*30:0*/ top__DOT__core__DOT__csr__DOT__scause_code;

@@ -86,3 +86,7 @@ class top extends Module{
   rom.io.axi<>xbar.io.slaves(0.U)
   ram.io.axi<>xbar.io.slaves(1.U)
 }
+
+object top extends App {
+  Driver.execute(args, () => new top)
+}

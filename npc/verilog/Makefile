@@ -38,7 +38,7 @@ default: run
 OBJ_DIR = obj_dir
 BIN = $(OBJ_DIR)/V$(TOP_MODULE)
 
-LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/mul-longlong-riscv32e-npc.bin
+LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32e-npc.bin
 ARGS += $(LOAD_IMG)
 
 run: $(CSRC)
