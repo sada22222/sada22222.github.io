@@ -65,12 +65,6 @@ void difftest_step(paddr_t pc, paddr_t npc) {
     }
 
     ref_difftest_regcpy(&ref, DIFFTEST_TO_DUT);
-    printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, npc_cpu.pc );
-    printf("nemupc=%x",ref.pc);
-        printf("npc ");
-        isa_reg_display(npc_cpu);
-        printf("nemu ");
-        isa_reg_display(ref);
     if(checkregs(ref, pc) == 0) {
         npc_state.state = NPC_ABORT;
         npc_state.halt_pc = pc;
@@ -98,15 +92,15 @@ bool checkregs(CPU_state ref, paddr_t pc) {
 
 
         // 打印程序计数器 (PC) 的值
-        printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, npc_cpu.pc );
+        printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, pc );
 
         // 标记校验失败
         ok = 0;
     }
 
     // 比较程序计数器 (PC) 的值
-    if (ref.pc != npc_cpu.pc ) {
-        dump("PC", npc_cpu.pc , ref.pc);
+    if (ref.pc != pc ) {
+        dump("PC", pc , ref.pc);
         ok = 0;
     }
 

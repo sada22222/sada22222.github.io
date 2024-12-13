@@ -25,7 +25,7 @@ void cpu_init() { // exe the first instruction
     dut->reset = 0;
 
 
-    IFDEF(CONFIG_ITRACE, itrace(npc_cpu.pc , npc_cpu.wbinst));
+    IFDEF(CONFIG_ITRACE, itrace(pc_value , wbinst_value));
 
     init_disasm("riscv32-pc-linux-gnu");
 
@@ -45,12 +45,12 @@ void exec_once() {
     dut->eval();
     tfp->dump(time_counter ++);
     
-    IFDEF(CONFIG_ITRACE, itrace(npc_cpu.pc, npc_cpu.wbinst));
+    IFDEF(CONFIG_ITRACE, itrace(pc_value, wbinst_value));
 
     npc_eval();
 
-    if(npc_cpu.pc>=0x20000004 &&  npc_cpu.wbinst!=0x13){
-    IFDEF(CONFIG_DIFFTEST, difftest_step(npc_cpu.pc, npc_cpu.pc + 4));}
+    if(pc_value >=0x20000004 &&  wbinst_value!=0x13){
+    IFDEF(CONFIG_DIFFTEST, difftest_step(pc_value, pc_value + 4));}
 }
 
 void cpu_exec(uint64_t n) {
@@ -90,16 +90,15 @@ void cpu_exec(uint64_t n) {
 
 
 void ebreak() {
-    if ( npc_cpu.wbinst == 0x6f) {
+    if ( wbinst_value == 0x6f) {
         npc_state.halt_ret = 1;
         npc_state.halt_pc = npc_cpu.pc;
     }
 }
 
 void npc_eval() {
-    npc_cpu.pc = pc_value;
-    npc_cpu.npc = npc_value;
-    npc_cpu.wbinst = wbinst_value;
+    npc_cpu.pc = npc_value;
+
     for (int i = 0; i < 32; i ++) {
         npc_cpu.gpr[i] = gprs[i];
     }

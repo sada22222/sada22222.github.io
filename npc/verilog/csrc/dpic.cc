@@ -18,8 +18,8 @@ extern "C" void mrom_read(int32_t addr, int32_t *data) {    *data = paddr_read(a
 
 
 word_t gprs[32];     // 寄存器数组，固定大小
-word_t npc_value = 0;  // 下一条指令地址
-word_t pc_value = 0;   // 当前指令地址
+paddr_t npc_value = 0;  // 下一条指令地址
+paddr_t pc_value = 0;   // 当前指令地址
 word_t wbinst_value = 0; // 写回阶段指令
 
 void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut_x3, uint32_t dut_x4, uint32_t dut_x5,

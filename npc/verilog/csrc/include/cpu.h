@@ -7,14 +7,12 @@
 #define EBREAK 0x100073
 typedef struct {
     word_t gpr[32];
-    paddr_t npc;
     paddr_t pc;
-    word_t wbinst;
 
 } CPU_state;
 extern word_t gprs[32];
-extern word_t npc_value ;
-extern word_t pc_value  ;
+extern paddr_t npc_value ;
+extern paddr_t pc_value  ;
 extern word_t wbinst_value;
 
 extern CPU_state npc_cpu;
