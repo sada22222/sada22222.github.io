@@ -18,6 +18,10 @@ void cpu_init() { // exe the first instruction
     dut->clock = 1; dut->reset = 1; dut->eval(); // pc -> 0x8000_0000
     tfp->dump(time_counter ++); 
     // Execute the first instruction
+    for(int i=0;i<10;i++){
+         dut->clock = 0;  dut->eval();
+         dut->clock = 1;  dut->eval();
+    }
     dut->reset = 0;
 
 
@@ -40,12 +44,13 @@ void exec_once() {
     dut->clock = 1 ; 
     dut->eval();
     tfp->dump(time_counter ++);
+    
     IFDEF(CONFIG_ITRACE, itrace(npc_cpu.pc, npc_cpu.wbinst));
 
     npc_eval();
 
-    //if(npc_cpu.pc>=0x80000004 &&  npc_cpu.wbinst!=0x13){
-    //IFDEF(CONFIG_DIFFTEST, difftest_step(dut->io_pc, npc_cpu.pc + 4));}
+    if(npc_cpu.pc>=0x20000004 &&  npc_cpu.wbinst!=0x13){
+    IFDEF(CONFIG_DIFFTEST, difftest_step(npc_cpu.pc, npc_cpu.pc + 4));}
 }
 
 void cpu_exec(uint64_t n) {
@@ -92,9 +97,9 @@ void ebreak() {
 }
 
 void npc_eval() {
-    npc_cpu.pc = pc;
-    npc_cpu.npc = npc;
-    npc_cpu.wbinst = awbinst;
+    npc_cpu.pc = pc_value;
+    npc_cpu.npc = npc_value;
+    npc_cpu.wbinst = wbinst_value;
     for (int i = 0; i < 32; i ++) {
         npc_cpu.gpr[i] = gprs[i];
     }

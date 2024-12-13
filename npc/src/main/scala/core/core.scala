@@ -8,6 +8,7 @@ import axi.AxiLiteMaster
 
 class Core extends Module {
   val io = IO(new Bundle() {
+  val interrupt      = Input(Bool())  
 
   val master_awready = Input(Bool())
   val master_awvalid = Output(Bool())
@@ -42,6 +43,45 @@ class Core extends Module {
   val master_rdata   = Input(UInt(32.W))
   val master_rlast   = Input(Bool())
   val master_rid     = Input(UInt(4.W))
+
+    // Write Address Channel
+  val slave_awready = Output(Bool())
+  val slave_awvalid = Input(Bool())
+  val slave_awaddr  = Input(UInt(32.W))
+  val slave_awid    = Input(UInt(4.W))
+  val slave_awlen   = Input(UInt(8.W))
+  val slave_awsize  = Input(UInt(3.W))
+  val slave_awburst = Input(UInt(2.W))
+
+  // Write Data Channel
+  val slave_wready = Output(Bool())
+  val slave_wvalid = Input(Bool())
+  val slave_wdata  = Input(UInt(32.W))
+  val slave_wstrb  = Input(UInt(4.W))
+  val slave_wlast  = Input(Bool())
+
+  // Write Response Channel
+  val slave_bready = Input(Bool())
+  val slave_bvalid = Output(Bool())
+  val slave_bresp  = Output(UInt(2.W))
+  val slave_bid    = Output(UInt(4.W))
+
+  // Read Address Channel
+  val slave_arready = Output(Bool())
+  val slave_arvalid = Input(Bool())
+  val slave_araddr  = Input(UInt(32.W))
+  val slave_arid    = Input(UInt(4.W))
+  val slave_arlen   = Input(UInt(8.W))
+  val slave_arsize  = Input(UInt(3.W))
+  val slave_arburst = Input(UInt(2.W))
+
+  // Read Data Channel
+  val slave_rready = Input(Bool())
+  val slave_rvalid = Output(Bool())
+  val slave_rresp  = Output(UInt(2.W))
+  val slave_rdata  = Output(UInt(32.W))
+  val slave_rlast  = Output(Bool())
+  val slave_rid    = Output(UInt(4.W))
   })
 
   val fetch     = Module(new IF)
@@ -194,6 +234,19 @@ io.master_rready := arbiter.io.selectedMaster.master_rready
   dpic.io.wbinst := WB.io.wbinst
   dpic.io.result := WB.io.regdata
   dpic.io.waddr := WB.io.regaddr
+
+  io.slave_awready := false.B
+  io.slave_wready  := false.B
+  io.slave_bvalid  := false.B
+  io.slave_bresp   := 0.U
+  io.slave_bid     := 0.U
+  io.slave_arready := false.B
+  io.slave_rvalid  := false.B
+  io.slave_rresp   := 0.U
+  io.slave_rdata   := 0.U
+  io.slave_rlast   := false.B
+  io.slave_rid     := 0.U
+
 
 }
 

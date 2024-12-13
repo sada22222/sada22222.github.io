@@ -18,6 +18,7 @@ WORK_DIR = $(shell pwd)
 CSRC = $(shell find $(abspath ./csrc) -name "*.c" -or -name "*.cc" -or -name "*.cpp")
 VSRC = $(shell find $(abspath ./vsrc) -name "*.v") 
 VSRC += $(shell find $(abspath /home/hujun/ysyx-workbench/ysyxSoC/perip) -name "*.v") 
+VSRC +=/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v
 
 FILELIST_MK = $(shell find ./csrc -name filelist.mk)
 -include $(FILELIST_MK)
@@ -36,15 +37,17 @@ LD_FLAGS     = $(addprefix -LDFLAGS , $(LIB))
 default: run
 
 
+
 OBJ_DIR = obj_dir
 BIN = $(OBJ_DIR)/V$(TOP_MODULE)
 
-LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/dummy-riscv32e-npc.bin
+LOAD_IMG =/home/hujun/ysyx-workbench/am-kernels/tests/cpu-tests/build/add-riscv32e-ysyxsoc.bin
 ARGS += $(LOAD_IMG)
 
 run: $(CSRC)
 	@echo "\033[0;1;36mVerilator the project: \033[0m"
 	@rm -rf $(OBJ_DIR)
+
 	$(VERILATOR) $(VERILATOR_FLAGS) $(VSRC) $(CXX_FLAGS) $(LD_FLAGS) $(CSRC) #> /dev/null 2>&1
 	@# echo "\033[0;35m$(ARGS)\033[0m"
 	@echo -n "(npc run) "

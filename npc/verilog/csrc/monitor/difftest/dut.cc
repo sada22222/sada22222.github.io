@@ -65,7 +65,12 @@ void difftest_step(paddr_t pc, paddr_t npc) {
     }
 
     ref_difftest_regcpy(&ref, DIFFTEST_TO_DUT);
-
+    printf("nemu pc=0x%x, npc pc=0x%x\n", ref.pc, npc_cpu.pc );
+    printf("nemupc=%x",ref.pc);
+        printf("npc ");
+        isa_reg_display(npc_cpu);
+        printf("nemu ");
+        isa_reg_display(ref);
     if(checkregs(ref, pc) == 0) {
         npc_state.state = NPC_ABORT;
         npc_state.halt_pc = pc;

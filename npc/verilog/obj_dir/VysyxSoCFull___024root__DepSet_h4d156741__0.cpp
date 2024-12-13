@@ -75,34 +75,62 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__0(VysyxSoCFull___0
     if (false && vlSelf) {}  // Prevent unused
     VysyxSoCFull__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VysyxSoCFull___024root___nba_sequent__TOP__0\n"); );
+    // Init
+    IData/*31:0*/ __Vdly__ysyxSoCFull__DOT__flash__DOT__data;
+    __Vdly__ysyxSoCFull__DOT__flash__DOT__data = 0;
     // Body
-    vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter 
-        = vlSelf->ysyxSoCFull__DOT__flash__DOT__counter;
     vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__cmd 
         = vlSelf->ysyxSoCFull__DOT__flash__DOT__cmd;
-    vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__state 
-        = vlSelf->ysyxSoCFull__DOT__flash__DOT__state;
-    vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__data 
-        = vlSelf->ysyxSoCFull__DOT__flash__DOT__data;
+    vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter 
+        = vlSelf->ysyxSoCFull__DOT__flash__DOT__counter;
+    __Vdly__ysyxSoCFull__DOT__flash__DOT__data = vlSelf->ysyxSoCFull__DOT__flash__DOT__data;
     vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__addr 
         = vlSelf->ysyxSoCFull__DOT__flash__DOT__addr;
+    vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__state 
+        = vlSelf->ysyxSoCFull__DOT__flash__DOT__state;
     if (vlSelf->ysyxSoCFull__DOT____Vcellinp__flash__ss) {
-        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter = 0U;
         vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__cmd = 0U;
-    } else if ((0U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state))) {
-        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter 
-            = (0xffU & ((7U > (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
-                         ? ((IData)(1U) + (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
-                         : 0U));
-        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__cmd 
-            = ((0xfeU & ((IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__cmd) 
-                         << 1U)) | (IData)(vlSelf->ysyxSoCFull__DOT___asic_spi_mosi));
+        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter = 0U;
+        __Vdly__ysyxSoCFull__DOT__flash__DOT__data = 0U;
+        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__addr = 0U;
     } else {
-        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter 
-            = (0xffU & ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state))
-                         ? ((0x17U > (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
+        if ((0U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state))) {
+            vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__cmd 
+                = (1U | (0xfeU & ((IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__cmd) 
+                                  << 1U)));
+            vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter 
+                = (0xffU & ((7U > (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
                              ? ((IData)(1U) + (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
-                             : 0U) : ((IData)(1U) + (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))));
+                             : 0U));
+        } else {
+            vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__counter 
+                = (0xffU & ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state))
+                             ? ((0x17U > (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
+                                 ? ((IData)(1U) + (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
+                                 : 0U) : ((IData)(1U) 
+                                          + (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))));
+        }
+        if ((2U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state))) {
+            __Vdly__ysyxSoCFull__DOT__flash__DOT__data 
+                = (((0U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
+                     ? ((vlSelf->ysyxSoCFull__DOT__flash__DOT__rdata 
+                         << 0x18U) | ((0xff0000U & 
+                                       (vlSelf->ysyxSoCFull__DOT__flash__DOT__rdata 
+                                        << 8U)) | (
+                                                   (0xff00U 
+                                                    & (vlSelf->ysyxSoCFull__DOT__flash__DOT__rdata 
+                                                       >> 8U)) 
+                                                   | (vlSelf->ysyxSoCFull__DOT__flash__DOT__rdata 
+                                                      >> 0x18U))))
+                     : vlSelf->ysyxSoCFull__DOT__flash__DOT__data) 
+                   << 1U);
+        }
+        if (((1U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state)) 
+             & (0x17U > (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter)))) {
+            vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__addr 
+                = (1U | (0xfffffeU & (vlSelf->ysyxSoCFull__DOT__flash__DOT__addr 
+                                      << 1U)));
+        }
     }
     if (vlSelf->ysyxSoCFull__DOT____Vcellinp__flash__ss) {
         vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__state = 0U;
@@ -127,26 +155,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__0(VysyxSoCFull___0
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
         VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/flash/flash.v", 44, "");
     }
-    if (vlSelf->ysyxSoCFull__DOT____Vcellinp__flash__ss) {
-        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__data = 0U;
-        vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__addr = 0U;
-    } else {
-        if ((2U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state))) {
-            vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__data 
-                = (((0U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter))
-                     ? vlSelf->ysyxSoCFull__DOT__flash__DOT__data_bswap
-                     : vlSelf->ysyxSoCFull__DOT__flash__DOT__data) 
-                   << 1U);
-        }
-        if (((1U == (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__state)) 
-             & (0x17U > (IData)(vlSelf->ysyxSoCFull__DOT__flash__DOT__counter)))) {
-            vlSelf->__Vdly__ysyxSoCFull__DOT__flash__DOT__addr 
-                = ((0xfffffeU & (vlSelf->ysyxSoCFull__DOT__flash__DOT__addr 
-                                 << 1U)) | (IData)(vlSelf->ysyxSoCFull__DOT___asic_spi_mosi));
-        }
-    }
+    vlSelf->ysyxSoCFull__DOT__flash__DOT__data = __Vdly__ysyxSoCFull__DOT__flash__DOT__data;
 }
 
+void VysyxSoCFull___024unit____Vdpiimwrap_flash_read_TOP____024unit(IData/*31:0*/ addr, IData/*31:0*/ &data);
 extern const VlUnpacked<CData/*0:0*/, 128> VysyxSoCFull__ConstPool__TABLE_h3de247c1_0;
 extern const VlUnpacked<CData/*1:0*/, 128> VysyxSoCFull__ConstPool__TABLE_h00cce6e5_0;
 
@@ -163,6 +175,8 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
     ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__unnamedblk1__DOT___GEN_0 = 0;
     CData/*0:0*/ ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__unnamedblk1__DOT___GEN_1;
     ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__unnamedblk1__DOT___GEN_1 = 0;
+    IData/*31:0*/ __Vtask_flash_read__2__data;
+    __Vtask_flash_read__2__data = 0;
     CData/*6:0*/ __Vtableidx6;
     __Vtableidx6 = 0;
     CData/*0:0*/ __Vdly__ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__idle_3;
@@ -394,10 +408,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_0_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:597: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 597, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 597, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:599: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 599, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 599, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -405,10 +419,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_0_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:603: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 603, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 603, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:605: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 605, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 605, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -416,10 +430,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_0_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:609: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 609, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 609, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:611: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 611, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 611, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -427,10 +441,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_0_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:615: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 615, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 615, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:617: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 617, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 617, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -438,10 +452,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_1_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:621: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 621, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 621, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:623: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 623, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 623, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -449,10 +463,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_1_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:627: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 627, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 627, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:629: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 629, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 629, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -460,10 +474,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_1_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:633: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 633, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 633, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:635: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 635, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 635, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -471,10 +485,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_1_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:639: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 639, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 639, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:641: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 641, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 641, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((2U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -482,10 +496,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_2_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:645: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 645, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 645, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:647: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 647, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 647, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((2U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -493,10 +507,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_2_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:651: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 651, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 651, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:653: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 653, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 653, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((2U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -504,10 +518,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_2_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:657: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 657, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 657, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:659: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 659, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 659, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((2U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -515,10 +529,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_2_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:663: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 663, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 663, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:665: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 665, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 665, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((3U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -526,10 +540,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_3_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:669: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 669, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 669, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:671: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 671, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 671, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((3U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -537,10 +551,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_3_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:675: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 675, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 675, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:677: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 677, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 677, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((3U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -548,10 +562,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_3_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:681: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 681, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 681, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:683: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 683, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 683, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((3U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -559,10 +573,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_3_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:687: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 687, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 687, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:689: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 689, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 689, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((4U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -570,10 +584,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_4_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:693: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 693, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 693, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:695: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 695, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 695, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((4U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -581,10 +595,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_4_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:699: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 699, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 699, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:701: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 701, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 701, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((4U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -592,10 +606,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_4_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:705: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 705, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 705, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:707: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 707, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 707, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((4U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -603,10 +617,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_4_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:711: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 711, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 711, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:713: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 713, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 713, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((5U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -614,10 +628,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_5_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:717: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 717, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 717, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:719: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 719, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 719, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((5U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -625,10 +639,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_5_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:723: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 723, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 723, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:725: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 725, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 725, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((5U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -636,10 +650,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_5_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:729: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 729, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 729, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:731: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 731, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 731, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((5U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -647,10 +661,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_5_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:735: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 735, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 735, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:737: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 737, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 737, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((6U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -658,10 +672,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_6_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:741: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 741, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 741, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:743: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 743, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 743, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((6U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -669,10 +683,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_6_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:747: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 747, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 747, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:749: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 749, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 749, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((6U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -680,10 +694,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_6_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:753: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 753, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 753, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:755: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 755, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 755, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((6U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -691,10 +705,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_6_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:759: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 759, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 759, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:761: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 761, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 761, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((7U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -702,10 +716,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_7_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:765: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 765, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 765, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:767: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 767, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 767, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((7U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -713,10 +727,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_7_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:771: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 771, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 771, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:773: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 773, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 773, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((7U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -724,10 +738,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_7_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:777: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 777, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 777, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:779: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 779, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 779, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((7U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -735,10 +749,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_7_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:783: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 783, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 783, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:785: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 785, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 785, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((8U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -746,10 +760,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_8_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:789: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 789, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 789, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:791: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 791, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 791, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((8U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -757,10 +771,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_8_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:795: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 795, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 795, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:797: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 797, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 797, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((8U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -768,10 +782,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_8_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:801: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 801, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 801, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:803: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 803, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 803, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((8U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -779,10 +793,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_8_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:807: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 807, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 807, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:809: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 809, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 809, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((9U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -790,10 +804,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_9_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:813: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 813, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 813, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:815: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 815, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 815, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((9U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -801,10 +815,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_9_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:819: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 819, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 819, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:821: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 821, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 821, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((9U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -812,10 +826,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_9_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:825: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 825, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 825, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:827: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 827, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 827, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((9U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -823,10 +837,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_9_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:831: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 831, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 831, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:833: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 833, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 833, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xaU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -834,10 +848,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_10_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:837: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 837, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 837, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:839: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 839, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 839, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xaU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -845,10 +859,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_10_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:843: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 843, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 843, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:845: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 845, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 845, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xaU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -856,10 +870,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_10_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:849: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 849, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 849, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:851: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 851, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 851, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xaU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -867,10 +881,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_10_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:855: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 855, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 855, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:857: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 857, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 857, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xbU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -878,10 +892,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_11_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:861: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 861, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 861, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:863: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 863, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 863, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xbU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -889,10 +903,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_11_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:867: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 867, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 867, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:869: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 869, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 869, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xbU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -900,10 +914,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_11_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:873: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 873, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 873, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:875: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 875, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 875, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xbU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -911,10 +925,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_11_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:879: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 879, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 879, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:881: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 881, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 881, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xcU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -922,10 +936,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_12_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:885: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 885, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 885, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:887: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 887, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 887, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xcU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -933,10 +947,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_12_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:891: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 891, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 891, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:893: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 893, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 893, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xcU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -944,10 +958,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_12_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:897: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 897, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 897, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:899: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 899, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 899, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xcU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -955,10 +969,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_12_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:903: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 903, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 903, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:905: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 905, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 905, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xdU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -966,10 +980,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_13_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:909: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 909, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 909, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:911: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 911, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 911, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xdU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -977,10 +991,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_13_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:915: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 915, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 915, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:917: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 917, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 917, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xdU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -988,10 +1002,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_13_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:921: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 921, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 921, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:923: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 923, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 923, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xdU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -999,10 +1013,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_13_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:927: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 927, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 927, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:929: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 929, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 929, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xeU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -1010,10 +1024,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_14_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:933: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 933, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 933, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:935: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 935, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 935, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xeU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -1021,10 +1035,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_14_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:939: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 939, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 939, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:941: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 941, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 941, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xeU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -1032,10 +1046,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_14_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:945: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 945, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 945, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:947: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 947, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 947, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xeU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -1043,10 +1057,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_14_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:951: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 951, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 951, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:953: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 953, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 953, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xfU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)) 
@@ -1054,10 +1068,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_15_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:957: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 957, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 957, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:959: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 959, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 959, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xfU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_arid)) 
@@ -1065,10 +1079,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__arFIFOMap_15_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:963: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 963, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 963, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:965: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 965, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 965, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xfU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)) 
@@ -1076,10 +1090,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_15_count))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:969: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:131 assert (!resp_fire || count =/= 0.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 969, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 969, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:971: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 971, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 971, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ ((0xfU == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awid)) 
@@ -1087,10 +1101,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awFIFOMap_15_count)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:975: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:132 assert (!req_fire  || count =/= flight.U)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 975, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 975, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:977: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 977, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 977, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ (((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__prefixOR_1)) 
@@ -1100,10 +1114,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                     | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__winner_3_2))))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:983: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:286 assert((prefixOR zip winner) map { case (p,w) => !p || !w } reduce {_ && _})\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 983, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 983, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:985: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 985, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 985, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__anyValid)) 
@@ -1112,20 +1126,20 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__winner_3_2))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:989: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:288 assert (!anyValid || winner.reduce(_||_))\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 989, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 989, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:991: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 991, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 991, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__winner_4_0)) 
                                  | (~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__winner_4_2)))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:995: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:286 assert((prefixOR zip winner) map { case (p,w) => !p || !w } reduce {_ && _})\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 995, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 995, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:997: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 997, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 997, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ (((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__anyValid_1)) 
@@ -1133,10 +1147,10 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                  | (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__winner_4_2))))))) {
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1001: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1: Assertion failed\n    at Xbar.scala:288 assert (!anyValid || winner.reduce(_||_))\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 1001, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 1001, "");
         VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1003: Assertion failed in %NysyxSoCFull.asic.axi4xbar_1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 1003, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 1003, "");
     }
     __Vdlyvset__ysyxSoCFull__DOT__asic__DOT__luart__DOT__muart__DOT__Uregs__DOT__transmitter__DOT__fifo_tx__DOT__tfifo__DOT__ram__v0 = 0U;
     __Vdly__ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__in_wdeq_q__DOT__full 
@@ -1195,22 +1209,22 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                                              | (1U 
                                                                 & (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_awaddr 
                                                                    >> 0xcU)))))))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1781: Assertion failed in %NysyxSoCFull.asic.lmrom: Assertion failed: do not support write operations\n    at MROM.scala:71 assert(!in.aw.valid, \"do not support write operations\")\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1811: Assertion failed in %NysyxSoCFull.asic.lmrom: Assertion failed: do not support write operations\n    at MROM.scala:71 assert(!in.aw.valid, \"do not support write operations\")\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 1781, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1783: Assertion failed in %NysyxSoCFull.asic.lmrom\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 1811, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1813: Assertion failed in %NysyxSoCFull.asic.lmrom\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 1783, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 1813, "");
     }
     if (VL_UNLIKELY(((~ (IData)(vlSelf->reset)) & ((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__in_0_wvalid) 
                                                    & ((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___awIn_0_io_deq_bits) 
                                                       >> 1U))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1787: Assertion failed in %NysyxSoCFull.asic.lmrom: Assertion failed: do not support write operations\n    at MROM.scala:72 assert(!in. w.valid, \"do not support write operations\")\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1817: Assertion failed in %NysyxSoCFull.asic.lmrom: Assertion failed: do not support write operations\n    at MROM.scala:72 assert(!in. w.valid, \"do not support write operations\")\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 1787, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1789: Assertion failed in %NysyxSoCFull.asic.lmrom\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 1817, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:1819: Assertion failed in %NysyxSoCFull.asic.lmrom\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 1789, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 1819, "");
     }
     __Vdlyvset__ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awIn_0__DOT__ram_ext__DOT__Memory__v0 = 0U;
     __Vdly__ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__Queue1_BundleMap_31__DOT__full 
@@ -1247,21 +1261,21 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
         = vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__Queue1_BundleMap_16__DOT__full;
     if (VL_UNLIKELY((((~ (IData)(vlSelf->reset)) & (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4xbar_1_auto_anon_out_0_arvalid)) 
                      & (2U < (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT___deq_q_io_deq_bits_size))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2120: Assertion failed in %NysyxSoCFull.asic.axi42apb: Assertion failed\n    at AXI4ToAPB.scala:64 assert(!(ar.valid && ar.bits.size > \"b10\".U))\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2150: Assertion failed in %NysyxSoCFull.asic.axi42apb: Assertion failed\n    at AXI4ToAPB.scala:64 assert(!(ar.valid && ar.bits.size > \"b10\".U))\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2120, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2122: Assertion failed in %NysyxSoCFull.asic.axi42apb\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2150, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2152: Assertion failed in %NysyxSoCFull.asic.axi42apb\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2122, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2152, "");
     }
     if (VL_UNLIKELY((((~ (IData)(vlSelf->reset)) & (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4xbar_1_auto_anon_out_0_awvalid)) 
                      & (2U < (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT___deq_q_1_io_deq_bits_size))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2126: Assertion failed in %NysyxSoCFull.asic.axi42apb: Assertion failed\n    at AXI4ToAPB.scala:65 assert(!(aw.valid && aw.bits.size > \"b10\".U))\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2156: Assertion failed in %NysyxSoCFull.asic.axi42apb: Assertion failed\n    at AXI4ToAPB.scala:65 assert(!(aw.valid && aw.bits.size > \"b10\".U))\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2126, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2128: Assertion failed in %NysyxSoCFull.asic.axi42apb\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2156, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2158: Assertion failed in %NysyxSoCFull.asic.axi42apb\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2128, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2158, "");
     }
     __Vdly__ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awIn_0__DOT__wrap 
         = vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__awIn_0__DOT__wrap;
@@ -1277,12 +1291,12 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                            & (~ ((~ ((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4yank_auto_in_wready) 
                                      & (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__nodeOut_wvalid))) 
                                  | (0U != (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__w_todo)))))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3198: Assertion failed in %NysyxSoCFull.asic.axi4frag: Assertion failed\n    at Fragmenter.scala:181 assert (!out.w.fire || w_todo =/= 0.U) // underflow impossible\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3228: Assertion failed in %NysyxSoCFull.asic.axi4frag: Assertion failed\n    at Fragmenter.scala:181 assert (!out.w.fire || w_todo =/= 0.U) // underflow impossible\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 3198, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3200: Assertion failed in %NysyxSoCFull.asic.axi4frag\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 3228, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3230: Assertion failed in %NysyxSoCFull.asic.axi4frag\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 3200, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 3230, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ (((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__nodeOut_wvalid)) 
@@ -1292,17 +1306,36 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                                                     >> 0x24U))
                                          : (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__cpu__DOT__cpu__DOT__arbiter__DOT__grant)))) 
                                  | (1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4frag__DOT__w_todo)))))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3204: Assertion failed in %NysyxSoCFull.asic.axi4frag: Assertion failed\n    at Fragmenter.scala:190 assert (!out.w.valid || !in_w.bits.last || w_last)\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3234: Assertion failed in %NysyxSoCFull.asic.axi4frag: Assertion failed\n    at Fragmenter.scala:190 assert (!out.w.valid || !in_w.bits.last || w_last)\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 3204, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3206: Assertion failed in %NysyxSoCFull.asic.axi4frag\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 3234, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:3236: Assertion failed in %NysyxSoCFull.asic.axi4frag\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 3206, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 3236, "");
     }
     __Vdly__ysyxSoCFull__DOT__asic__DOT__cpu__DOT__cpu__DOT__fetch__DOT__pc 
         = vlSelf->ysyxSoCFull__DOT__asic__DOT__cpu__DOT__cpu__DOT__fetch__DOT__pc;
     __Vdly__ysyxSoCFull__DOT__asic__DOT__cpu__DOT__cpu__DOT__EX__DOT__mdu__DOT__div__DOT__counter 
         = vlSelf->ysyxSoCFull__DOT__asic__DOT__cpu__DOT__cpu__DOT__EX__DOT__mdu__DOT__div__DOT__counter;
+    if (((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___apbxbar_auto_anon_out_0_penable)) 
+         & (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___apbxbar_auto_anon_out_0_psel))) {
+        if (VL_LIKELY((3U == ((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__is_write)
+                               ? 0U : 3U)))) {
+            VysyxSoCFull___024unit____Vdpiimwrap_flash_read_TOP____024unit(
+                                                                           (0xfffffcU 
+                                                                            & vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_addr_w), __Vtask_flash_read__2__data);
+            vlSelf->ysyxSoCFull__DOT__asic__DOT__lspi__DOT__mspi__DOT__data 
+                = __Vtask_flash_read__2__data;
+        } else {
+            VL_FWRITEF(0x80000002U,"Assertion failed: Unsupport command `%xh`, only support `03h` read command\n",
+                       8,((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__is_write)
+                           ? 0U : 3U));
+            VL_WRITEF("[%0t] %%Error: flash.v:98: Assertion failed in %NysyxSoCFull.asic.lspi.mspi.flash_cmd_i\n",
+                      64,VL_TIME_UNITED_Q(1000),-9,
+                      vlSymsp->name());
+            VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/flash/flash.v", 98, "");
+        }
+    }
     ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__unnamedblk1__DOT___GEN_4 
         = (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__Queue1_BundleMap_15__DOT__full) 
             << 0xfU) | (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__Queue1_BundleMap_14__DOT__full) 
@@ -1365,23 +1398,23 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
                            & (~ ((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__cpu__DOT__cpu__DOT__arbiter_io_selectedMaster_master_rvalid)) 
                                  | ((IData)(ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__unnamedblk1__DOT___GEN_4) 
                                     >> (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_rT_19)))))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2524: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1: Assertion failed\n    at UserYanker.scala:69 assert (!out.r.valid || r_valid) // Q must be ready faster than the response\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2554: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1: Assertion failed\n    at UserYanker.scala:69 assert (!out.r.valid || r_valid) // Q must be ready faster than the response\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2524, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2526: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2554, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2556: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2526, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2556, "");
     }
     if (VL_UNLIKELY((1U & ((~ (IData)(vlSelf->reset)) 
                            & (~ ((~ (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT__in_0_bvalid)) 
                                  | ((IData)(ysyxSoCFull__DOT__asic__DOT__axi4yank__DOT__unnamedblk1__DOT___GEN_5) 
                                     >> (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4xbar_1__DOT___in_0_bT_9)))))))) {
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2530: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1: Assertion failed\n    at UserYanker.scala:98 assert (!out.b.valid || b_valid) // Q must be ready faster than the response\n\n",
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2560: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1: Assertion failed\n    at UserYanker.scala:98 assert (!out.b.valid || b_valid) // Q must be ready faster than the response\n\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2530, "");
-        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2532: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1\n",
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2560, "");
+        VL_WRITEF("[%0t] %%Error: ysyxSoCFull.v:2562: Assertion failed in %NysyxSoCFull.asic.axi4yank.unnamedblk1\n",
                   64,VL_TIME_UNITED_Q(1000),-9,vlSymsp->name());
-        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/perip/ysyxSoCFull.v", 2532, "");
+        VL_STOP_MT("/home/hujun/ysyx-workbench/ysyxSoC/build/ysyxSoCFull.v", 2562, "");
     }
     __Vdly__ysyxSoCFull__DOT__asic__DOT__axi4ram__DOT__w_full 
         = ((~ (IData)(vlSelf->reset)) & ((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi4ram__DOT___GEN) 
@@ -7359,9 +7392,9 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
     if (vlSelf->ysyxSoCFull__DOT__asic__DOT__lmrom__DOT___nodeIn_rid_T) {
         VysyxSoCFull___024root____Vdpiimwrap_ysyxSoCFull__DOT__asic__DOT__lmrom__DOT__mrom__DOT__mrom_read_TOP(
                                                                                 (0x3fffffffU 
-                                                                                & vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_araddr), vlSelf->__Vtask_ysyxSoCFull__DOT__asic__DOT__lmrom__DOT__mrom__DOT__mrom_read__2__rdata);
+                                                                                & vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_araddr), vlSelf->__Vtask_ysyxSoCFull__DOT__asic__DOT__lmrom__DOT__mrom__DOT__mrom_read__3__rdata);
         vlSelf->ysyxSoCFull__DOT__asic__DOT__lmrom__DOT___mrom_rdata 
-            = vlSelf->__Vtask_ysyxSoCFull__DOT__asic__DOT__lmrom__DOT__mrom__DOT__mrom_read__2__rdata;
+            = vlSelf->__Vtask_ysyxSoCFull__DOT__asic__DOT__lmrom__DOT__mrom__DOT__mrom_read__3__rdata;
     } else {
         vlSelf->ysyxSoCFull__DOT__asic__DOT__lmrom__DOT___mrom_rdata = 0U;
     }
@@ -7381,11 +7414,11 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
             ? (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__accept_write)
             : (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__is_write_r));
     if (vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__accept_write) {
-        vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+        vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
             = vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_wdata;
         vlSelf->__VdfgTmp_h0f59f008__0 = vlSelf->ysyxSoCFull__DOT__asic__DOT___axi4frag_auto_out_wstrb;
     } else {
-        vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+        vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
             = vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__wdata_reg_r;
         vlSelf->__VdfgTmp_h0f59f008__0 = vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__wstrb_reg_r;
     }
@@ -7411,8 +7444,8 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
     }
     vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__byte1 
         = (0xffU & ((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT____VdfgTmp_h1164a660__0)
-                     ? (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
-                        >> 8U) : (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+                     ? (vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
+                        >> 8U) : (vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
                                   >> 0x18U)));
     vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__size 
         = ((1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pstrb))
@@ -7430,25 +7463,25 @@ VL_INLINE_OPT void VysyxSoCFull___024root___nba_sequent__TOP__2(VysyxSoCFull___0
     vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__byte0 
         = (0xffU & (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__is_write) 
                      & (IData)(vlSelf->__VdfgTmp_h0f59f008__0))
-                     ? vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata
+                     ? vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w
                      : (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT____VdfgTmp_h1164a660__0) 
                          & (1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__size)))
-                         ? (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+                         ? (vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
                             >> 8U) : (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT____VdfgTmp_h1138d757__0) 
                                        & (1U == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__size)))
-                                       ? (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+                                       ? (vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
                                           >> 0x10U)
                                        : (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__axi42apb__DOT__is_write) 
                                            & (((IData)(vlSelf->__VdfgTmp_h0f59f008__0) 
                                                >> 3U) 
                                               & (1U 
                                                  == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__size))))
-                                           ? (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+                                           ? (vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
                                               >> 0x18U)
                                            : (((IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT____VdfgTmp_h1138d757__0) 
                                                & (2U 
                                                   == (IData)(vlSelf->ysyxSoCFull__DOT__asic__DOT__lpsram__DOT__mpsram__DOT__u0__DOT__size)))
-                                               ? (vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata 
+                                               ? (vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w 
                                                   >> 0x10U)
-                                               : vlSelf->ysyxSoCFull__DOT__asic__DOT___axi42apb_auto_out_pwdata))))));
+                                               : vlSelf->ysyxSoCFull__DOT__asic__DOT__lsdram_apb__DOT__msdram__DOT__u_sdram_ctrl__DOT__ram_write_data_w))))));
 }

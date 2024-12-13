@@ -14,38 +14,35 @@ extern "C" void get_diff_commit(svBit commit){
 }
 
 extern "C" void flash_read(int32_t addr, int32_t *data) { assert(0); }
-extern "C" void mrom_read(int32_t addr, int32_t *data) { data=0x413; }
+extern "C" void mrom_read(int32_t addr, int32_t *data) {    *data = paddr_read(addr, 4);}
 
 
-word_t* gprs = NULL;
-word_t* npc = NULL;
-word_t* pc = NULL;
-word_t* awbinst = NULL;
-void  set_gpr_ptr(uint32_t dut_x0,  uint32_t dut_x1,  uint32_t dut_x2,  uint32_t dut_x3,  uint32_t dut_x4,  uint32_t dut_x5,
-                  uint32_t dut_x6,  uint32_t dut_x7,  uint32_t dut_x8,  uint32_t dut_x9,  uint32_t dut_x10, uint32_t dut_x11, uint32_t dut_x12,
-                  uint32_t dut_x13, uint32_t dut_x14, uint32_t dut_x15, uint32_t dut_x16, uint32_t dut_x17, uint32_t dut_x18, uint32_t dut_x19,
-                  uint32_t dut_x20, uint32_t dut_x21, uint32_t dut_x22, uint32_t dut_x23, uint32_t dut_x24, uint32_t dut_x25, uint32_t dut_x26,
-                  uint32_t dut_x27, uint32_t dut_x28, uint32_t dut_x29, uint32_t dut_x30, uint32_t dut_x31, 
-                  uint32_t inst,    uint32_t pc,      uint32_t npc,  uint32_t flushpc, uint32_t flush, uint32_t  stall,
-                  uint32_t wbinst,  uint32_t bputake, uint32_t bpuaddr,uint32_t idpc, uint32_t idinst,uint32_t expc,
-                  uint32_t exinst,  uint32_t mempc, uint32_t meminst,   uint32_t result,   uint32_t waddr,   uint32_t state){
-                    
-    printf(" flushpc=%x  flush=%x   stall=%x   ifstate=%x   bputake=%x  bpuaddr=%x  \n " ,flushpc,flush,stall,state,bputake,bpuaddr);
-    printf("ifpc=%x  ifinst=%x  idpc=%x  idinst=%x  expc=%x   exinst=%x   mempc=%x  meminst=%x  wbpc=%x  wbinst=%x   result=%x  waddr=%x\n\n",  npc,inst,idpc,idinst,expc,exinst,mempc,meminst,pc,wbinst,result,waddr);
+word_t gprs[32];     // 寄存器数组，固定大小
+word_t npc_value = 0;  // 下一条指令地址
+word_t pc_value = 0;   // 当前指令地址
+word_t wbinst_value = 0; // 写回阶段指令
+
+void set_gpr_ptr(uint32_t dut_x0, uint32_t dut_x1, uint32_t dut_x2, uint32_t dut_x3, uint32_t dut_x4, uint32_t dut_x5,
+                    uint32_t dut_x6, uint32_t dut_x7, uint32_t dut_x8, uint32_t dut_x9, uint32_t dut_x10, uint32_t dut_x11, uint32_t dut_x12,
+                    uint32_t dut_x13, uint32_t dut_x14, uint32_t dut_x15, uint32_t dut_x16, uint32_t dut_x17, uint32_t dut_x18, uint32_t dut_x19,
+                    uint32_t dut_x20, uint32_t dut_x21, uint32_t dut_x22, uint32_t dut_x23, uint32_t dut_x24, uint32_t dut_x25, uint32_t dut_x26,
+                    uint32_t dut_x27, uint32_t dut_x28, uint32_t dut_x29, uint32_t dut_x30, uint32_t dut_x31, 
+                    uint32_t inst, uint32_t pc, uint32_t npc, uint32_t flushpc, uint32_t flush, uint32_t stall,
+                    uint32_t wbinst, uint32_t bputake, uint32_t bpuaddr, uint32_t idpc, uint32_t idinst, uint32_t expc,
+                    uint32_t exinst, uint32_t mempc, uint32_t meminst, uint32_t result, uint32_t waddr, uint32_t state) {
     
+    // 打印输入状态信息
+    printf("flushpc=%x flush=%x stall=%x ifstate=%x bputake=%x bpuaddr=%x\n",
+           flushpc, flush, stall, state, bputake, bpuaddr);
+    printf("ifpc=%x ifinst=%x idpc=%x idinst=%x expc=%x exinst=%x mempc=%x meminst=%x wbpc=%x wbinst=%x result=%x waddr=%x\n\n",
+           npc, inst, idpc, idinst, expc, exinst, mempc, meminst, pc, wbinst, result, waddr);
 
-    // 如果 gprs 没有初始化，则分配内存
-    if (gprs == NULL) {
-        gprs = (word_t*)malloc(32 * sizeof(word_t));  // 为32个寄存器分配内存
-        if (gprs == NULL) {
-            fprintf(stderr, "Memory allocation for gprs failed!\n");
-            exit(1);
-        }
-    }
-    npc     = npc;
-    pc      = pc;
-    awbinst  = wbinst;
-    
+    // 更新全局变量
+    npc_value = npc;
+    pc_value = pc;
+    wbinst_value = wbinst;
+
+    // 将寄存器值存储到 gprs 数组
     gprs[0] = dut_x0;
     gprs[1] = dut_x1;
     gprs[2] = dut_x2;
@@ -79,7 +76,6 @@ void  set_gpr_ptr(uint32_t dut_x0,  uint32_t dut_x1,  uint32_t dut_x2,  uint32_t
     gprs[30] = dut_x30;
     gprs[31] = dut_x31;
 }
-
 /*static int cnt = 0;
 uint32_t fetch(bool clk, bool rst, paddr_t pc) {
     printf("clk=%d, rst=%d, pc=" FMT_PADDR "\n", clk, rst, pc);

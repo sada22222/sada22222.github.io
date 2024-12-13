@@ -3,7 +3,6 @@ cmd_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/cp
 source_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/cpu/difftest/ref.o := src/cpu/difftest/ref.c
 
 deps_/home/hujun/ysyx-workbench/nemu/build/obj-riscv32-nemu-interpreter-so/src/cpu/difftest/ref.o := \
-    $(wildcard include/config/device.h) \
   /home/hujun/ysyx-workbench/nemu/include/isa.h \
   /home/hujun/ysyx-workbench/nemu/src/isa/riscv32/include/isa-def.h \
   /home/hujun/ysyx-workbench/nemu/include/common.h \

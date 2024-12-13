@@ -185,7 +185,7 @@
 /*
  * OCR bits are mostly in host.h
  */
-#define MMC_CARD_BUSY	0x80000000	/* Card Power up status bit */
+#define MMC_CARD_BUSY	0x20000000	/* Card Power up status bit */
 
 /*
  * Card Command Classes (CCC)
@@ -426,12 +426,12 @@
  * Erase/trim/discard
  */
 #define MMC_ERASE_ARG			0x00000000
-#define MMC_SECURE_ERASE_ARG		0x80000000
+#define MMC_SECURE_ERASE_ARG		0x20000000
 #define MMC_TRIM_ARG			0x00000001
 #define MMC_DISCARD_ARG			0x00000003
-#define MMC_SECURE_TRIM1_ARG		0x80000001
-#define MMC_SECURE_TRIM2_ARG		0x80008000
-#define MMC_SECURE_ARGS			0x80000000
+#define MMC_SECURE_TRIM1_ARG		0x20000001
+#define MMC_SECURE_TRIM2_ARG		0x20008000
+#define MMC_SECURE_ARGS			0x20000000
 #define MMC_TRIM_ARGS			0x00008001
 
 #define mmc_driver_type_mask(n)		(1 << (n))

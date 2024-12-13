@@ -55,9 +55,5 @@ __EXPORT void difftest_init(int port) {
   Log("NEMU as reference difftest init !");
   void init_mem();
   init_mem();
-  /* Perform ISA dependent initialization. */
   init_isa();
-  // #ifdef CONFIG_DEVICE
-
-  // #endif
 }
